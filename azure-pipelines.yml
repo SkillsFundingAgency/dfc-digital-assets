@@ -1,0 +1,55 @@
+# dotnet code build
+
+resources:
+  repositories:
+  - repository: self
+
+variables:
+  npmfolder: 'DFC.Digital/DFC.Digital.Web.Sitefinity/ResourcePackages/gds_toolkit'
+
+trigger:
+  batch: true # batch if multiple checkins while build in progress
+  branches:
+    include:
+    - master
+
+pr:
+  branches:
+    include:
+    - master
+
+jobs:
+
+# Full build
+- job: BuildDotNetCore
+  displayName: Build dot net core project
+  pool:
+    name: Continuous Integration 02 - SSD - 160ACU
+    demands:
+    - msbuild
+    - visualstudio
+
+  steps:
+
+  # version check
+  - task: Npm@1
+    displayName: 'Show npm version'
+    inputs:
+      command: custom
+      workingDir: '$(npmfolder)'
+      verbose: false
+      customCommand: version
+
+  # install node packages from packages.json
+  - task: Npm@1
+    displayName: 'npm install'
+    inputs:
+      command: install
+      workingDir: '$(npmfolder)'
+
+  # run grunt
+  - task: Grunt@0
+    displayName: 'grunt '
+    inputs:
+      gruntFile: '$(npmfolder)/gruntfile.js'
+      workingDirectory: '$(npmfolder)/node_modules/grunt/'
