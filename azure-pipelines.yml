@@ -5,7 +5,7 @@ resources:
   - repository: self
 
 variables:
-  npmfolder: 'DFC.Digital/DFC.Digital.Web.Sitefinity/ResourcePackages/gds_toolkit'
+  npmfolder: 'src'
 
 trigger:
   batch: true # batch if multiple checkins while build in progress
