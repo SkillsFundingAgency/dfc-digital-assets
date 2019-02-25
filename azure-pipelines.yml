@@ -6,6 +6,7 @@ resources:
 
 variables:
   npmfolder: 'src'
+  assetpath: 'assets/dist' # subfolder off npmfolder
 
 trigger:
   batch: true # batch if multiple checkins while build in progress
@@ -53,3 +54,10 @@ jobs:
     inputs:
       gruntFile: '$(npmfolder)/gruntfile.js'
       workingDirectory: '$(npmfolder)/node_modules/grunt/'
+
+  # publish
+  - task: PublishBuildArtifacts@1
+    displayName: 'Publish Artifact: drop'
+    inputs:
+      pathtoPublish: '$(npmfolder)/$(assetpath)'
+      artifactName: assets
