@@ -32,12 +32,12 @@ jobs:
 
   steps:
 
-  # copy azure templates
-  - task: CopyFiles@2
-    displayName: 'Copy Files: Azure'
+  # Resources
+  - task: PublishBuildArtifacts@1
+    displayName: 'Publish Artifact: drop'
     inputs:
-      Contents: 'Resources/**/*'
-      TargetFolder: '$(build.artifactstagingdirectory)'
+      pathtoPublish: 'Resources'
+      artifactName: resources
 
   # version check
   - task: Npm@1
