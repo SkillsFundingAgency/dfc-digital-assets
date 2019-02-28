@@ -3,9 +3,14 @@
 resources:
   repositories:
   - repository: self
+  - repository: dfc-devops
+    type: github
+    name: SkillsFundingAgency/dfc-devops
+    ref: refs/heads/NCSD-306_grunt_yamltemplate
+    endpoint: 'GitHub (CDH)'
 
 variables:
-  npmfolder: 'src'
+  npmroot: 'src'
   assetpath: 'assets/dist' # subfolder off npmfolder
 
 trigger:
@@ -27,44 +32,28 @@ jobs:
   pool:
     name: Continuous Integration 02 - SSD - 160ACU
     demands:
-    - msbuild
-    - visualstudio
+    - npm
+    - grunt
 
   steps:
 
   # Resources
   - task: PublishBuildArtifacts@1
-    displayName: 'Publish Artifact: drop'
+    displayName: 'Publish Artifact: Resources'
     inputs:
       pathtoPublish: 'Resources'
       artifactName: resources
 
-  # version check
-  - task: Npm@1
-    displayName: 'Show npm version'
-    inputs:
-      command: custom
-      workingDir: '$(npmfolder)'
-      verbose: false
-      customCommand: version
+  # build and publish gds_toolkit
+  - template: AzureDevOpsTemplates/Build/dfc-grunt-build.yml@dfc-devops
+    parameters:
+      npmfolder: '$(npmroot)/gds_toolkit'
+      publishpath: '$(assetpath)'
+      publishname: 'gds_toolkit'
 
-  # install node packages from packages.json
-  - task: Npm@1
-    displayName: 'npm install'
-    inputs:
-      command: install
-      workingDir: '$(npmfolder)'
-
-  # run grunt
-  - task: Grunt@0
-    displayName: 'grunt '
-    inputs:
-      gruntFile: '$(npmfolder)/gruntfile.js'
-      workingDirectory: '$(npmfolder)/node_modules/grunt/'
-
-  # publish
-  - task: PublishBuildArtifacts@1
-    displayName: 'Publish Artifact: drop'
-    inputs:
-      pathtoPublish: '$(npmfolder)/$(assetpath)'
-      artifactName: assets
+  # build and publish gds_service_toolkit
+  - template: AzureDevOpsTemplates/Build/dfc-grunt-build.yml@dfc-devops
+    parameters:
+      npmfolder: '$(npmroot)/gds_service_toolkit'
+      publishpath: '$(assetpath)'
+      publishname: 'gds_service_toolkit'
