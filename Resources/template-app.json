@@ -32,9 +32,9 @@
     }
   ],
   "outputs": {
-    "appInsightInstrumentationKey": {
+    "storageKey": {
       "type": "string",
-      "value": "[reference('exploreCareersAssetsStorage').outputs.storageConnectionString.value]"
+      "value": "[reference('exploreCareersAssetsStorage').outputs.storageKey.value]"
     }
   }
 }
