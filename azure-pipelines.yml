@@ -33,7 +33,6 @@ jobs:
     name: Continuous Integration 02 - SSD - 160ACU
     demands:
     - npm
-    - grunt
 
   steps:
 
