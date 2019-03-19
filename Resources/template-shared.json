@@ -19,6 +19,13 @@
       "metadata": {
         "description": "URL to get the assets from"
       }
+    },
+    "customCdnFqdn": {
+      "type": "string",
+      "defaultValue": "",
+      "metadata": {
+        "description": "Endpoint in the CDN to create"
+      }
     }
   },
   "variables": {
@@ -44,6 +51,12 @@
           },
           "originHostName": {
             "value": "[parameters('originHostName')]"
+          },
+          "customDomainName": {
+            "value": "[parameters('customCdnFqdn')]"
+          },
+          "queryStringCachingBehavior": {
+            "value": "UseQueryString"
           }
         }
       }
