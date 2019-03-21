@@ -26,7 +26,6 @@
   ],
 
   "concatGovUkJsFiles": [
-    "node_modules/govuk_template_mustache/assets/javascripts/govuk-template.js",
     "node_modules/govuk-frontend/all.js"
   ],
 
