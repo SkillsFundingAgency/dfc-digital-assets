@@ -165,6 +165,8 @@ module.exports = function (grunt) {
                     // Project assets
                     // Concatenates project files listed in jsfiles.json
                     { '<%= dist.path %>/js/dfcdigital.min.js': projectJsfiles },
+                    { '<%= dist.path %>/js/jquerybundle.min.js': jqueryBundle },
+                    { '<%= dist.path %>/js/ie8bundle.min.js': ie8Bundle },
                     { '<%= dist.path %>/js/cmsExtentionsBundle.min.js': cmsExtentionsBundle },
                     {
                         expand: true,
