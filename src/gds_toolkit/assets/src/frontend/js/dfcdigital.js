@@ -90,17 +90,6 @@ $(document).ready(function () {
 });
 
 function sendEmail(e) {
-    var emailAddress = $('input[name=EmailAddress]').val();
-
-    if (emailAddress.length && $('.survey_form')[0].checkValidity()) {
-        e.preventDefault();
-        $("#js-survey-form").addClass("js-hidden");
-        $.post('/govnotifyemail',
-            { emailaddress: emailAddress },
-            function (result) {
-                DisplayResponseMessage(result);
-            });
-    }
 }
 function DisplayResponseMessage(result) {
     if (result === true) {
