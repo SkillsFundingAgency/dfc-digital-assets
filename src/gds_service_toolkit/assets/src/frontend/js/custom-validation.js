@@ -35,8 +35,11 @@
         PopulateDateOfBirth();
     });
 
-    var validator = $("form").validate();
-    validator.settings.ignore = [];
+    if($("form"))
+    {
+       var validator = $("form").validate();
+       validator.settings.ignore = [];
+    }
 });
 
 $.validator.setDefaults({
