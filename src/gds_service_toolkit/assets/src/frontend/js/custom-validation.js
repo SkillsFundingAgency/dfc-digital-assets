@@ -35,9 +35,9 @@
         PopulateDateOfBirth();
     });
 
-    if($("form"))
+    var validator = $("form").validate();
+    if(validator)
     {
-       var validator = $("form").validate();
        validator.settings.ignore = [];
     }
 });
