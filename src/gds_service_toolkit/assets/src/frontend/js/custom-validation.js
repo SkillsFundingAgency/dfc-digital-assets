@@ -5,7 +5,7 @@
 
         var validator = $('form').validate();
         if ($('form').valid()) {
-            $("form").submit(e);
+            $("form").submit();
         } else {
             $('#error-validation-summary').show();
 
