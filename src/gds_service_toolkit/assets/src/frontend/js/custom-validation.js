@@ -123,7 +123,7 @@ jQuery.validator.addMethod("agerange", function (value, element, param) {
     var entryYear = parseInt(dateParts[2]);
     var entryDate = new Date(entryYear, entryMonth, entryDay);
 
-    if (entryDate.getFullYear() == entryYear && entryDate.getMonth() == entryMonth && entryDate.getDate() == entryDay) {
+    if (entryDate.getFullYear() === entryYear && entryDate.getMonth() === entryMonth && entryDate.getDate() === entryDay) {
         if (Object.prototype.toString.call(entryDate) === "[object Date]") {
             // it is a date type
             if (isNaN(entryDate.getTime())) {  // entryDate.valueOf() could also work
@@ -195,7 +195,7 @@ jQuery.validator.addMethod("daterange", function (value, element, param) {
     var entryDay = parseInt(dateParts[2]);
     var entryDate = new Date(entryYear, entryMonth, entryDay);
 
-    if (entryDate.getFullYear() == entryYear && entryDate.getMonth() == entryMonth && entryDate.getDate() == entryDay) {
+    if (entryDate.getFullYear() === entryYear && entryDate.getMonth() === entryMonth && entryDate.getDate() === entryDay) {
         if (Object.prototype.toString.call(entryDate) === "[object Date]") {
             // it is a date type
             if (isNaN(entryDate.getTime())) {  // entryDate.valueOf() could also work
@@ -249,7 +249,7 @@ jQuery.validator.addMethod("doubleregex", function (value, element, param) {
 
     var failedPatternErrorMessages = new Array();
 
-    if (isDrRequired === "False" && (value == "" || value == null || value == undefined)) {
+    if (isDrRequired === "False" && (value === "" || value === null || value === undefined)) {
         return true;
     }
     else {
