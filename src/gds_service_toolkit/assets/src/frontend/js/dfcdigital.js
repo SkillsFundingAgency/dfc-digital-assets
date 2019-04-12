@@ -12,9 +12,9 @@ dfc.digital = {
 };
 
 $(document).ready(function () {
-    // Add cookie message
+    // Add a cookie message when the user loads the page for the first time.
     CookieBanner.addCookieMessage();
-    CookieBanner.init('seen_cookie_message', 'yes', { days: 28 });
+    CookieBanner.init('seen_cookie_message', 'yes', { days: 30 });
 
     $(".js-search-focus").ready(function () { dfc.digital.addFocus(".js-search-focus"); }).focus(function () { dfc.digital.addFocus(this) }).blur(function () { dfc.digital.addFocus(this) });
 
