@@ -25,7 +25,7 @@ module.exports = function (grunt) {
     require('load-grunt-tasks')(grunt);
     // Show elapsed time at the end
     require('time-grunt')(grunt);
-    const node_sass = require('node-sass');
+
     // Init
     grunt.initConfig({
         timestamp: '<%= new Date().getTime() %>',
@@ -70,9 +70,10 @@ module.exports = function (grunt) {
 
         sass: {
             options: {
-                implementation: node_sass,
-                sourceMap: true,
-                outputStyle: 'nested'
+                outputStyle: 'nested',
+                includePaths: [
+                    
+                ]
             },
             dist: {
                 files: [{
