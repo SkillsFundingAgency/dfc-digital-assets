@@ -11,6 +11,8 @@ dfc.digital = {
 };
 
 $(document).ready(function () {
+    CookieBanner.addCookieMessage();
+
     $(".js-search-focus").ready(function () { dfc.digital.addFocus(".js-search-focus"); }).focus(function () { dfc.digital.addFocus(this) }).blur(function () { dfc.digital.addFocus(this) });
 
     /* Not yet developed
