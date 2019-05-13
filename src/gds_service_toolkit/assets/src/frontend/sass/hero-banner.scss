@@ -24,7 +24,17 @@
             text-decoration: underline;
         }
     }
-}
+    .govuk-heading-xl {
+        margin: 0 0 30px 0;
+        color: #FFFFFF;
+    }
+    p {
+        color: #FFFFFF;
+        a {
+            font-weight: bold;
+            color: #FFFFFF;
+        }
+    }}
 
 .govuk-header__container {
     border-bottom: 10px solid transparent;
