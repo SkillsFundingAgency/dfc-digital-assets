@@ -88,10 +88,6 @@
     border-radius: 5px;
     background-color: govuk-colour("grey-4");
 
-    //.js-enabled & {
-    //  padding: 8px 7px 7px 23px;
-    //}
-
     @include media(tablet) {
       display: table-cell;
     }
@@ -102,10 +98,6 @@
     margin-left: 0;
     font-size: 16px;
     height: 0;
-
-    //.js-enabled & {
-    //  margin-left: 5px;
-    //}
   }
 
   .facet-tag__remove {
@@ -125,44 +117,12 @@
     text-decoration: none;
     background: none;
     border: 0;
-
-    //.js-enabled & {
-    //  display: inline-block;
-    //}
   }
 
 .facet-toggle {
   display: none;
   margin-bottom: govuk-spacing(6);
 }
-
-//.js-enabled {
-//  .facet-toggle {
-//    display: inline-block;
-//  }
-//
-//  .facet-toggle__content {
-//    display: block;
-//
-//    &.facet-toggle__content--hide {
-//      display: none;
-//    }
-//  }
-//
-//  .facet-toggle--only-on-mobile {
-//    .facet-toggle {
-//      @include media(tablet) {
-//        display: none;
-//      }
-//    }
-//
-//    .facet-toggle__content.facet-toggle__content--hide {
-//      @include media(tablet) {
-//        display: block;
-//      }
-//    }
-//  }
-//}
 
 .conditional-date {
   margin-left: 0px;
