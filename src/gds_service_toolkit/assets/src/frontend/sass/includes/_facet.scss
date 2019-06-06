@@ -55,7 +55,7 @@
     vertical-align: middle;
     margin: 5px 0;
 
-    @include media(tablet) {
+    @include govuk-media-query(tablet) {
       display: inline-block;
     }
   }
@@ -74,7 +74,7 @@
     text-transform: lowercase;
     font-size: 16px;
 
-    @include media(tablet) {
+    @include govuk-media-query(tablet) {
       display: table-cell;
       padding: 0 5px 0 2px;
     }
@@ -88,7 +88,7 @@
     border-radius: 5px;
     background-color: govuk-colour("grey-4");
 
-    @include media(tablet) {
+    @include govuk-media-query(tablet) {
       display: table-cell;
     }
   }
