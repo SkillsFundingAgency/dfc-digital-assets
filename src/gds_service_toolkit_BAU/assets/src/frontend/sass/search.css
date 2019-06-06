@@ -1,0 +1,741 @@
+﻿/**taken from elements start**/
+.phase-banner-beta {
+	padding: 10px 0 8px;
+	border-bottom: 1px solid #bfc1c3;
+	max-width: 960px;
+	margin: 0 auto;
+}
+
+@media (max-width:1019px) {
+	.phase-banner-beta {
+		margin: 0 30px;
+	}
+}
+
+/*rethink*/
+@media (max-width:640px) {
+	.phase-banner-beta {
+		margin: 0 15px;
+	}
+}
+
+/*rethink*/
+@media (min-width:641px) {
+	.phase-banner-beta {
+		padding-bottom: 10px;
+	}
+
+}
+
+.phase-banner-beta p {
+	margin: 0;
+	color: #000;
+	font-family: "nta",Arial,sans-serif;
+	font-size: 14px;
+	line-height: 1.1428571429;
+	font-weight: 400;
+	text-transform: none;
+}
+
+@media (min-width:641px) {
+	.phase-banner-beta p {
+		font-size: 16px;
+		line-height: 1.25;
+	}
+}
+
+.phase-banner-beta .phase-tag {
+	display: inline-block;
+	vertical-align: top;
+	margin: 0 8px 0 0;
+	padding: 2px 5px 0;
+	font-family: "nta",Arial,sans-serif;
+	font-size: 14px;
+	line-height: 1.1428571429;
+	font-weight: 700;
+	text-transform: none;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	text-decoration: none;
+	color: #fff;
+	background-color: #f47738;
+}
+
+@media (min-width:641px) {
+	.phase-banner-beta .phase-tag {
+		vertical-align: baseline;
+	}
+}
+
+@media (min-width:641px) {
+	.phase-banner-beta .phase-tag {
+		font-size: 16px;
+		line-height: 1.25;
+	}
+}
+
+.phase-banner-beta span {
+	vertical-align: top;
+}
+
+@media (min-width:641px) {
+	.phase-banner-beta span {
+		vertical-align: baseline;
+	}
+}
+
+/**taken from elements end**/
+.profile-info-wrap {
+	margin: 1px 0 0;
+}
+
+.profile-info-wrap::after {
+	clear: both;
+	content: "";
+	display: table;
+}
+
+.profile-info-wrap .profile-info {
+	box-sizing: border-box;
+	background: #dee0e2;
+	float: left;
+	padding: 0;
+}
+.profile-info.sixty {
+    border-right: 1px solid #fff;
+}
+
+@media screen and (min-width:1020px) {
+	.profile-info-wrap .profile-info {
+		font-family: "nta",Arial,sans-serif;
+		line-height: 1.25;
+		font-weight: 700;
+		text-transform: none;
+	}
+    /**Fix for career profile page**/
+.profile-info-wrap .profile-info .profile-info-data.nomar {margin-left:15%;text-align:left;}
+}
+
+.profile-info-wrap .profile-info .profile-info-icon {
+	box-sizing: border-box;
+	background: #005ea5;
+	color: #fff;
+	display: block;
+	padding: 10px;
+	text-align: center;
+}
+
+.profile-info-wrap .profile-info .profile-info-icon.icon-hours span {
+	display: block;
+	position: relative;
+	text-align: center;
+	text-indent: -9999px;
+}
+
+.profile-info-wrap .profile-info .profile-info-icon.icon-hours span::after {
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgaGVpZ2h0PSIyMHB4IiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAyMCAyMCIgd2lkdGg9IjIwcHgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6c2tldGNoPSJodHRwOi8vd3d3LmJvaGVtaWFuY29kaW5nLmNvbS9za2V0Y2gvbnMiIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj48dGl0bGUvPjxkZXNjLz48ZGVmcy8+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIiBpZD0iUGFnZS0xIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSI+PGcgZmlsbD0iI2ZmZmZmZiIgZmlsbC1vcGFjaXR5PSIwLjkiIGlkPSJJY29ucy1EZXZpY2UiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC00NC4wMDAwMDAsIDAuMDAwMDAwKSI+PGcgaWQ9ImFjY2Vzcy10aW1lIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg0NC4wMDAwMDAsIDAuMDAwMDAwKSI+PHBhdGggZD0iTTEwLDAgQzQuNSwwIDAsNC41IDAsMTAgQzAsMTUuNSA0LjUsMjAgMTAsMjAgQzE1LjUsMjAgMjAsMTUuNSAyMCwxMCBDMjAsNC41IDE1LjUsMCAxMCwwIEwxMCwwIFogTTEwLDE4IEM1LjYsMTggMiwxNC40IDIsMTAgQzIsNS42IDUuNiwyIDEwLDIgQzE0LjQsMiAxOCw1LjYgMTgsMTAgQzE4LDE0LjQgMTQuNCwxOCAxMCwxOCBaIE0xMC41LDUgTDksNSBMOSwxMSBMMTQuMiwxNC4yIEwxNSwxMi45IEwxMC41LDEwLjIgTDEwLjUsNSBaIiBpZD0iU2hhcGUiLz48L2c+PC9nPjwvZz48L3N2Zz4=) no-repeat top left;
+	background-size: 24px 24px;
+	content: "";
+	display: block;
+	height: 24px;
+	left: 50%;
+	margin: 0 0 0 -12px;
+	position: relative;
+	top: 0;
+	width: 24px;
+}
+
+@media screen and (max-width:1019px) {
+	.profile-info-wrap .profile-info .profile-info-icon.icon-hours span {
+		display: inline-block;
+		height: 16px;
+		width: 20px;
+	}
+
+	.profile-info-wrap .profile-info .profile-info-icon.icon-hours span::after {
+		background-size: 20px 20px;
+		height: 24px;
+		width: 24px;
+	}
+}
+
+@media screen and (min-width:1020px) {
+	.profile-info-wrap .profile-info .profile-info-icon {
+		float: left;
+		width: 30%;
+		max-width: 70px;
+	}
+
+	.profile-info-wrap .profile-info .profile-info-icon span {
+		display: block;
+		font-size: 1.4em;
+		line-height: 1;
+	}
+}
+
+.profile-info-wrap .profile-info .profile-info-data {
+	box-sizing: border-box;
+	display: block;
+	padding: 10px 0;
+	text-align: center;
+}
+
+.profile-info-wrap .profile-info .profile-info-data span {
+	display: block;
+	line-height: 1;
+	font-weight: 700;
+}
+
+@media screen and (min-width:1020px) {
+	.profile-info-wrap .profile-info .profile-info-data {
+		margin-left: 25%;
+		font-weight: 300;
+	}
+}
+
+.profile-info-wrap .profile-info::after {
+	border-right: 0;
+}
+
+.forty {
+	width: 40%;
+}
+
+.sixty {
+	width: 60%;
+}
+
+.profile-image img {
+	width: 100%;
+}
+
+.hidden-xl {
+	display: none;
+}
+
+@media (max-width:768px) {
+	.profile-image,.profile-toc,.profile-info-wrap .profile-info .profile-info-icon {
+		display: none !important;
+	}
+
+	.sixty,.forty {
+		width: 100%;
+	}
+
+	.profile-info-wrap {
+		margin: 0;
+	}
+
+	.profile-info-wrap .profile-info .profile-info-data {
+		text-align: left;
+		padding-left: 15px;
+	}
+
+	.profile-info-wrap .profile-info .profile-info-data span {
+		display: inline-block;
+		font-weight: 400;
+	}
+
+	.profile-info-wrap .profile-info {
+		border-right: none;
+	}
+
+	.profile-summary {
+		padding-bottom: 1px !important;
+	}
+
+	.hidden-xl {
+		display: block;
+	}
+
+	.forty,header.page-header div h1 span,.progressive {
+		display: none;
+	}
+
+	.profile-info-wrap .profile-info .profile-info-data {
+		padding-top: 0;
+	}
+
+	header.page-header.profile {
+		background: #dfdfdf;
+		padding-left: 15px;
+	}
+
+	.profile-summary {
+		margin-top: -30px;
+	}
+
+	.profile-info-wrap .profile-info .profile-info-data span {
+		display: inline-block;
+		font-weight: 400;
+	}
+}
+
+.profile-summary {
+	font-family: "nta",Arial,sans-serif;
+	line-height: 1.25;
+	font-weight: 400;
+	text-transform: none;
+	padding-top: 2px;
+	padding-bottom: 8px;
+	background: #DEE0E2;
+	padding: 15px !important;
+}
+
+@media (min-width:769px) {
+	.profile-summary {
+		padding-top: 0;
+		padding-bottom: 5px;
+		line-height: 1.31579;
+	}
+}
+
+.profile-summary .profile-image {
+	margin: -15px -15px 0;
+}
+
+.profile-summary .profile-image img {
+	max-width: 100%;
+}
+
+.profile-salary {
+	margin: 15px 0 0;
+}
+
+.profile-salary strong {
+	font-family: "nta",Arial,sans-serif;
+	line-height: 1.2;
+	font-weight: 700;
+	text-transform: none;
+}
+
+@media (min-width:769px) {
+	.profile-salary strong {
+		line-height: 1.25;
+	}
+
+	.profile-info-wrap .profile-info .profile-info-data span {
+		font-size: 24px;
+	}
+    
+}
+
+.profile-salary p {
+	margin: 0;
+}
+
+.profile-toc {
+	border-bottom: 1px solid #BFC1C3;
+	margin: 0 0 30px;
+	padding: 20px 0 30px;
+	column-count: 2;
+	-moz-column-count: 2;
+	-webkit-column-count: 2;
+}
+
+.profile-toc ol {
+	list-style: decimal;
+	padding: 0 20px;
+}
+
+.profile-toc ol li {
+	margin: 10px 0;
+	page-break-inside: avoid;
+	break-inside: avoid;
+	-webkit-column-break-inside: avoid;
+}
+
+.numbered-sections {
+	counter-reset: page-section;
+}
+
+.numbered-sections .page-section {
+	counter-increment: page-section;
+	margin-bottom: 50px;
+}
+
+.numbered-sections .page-section h2::before {
+	content: counter(page-section) ". ";
+}
+
+.video-container {
+	position: relative;
+	padding-bottom: 56.25%;
+	padding-top: 30px;
+	height: 0;
+	overflow: hidden;
+	margin: 30px 0;
+}
+
+.video-container iframe,.video-container object,.video-container embed {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+
+#salary span,.vacancies-list a:link {
+	font-weight: 700;
+}
+
+.vacancies-list dt {
+	float: left;
+	width: 100px;
+}
+
+.vacancies-list dl {
+	margin:0;
+}
+
+ul.related-careers,ul.vacancies-list {
+	list-style-type: none;
+	list-style-image: none;
+}
+
+ul.related-careers, ul.related-careers li, ul.vacancies-list li, ul.vacancies-list {
+	padding-left: 0;
+}
+
+ul.related-careers, ul.vacancies-list {
+    margin-left:0;
+}
+
+.column-third,.column-one-third {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+@media (min-width: 641px) {
+	.column-third,.column-one-third {
+		float: left;
+		width: 33.3333333333%;
+		padding: 0 15px;
+	}
+}
+
+.grid-row:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+.arrow_stats strong {
+	color: #005ea5;
+	display: block;
+	font-weight: 700;
+	font-size: 260%;
+}
+
+.arrow_stats p {
+	color: #0b0c0c;
+	border-bottom: 1px solid #bfc1c3;
+	display: block;
+	font-weight: 700;
+	margin: 0 0 5px;
+	font-size: 100%;
+}
+
+.arrow_stats span {
+	color: #0b0c0c;
+	font-weight: 700;
+	font-size: 160%;
+}
+
+#arrow_stats:after {
+	clear: both;
+	content: "";
+	display: table;
+}
+
+.text-right {
+	text-align: right;
+}
+
+.text-center {
+	text-align: center;
+}
+
+#arrow_stats img {
+	width: 100%;
+	max-width: 99px;
+}
+
+@media (max-width:640px) {
+	#arrow_stats {
+		max-width: 320px;
+		margin: 0 auto;
+	}
+
+	.arrow_stats {
+		text-align: center;
+	}
+    
+ul.related-careers, ul.vacancies-list, ul.search-results {
+    margin-left: -15px;
+}
+	
+}
+
+.profile-warning-tabs {
+	display: none;
+	list-style: none;
+	margin: 0 0 15px !important;
+	padding: 0 !important;
+}
+
+.profile-warning-tabs li {
+	display: inline-block;
+	margin: 0 25px 0 0;
+	padding: 0;
+}
+
+.profile-warning-tabs li a {
+	color: #005EA5;
+	display: block;
+	padding: 5px 0;
+	text-decoration: none;
+}
+.profile-warning-tabs li a span {
+	text-decoration: underline;
+}
+
+.profile-warning-tabs li a {
+		font-size: 19px;
+		line-height: 1.31579;
+	}
+
+.profile-warning-tabs li a:hover {
+	color: #2B8CC4;
+}
+
+.profile-warning-tabs li a:before {
+	content: "\25BA";
+	margin-right: 5px;
+	text-decoration: none;
+}
+
+.profile-warning-tabs li a.active:before {
+	content: "\25BC";
+}
+
+.full-width {width:100%}
+
+/**Chart CSS**/
+#employment-by-region-chart {
+  display: none;
+}
+
+#employment-by-region-chart .chart rect.employed {
+  fill: #005EA5;
+}
+
+#employment-by-region-chart .chart .bar .hover-bg {
+  fill: transparent;
+}
+
+#employment-by-region-chart .chart .bar:hover .hover-bg {
+  fill: #FFBF47;
+}
+
+#employment-by-region-chart .chart .bar:hover text.region {
+  font-weight: bold;
+}
+
+#employment-by-region-chart .chart .bar text {
+  font-size: 16px;
+}
+
+#employment-by-region-chart .chart text.employment-title {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+#employment-by-region-data {
+  display: block;
+}
+
+#employment-by-region-data > table {
+  max-width: 320px;
+  margin: auto;
+}
+
+@media screen and (min-width: 768px) {
+  .js-enabled #employment-by-region-chart {
+    display: block;
+  }
+  .js-enabled #employment-by-region-data {
+    display: none;
+  }
+}
+
+/**Homepage**/
+
+button.search-submit {
+    background-color: #005EA5; 
+    background-image: url(../../stylesheets/images/search-button.png);
+    background-repeat: no-repeat;
+    background-position: -12.5% 50%; 
+    bottom: 0;
+    right: 0;
+    height: 50px;
+    width: 50px;
+    overflow: visible;
+    cursor: pointer;
+    text-indent: -5000px;
+    border:none;
+    float:left;
+}
+
+@media (max-width: 480px){button.search-submit{height: 49px;
+    width: 49px;}}
+
+.search-submit:hover {background-color: #2B8CC4;}
+
+.form-control {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: "nta", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 400;
+  text-transform: none;
+  width: 100%;
+  padding: 4px;
+  background-color: #fff;
+  border: 2px solid #6f777b;
+}
+
+
+
+.search-control {float:left;height:38px;
+    width:80%;
+    padding: 4px;
+}
+.search-box {float:left;width:100%;margin-bottom:30px;}
+
+input[type="search"], input[type="text"] {margin:0;}
+
+.form-group {
+    margin-bottom: 30px;
+}
+
+.form-label {
+    font-family: "nta", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.25;
+    font-weight: 400;
+    text-transform: none;
+}
+.form-label {
+    display: block;
+    color: #0b0c0c;
+}
+
+@media (min-width: 641px){
+.form-label {
+    font-size: 19px;
+    line-height: 1.3157894737;
+}
+}
+
+ul.search-results {list-style:none;margin-bottom:60px;}
+ul.search-results li {margin-bottom:30px; padding:0;}
+
+.alt-title,.form-hint {color:#6f777b;}
+
+input[type="search"] {
+    margin: 0;
+}
+input[type="search"] {
+    -webkit-appearance: textfield;
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+}
+input[type="text"], input[type="search"] {
+    font-family: "nta", Arial, sans-serif;
+    font-weight: 400;
+    text-transform: none;
+    border: 2px solid #6f777b;
+    min-width: 8em;
+  
+}
+
+@media (max-width:480px) {
+.search-control {width:78%;}
+}
+
+@media (min-width: 769px){
+.grid-row main#home-width {
+    float: left;
+    width: 100%;
+}
+}
+.grid-row main#home-width {
+    padding: 0 15px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+ul.mb60, p.mb60, button.mb60, .mb60 {margin-bottom:60px;}
+
+button.mb60 {font-size: 1.2em;}
+
+#footer > div > div > div.footer-meta-inner > ul > li > a[rel="external"]:after {background-position: right 2px;}
+
+/**Contact form**/
+fieldset {
+    width: 100%;
+}
+
+@media (min-width: 641px){
+.block-label {
+    float: left;
+}
+}
+
+.block-label {
+    display: block;
+    clear: left;
+    position: relative;
+    background: #dee0e2;
+    border: 1px solid #dee0e2;
+    padding: 18px 30px 15px 54px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.block-label input {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    cursor: pointer;
+    margin: 0;
+    width: 29px;
+    height: 29px;
+}
+
+input#page-entry {float: left;
+    margin-top: 10px; margin-left: 2px;}
+
+.text-box,.input-box {
+   -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-weight: 400;
+    text-transform: none;
+    padding: 4px;
+    background-color: #fff;
+    border: 2px solid #6f777b;
+    width:60%;
+    margin:0;
+    padding:0;
+}
+
+

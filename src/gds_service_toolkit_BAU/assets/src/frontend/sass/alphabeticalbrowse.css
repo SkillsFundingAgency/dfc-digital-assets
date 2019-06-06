@@ -1,0 +1,86 @@
+﻿/********************************
+    AZ Job Profiles
+********************************/
+
+#az-index-wrapper .largeLetter{
+    display:inline;
+    float:left;
+    background: #005EA5;
+	margin: 4px 5px 0px 0px;
+	width: 110px;
+	height: 119px;
+	text-align:center;
+	line-height:120px;
+	font-size:95px;
+	color:#fff;
+}
+
+#az-index-wrapper {
+    display: block;
+    margin-bottom: 1em;
+}
+
+#az-index-wrapper:after {
+    content: '';
+    clear: both;
+    display: block;
+}
+
+#az-index {
+	font: bold 100% Arial;
+	margin: 0;
+	padding: 0;
+	display:inline;
+}
+
+ul#az-index li {
+	float: left;
+	height: 28px;
+	list-style-type: none;
+	margin: 4px 0px 9px 0px;
+	padding:0;
+	width: 44px;
+}
+
+#az-index a:link, #az-index a:visited {
+	background: #e5e5e5;
+	color: #000;
+	display: block;
+	height: 25px;
+	padding: 0.65em 0 0 0;
+	text-align: center;
+	text-decoration: none;
+	width: 40px;
+}
+
+#az-index a:hover {
+	background: #01739d;
+	color: #fff;
+	text-decoration: underline;
+}
+
+#az-index li .placeholder {
+    display: block;
+    background: #e5e5e5;
+    height: 37px;
+    margin: 0px 5px 0 0;
+    width: 40px;
+}
+
+#alphabetical-job-list {
+    display: block;
+    width: 100%;
+}
+
+#alphabetical-job-list ul.job-profiles {
+    list-style: none;
+    padding-left: 0;
+}
+
+#alphabetical-job-list ul.job-profiles.col-1 {
+    margin-bottom: 0;
+}
+
+#alphabetical-job-list ul.job-profiles.col-2 {
+    margin-top: 0;
+}
