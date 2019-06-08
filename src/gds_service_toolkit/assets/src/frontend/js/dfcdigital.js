@@ -53,20 +53,10 @@ $(document).ready(function () {
     */
 
     $(".locationfield").on('change keyup keydown blur input', function () {
-        var locationRegex = $('.locationRegex').first().val();
-        var regex = new RegExp(locationRegex);
-        var value = $(".locationfield").first().val();
-        if (value) {
-            if (regex.test(value)) {
-                $("#distanceFormGroup").show();
-            } else {
-                $("#distanceFormGroup").hide();
-            }
-        }
-        else if (value === "") {
-            $("#distanceFormGroup").hide();
-        }
+        HideDisplayDistanceDropDown();
     });
+
+    HideDisplayDistanceDropDown();
 
 });
 
@@ -100,3 +90,18 @@ $('.js-autocomplete').each(function () {
     });
 });
 
+function HideDisplayDistanceDropDown() {
+    var locationRegex = $('.locationRegex').first().val();
+    var regex = new RegExp(locationRegex);
+    var value = $(".locationfield").first().val();
+    if (value) {
+        if (regex.test(value)) {
+            $("#distanceFormGroup").show();
+        } else {
+            $("#distanceFormGroup").hide();
+        }
+    }
+    else if (value === "") {
+        $("#distanceFormGroup").hide();
+    }
+}
