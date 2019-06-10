@@ -53,10 +53,10 @@ $(document).ready(function () {
     */
 
     $(".locationfield").on('change keyup keydown blur input', function () {
-        HideDisplayDistanceDropDown();
+        ConditionalDistanceDropDownDisplay();
     });
 
-    HideDisplayDistanceDropDown();
+    ConditionalDistanceDropDownDisplay();
 
 });
 
@@ -90,7 +90,7 @@ $('.js-autocomplete').each(function () {
     });
 });
 
-function HideDisplayDistanceDropDown() {
+function ConditionalDistanceDropDownDisplay() {
     var locationRegex = $('.locationRegex').first().val();
     var regex = new RegExp(locationRegex);
     var value = $(".locationfield").first().val();
