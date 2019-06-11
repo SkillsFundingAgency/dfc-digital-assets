@@ -1,0 +1,25 @@
+{
+  "concatCustomJsFiles": [
+    "assets/src/frontend/js/42e09914.ipsos-overlay.js",
+    "assets/src/frontend/js/_search.js",
+    "assets/src/frontend/js/contactadvisor.js",
+    "assets/src/frontend/js/coursesearch.js",
+    "assets/src/frontend/js/coursesearch-results.js",
+    "assets/src/frontend/js/coursesearchresults.js",
+    "assets/src/frontend/js/customvalidation.js",
+    "assets/src/frontend/js/editdetails.js",
+    "assets/src/frontend/js/employment-graph.js",
+    "assets/src/frontend/js/GenericFunctions.js",
+    "assets/src/frontend/js/kendo.editor.js",
+    "assets/src/frontend/js/search-box.js",
+    "assets/src/frontend/js/search-results.js",
+    "assets/src/frontend/js/SFA.js",
+    "assets/src/frontend/js/SfaGeoLocation.js",
+    "assets/src/frontend/js/sfaSitefinity.js",
+    "assets/src/frontend/js/skillsHealthCheck.js"
+  ],
+
+  "concatGovUkJsFiles": [
+    "node_modules/govuk-frontend/all.js"
+  ]
+}
