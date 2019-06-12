@@ -18,9 +18,21 @@
     "assets/src/frontend/js/sfaSitefinity.js",
     "assets/src/frontend/js/skillsHealthCheck.js",
     "assets/src/frontend/js/vendor/d3.v3.min.js",
+    "assets/src/frontend/js/application.js",
+    "assets/src/frontend/js/dialog.js",
+    "assets/src/frontend/js/dialog-polyfill.0.4.3-01.js",
+    "assets/src/frontend/js/govuk-template.js",
+    "assets/src/frontend/js/ie.js",
+    "assets/src/frontend/js/redirect.js",
+    "assets/src/frontend/js/search.js",
     "assets/src/frontend/js/vendor/validation/jquery.validate.js",
     "assets/src/frontend/js/vendor/validation/jquery.validate.unobtrusive.js",
-    "assets/src/frontend/js/vendor/validation/jquery.validate-vsdoc.js"
+    "assets/src/frontend/js/vendor/validation/jquery.validate-vsdoc.js",
+    "assets/src/frontend/js/vendor/goog/webfont.debug.js",
+    "assets/src/frontend/js/vendor/polyfills/bind.js",
+    "assets/src/frontend/js/vendor/details.polyfill.js",
+    "assets/src/frontend/js/vendor/jquery-1.11.0.min.js"
+
   ],
 
   "concatGovUkJsFiles": [

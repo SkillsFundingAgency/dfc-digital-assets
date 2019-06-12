@@ -1,0 +1,93 @@
+﻿@using Telerik.Sitefinity.Frontend.Mvc.Helpers
+
+<div ng-show="isShared" class="alert alert-warning">
+    <b>@Html.Resource("ThisContentIsShared")</b> @Html.Resource("SharedContentWarning")
+</div>
+<sf-html-field class="kendo-content-block"
+               sf-model="properties.Content.PropertyValue"
+               sf-template-url="/ResourcePackages/GdsSfa/client-components/fields/html-field/sf-html-field.sf-cshtml">
+</sf-html-field>
+
+<script type="text/ng-template" section="modal-footer">
+    <button class="btn btn-primary pull-left" onclick="saveProperties(false)">@Html.Resource("Save")</button>
+    <button class="btn btn-default pull-left" onclick="saveProperties(true)" ng-hide="hideSaveAllTranslations">@Html.Resource("SaveAllTranslations")</button>
+    <a class="btn btn-link pull-left" data-dismiss="modal" ng-click="cancel()">@Html.Resource("Cancel")</a>
+    @*
+        @if (((IDesignerModel)ViewBag.DesignerModel).Views.Count() > 1)
+        {
+            foreach (var view in ((IDesignerModel)ViewBag.DesignerModel).Views)
+            {
+                <a class="btn btn-default btn-xs m-top-xs designer-btn-@view" ng-hide="isCurrentView('@view')" href="#/@view">@Html.Resource(view, fallbackToKey: true)</a>
+            }
+        }
+    *@
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        setTimeout(function () {
+            var editor = $('#editor').data('kendoEditor');
+
+            $('#insertUnorderedListRegularButton').on("click", function () {
+                var editor = $('#editor').data('kendoEditor');
+                insertUnorderedListRegular(editor);
+            });
+
+            $('#insertUnorderedListBulletButton').on("click", function () {
+                var editor = $('#editor').data('kendoEditor');
+                insertUnorderedListBullet(editor);
+            });
+
+
+            $('#insertOrderedListButton').on("click", function () {
+                var editor = $('#editor').data('kendoEditor');
+                insertOrderedList(editor);
+            });
+
+            editor.bind('execute', onCommandExecute);
+
+        }, 1000);
+    });
+    
+    function onCommandExecute(e) {
+        if (e.name == 'formatting') {
+            if (e.command.formatter.tag == 'a') {
+                if (e.command.formatter.attributes.className == 'external') {
+                    e.command.formatter.attributes.rel = 'external';
+                } else if (e.command.formatter.attributes.className == 'normal') {
+                    e.command.formatter.attributes.className = '';
+                    e.command.formatter.attributes.rel = null;
+                } else if (e.command.formatter.attributes.className == 'link-back') {
+                    e.command.formatter.attributes.rel = null;
+                }
+            }
+        }
+    }
+
+    function insertUnorderedListRegular(editor) {
+        if (!editor)
+            return;
+        editor.exec("insertUnorderedList");
+        editor.value(editor.value().replace(/(<ul[^>]*>)/, '<ul class="list">'));
+        editor.update();
+        editor.trigger('change');
+    }
+
+    function insertUnorderedListBullet(editor) {
+        if (!editor)
+            return;
+        editor.exec("insertUnorderedList");
+        editor.value(editor.value().replace(/(<ul[^>]*>)/, '<ul class="list list-bullet">'));
+        editor.update();
+        editor.trigger('change');
+    }
+
+    function insertOrderedList(editor) {
+        if (!editor)
+            return;
+        editor.exec("insertOrderedList");
+        editor.value(editor.value().replace(/(<ol[^>]*>)/, '<ol class="list list-number">'));
+        editor.update();
+        editor.trigger('change');
+    }
+</script>

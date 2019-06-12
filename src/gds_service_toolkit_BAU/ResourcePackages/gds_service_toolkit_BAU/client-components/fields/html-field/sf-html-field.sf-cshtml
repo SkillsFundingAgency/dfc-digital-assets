@@ -1,0 +1,70 @@
+<textarea id="editor" style="height: 340px;" class="editor"
+    kendo-editor="editorWidget" ng-model="sfModel"
+	k-scope-field="editorWidget"
+	sf-toggle-commands="strikethrough, justifyFull, subscript, superscript, fontName, fontSize, foreColor, backColor, print"
+    k-encoded="false"
+    k-stylesheets='[
+		getPackageResourceUrl("/ResourcePackages/GdsSfa/assets/stylesheets/govuk-template.css"),
+		getPackageResourceUrl("/ResourcePackages/GdsSfa/assets/stylesheets/fonts.css"),
+		getPackageResourceUrl("/ResourcePackages/GdsSfa/assets/stylesheets/main.css"),
+		getPackageResourceUrl("/ResourcePackages/GdsSfa/assets/stylesheets/sfa.css"),
+		getPackageResourceUrl("/ResourcePackages/GdsSfa/assets/custom/stylesheets/sfaSitefinity.css"),
+		getPackageResourceUrl("/ResourcePackages/GdsSfa/assets/custom/stylesheets/editor-styles.css")
+	]',
+    k-tools='[
+	{ name: "formatting", width: 150, items: [
+        { text: "Heading XLarge", value: "h1.heading-xlarge" },
+        { text: "Heading Large", value: "h2.heading-large" },
+        { text: "Heading Medium", value: "h3.heading-medium" },
+		{ text: "Heading Small", value: "h4.heading-small" },
+		{ text: "Lead paragraph", value: "p.lede" },
+		{ text: "Paragraph", value: "p" },
+		{ text: "Paragraph Small", value: "p.font-xsmall" },
+		{ text: "Link normal", value: "a.normal" },
+		{ text: "Link external", value: "a.external" },
+		{ text: "Link back", value: "a.link-back" }
+        ] 
+    }, 
+	{
+        name: "insertUnorderedListRegular",
+        tooltip: "Insert unordered list - regular",
+		template: "<a href=\"\" id=\"insertUnorderedListRegularButton\" class=\"k-tool k-group-start\"><span class=\"k-tool-icon k-insertUnorderedList\"></span></a>"
+    },
+	{
+        name: "insertUnorderedListBullet",
+        tooltip: "Insert unordered list - bullet",
+		template: "<a href=\"\" id=\"insertUnorderedListBulletButton\" class=\"k-tool k-group-start\"><span class=\"k-tool-icon k-insertUnorderedList\"></span></a>"
+    },
+	{
+        name: "insertOrderedList",
+        tooltip: "Insert ordered list",
+		template: "<a href=\"\" id=\"insertOrderedListButton\" class=\"k-tool k-group-start\"><span class=\"k-tool-icon k-insertOrderedList\"></span></a>"
+    }, 
+	"indent", "outdent",
+    {
+        name: "createLink",
+        template: "<a href=\"\" class=\"k-tool k-group-start\" ng-click=\"openLinkSelector()\" title=\"@(Res.Get<ClientComponentsResources>().InsertHyperlink)\"><span class=\"k-tool-icon k-createLink\">@(Res.Get<ClientComponentsResources>().InsertHyperlink)</span></a>"
+    },
+    "unlink", 
+    "cleanFormatting", 
+    {
+        name: "fullscreen",
+        template: "<a class=\"k-tool js-custom-tool custom-tool\" title=\"Fullscreen\" ng-click=\"toggleFullScreen()\"><span class=\"js-fullScreen glyphicon\"></span></a>"
+	},
+    {
+        name: "htmlView",
+        template: "<button class=\"custom-tool btn btn-default btn-xs pull-right js-htmlview js-custom-tool\" ng-click=\"toggleHtmlView()\">\{\{htmlViewLabel\}\}</button>"
+    }
+    ]'>
+</textarea>
+
+<sf-link-selector-modal id="linkSelectorModal"></sf-link-selector-modal>
+
+<div class="mediaPropertiesModal"
+     template-url="{{mediaPropertiesDialog}}"
+     modal
+     size="normal"
+     existing-scope="true"
+     window-class="sf-designer-dlg sf-timespan-selector-dlg"
+     dialog-controller="{{sfMediaPropertiesController}}">
+</div>

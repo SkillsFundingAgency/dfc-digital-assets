@@ -1,0 +1,60 @@
+﻿@model Telerik.Sitefinity.Frontend.Navigation.Mvc.Models.Breadcrumb.BreadcrumbViewModel
+    
+@functions
+{
+    private bool ExclusionPage()
+    {
+        var exclude = Request != null && Request.Url != null && (
+                          Request.Url.AbsoluteUri.ToLower().Contains("/about-us/privacy-and-cookies") ||
+                          Request.Url.AbsoluteUri.ToLower().EndsWith("/skills-health-check") ||
+                          Request.Url.AbsoluteUri.ToLower().EndsWith("/skills-health-check/") ||
+                          Request.Url.AbsoluteUri.ToLower().EndsWith("/skills-health-check/home") ||
+                          Request.Url.AbsoluteUri.ToLower().EndsWith("/course-directory") ||
+                          Request.Url.AbsoluteUri.ToLower().EndsWith("/course-directory/") ||
+                          Request.Url.AbsoluteUri.ToLower().EndsWith("/course-directory/home") ||
+                          Request.Url.AbsoluteUri.ToLower().EndsWith("/your-account") ||
+                          Request.Url.AbsoluteUri.ToLower().EndsWith("/your-account/") ||
+                          Request.Url.AbsoluteUri.ToLower().EndsWith("/home/") ||
+                          Request.Url.AbsoluteUri.ToLower().EndsWith("/home") ||
+                          Request.Url.AbsoluteUri.ToLower().Contains("/alerts"));
+
+        return exclude;
+    }
+
+}
+
+@if (Model != null && Model.SiteMapNodes != null && Model.SiteMapNodes.Count > 0)
+{
+    <div class="breadcrumbs @Model.CssClass">
+        <ol>
+            @for (int i = 0; i < Model.SiteMapNodes.Count; i++)
+            {
+                var node = Model.SiteMapNodes[i];
+                if (i == Model.SiteMapNodes.Count - 1 && Model.ShowCurrentPageInTheEnd)
+                {
+                    <li class="active">@node.Title</li>
+                }
+                else if (i != 0 && ExclusionPage())
+                {
+
+                }
+                else
+                {
+                    <li><a href="@node.Url">@node.Title</a></li>
+                }
+            }
+
+            @if (Request.Url != null && Request.Url.AbsoluteUri.ToLower().Contains("/skills-health-check/question?assessmenttype"))
+            {
+                <li><a href="/assess-your-skills/skills-health-check/your-assessments">Your assessments</a></li>
+            }
+            
+            @if (Model.SiteMapNodes.Count == 1 && Request.Url != null && !Request.Url.AbsoluteUri.ToLower().EndsWith("/job-profiles") && Request.Url.AbsoluteUri.ToLower().Contains("/job-profiles/") && !Request.Url.AbsoluteUri.ToLower().Contains("/job-profiles/home"))
+            {
+                <li>
+                    <a href="/job-profiles">Job profiles</a>
+                </li>
+            }
+        </ol>
+    </div>
+}

@@ -1,0 +1,79 @@
+﻿@using System.Net.Configuration
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers;
+@using Telerik.Sitefinity.Frontend.Navigation.Mvc.Models;
+@using Telerik.Sitefinity.Web;
+@using Telerik.Sitefinity.Modules.Pages;
+@using Telerik.Sitefinity.Abstractions;
+
+@{
+    //PageManager m = PageManager.GetManager();
+    //SelectedPageModel[] items =    m.GetPageNodes().Where(x => x.PageId == SiteInitializer.CurrentFrontendRootNodeId).Select(x => new SelectedPageModel() { Id = x.Id, NodeType = x.NodeType, Title = x.Title, Url = x.UrlName, IsExternal = false }).ToArray();
+    //NavigationModel navigationModel = new NavigationModel(PageSelectionMode.SelectedPages, Guid.Empty, items, 1, false, string.Empty, true);
+    NavigationModel navigationModel = new NavigationModel(PageSelectionMode.TopLevelPages, Guid.Empty, null, 1, true, string.Empty, true);
+}
+
+@model Sfa.Careers.Web.Modules.Mvc.Models.HeaderWidget.HeaderViewModel
+        
+@functions
+{
+
+    private bool ExclusionPage()
+    {
+        var exclude = Request != null && Request.Url != null && Request.Url.AbsoluteUri.ToLower().Contains("/about-us/privacy-and-cookies");
+
+        return exclude;
+    }
+
+}
+
+@helper RenderNode(NodeViewModel node)
+{
+    <li>
+        @if (Request != null && Request.Url != null && Request.Url.AbsoluteUri.ToLower().Contains("/contact-us/") && !string.IsNullOrWhiteSpace(node.Url) && node.Url.ToLower().Contains("/contact-an-adviser"))
+        {
+               <a class="active" href="@node.Url" target="@node.LinkTarget">@node.Title</a>
+        }
+        else
+        {
+            <a class="@(node.IsCurrentlyOpened || node.HasChildOpen && !ExclusionPage() ? "active" : "")" href="@node.Url" target="@node.LinkTarget">@node.Title</a>
+        }
+       
+    </li>
+}
+
+<header class="with-proposition" id="global-header" role="banner">
+    <div class="header-wrapper">
+        <div class='header-proposition'>
+            <div class='content'>
+                <a class='js-header-toggle menu' href='#proposition-links'>Menu</a>
+                <nav id='proposition-menu'>
+                    <a href="/" id='proposition-name'>National Careers Service</a>
+                    <ul id='proposition-links'>
+                        @for(Int32 counter = 1; counter < navigationModel.Nodes.Count; counter++)
+                        {
+                            var node = navigationModel.Nodes[counter];
+                            if(((PageSiteNode)node.OriginalSiteMapNode).ShowInNavigation == true)
+                            {
+                                @RenderNode(node);
+                            }
+                        }
+                        @*
+                            @foreach(var node in navigationModel.Nodes)
+                            {
+                                if(((PageSiteNode)node.OriginalSiteMapNode).ShowInNavigation == true)
+                                {
+                                    @RenderNode(node);
+                                }
+                            }
+                        *@
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+@if (!string.IsNullOrWhiteSpace(Model.IpsosBanner))
+{
+    <div id="ipsosBanner" class="ipsos hide">  @Html.Raw(Model.IpsosBanner) </div>
+}
+<div id="global-header-bar"></div>
