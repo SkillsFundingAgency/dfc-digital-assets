@@ -16,7 +16,11 @@
     "assets/src/frontend/js/SFA.js",
     "assets/src/frontend/js/SfaGeoLocation.js",
     "assets/src/frontend/js/sfaSitefinity.js",
-    "assets/src/frontend/js/skillsHealthCheck.js"
+    "assets/src/frontend/js/skillsHealthCheck.js",
+    "assets/src/frontend/js/vendor/d3.v3.min.js",
+    "assets/src/frontend/js/vendor/validation/jquery.validate.js",
+    "assets/src/frontend/js/vendor/validation/jquery.validate.unobtrusive.js",
+    "assets/src/frontend/js/vendor/validation/jquery.validate-vsdoc.js"
   ],
 
   "concatGovUkJsFiles": [
