@@ -172,7 +172,7 @@ module.exports = function (grunt) {
                     { '<%= dist.path %>/js/all.min.js': govukJsfiles },
                     {
                         expand: true,
-                        src: ['*.js', '!*.min.js'],
+                        src: ['*.js'],
                         dest: '<%= dist.path %>/js',
                         cwd: '<%= dist.path %>/js',
                         rename: function (dst, src) {
