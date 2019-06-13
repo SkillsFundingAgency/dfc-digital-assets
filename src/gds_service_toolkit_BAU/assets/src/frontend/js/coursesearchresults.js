@@ -1,9 +1,11 @@
 ﻿$('#CurrentSearchRequest_StartDateDobModel_SelectedDateFrom').removeAttr("data-val-date");
 
 $(document).ready(function () {
-    $('#courseRefinement').validate().settings.ignore = [];
-  
-      setToToday()
+    var validate = $('#courseRefinement').validate();
+    if (validate) {
+        validate.settings.ignore = [];
+    }
+    setToToday();
 });
 
 $("#CurrentSearchRequest_StartDateDobModel_Day").change(function () {
@@ -30,7 +32,11 @@ function PopulateSelectedDateFrom() {
     }
 
     $('#CurrentSearchRequest_StartDateDobModel_SelectedDateFrom').val(selectedDateFrom);
-    $("#courseRefinement").validate().element('#CurrentSearchRequest_StartDateDobModel_SelectedDateFrom');
+
+    var val = $("#courseRefinement").validate();
+    if (val) {
+        val.element('#CurrentSearchRequest_StartDateDobModel_SelectedDateFrom');
+    }
 
 }
 
@@ -57,9 +63,11 @@ function setToToday() {
 
         $('#CurrentSearchRequest_StartDateDobModel_SelectedDateFrom').val(selectedDateFrom);
 
-        $("#courseRefinement").validate().element('#CurrentSearchRequest_StartDateDobModel_Day');
-        $("#courseRefinement").validate().element('#CurrentSearchRequest_StartDateDobModel_Month');
-        $("#courseRefinement").validate().element('#CurrentSearchRequest_StartDateDobModel_Year');
-        $("#courseRefinement").validate().element('#CurrentSearchRequest_StartDateDobModel_SelectedDateFrom');
+    var courseRefinement = $("#courseRefinement").validate();
+    
+    courseRefinement ? courseRefinement.element('#CurrentSearchRequest_StartDateDobModel_Day')
+        $("#courseRefinement").validate()?.element('#CurrentSearchRequest_StartDateDobModel_Month');
+        $("#courseRefinement").validate()?.element('#CurrentSearchRequest_StartDateDobModel_Year');
+        $("#courseRefinement").validate()?.element('#CurrentSearchRequest_StartDateDobModel_SelectedDateFrom');
     
 }

@@ -1,9 +1,12 @@
 ﻿$('#CurrentSearchRequest_StartDateDobModel_SelectedDateFrom').removeAttr("data-val-date");
 
 $(document).ready(function () {
-    $('#courseRefinement').validate().settings.ignore = [];
+    var validate = $('#courseRefinement').validate();
+    if (validate) {
+        validate.settings.ignore = [];
+    }
   
-      setToToday()
+    setToToday();
 });
 
 $("#CurrentSearchRequest_StartDateDobModel_Day").change(function () {

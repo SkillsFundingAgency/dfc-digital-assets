@@ -1,22 +1,10 @@
 {
   "concatCustomJsFiles": [
-    "assets/src/frontend/js/jquery-1.11.0.min.js",
-    "assets/src/frontend/js/jquery.validate.js",
-    "assets/src/frontend/js/jquery.validate.unobtrusive.js",
-    "assets/src/frontend/js/jquery.validate-vsdoc.js",
-    "assets/src/frontend/js/42e09914.ipsos-overlay.js",
-    "assets/src/frontend/js/govuk-template.js",
+    "assets/src/frontend/js/d3.v3.min.js",
     "assets/src/frontend/js/bind.js",
-    "assets/src/frontend/js/vendor/d3.v3.min.js",
-    "assets/src/frontend/js/dialog.js",
-    "assets/src/frontend/js/dialog-polyfill.0.4.3-01.js",
-    "assets/src/frontend/js/goog/webfont.debug.js",
-    "assets/src/frontend/js/details.polyfill.js",
     "assets/src/frontend/js/_search.js",
-    "assets/src/frontend/js/ie.js",
     "assets/src/frontend/js/redirect.js",
     "assets/src/frontend/js/search.js",
-    "assets/src/frontend/js/contactadvisor.js",
     "assets/src/frontend/js/coursesearch.js",
     "assets/src/frontend/js/coursesearch-results.js",
     "assets/src/frontend/js/coursesearchresults.js",
@@ -34,7 +22,13 @@
     "assets/src/frontend/js/kendo.editor.js",
     "assets/src/frontend/js/CareerProfilesRelatedSOC.js",
     "assets/src/frontend/js/JobProfilesRelatedSOC.js"
+  ],
 
+  "jqueryBundle": [
+    "node_modules/jquery/dist/jquery.min.js",
+    "node_modules/jquery-validation/dist/jquery.validate.min.js",
+    "node_modules/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js",
+    "node_modules/jquery-migrate/dist/jquery-migrate.min.js"
   ],
 
   "concatGovUkJsFiles": [

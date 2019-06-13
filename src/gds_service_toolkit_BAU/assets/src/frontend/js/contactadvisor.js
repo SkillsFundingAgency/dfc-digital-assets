@@ -1,7 +1,10 @@
 ﻿$('#DateOfBirth').removeAttr("data-val-date");
 
 $(document).ready(function () {
-    $('#ContactAdvisorForm').validate().settings.ignore = [];
+    var validate = $('#ContactAdvisorForm').validate();
+    if (validate) {
+        validate.settings.ignore = [];
+    }
 });
 
 $("#DateOfBirthDay").change(function () {

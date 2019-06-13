@@ -1,7 +1,11 @@
 ﻿$('#Identity_PersonalDetails_DateOfBirth').removeAttr("data-val-date");
 
 $(document).ready(function () {
-    $('#EditDetailsForm').validate().settings.ignore = [];
+    var validate = $('#EditDetailsForm').validate();
+    if (validate) {
+        validate.settings.ignore = [];
+    }
+
     PopulateDateOfBirthDetails();
 });
 

@@ -13,6 +13,7 @@ module.exports = function (grunt) {
     // Loads project js files which will be concatenated and minified in one file
     var projectJsfiles = grunt.file.readJSON('jsfiles.json').concatCustomJsFiles;
     var govukJsfiles = grunt.file.readJSON('jsfiles.json').concatGovUkJsFiles;
+    var jqueryBundle = grunt.file.readJSON('jsfiles.json').jqueryBundle;
 
     // Name of the folder that contains project specific assets (scss, js, images, etc.)
     var projectAssetsFolder = "frontend";
@@ -168,8 +169,9 @@ module.exports = function (grunt) {
                 files: [
                     // Project assets
                     // Concatenates project files listed in jsfiles.json
-                    { '<%= dist.path %>/js/dfcdigital.min.js': '<%= src.path %>/**/*.js' },
+                    { '<%= dist.path %>/js/dfcdigital.min.js': projectJsfiles },
                     { '<%= dist.path %>/js/all.min.js': govukJsfiles },
+                    { '<%= dist.path %>/js/jquerybundle.min.js': jqueryBundle },
                     {
                         expand: true,
                         src: ['*.js'],
