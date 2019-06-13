@@ -168,7 +168,7 @@ module.exports = function (grunt) {
                 files: [
                     // Project assets
                     // Concatenates project files listed in jsfiles.json
-                    { '<%= dist.path %>/js/dfcdigital.min.js': projectJsfiles },
+                    { '<%= dist.path %>/js/dfcdigital.min.js': '<%= src.path %>/**/*.js' },
                     { '<%= dist.path %>/js/all.min.js': govukJsfiles },
                     {
                         expand: true,
