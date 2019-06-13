@@ -33,7 +33,7 @@ function PopulateDateOfBirthDetails() {
         }
 
         $('#Identity_PersonalDetails_DateOfBirth').val(dateOfBirth);
-        $("#EditDetailsForm").validate().element('#Identity_PersonalDetails_DateOfBirth');
+        $("#EditDetailsForm").length && $("#EditDetailsForm").validate().element('#Identity_PersonalDetails_DateOfBirth');
     }
 }
 

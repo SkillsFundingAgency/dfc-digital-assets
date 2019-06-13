@@ -33,8 +33,7 @@ function PopulateSelectedDateFrom() {
     }
 
     $('#CurrentSearchRequest_StartDateDobModel_SelectedDateFrom').val(selectedDateFrom);
-    $("#courseRefinement").validate().element('#CurrentSearchRequest_StartDateDobModel_SelectedDateFrom');
-
+    $("#courseRefinement").length && $("#courseRefinement").validate().element('#CurrentSearchRequest_StartDateDobModel_SelectedDateFrom');
 }
 
 
@@ -60,9 +59,9 @@ function setToToday() {
 
         $('#CurrentSearchRequest_StartDateDobModel_SelectedDateFrom').val(selectedDateFrom);
 
-        $("#courseRefinement").validate().element('#CurrentSearchRequest_StartDateDobModel_Day');
-        $("#courseRefinement").validate().element('#CurrentSearchRequest_StartDateDobModel_Month');
-        $("#courseRefinement").validate().element('#CurrentSearchRequest_StartDateDobModel_Year');
-        $("#courseRefinement").validate().element('#CurrentSearchRequest_StartDateDobModel_SelectedDateFrom');
+        $("#courseRefinement").length && $("#courseRefinement").validate().element('#CurrentSearchRequest_StartDateDobModel_Day');
+        $("#courseRefinement").length && $("#courseRefinement").validate().element('#CurrentSearchRequest_StartDateDobModel_Month');
+        $("#courseRefinement").length && $("#courseRefinement").validate().element('#CurrentSearchRequest_StartDateDobModel_Year');
+        $("#courseRefinement").length && $("#courseRefinement").validate().element('#CurrentSearchRequest_StartDateDobModel_SelectedDateFrom');
     
 }

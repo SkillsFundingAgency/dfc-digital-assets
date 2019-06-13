@@ -126,11 +126,11 @@
                 var searchLocation = $("#searchLocation").val();
                 var isSearchValid = false;
                 if (searchLocation == "JobProfileHome") {
-                    $("#JobProfileHomeForm").validate().element(searchBoxSelector);
+                    $("#JobProfileHomeForm").length && $("#JobProfileHomeForm").validate().element(searchBoxSelector);
                     isSearchValid = $(searchBoxSelector).valid();
                 }
                 else if (searchLocation == "JobProfileSearchResults") {
-                    $("#search-form").validate().element(searchBoxSelector);
+                    $("#search-form").length && $("#search-form").validate().element(searchBoxSelector);
                     isSearchValid = $(searchBoxSelector).valid();
                 }
                 

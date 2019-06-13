@@ -31,6 +31,6 @@ function PopulateDateOfBirth() {
         }
 
         $('#DateOfBirth').val(dateOfBirth);
-        $("#ContactAdvisorForm").validate().element('#DateOfBirth');
+        $("#ContactAdvisorForm").length && $("#ContactAdvisorForm").validate().element('#DateOfBirth');
     }
 }
