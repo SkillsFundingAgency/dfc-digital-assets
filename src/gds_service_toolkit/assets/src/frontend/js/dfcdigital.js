@@ -49,9 +49,14 @@ $(document).ready(function () {
         }
     });
 
-    /* Not implemented yet
-    //JP Thumbs Up / Down
+    /*Course Search
     */
+
+    $(".locationfield").on('change keyup keydown blur input', function () {
+        ConditionalDistanceDropDownDisplay();
+    });
+
+    ConditionalDistanceDropDownDisplay();
 
 });
 
@@ -85,3 +90,18 @@ $('.js-autocomplete').each(function () {
     });
 });
 
+function ConditionalDistanceDropDownDisplay() {
+    var locationRegex = $('.locationRegex').first().val();
+    var regex = new RegExp(locationRegex);
+    var value = $(".locationfield").first().val();
+    if (value) {
+        if (regex.test(value)) {
+            $("#distanceFormGroup").show();
+        } else {
+            $("#distanceFormGroup").hide();
+        }
+    }
+    else if (value === "") {
+        $("#distanceFormGroup").hide();
+    }
+}
