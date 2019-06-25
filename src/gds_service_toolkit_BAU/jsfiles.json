@@ -1,0 +1,37 @@
+{
+  "concatCustomJsFiles": [
+    "assets/src/frontend/js/d3.v3.min.js",
+    "assets/src/frontend/js/bind.js",
+    "assets/src/frontend/js/_search.js",
+    "assets/src/frontend/js/redirect.js",
+    "assets/src/frontend/js/search.js",
+    "assets/src/frontend/js/coursesearch.js",
+    "assets/src/frontend/js/coursesearch-results.js",
+    "assets/src/frontend/js/coursesearchresults.js",
+    "assets/src/frontend/js/customvalidation.js",
+    "assets/src/frontend/js/editdetails.js",
+    "assets/src/frontend/js/employment-graph.js",
+    "assets/src/frontend/js/GenericFunctions.js",
+    "assets/src/frontend/js/search-box.js",
+    "assets/src/frontend/js/search-results.js",
+    "assets/src/frontend/js/SFA.js",
+    "assets/src/frontend/js/SfaGeoLocation.js",
+    "assets/src/frontend/js/sfaSitefinity.js",
+    "assets/src/frontend/js/skillsHealthCheck.js",
+    "assets/src/frontend/js/application.js",
+    "assets/src/frontend/js/kendo.editor.js",
+    "assets/src/frontend/js/CareerProfilesRelatedSOC.js",
+    "assets/src/frontend/js/JobProfilesRelatedSOC.js"
+  ],
+
+  "jqueryBundle": [
+    "node_modules/jquery/dist/jquery.min.js",
+    "node_modules/jquery-validation/dist/jquery.validate.min.js",
+    "node_modules/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js",
+    "node_modules/jquery-migrate/dist/jquery-migrate.min.js"
+  ],
+
+  "concatGovUkJsFiles": [
+    "node_modules/govuk-frontend/all.js"
+  ]
+}

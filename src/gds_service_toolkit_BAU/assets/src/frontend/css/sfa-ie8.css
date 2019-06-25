@@ -1,0 +1,7 @@
+.ipsos p {
+    margin:0 auto;
+}
+
+#course-search, #SearchViewModel_q {      
+    width:90%;
+}
