@@ -55,3 +55,10 @@ jobs:
       npmfolder: '$(npmroot)/gds_service_toolkit'
       publishpath: '$(assetpath)'
       publishname: 'gds_service_toolkit'
+      
+  # build and publish gds_service_toolkit_BAU
+  - template: AzureDevOpsTemplates/Build/dfc-grunt-build.yml@dfc-devops
+    parameters:
+      npmfolder: '$(npmroot)/gds_service_toolkit_BAU'
+      publishpath: '$(assetpath)'
+      publishname: 'gds_service_toolkit_BAU'      
