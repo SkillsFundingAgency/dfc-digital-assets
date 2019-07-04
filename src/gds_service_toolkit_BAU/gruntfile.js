@@ -43,7 +43,11 @@ module.exports = function (grunt) {
         concat_css: {
             all: {
                 src: '<%= src.path %>/' + projectAssetsFolder + '/css/*.css',
-                dest: '<%= dist.path %>/css/custom.css'
+                dest: '<%= dist.path %>/css/sfa.css'
+            },
+            ie8: {
+                src: '<%= src.path %>/' + projectAssetsFolder + '/css/ie8/*.css',
+                dest: '<%= dist.path %>/css/sfa-ie8.css'
             }
         },
 
@@ -85,7 +89,7 @@ module.exports = function (grunt) {
             dist: {
                 files: [{
                     expand: true,
-                    cwd: '<%= src.path %>/' + projectAssetsFolder + '/css',
+                    cwd: '<%= src.path %>/' + projectAssetsFolder + '/sass',
                     src: ['*.scss'],
                     dest: '<%= dist.path %>/css/',
                     ext: '.css'
@@ -102,7 +106,6 @@ module.exports = function (grunt) {
             }
         },
 
-        // use always with target e.g. `csslint:doc` or `csslint:dev`
         // unfortunately there is no point to run csslint on compressed css so
         // csslint runs once, when you use `grunt` and it lints on documentation's css
         // csslint runs on every save when you use `grunt dev` and it lints the original file you are working on -> `style.css`

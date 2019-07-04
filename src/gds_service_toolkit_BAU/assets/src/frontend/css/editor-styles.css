@@ -6,7 +6,7 @@ p.lede { font-size: 24px; }
 p { font-size: 19px; }
 p.font-xsmall { font-size: 16px; }
 a.external { font-size: 19px; line-height: 1.3157894737; }
-a.external:after { content: "\A0\A0\A0\A0"; background-image: url(../images/external-link.png); background-repeat: no-repeat; background-position: right 6px; }
+a.external:after { content: "\A0\A0\A0\A0"; background-image: url(/gds_service_toolkit_BAU/images/external-link.png); background-repeat: no-repeat; background-position: right 6px; }
 .link-back:link, .link-back:visited, .link-back:hover, .link-back:active { color: #0b0c0c; }
 .link-back::before { content: ''; display: block; width: 0; height: 0; border-top: 5px solid transparent; border-right: 6px solid #0b0c0c; border-bottom: 5px solid transparent; position: absolute; left: 0; top: 50%; margin-top: -6px; }
 ul, ol { list-style-type: none; }
