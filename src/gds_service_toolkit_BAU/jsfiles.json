@@ -4,7 +4,6 @@
     "assets/src/frontend/js/bind.js",
     "assets/src/frontend/js/_search.js",
     "assets/src/frontend/js/redirect.js",
-    "assets/src/frontend/js/search.js",
     "assets/src/frontend/js/coursesearch.js",
     "assets/src/frontend/js/coursesearch-results.js",
     "assets/src/frontend/js/coursesearchresults.js",
@@ -21,7 +20,19 @@
     "assets/src/frontend/js/application.js",
     "assets/src/frontend/js/kendo.editor.js",
     "assets/src/frontend/js/CareerProfilesRelatedSOC.js",
-    "assets/src/frontend/js/JobProfilesRelatedSOC.js"
+    "assets/src/frontend/js/JobProfilesRelatedSOC.js",
+    "assets/src/frontend/js/42e09914.ipsos-overlay.js",
+    "assets/src/frontend/js/application.js",
+    "assets/src/frontend/js/contactadvisor.js",
+    "assets/src/frontend/js/details.polyfill.js",
+    "assets/src/frontend/js/dialog.js",
+    "assets/src/frontend/js/dialog-polyfill.0.4.3-01.js",
+    "assets/src/frontend/js/govuk-template.js",
+    "assets/src/frontend/js/search-box.js",
+    "assets/src/frontend/js/search-results.js",
+    "assets/src/frontend/js/selection-buttons.js",
+    "assets/src/frontend/js/SfaGeoLocation.js",
+    "assets/src/frontend/js/skillsHealthCheck.js"
   ],
 
   "jqueryBundle": [

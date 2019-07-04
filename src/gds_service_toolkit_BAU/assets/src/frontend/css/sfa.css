@@ -219,7 +219,7 @@ button.search {
     text-indent: -5000px;
     color: #fff;
     background-color: #2b8cc4;
-    background-image: url(./images/search-button.png);
+    background-image: url(/gds_service_toolkit_BAU/images/search-button.png);
     background-repeat: no-repeat;
     background-position: -12.5% 50%;
 }
@@ -337,7 +337,7 @@ button.search {
 }
 
 .pagination li.next a:before {
-    background: transparent url(./images/arrow-sprite.png) no-repeat -102px -11px;
+    background: transparent url(/gds_service_toolkit_BAU/images/arrow-sprite.png) no-repeat -102px -11px;
     margin: -4px -32px 0 0;
     display: block;
     float: right;
@@ -347,7 +347,7 @@ button.search {
 }
 
 .pagination li.previous a:before {
-    background: transparent url(./images/arrow-sprite.png) no-repeat -20px -11px;
+    background: transparent url(/gds_service_toolkit_BAU/images/arrow-sprite.png) no-repeat -20px -11px;
     margin: -4px 0 0 -32px;
     display: block;
     float: left;
@@ -630,7 +630,7 @@ ul#az-index li {
 }
 
 .js-enabled .checkbox-filter .toggle {
-    background: url(./images/toggle-sprite.png) no-repeat;
+    background: url(/gds_service_toolkit_BAU/images/toggle-sprite.png) no-repeat;
     height: 10px;
     width: 12px;
     background-position: -12px 0;

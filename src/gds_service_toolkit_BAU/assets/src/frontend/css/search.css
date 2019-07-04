@@ -576,7 +576,7 @@ ul.related-careers, ul.vacancies-list, ul.search-results {
 
 button.search-submit {
     background-color: #005EA5; 
-    background-image: url(../../stylesheets/images/search-button.png);
+    background-image: url(/gds_service_toolkit_BAU/images/search-button.png);
     background-repeat: no-repeat;
     background-position: -12.5% 50%; 
     bottom: 0;

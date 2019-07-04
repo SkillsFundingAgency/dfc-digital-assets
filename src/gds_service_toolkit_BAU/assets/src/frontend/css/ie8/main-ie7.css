@@ -1,31 +1,5 @@
-.grid-row:after, #content:after, .notice:after, .panel:after, fieldset:after, .form-section:after, .form-group:after, .form-block:after, .breadcrumbs ol:after, .example:after {
-  content: "";
-  display: block;
-  clear: both;
-}
-
-#content {
-  max-width: 960px;
-  width: 960px;
-  margin: 0 15px;
-  margin: 0 30px;
-  margin: 0 auto;
-}
-
-.grid-row {
-  margin: 0 -15px;
-}
-
-.grid-row:after, #content:after, .notice:after, .panel:after, fieldset:after, .form-section:after, .form-group:after, .form-block:after, .breadcrumbs ol:after, .example:after {
-  content: "";
-  display: block;
-  clear: both;
-}
-
-.grid-row:after, #content:after, .notice:after, .panel:after, fieldset:after, .form-section:after, .form-group:after, .form-block:after, .breadcrumbs ol:after, .example:after {
-  content: "";
-  display: block;
-  clear: both;
+.grid-row, #content, .notice, .panel, fieldset, .form-section, .form-group, .form-block, .breadcrumbs ol, .example {
+  zoom: 1;
 }
 
 .grid-row:after, #content:after, .notice:after, .panel:after, fieldset:after, .form-section:after, .form-group:after, .form-block:after, .breadcrumbs ol:after, .example:after {
@@ -46,10 +20,60 @@
   margin: 0 -15px;
 }
 
+.grid-row, #content, .notice, .panel, fieldset, .form-section, .form-group, .form-block, .breadcrumbs ol, .example {
+  zoom: 1;
+}
+
 .grid-row:after, #content:after, .notice:after, .panel:after, fieldset:after, .form-section:after, .form-group:after, .form-block:after, .breadcrumbs ol:after, .example:after {
   content: "";
   display: block;
   clear: both;
+}
+
+.grid-row, #content, .notice, .panel, fieldset, .form-section, .form-group, .form-block, .breadcrumbs ol, .example {
+  zoom: 1;
+}
+
+.grid-row:after, #content:after, .notice:after, .panel:after, fieldset:after, .form-section:after, .form-group:after, .form-block:after, .breadcrumbs ol:after, .example:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.grid-row, #content, .notice, .panel, fieldset, .form-section, .form-group, .form-block, .breadcrumbs ol, .example {
+  zoom: 1;
+}
+
+.grid-row:after, #content:after, .notice:after, .panel:after, fieldset:after, .form-section:after, .form-group:after, .form-block:after, .breadcrumbs ol:after, .example:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+#content {
+  max-width: 960px;
+  width: 960px;
+  margin: 0 15px;
+  margin: 0 30px;
+  margin: 0 auto;
+}
+
+.grid-row {
+  margin: 0 -15px;
+}
+
+.grid-row, #content, .notice, .panel, fieldset, .form-section, .form-group, .form-block, .breadcrumbs ol, .example {
+  zoom: 1;
+}
+
+.grid-row:after, #content:after, .notice:after, .panel:after, fieldset:after, .form-section:after, .form-group:after, .form-block:after, .breadcrumbs ol:after, .example:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.grid-row, #content, .notice, .panel, fieldset, .form-section, .form-group, .form-block, .breadcrumbs ol, .example {
+  zoom: 1;
 }
 
 .grid-row:after, #content:after, .notice:after, .panel:after, fieldset:after, .form-section:after, .form-group:after, .form-block:after, .breadcrumbs ol:after, .example:after {
@@ -215,6 +239,7 @@ legend {
 .column-one-quarter {
   float: left;
   width: 25%;
+  width: 217.5px;
   padding: 0 15px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -225,6 +250,7 @@ legend {
 .column-one-half {
   float: left;
   width: 50%;
+  width: 465px;
   padding: 0 15px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -235,6 +261,7 @@ legend {
 .column-one-third {
   float: left;
   width: 33.3333333333%;
+  width: 300px;
   padding: 0 15px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -244,6 +271,7 @@ legend {
 .column-two-thirds {
   float: left;
   width: 66.6666666667%;
+  width: 630px;
   padding: 0 15px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -253,6 +281,7 @@ legend {
 .column-full {
   float: left;
   width: 100%;
+  width: 960px;
   padding: 0 15px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -524,6 +553,8 @@ p {
 .link-back {
   display: -moz-inline-stack;
   display: inline-block;
+  zoom: 1;
+  display: inline;
   position: relative;
   font-family: "nta", Arial, sans-serif;
   font-weight: 400;
@@ -538,7 +569,7 @@ p {
   color: #0b0c0c;
   text-decoration: none;
   border-bottom: 1px solid #0b0c0c;
-  background: url("./images/icon-arrow-left.png") no-repeat 0 4px;
+  background: url("/gds_service_toolkit_BAU/images/icon-arrow-left.png") no-repeat 0 4px;
 }
 
 .link-back:link, .link-back:visited, .link-back:hover, .link-back:active {
@@ -590,6 +621,7 @@ hr {
   margin-top: 30px;
   margin-bottom: 30px;
   padding: 0;
+  color: #bfc1c3;
 }
 
 .notice {
@@ -614,6 +646,8 @@ hr {
   position: relative;
   display: -moz-inline-stack;
   display: inline-block;
+  zoom: 1;
+  display: inline;
   padding: .526315em .789473em .263157em;
   border: none;
   -webkit-border-radius: 0;
@@ -731,7 +765,7 @@ hr {
   line-height: 1.2;
   font-size: 24px;
   line-height: 1.25;
-  background-image: url("./images/icon-pointer.png");
+  background-image: url("/gds_service_toolkit_BAU/images/icon-pointer.png");
   background-repeat: no-repeat;
   background-position: 100% 50%;
   padding: 0.3684210526em 2.1578947368em 0.2105263158em 0.8421052632em;
@@ -740,7 +774,7 @@ hr {
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 20 / 10), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   .button-start,
   .button-get-started {
-    background-image: url("./images/icon-pointer-2x.png");
+    background-image: url("/gds_service_toolkit_BAU/images/icon-pointer-2x.png");
     background-size: 30px 19px;
   }
 }
@@ -754,12 +788,12 @@ hr {
 .icon-calendar {
   width: 27px;
   height: 27px;
-  background-image: url("./images/icon-calendar.png");
+  background-image: url("/gds_service_toolkit_BAU/images/icon-calendar.png");
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 20 / 10), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   .icon-calendar {
-    background-image: url("./images/icon-calendar-2x.png");
+    background-image: url("/gds_service_toolkit_BAU/images/icon-calendar-2x.png");
     background-size: 100%;
   }
 }
@@ -767,12 +801,12 @@ hr {
 .icon-file-download {
   width: 30px;
   height: 39px;
-  background-image: url("./images/icon-file-download.png");
+  background-image: url("/gds_service_toolkit_BAU/images/icon-file-download.png");
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 20 / 10), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   .icon-file-download {
-    background-image: url("./images/icon-file-download-2x.png");
+    background-image: url("/gds_service_toolkit_BAU/images/icon-file-download-2x.png");
     background-size: 100%;
   }
 }
@@ -780,12 +814,12 @@ hr {
 .icon-important {
   width: 35px;
   height: 35px;
-  background-image: url("./images/icon-important.png");
+  background-image: url("/gds_service_toolkit_BAU/images/icon-important.png");
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 20 / 10), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   .icon-important {
-    background-image: url("./images/icon-important-2x.png");
+    background-image: url("/gds_service_toolkit_BAU/images/icon-important-2x.png");
     background-size: 100%;
   }
 }
@@ -793,12 +827,12 @@ hr {
 .icon-information {
   width: 27px;
   height: 27px;
-  background-image: url("./images/icon-information.png");
+  background-image: url("/gds_service_toolkit_BAU/images/icon-information.png");
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 20 / 10), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   .icon-information {
-    background-image: url("./images/icon-information-2x.png");
+    background-image: url("/gds_service_toolkit_BAU/images/icon-information-2x.png");
     background-size: 100%;
   }
 }
@@ -806,12 +840,12 @@ hr {
 .icon-locator {
   width: 26px;
   height: 36px;
-  background-image: url("./images/icon-locator.png");
+  background-image: url("/gds_service_toolkit_BAU/images/icon-locator.png");
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 20 / 10), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   .icon-locator {
-    background-image: url("./images/icon-locator-2x.png");
+    background-image: url("/gds_service_toolkit_BAU/images/icon-locator-2x.png");
     background-size: 100%;
   }
 }
@@ -819,12 +853,12 @@ hr {
 .icon-pointer {
   width: 30px;
   height: 19px;
-  background-image: url("./images/icon-pointer.png");
+  background-image: url("/gds_service_toolkit_BAU/images/icon-pointer.png");
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 20 / 10), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   .icon-pointer {
-    background-image: url("./images/icon-pointer-2x.png");
+    background-image: url("/gds_service_toolkit_BAU/images/icon-pointer-2x.png");
     background-size: 100%;
   }
 }
@@ -832,12 +866,12 @@ hr {
 .icon-pointer-black {
   width: 23px;
   height: 23px;
-  background-image: url("./images/icon-pointer-black.png");
+  background-image: url("/gds_service_toolkit_BAU/images/icon-pointer-black.png");
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 20 / 10), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   .icon-pointer-black {
-    background-image: url("./images/icon-pointer-black-2x.png");
+    background-image: url("/gds_service_toolkit_BAU/images/icon-pointer-black-2x.png");
     background-size: 100%;
   }
 }
@@ -845,12 +879,12 @@ hr {
 .icon-search {
   width: 30px;
   height: 22px;
-  background-image: url("./images/icon-search.png");
+  background-image: url("/gds_service_toolkit_BAU/images/icon-search.png");
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 20 / 10), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   .icon-search {
-    background-image: url("./images/icon-search-2x.png");
+    background-image: url("/gds_service_toolkit_BAU/images/icon-search-2x.png");
     background-size: 100%;
   }
 }
@@ -858,12 +892,12 @@ hr {
 .icon-step-1 {
   width: 23px;
   height: 23px;
-  background-image: url("./images/icon-steps/icon-step-1.png");
+  background-image: url("/gds_service_toolkit_BAU/images/icon-steps/icon-step-1.png");
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 20 / 10), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   .icon-step-1 {
-    background-image: url("./images/icon-steps/icon-step-1-2x.png");
+    background-image: url("/gds_service_toolkit_BAU/images/icon-steps/icon-step-1-2x.png");
     background-size: 100%;
   }
 }
@@ -871,12 +905,12 @@ hr {
 .icon-step-2 {
   width: 23px;
   height: 23px;
-  background-image: url("./images/icon-steps/icon-step-2.png");
+  background-image: url("/gds_service_toolkit_BAU/images/icon-steps/icon-step-2.png");
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 20 / 10), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   .icon-step-2 {
-    background-image: url("./images/icon-steps/icon-step-2-2x.png");
+    background-image: url("/gds_service_toolkit_BAU/images/icon-steps/icon-step-2-2x.png");
     background-size: 100%;
   }
 }
@@ -884,12 +918,12 @@ hr {
 .icon-step-3 {
   width: 23px;
   height: 23px;
-  background-image: url("./images/icon-steps/icon-step-3.png");
+  background-image: url("/gds_service_toolkit_BAU/images/icon-steps/icon-step-3.png");
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 20 / 10), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   .icon-step-3 {
-    background-image: url("./images/icon-steps/icon-step-3-2x.png");
+    background-image: url("/gds_service_toolkit_BAU/images/icon-steps/icon-step-3-2x.png");
     background-size: 100%;
   }
 }
@@ -897,12 +931,12 @@ hr {
 .icon-step-4 {
   width: 23px;
   height: 23px;
-  background-image: url("./images/icon-steps/icon-step-4.png");
+  background-image: url("/gds_service_toolkit_BAU/images/icon-steps/icon-step-4.png");
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 20 / 10), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   .icon-step-4 {
-    background-image: url("./images/icon-steps/icon-step-4-2x.png");
+    background-image: url("/gds_service_toolkit_BAU/images/icon-steps/icon-step-4-2x.png");
     background-size: 100%;
   }
 }
@@ -910,12 +944,12 @@ hr {
 .icon-step-5 {
   width: 23px;
   height: 23px;
-  background-image: url("./images/icon-steps/icon-step-5.png");
+  background-image: url("/gds_service_toolkit_BAU/images/icon-steps/icon-step-5.png");
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 20 / 10), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   .icon-step-5 {
-    background-image: url("./images/icon-steps/icon-step-5-2x.png");
+    background-image: url("/gds_service_toolkit_BAU/images/icon-steps/icon-step-5-2x.png");
     background-size: 100%;
   }
 }
@@ -923,12 +957,12 @@ hr {
 .icon-step-6 {
   width: 23px;
   height: 23px;
-  background-image: url("./images/icon-steps/icon-step-6.png");
+  background-image: url("/gds_service_toolkit_BAU/images/icon-steps/icon-step-6.png");
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 20 / 10), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   .icon-step-6 {
-    background-image: url("./images/icon-steps/icon-step-6-2x.png");
+    background-image: url("/gds_service_toolkit_BAU/images/icon-steps/icon-step-6-2x.png");
     background-size: 100%;
   }
 }
@@ -936,12 +970,12 @@ hr {
 .icon-step-7 {
   width: 23px;
   height: 23px;
-  background-image: url("./images/icon-steps/icon-step-7.png");
+  background-image: url("/gds_service_toolkit_BAU/images/icon-steps/icon-step-7.png");
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 20 / 10), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   .icon-step-7 {
-    background-image: url("./images/icon-steps/icon-step-7-2x.png");
+    background-image: url("/gds_service_toolkit_BAU/images/icon-steps/icon-step-7-2x.png");
     background-size: 100%;
   }
 }
@@ -949,12 +983,12 @@ hr {
 .icon-step-8 {
   width: 23px;
   height: 23px;
-  background-image: url("./images/icon-steps/icon-step-8.png");
+  background-image: url("/gds_service_toolkit_BAU/images/icon-steps/icon-step-8.png");
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 20 / 10), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   .icon-step-8 {
-    background-image: url("./images/icon-steps/icon-step-8-2x.png");
+    background-image: url("/gds_service_toolkit_BAU/images/icon-steps/icon-step-8-2x.png");
     background-size: 100%;
   }
 }
@@ -962,12 +996,12 @@ hr {
 .icon-step-9 {
   width: 23px;
   height: 23px;
-  background-image: url("./images/icon-steps/icon-step-9.png");
+  background-image: url("/gds_service_toolkit_BAU/images/icon-steps/icon-step-9.png");
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 20 / 10), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   .icon-step-9 {
-    background-image: url("./images/icon-steps/icon-step-9-2x.png");
+    background-image: url("/gds_service_toolkit_BAU/images/icon-steps/icon-step-9-2x.png");
     background-size: 100%;
   }
 }
@@ -975,12 +1009,12 @@ hr {
 .icon-step-10 {
   width: 23px;
   height: 23px;
-  background-image: url("./images/icon-steps/icon-step-10.png");
+  background-image: url("/gds_service_toolkit_BAU/images/icon-steps/icon-step-10.png");
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 20 / 10), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   .icon-step-10 {
-    background-image: url("./images/icon-steps/icon-step-10-2x.png");
+    background-image: url("/gds_service_toolkit_BAU/images/icon-steps/icon-step-10-2x.png");
     background-size: 100%;
   }
 }
@@ -988,12 +1022,12 @@ hr {
 .icon-step-11 {
   width: 23px;
   height: 23px;
-  background-image: url("./images/icon-steps/icon-step-11.png");
+  background-image: url("/gds_service_toolkit_BAU/images/icon-steps/icon-step-11.png");
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 20 / 10), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   .icon-step-11 {
-    background-image: url("./images/icon-steps/icon-step-11-2x.png");
+    background-image: url("/gds_service_toolkit_BAU/images/icon-steps/icon-step-11-2x.png");
     background-size: 100%;
   }
 }
@@ -1001,12 +1035,12 @@ hr {
 .icon-step-12 {
   width: 23px;
   height: 23px;
-  background-image: url("./images/icon-steps/icon-step-12.png");
+  background-image: url("/gds_service_toolkit_BAU/images/icon-steps/icon-step-12.png");
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 20 / 10), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   .icon-step-12 {
-    background-image: url("./images/icon-steps/icon-step-12-2x.png");
+    background-image: url("/gds_service_toolkit_BAU/images/icon-steps/icon-step-12-2x.png");
     background-size: 100%;
   }
 }
@@ -1014,12 +1048,12 @@ hr {
 .icon-step-13 {
   width: 23px;
   height: 23px;
-  background-image: url("./images/icon-steps/icon-step-13.png");
+  background-image: url("/gds_service_toolkit_BAU/images/icon-steps/icon-step-13.png");
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 20 / 10), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   .icon-step-13 {
-    background-image: url("./images/icon-steps/icon-step-13-2x.png");
+    background-image: url("/gds_service_toolkit_BAU/images/icon-steps/icon-step-13-2x.png");
     background-size: 100%;
   }
 }
@@ -1027,12 +1061,12 @@ hr {
 .icon-step-14 {
   width: 23px;
   height: 23px;
-  background-image: url("./images/icon-steps/icon-step-14.png");
+  background-image: url("/gds_service_toolkit_BAU/images/icon-steps/icon-step-14.png");
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 20 / 10), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   .icon-step-14 {
-    background-image: url("./images/icon-steps/icon-step-14-2x.png");
+    background-image: url("/gds_service_toolkit_BAU/images/icon-steps/icon-step-14-2x.png");
     background-size: 100%;
   }
 }
@@ -1086,6 +1120,7 @@ ol {
 .list-number {
   list-style-type: decimal;
   padding-left: 20px;
+  padding-left: 28px;
 }
 
 table {
@@ -1232,6 +1267,10 @@ details .arrow {
 
 fieldset {
   width: 100%;
+}
+
+legend {
+  margin-left: -7px;
 }
 
 textarea {
@@ -1413,7 +1452,6 @@ textarea {
   margin: 0;
   width: 29px;
   height: 29px;
-  top: 12px;
 }
 
 .block-label:hover {
@@ -1558,7 +1596,7 @@ input[type=number] {
   font-size: 16px;
   line-height: 1.25;
   float: left;
-  background-image: url("./images/separator.png");
+  background-image: url("/gds_service_toolkit_BAU/images/separator.png");
   background-position: 0% 50%;
   background-repeat: no-repeat;
   list-style: none;
@@ -1569,7 +1607,7 @@ input[type=number] {
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 20 / 10), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   .breadcrumbs li {
-    background-image: url("./images/separator-2x.png");
+    background-image: url("/gds_service_toolkit_BAU/images/separator-2x.png");
     background-size: 6px 11px;
   }
 }
@@ -1606,6 +1644,8 @@ input[type=number] {
 .phase-banner-alpha .phase-tag {
   display: -moz-inline-stack;
   display: inline-block;
+  zoom: 1;
+  display: inline;
   margin: 0 8px 0 0;
   padding: 2px 5px 0;
   font-family: "nta", Arial, sans-serif;
@@ -1649,6 +1689,8 @@ input[type=number] {
 .phase-banner-beta .phase-tag {
   display: -moz-inline-stack;
   display: inline-block;
+  zoom: 1;
+  display: inline;
   margin: 0 8px 0 0;
   padding: 2px 5px 0;
   font-family: "nta", Arial, sans-serif;
@@ -1683,60 +1725,4 @@ input[type=number] {
     display: list-item;
     display: revert;
   }
-}
-
-.elements-index .heading-medium {
-  margin: 1em 0 0 0;
-}
-
-.elements-index .divider {
-  margin-top: 4em;
-}
-
-.outdent-navigation {
-  margin-left: -25%;
-}
-
-.heading-xlarge {
-  margin-top: 1.25em;
-  margin-bottom: 0.625em;
-}
-
-.heading-contents {
-  margin-top: 3em;
-}
-
-.list-contents li {
-  font-family: "nta", Arial, sans-serif;
-  font-weight: 400;
-  text-transform: none;
-  font-size: 14px;
-  line-height: 1.1428571429;
-  font-size: 16px;
-  line-height: 1.25;
-}
-
-.lead-in {
-  margin-bottom: 0;
-}
-
-.list-bullet {
-  margin-bottom: 45px;
-}
-
-.list-underline {
-  border-top: 1px solid #bfc1c3;
-}
-
-.list-underline li {
-  border-bottom: 1px solid #bfc1c3;
-  padding: 2px 0 3px 0;
-}
-
-.list-underline a {
-  text-decoration: none;
-}
-
-.no-top-margin {
-  margin-top: 0;
 }

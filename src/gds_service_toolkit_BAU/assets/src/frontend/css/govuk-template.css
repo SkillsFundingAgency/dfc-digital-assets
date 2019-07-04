@@ -141,11 +141,11 @@ a:active {
   color: #2e8aca; }
 
 a[rel="external"]:after {
-  background-image: url(external-links/external-link.png);
+  background-image: url(/gds_service_toolkit_BAU/images/external-links/external-link.png);
   background-repeat: no-repeat; }
   @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 20 / 10), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
     a[rel="external"]:after {
-      background-image: url(external-links/external-link-24x24.png);
+      background-image: url(/gds_service_toolkit_BAU/images/external-links/external-link-24x24.png);
       background-size: 12px 400px; } }
 a[rel="external"]:after {
   content: "\A0\A0\A0\A0\A0";
@@ -165,51 +165,12 @@ a[rel="external"]:hover:after {
 .external-link:hover:after {
   background-position: right 0px; }
 .external-link:after {
-  background-image: url(external-links/external-link-black-12x12.png);
+  background-image: url(/gds_service_toolkit_BAU/images/external-links/external-link-black-12x12.png);
   background-repeat: no-repeat; }
   @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 20 / 10), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
     .external-link:after {
-      background-image: url(external-links/external-link-black-24x24.png);
+      background-image: url(/gds_service_toolkit_BAU/images/external-links/external-link-black-24x24.png);
       background-size: 12px 400px; } }
-
-/*
- * 1. Corrects text resizing oddly in IE6/7 when body font-size is set using em units
- *    http://clagnut.com/blog/348/#c790
- *    note - font-size reduced to 62.5% to allow simple rem/px font-sizing and fallback
- *    http://snook.ca/archives/html_and_css/font-size-with-rem
- * 2. Keeps page centred in all browsers regardless of content height
- * 3. Removes Android and iOS tap highlight color to prevent entire container being highlighted
- *    www.yuiblog.com/blog/2010/10/01/quick-tip-customizing-the-mobile-safari-tap-highlight-color/
- */
-html {
-  font-size: 62.5%;
-  /* 1 */
-  overflow-y: scroll;
-  /* 2 */
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  /* 3 */ }
-
-/*
- * 1. Font-size increased to compensate for change to html element font-size in
- *    order to support beta typography which was set in ems
- *    (62.5% * 160% = 100%)
- * 2. Addresses margins handled incorrectly in IE6/7
- */
-body {
-  font-size: 160%;
-  /* 1 */
-  margin: 0;
-  /* 2 */ }
-
-b,
-strong {
-  font-weight: 600; }
-
-img {
-  border: 0; }
-
-abbr[title] {
-  cursor: help; }
 
 /*
  * 1. Addresses `appearance` set to `searchfield` in Safari 5 and Chrome.
@@ -385,7 +346,7 @@ button:focus,
     margin-bottom: -3px;
     padding-top: 2px;
     border-bottom: 1px solid transparent;
-    background: url(images/gov.uk_logotype_crown.png) no-repeat;
+    background: url(/gds_service_toolkit_BAU/images/gov.uk_logotype_crown.png) no-repeat;
     background-size: 35px 31px;
     background-position: 0 0; }
     #global-header #logo img {
@@ -644,10 +605,10 @@ button:focus,
             height: 17px;
             overflow: hidden;
             text-indent: -999em;
-            background: url(images/open-government-licence.png) 0 0 no-repeat; }
+            background: url(/gds_service_toolkit_BAU/images/open-government-licence.png) 0 0 no-repeat; }
             @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 20 / 10), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
               #footer .footer-meta .footer-meta-inner .open-government-licence .logo a {
-                background-image: url(images/open-government-licence_2x.png);
+                background-image: url(/gds_service_toolkit_BAU/images/open-government-licence_2x.png);
                 background-size: 41px 17px; } }
         #footer .footer-meta .footer-meta-inner .open-government-licence p {
           font-family: "nta", Arial, sans-serif;
@@ -683,7 +644,7 @@ button:focus,
           margin-top: 0; } }
       #footer .footer-meta .copyright a {
         display: block;
-        background-image: url(images/govuk-crest.png);
+        background-image: url(/gds_service_toolkit_BAU/images/govuk-crest.png);
         background-repeat: no-repeat;
         background-position: 50% 0%;
         text-align: center;
@@ -694,7 +655,7 @@ button:focus,
             background-position: 100% 0%; } }
         @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 20 / 10), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
           #footer .footer-meta .copyright a {
-            background-image: url(images/govuk-crest-2x.png);
+            background-image: url(/gds_service_toolkit_BAU/images/govuk-crest-2x.png);
             background-size: 125px 102px; } }
         @media (min-width: 641px) {
           #footer .footer-meta .copyright a {
