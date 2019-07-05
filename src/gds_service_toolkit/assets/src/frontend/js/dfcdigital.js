@@ -53,7 +53,7 @@ $(document).ready(function () {
     */
 
     $(".locationfield").on('change keyup keydown blur input', function () {
-        ConditionalDistanceDropDownDisplay();
+        ConditionalDistanceDropDownDisplay($(this));
     });
 
     ConditionalDistanceDropDownDisplay();
@@ -90,8 +90,9 @@ $('.js-autocomplete').each(function () {
     });
 });
 
-function ConditionalDistanceDropDownDisplay() {
-    var locationRegex = $('.locationRegex').first().val();
+function ConditionalDistanceDropDownDisplay(locationField) {
+    locationField = locationField || $(".locationfield");
+    var locationRegex = locationField.data("val-postcode");
     var regex = new RegExp(locationRegex);
     var value = $(".locationfield").first().val();
     if (value) {

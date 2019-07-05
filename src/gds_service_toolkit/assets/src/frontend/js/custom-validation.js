@@ -1,6 +1,6 @@
 ﻿$('#DateOfBirth').removeAttr("data-val-date");
 $(document).ready(function () {
-    $("button[type='submit']").click(function () {
+    $("button[type='submit']:not('.novalidate')").click(function () {
         $('#error-validation-summary').hide();
         $('#error-validation-summary .govuk-error-summary__body ul').empty();
         if ($('#DateOfBirth').val() !== undefined){PopulateDateOfBirth();}
