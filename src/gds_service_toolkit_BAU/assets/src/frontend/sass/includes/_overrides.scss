@@ -1,6 +1,11 @@
 /* Overrides to map old GOV.UK styles (GOVUK_frontend_toolkit/GOVUK_elements) to new GOVUK-frontend styles */
 
 // Update to entire tags such as <p> or <main>
+body {
+  @extend .govuk-template__body;
+  @extend .app-body-class !optional;
+  @extend .js-enabled
+}
 
 main {
   @extend .govuk-main-wrapper;
@@ -121,4 +126,20 @@ a {
 
 .button-start {
   @extend .govuk-button--start
+}
+
+.breadcrumbs {
+  @extend .govuk-breadcrumbs;
+
+  ol {
+    @extend .govuk-breadcrumbs__list
+  }
+
+  li {
+    @extend .govuk-breadcrumbs__list-item
+  }
+
+  a {
+    @extend .govuk-breadcrumbs__link
+  }
 }
