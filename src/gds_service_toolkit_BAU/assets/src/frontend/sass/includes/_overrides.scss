@@ -1,16 +1,89 @@
 /* Overrides to map old GOV.UK styles (GOVUK_frontend_toolkit/GOVUK_elements) to new GOVUK-frontend styles */
 
+// Update to entire tags such as <p> or <main>
+
+main {
+  @extend .govuk-main-wrapper;
+  @extend .app-main-class !optional;
+}
+
 p {
   @extend .govuk-body-m;
 }
+
+table {
+  @extend .govuk-table
+}
+
+a {
+  @extend .govuk-link
+}
+
+// Update to font-related classes
 
 .heading-xlarge {
   @extend .govuk-heading-xl
 }
 
+.heading-large {
+  @extend .govuk-heading-l
+}
+
+.heading-medium {
+  @extend .govuk-heading-m
+}
+
+.heading-small {
+  @extend .govuk-heading-s
+}
+
+.heading-secondary {
+  @extend .govuk-caption-xl
+}
+
 .lede {
   @extend .govuk-body-lead
 }
+
+.font-xsmall {
+  @extend .govuk-\!-font-size-16
+}
+
+.font-small {
+  @extend .govuk-\!-font-size-19
+}
+
+.font-medium {
+  @extend .govuk-\!-font-size-24
+}
+
+.font-large {
+  @extend .govuk-\!-font-size-36
+}
+
+.font-xlarge {
+  @extend .govuk-\!-font-size-48
+}
+
+.font-xxlarge {
+  @extend .govuk-\!-font-size-80
+}
+
+// Update to other typography related classes
+
+.list {
+  @extend .govuk-list
+}
+
+.list-bullet {
+  @extend .govuk-list--bullet
+}
+
+.list-number {
+  @extend .govuk-list--number
+}
+
+// Update to grid layout related classes
 
 .grid-row {
   @extend .govuk-grid-row
@@ -20,7 +93,32 @@ p {
   @extend .govuk-grid-column-two-thirds
 }
 
-main {
-  @extend .govuk-main-wrapper;
-  @extend .app-main-class !optional;
+.column-full {
+  @extend .govuk-grid-column-full
+}
+
+.column-one-half {
+  @extend .govuk-grid-column-one-half
+}
+
+.column-one-third {
+  @extend .govuk-grid-column-one-third
+}
+
+.column-one-quarter {
+  @extend .govuk-grid-column-one-quarter
+}
+
+.form-group {
+  @extend .govuk-form-group
+}
+
+// Update to component classes
+
+.button {
+  @extend .govuk-button
+}
+
+.button-start {
+  @extend .govuk-button--start
 }
