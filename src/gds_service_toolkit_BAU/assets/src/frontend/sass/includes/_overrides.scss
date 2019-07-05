@@ -1,0 +1,26 @@
+/* Overrides to map old GOV.UK styles (GOVUK_frontend_toolkit/GOVUK_elements) to new GOVUK-frontend styles */
+
+p {
+  @extend .govuk-body-m;
+}
+
+.heading-xlarge {
+  @extend .govuk-heading-xl
+}
+
+.lede {
+  @extend .govuk-body-lead
+}
+
+.grid-row {
+  @extend .govuk-grid-row
+}
+
+.column-two-thirds {
+  @extend .govuk-grid-column-two-thirds
+}
+
+main {
+  @extend .govuk-main-wrapper;
+  @extend .app-main-class !optional;
+}
