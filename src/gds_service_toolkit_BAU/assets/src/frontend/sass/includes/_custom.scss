@@ -1,0 +1,30 @@
+/* Custom styling moved from BAU */
+
+// Yellow border highlight
+.govuk-box-border-yellow {
+  margin: 1em 0;
+  padding: 0 1em 2.2em;
+  border: 4px solid #ffbf47;
+}
+
+.govuk-box-border-yellow-reduced {
+  margin: 1em 0;
+  padding: 1em 1em .5em;
+  border: 4px solid #ffbf47;
+}
+
+.govuk-box-border-yellow-delete {
+  margin: 1em 0;
+  padding: 0 1em 1.2em;
+  border: 4px solid #ffbf47;
+}
+
+@media (max-width: 641px) {
+  .govuk-box-border-yellow-delete {padding: 0 1em 0.2em;}
+
+}
+
+// Images for activity tests
+.mechanical-images img {
+  max-width: 100%;
+}
