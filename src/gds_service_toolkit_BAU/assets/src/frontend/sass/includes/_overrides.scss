@@ -80,6 +80,10 @@ a {
   @extend .govuk-link
 }
 
+label {
+  @extend .govuk-label
+}
+
 // Update to font-related classes
 
 .heading-xlarge {
@@ -146,6 +150,19 @@ a {
 
 // Update to grid layout related classes
 
+.skiplink {
+  @extend .govuk-skip-link
+}
+
+// Cookie
+@import "cookie-banner";
+#global-cookie-message {
+  @extend .app-cookie-banner, .js-cookie-banner !optional;
+  p {
+    @extend .govuk-width-container
+  }
+}
+
 .grid-row {
   @extend .govuk-grid-row
 }
@@ -198,4 +215,16 @@ a {
   a {
     @extend .govuk-breadcrumbs__link
   }
+}
+
+.footer-wrapper {
+  @extend .govuk-footer
+}
+
+.visuallyhidden {
+  @extend .govuk-visually-hidden
+}
+
+.visually-hidden {
+  @extend .govuk-visually-hidden
 }

@@ -32,6 +32,7 @@
     "assets/src/frontend/js/search-results.js",
     "assets/src/frontend/js/selection-buttons.js",
     "assets/src/frontend/js/SfaGeoLocation.js",
+    "assets/src/frontend/js/cookie-banner.js",
     "assets/src/frontend/js/skillsHealthCheck.js"
   ],
 
