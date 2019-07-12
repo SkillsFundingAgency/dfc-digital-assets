@@ -569,7 +569,7 @@ p {
   color: #0b0c0c;
   text-decoration: none;
   border-bottom: 1px solid #0b0c0c;
-  background: url("/gds_service_toolkit_BAU/images/icon-arrow-left.png") no-repeat 0 4px;
+  background: url("/gds_service_toolkit_BAU/images/icons/icon-arrow-left.png") no-repeat 0 4px;
 }
 
 .link-back:link, .link-back:visited, .link-back:hover, .link-back:active {
@@ -767,17 +767,17 @@ hr {
   line-height: 1.2;
   font-size: 24px;
   line-height: 1.25;
-  background-image: url("/gds_service_toolkit_BAU/images/icon-pointer.png");
+  background-image: url("/gds_service_toolkit_BAU/images/icons/icon-pointer.png");
   background-repeat: no-repeat;
   background-position: 100% 50%;
   padding: 0.3684210526em 2.1578947368em 0.2105263158em 0.8421052632em;
-  background-image: url("/gds_service_toolkit_BAU/images/icon-pointer-2x.png");
+  background-image: url("/gds_service_toolkit_BAU/images/icons/icon-pointer-2x.png");
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 20 / 10), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   .button-start,
   .button-get-started {
-    background-image: url("/gds_service_toolkit_BAU/images/icon-pointer-2x.png");
+    background-image: url("/gds_service_toolkit_BAU/images/icons/icon-pointer-2x.png");
     background-size: 30px 19px;
   }
 }
@@ -791,12 +791,12 @@ hr {
 .icon-calendar {
   width: 27px;
   height: 27px;
-  background-image: url("/gds_service_toolkit_BAU/images/icon-calendar.png");
+  background-image: url("/gds_service_toolkit_BAU/images/icons/icon-calendar.png");
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 20 / 10), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   .icon-calendar {
-    background-image: url("/gds_service_toolkit_BAU/images/icon-calendar-2x.png");
+    background-image: url("/gds_service_toolkit_BAU/images/icons/icon-calendar-2x.png");
     background-size: 100%;
   }
 }
@@ -804,12 +804,12 @@ hr {
 .icon-file-download {
   width: 30px;
   height: 39px;
-  background-image: url("/gds_service_toolkit_BAU/images/icon-file-download.png");
+  background-image: url("/gds_service_toolkit_BAU/images/icons/icon-file-download.png");
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 20 / 10), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   .icon-file-download {
-    background-image: url("/gds_service_toolkit_BAU/images/icon-file-download-2x.png");
+    background-image: url("/gds_service_toolkit_BAU/images/icons/icon-file-download-2x.png");
     background-size: 100%;
   }
 }
@@ -817,12 +817,12 @@ hr {
 .icon-important {
   width: 35px;
   height: 35px;
-  background-image: url("/gds_service_toolkit_BAU/images/icon-important.png");
+  background-image: url("/gds_service_toolkit_BAU/images/icons/icon-important.png");
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 20 / 10), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   .icon-important {
-    background-image: url("/gds_service_toolkit_BAU/images/icon-important-2x.png");
+    background-image: url("/gds_service_toolkit_BAU/images/icons/icon-important-2x.png");
     background-size: 100%;
   }
 }
@@ -830,12 +830,12 @@ hr {
 .icon-information {
   width: 27px;
   height: 27px;
-  background-image: url("/gds_service_toolkit_BAU/images/icon-information.png");
+  background-image: url("/gds_service_toolkit_BAU/images/icons/icon-information.png");
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 20 / 10), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   .icon-information {
-    background-image: url("/gds_service_toolkit_BAU/images/icon-information-2x.png");
+    background-image: url("/gds_service_toolkit_BAU/images/icons/icon-information-2x.png");
     background-size: 100%;
   }
 }
@@ -843,12 +843,12 @@ hr {
 .icon-locator {
   width: 26px;
   height: 36px;
-  background-image: url("/gds_service_toolkit_BAU/images/icon-locator.png");
+  background-image: url("/gds_service_toolkit_BAU/images/icons/icon-locator.png");
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 20 / 10), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   .icon-locator {
-    background-image: url("/gds_service_toolkit_BAU/images/icon-locator-2x.png");
+    background-image: url("/gds_service_toolkit_BAU/images/icons/icon-locator-2x.png");
     background-size: 100%;
   }
 }
@@ -856,12 +856,12 @@ hr {
 .icon-pointer {
   width: 30px;
   height: 19px;
-  background-image: url("/gds_service_toolkit_BAU/images/icon-pointer.png");
+  background-image: url("/gds_service_toolkit_BAU/images/icons/icon-pointer.png");
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 20 / 10), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   .icon-pointer {
-    background-image: url("/gds_service_toolkit_BAU/images/icon-pointer-2x.png");
+    background-image: url("/gds_service_toolkit_BAU/images/icons/icon-pointer-2x.png");
     background-size: 100%;
   }
 }
@@ -869,12 +869,12 @@ hr {
 .icon-pointer-black {
   width: 23px;
   height: 23px;
-  background-image: url("/gds_service_toolkit_BAU/images/icon-pointer-black.png");
+  background-image: url("/gds_service_toolkit_BAU/images/icons/icon-pointer-black.png");
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 20 / 10), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   .icon-pointer-black {
-    background-image: url("/gds_service_toolkit_BAU/images/icon-pointer-black-2x.png");
+    background-image: url("/gds_service_toolkit_BAU/images/icons/icon-pointer-black-2x.png");
     background-size: 100%;
   }
 }
@@ -882,12 +882,12 @@ hr {
 .icon-search {
   width: 30px;
   height: 22px;
-  background-image: url("/gds_service_toolkit_BAU/images/icon-search.png");
+  background-image: url("/gds_service_toolkit_BAU/images/icons/icon-search.png");
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 20 / 10), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   .icon-search {
-    background-image: url("/gds_service_toolkit_BAU/images/icon-search-2x.png");
+    background-image: url("/gds_service_toolkit_BAU/images/icons/icon-search-2x.png");
     background-size: 100%;
   }
 }
@@ -895,12 +895,12 @@ hr {
 .icon-step-1 {
   width: 23px;
   height: 23px;
-  background-image: url("/gds_service_toolkit_BAU/images/icon-steps/icon-step-1.png");
+  background-image: url("/gds_service_toolkit_BAU/images/icons/icon-steps/icon-step-1.png");
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 20 / 10), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   .icon-step-1 {
-    background-image: url("/gds_service_toolkit_BAU/images/icon-steps/icon-step-1-2x.png");
+    background-image: url("/gds_service_toolkit_BAU/images/icons/icon-steps/icon-step-1-2x.png");
     background-size: 100%;
   }
 }
@@ -908,12 +908,12 @@ hr {
 .icon-step-2 {
   width: 23px;
   height: 23px;
-  background-image: url("/gds_service_toolkit_BAU/images/icon-steps/icon-step-2.png");
+  background-image: url("/gds_service_toolkit_BAU/images/icons/icon-steps/icon-step-2.png");
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 20 / 10), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   .icon-step-2 {
-    background-image: url("/gds_service_toolkit_BAU/images/icon-steps/icon-step-2-2x.png");
+    background-image: url("/gds_service_toolkit_BAU/images/icons/icon-steps/icon-step-2-2x.png");
     background-size: 100%;
   }
 }
@@ -921,12 +921,12 @@ hr {
 .icon-step-3 {
   width: 23px;
   height: 23px;
-  background-image: url("/gds_service_toolkit_BAU/images/icon-steps/icon-step-3.png");
+  background-image: url("/gds_service_toolkit_BAU/images/icons/icon-steps/icon-step-3.png");
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 20 / 10), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   .icon-step-3 {
-    background-image: url("/gds_service_toolkit_BAU/images/icon-steps/icon-step-3-2x.png");
+    background-image: url("/gds_service_toolkit_BAU/images/icons/icon-steps/icon-step-3-2x.png");
     background-size: 100%;
   }
 }
@@ -934,12 +934,12 @@ hr {
 .icon-step-4 {
   width: 23px;
   height: 23px;
-  background-image: url("/gds_service_toolkit_BAU/images/icon-steps/icon-step-4.png");
+  background-image: url("/gds_service_toolkit_BAU/images/icons/icon-steps/icon-step-4.png");
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 20 / 10), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   .icon-step-4 {
-    background-image: url("/gds_service_toolkit_BAU/images/icon-steps/icon-step-4-2x.png");
+    background-image: url("/gds_service_toolkit_BAU/images/icons/icon-steps/icon-step-4-2x.png");
     background-size: 100%;
   }
 }
@@ -947,12 +947,12 @@ hr {
 .icon-step-5 {
   width: 23px;
   height: 23px;
-  background-image: url("/gds_service_toolkit_BAU/images/icon-steps/icon-step-5.png");
+  background-image: url("/gds_service_toolkit_BAU/images/icons/icon-steps/icon-step-5.png");
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 20 / 10), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   .icon-step-5 {
-    background-image: url("/gds_service_toolkit_BAU/images/icon-steps/icon-step-5-2x.png");
+    background-image: url("/gds_service_toolkit_BAU/images/icons/icon-steps/icon-step-5-2x.png");
     background-size: 100%;
   }
 }
@@ -960,12 +960,12 @@ hr {
 .icon-step-6 {
   width: 23px;
   height: 23px;
-  background-image: url("/gds_service_toolkit_BAU/images/icon-steps/icon-step-6.png");
+  background-image: url("/gds_service_toolkit_BAU/images/icons/icon-steps/icon-step-6.png");
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 20 / 10), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   .icon-step-6 {
-    background-image: url("/gds_service_toolkit_BAU/images/icon-steps/icon-step-6-2x.png");
+    background-image: url("/gds_service_toolkit_BAU/images/icons/icon-steps/icon-step-6-2x.png");
     background-size: 100%;
   }
 }
@@ -973,12 +973,12 @@ hr {
 .icon-step-7 {
   width: 23px;
   height: 23px;
-  background-image: url("/gds_service_toolkit_BAU/images/icon-steps/icon-step-7.png");
+  background-image: url("/gds_service_toolkit_BAU/images/icons/icon-steps/icon-step-7.png");
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 20 / 10), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   .icon-step-7 {
-    background-image: url("/gds_service_toolkit_BAU/images/icon-steps/icon-step-7-2x.png");
+    background-image: url("/gds_service_toolkit_BAU/images/icons/icon-steps/icon-step-7-2x.png");
     background-size: 100%;
   }
 }
@@ -986,12 +986,12 @@ hr {
 .icon-step-8 {
   width: 23px;
   height: 23px;
-  background-image: url("/gds_service_toolkit_BAU/images/icon-steps/icon-step-8.png");
+  background-image: url("/gds_service_toolkit_BAU/images/icons/icon-steps/icon-step-8.png");
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 20 / 10), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   .icon-step-8 {
-    background-image: url("/gds_service_toolkit_BAU/images/icon-steps/icon-step-8-2x.png");
+    background-image: url("/gds_service_toolkit_BAU/images/icons/icon-steps/icon-step-8-2x.png");
     background-size: 100%;
   }
 }
@@ -999,12 +999,12 @@ hr {
 .icon-step-9 {
   width: 23px;
   height: 23px;
-  background-image: url("/gds_service_toolkit_BAU/images/icon-steps/icon-step-9.png");
+  background-image: url("/gds_service_toolkit_BAU/images/icons/icon-steps/icon-step-9.png");
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 20 / 10), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   .icon-step-9 {
-    background-image: url("/gds_service_toolkit_BAU/images/icon-steps/icon-step-9-2x.png");
+    background-image: url("/gds_service_toolkit_BAU/images/icons/icon-steps/icon-step-9-2x.png");
     background-size: 100%;
   }
 }
@@ -1012,12 +1012,12 @@ hr {
 .icon-step-10 {
   width: 23px;
   height: 23px;
-  background-image: url("/gds_service_toolkit_BAU/images/icon-steps/icon-step-10.png");
+  background-image: url("/gds_service_toolkit_BAU/images/icons/icon-steps/icon-step-10.png");
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 20 / 10), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   .icon-step-10 {
-    background-image: url("/gds_service_toolkit_BAU/images/icon-steps/icon-step-10-2x.png");
+    background-image: url("/gds_service_toolkit_BAU/images/icons/icon-steps/icon-step-10-2x.png");
     background-size: 100%;
   }
 }
@@ -1025,12 +1025,12 @@ hr {
 .icon-step-11 {
   width: 23px;
   height: 23px;
-  background-image: url("/gds_service_toolkit_BAU/images/icon-steps/icon-step-11.png");
+  background-image: url("/gds_service_toolkit_BAU/images/icons/icon-steps/icon-step-11.png");
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 20 / 10), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   .icon-step-11 {
-    background-image: url("/gds_service_toolkit_BAU/images/icon-steps/icon-step-11-2x.png");
+    background-image: url("/gds_service_toolkit_BAU/images/icons/icon-steps/icon-step-11-2x.png");
     background-size: 100%;
   }
 }
@@ -1038,12 +1038,12 @@ hr {
 .icon-step-12 {
   width: 23px;
   height: 23px;
-  background-image: url("/gds_service_toolkit_BAU/images/icon-steps/icon-step-12.png");
+  background-image: url("/gds_service_toolkit_BAU/images/icons/icon-steps/icon-step-12.png");
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 20 / 10), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   .icon-step-12 {
-    background-image: url("/gds_service_toolkit_BAU/images/icon-steps/icon-step-12-2x.png");
+    background-image: url("/gds_service_toolkit_BAU/images/icons/icon-steps/icon-step-12-2x.png");
     background-size: 100%;
   }
 }
@@ -1051,12 +1051,12 @@ hr {
 .icon-step-13 {
   width: 23px;
   height: 23px;
-  background-image: url("/gds_service_toolkit_BAU/images/icon-steps/icon-step-13.png");
+  background-image: url("/gds_service_toolkit_BAU/images/icons/icon-steps/icon-step-13.png");
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 20 / 10), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   .icon-step-13 {
-    background-image: url("/gds_service_toolkit_BAU/images/icon-steps/icon-step-13-2x.png");
+    background-image: url("/gds_service_toolkit_BAU/images/icons/icon-steps/icon-step-13-2x.png");
     background-size: 100%;
   }
 }
@@ -1064,12 +1064,12 @@ hr {
 .icon-step-14 {
   width: 23px;
   height: 23px;
-  background-image: url("/gds_service_toolkit_BAU/images/icon-steps/icon-step-14.png");
+  background-image: url("/gds_service_toolkit_BAU/images/icons/icon-steps/icon-step-14.png");
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 20 / 10), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   .icon-step-14 {
-    background-image: url("/gds_service_toolkit_BAU/images/icon-steps/icon-step-14-2x.png");
+    background-image: url("/gds_service_toolkit_BAU/images/icons/icon-steps/icon-step-14-2x.png");
     background-size: 100%;
   }
 }
