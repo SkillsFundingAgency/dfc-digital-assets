@@ -1,0 +1,63 @@
+/* Custom styling moved from BAU */
+
+// Yellow border highlight
+.govuk-box-border-yellow {
+  margin: 1em 0;
+  padding: 2.2em 1em 2.2em;
+  border: 4px solid #ffbf47;
+}
+
+.govuk-box-border-yellow-reduced {
+  margin: 1em 0;
+  padding: 1em 1em .5em;
+  border: 4px solid #ffbf47;
+}
+
+.govuk-box-border-yellow-delete {
+  margin: 1em 0;
+  padding: 1.2em 1em 1.2em;
+  border: 4px solid #ffbf47;
+}
+
+@media (max-width: 641px) {
+  .govuk-box-border-yellow-delete {padding: 0 1em 0.2em;}
+
+}
+
+// Link at bottom of SHC homepage
+
+.buttonLink {
+  @extend .govuk-body-m;
+  color: #005ea5;
+  background:none!important;
+  border:none;
+  padding:0!important;
+  /*border is optional*/
+  border-bottom:1px solid #444;
+}
+
+// Account login at top
+
+.account-info {
+  padding-left: 0;
+  text-align: right;
+  font-size: 14px;
+  line-height: 1.1428571429;
+  padding: 1em 0;
+  border-bottom: 1px solid #bfc1c3;
+}
+
+.your-name {
+  @extend .govuk-body-s
+}
+
+@media (min-width: 641px) {
+  .account-info {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+
+.account-info .your-name,#signin-link {
+  padding: 0 .5em;
+}
