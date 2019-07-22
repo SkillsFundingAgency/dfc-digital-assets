@@ -1,3 +1,59 @@
+// HEADER and RELATED ITEMS
+
+.govuk-header__container {
+  border-bottom: transparent;
+}
+
+nav {
+  .govuk-tag {
+    margin: 0 0 0 4px;
+    top: -6px;
+    font-size: 10px;
+    position: relative;
+    padding: 2px 5px;
+  }
+}
+
+
+.govuk-secondary-colour {
+  color: $govuk-secondary-text-colour;
+}
+
+// Change to header to change colour of blue border underneath header to green.
+.govuk-header__container {
+  border-bottom: 10px solid #207e77;
+  @include govuk-media-query(desktop) {
+    padding-top: 7px;
+  }
+}
+
+// Change to desktop header to fix margin/padding
+.govuk-header__link--service-name {
+  @include govuk-media-query(desktop) {
+    margin-bottom: -1px;
+  }
+}
+
+.govuk-header__navigation {
+  @include govuk-media-query(desktop) {
+    margin: 0px 0px 4px;
+  }
+}
+
+.app-related-items {
+  //border-top: 10px solid govuk-colour("blue");
+  border-top: 10px solid #207e77;
+  padding-top: govuk-spacing(2);
+}
+
+.app-related-items .govuk-list > li {
+  margin-bottom: govuk-spacing(2);
+}
+
+.govuk-related-items {
+  @extend .app-related-items
+}
+
 /* Custom styling moved from BAU */
 
 // Yellow border highlight
@@ -41,7 +97,7 @@
   border-bottom:1px solid #444;
 }
 
-// Account login at top
+// Account login at top banner
 
 .account-info {
   padding-left: 0;
@@ -67,5 +123,78 @@
   padding: 0 .5em;
 }
 
-// Ipsos import
+// Ipsos survey import
 @import "ipsos";
+
+// ******************** Accounts pages
+
+.form-label {
+  @extend .govuk-label
+}
+
+.w100 {
+  @extend .govuk-input
+}
+
+#Identity_PersonalDetails_Title {
+  @extend .govuk-select;
+}
+
+.form-hint {
+  @extend .govuk-hint
+}
+
+#Identity_PersonalDetails_DateOfBirthDay {
+  @extend .govuk-input, .govuk-date-input__input, .govuk-input--width-2
+}
+
+#Identity_PersonalDetails_DateOfBirthMonth {
+  @extend .govuk-input, .govuk-date-input__input, .govuk-input--width-2
+}
+
+#Identity_PersonalDetails_DateOfBirthYear {
+  @extend .govuk-input, .govuk-date-input__input, .govuk-input--width-4
+}
+
+#Identity_PersonalDetails_Gender {
+  @extend .govuk-select
+}
+
+#Identity_PersonalDetails_HomePostCode {
+  @extend .govuk-input, .govuk-input--width-10
+}
+
+#Identity_PersonalDetails_AlternativePostCode {
+  @extend .govuk-input, .govuk-input--width-10
+}
+
+#Identity_ContactDetails_ContactPreference {
+  @extend .govuk-select
+}
+
+#CurrentPassword {
+  @extend .govuk-input, .govuk-\!-width-one-half
+}
+
+#NewPassword {
+  @extend .govuk-input, .govuk-\!-width-one-half
+}
+
+#ConfirmNewPassword {
+  @extend .govuk-input, .govuk-\!-width-one-half
+}
+
+details {
+  margin-top: 1em;
+}
+
+#Reason {
+  height: initial;
+  @extend .govuk-textarea;
+}
+
+#password {
+  @extend .govuk-input, .govuk-\!-width-one-half
+}
+
+// ******************** End of accounts pages
