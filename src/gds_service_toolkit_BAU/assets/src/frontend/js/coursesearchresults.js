@@ -40,14 +40,6 @@ function PopulateSelectedDateFrom() {
 
 }
 
-
-$("input[type='radio']").click(function () {
-    var startDateValue = $("input[name='radio-date-group']:checked").val();
-    if (startDateValue.toLowerCase() === "anytime" || startDateValue.toLowerCase() === "today") {
-        setToToday();
-    }
-});
-
 function setToToday() {
    
         var today = new Date();
