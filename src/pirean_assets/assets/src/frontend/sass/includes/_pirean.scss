@@ -1,0 +1,48 @@
+// Changes by ID to can't access account page
+#first-name-2 {
+  @extend .govuk-input;
+  @extend .govuk-\!-width-one-half
+}
+
+#last-name-2 {
+  @extend .govuk-input;
+  @extend .govuk-\!-width-one-half
+}
+
+#email {
+  @extend .govuk-input;
+  @extend .govuk-\!-width-one-half
+}
+
+#postcode {
+  @extend .govuk-input, .govuk-input--width-10
+}
+
+#dobday {
+  @extend .govuk-input, .govuk-date-input__input, .govuk-input--width-2
+}
+
+#dobmonth {
+  @extend .govuk-input, .govuk-date-input__input, .govuk-input--width-2
+}
+
+#dobyear {
+  @extend .govuk-input, .govuk-date-input__input, .govuk-input--width-4
+}
+
+// Create account
+
+.details-replace {
+  margin-top: 1em;
+}
+
+#password {
+  @extend .govuk-input;
+  @extend .govuk-\!-width-one-half
+}
+
+#password-confirm {
+  @extend .govuk-input;
+  @extend .govuk-\!-width-one-half
+}
+

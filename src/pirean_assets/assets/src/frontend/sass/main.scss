@@ -1,0 +1,14 @@
+$govuk-compatibility-govukfrontendtoolkit: true;
+$govuk-compatibility-govuktemplate: true;
+$govuk-compatibility-govukelements: true;
+
+@import "../../../../node_modules/govuk-frontend/all";
+
+/* Importing overridden old styles with new */
+@import "includes/overrides";
+
+/* Importing custom styles */
+@import "includes/custom";
+
+/* Importing pirean styles */
+@import "includes/pirean";

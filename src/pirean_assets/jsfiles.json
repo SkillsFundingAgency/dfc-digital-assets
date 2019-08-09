@@ -1,0 +1,5 @@
+{
+  "concatGovUkJsFiles": [
+    "node_modules/govuk-frontend/all.js"
+  ]
+}
