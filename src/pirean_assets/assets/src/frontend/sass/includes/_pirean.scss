@@ -46,3 +46,9 @@
   @extend .govuk-\!-width-one-half
 }
 
+.error-message {
+  @media (min-width: 641px) {
+    line-height: 0.8;
+  }
+}
+
