@@ -136,6 +136,10 @@ nav {
   @extend .govuk-input
 }
 
+input[type="text"] {
+  @extend .govuk-input
+}
+
 #Identity_PersonalDetails_Title {
   @extend .govuk-select;
 }
@@ -145,14 +149,17 @@ nav {
 }
 
 #Identity_PersonalDetails_DateOfBirthDay {
+  min-width: 0;
   @extend .govuk-input, .govuk-date-input__input, .govuk-input--width-2
 }
 
 #Identity_PersonalDetails_DateOfBirthMonth {
+  min-width: 0;
   @extend .govuk-input, .govuk-date-input__input, .govuk-input--width-2
 }
 
 #Identity_PersonalDetails_DateOfBirthYear {
+  min-width: 0;
   @extend .govuk-input, .govuk-date-input__input, .govuk-input--width-4
 }
 
@@ -196,5 +203,7 @@ details {
 #password {
   @extend .govuk-input, .govuk-\!-width-one-half
 }
+
+
 
 // ******************** End of accounts pages
