@@ -13,6 +13,17 @@ dfc.digital = {
 $(document).ready(function () {
     CookieBanner.addCookieMessage();
 
+    var count = 0;
+    $("#ipsos-survey-banner").hide();
+    $("#voc-survey-banner").show();
+    $('body').click(function () {
+        count += 1;
+        if (count >= 10) {
+            $("#ipsos-survey-banner").show();
+            $("#voc-survey-banner").hide();
+        }
+    });
+
     $(".js-search-focus").ready(function () { dfc.digital.addFocus(".js-search-focus"); }).focus(function () { dfc.digital.addFocus(this) }).blur(function () { dfc.digital.addFocus(this) });
 
     /* Not yet developed
