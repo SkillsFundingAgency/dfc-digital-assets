@@ -1,0 +1,76 @@
+/* Overrides to apply new GOVUK-frontend styles automatically */
+@import "cookie-banner";
+
+body {
+  @extend .govuk-template__body;
+  @extend .app-body-class !optional;
+  @extend .js-enabled
+}
+
+main {
+  @extend .govuk-main-wrapper;
+  @extend .app-main-class !optional;
+}
+
+p {
+  @extend .govuk-body-m;
+}
+
+table {
+  @extend .govuk-table
+}
+
+//thead {
+//  @extend .govuk-table__head !optional;
+//}
+//
+//tr {
+//  @extend .govuk-table__row!
+//}
+//
+//th {
+//  @extend .govuk-table__header
+//}
+//
+//td {
+//  @extend .govuk-table__cell
+//}
+
+a {
+  @extend .govuk-link
+}
+
+label {
+  @extend .govuk-label
+}
+
+h1 {
+  @extend .govuk-heading-xl
+}
+
+h2 {
+  @extend .govuk-heading-l
+}
+
+h3 {
+  @extend .govuk-heading-m
+}
+
+h4 {
+  @extend .govuk-heading-s
+}
+
+ul {
+  @extend .govuk-list;
+  @extend .govuk-list--bullet
+}
+
+ol {
+  @extend .govuk-list;
+  @extend .govuk-list--number
+}
+
+button {
+  @extend .govuk-button
+
+}

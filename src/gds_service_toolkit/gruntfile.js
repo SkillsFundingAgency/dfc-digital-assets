@@ -83,15 +83,8 @@ module.exports = function (grunt) {
                     src: ['*.scss'],
                     dest: '<%= dist.path %>/css/',
                     ext: '.css'
-                },
-
-                {
-                    expand: true,
-                    cwd: 'node_modules/govuk-frontend/',
-                    src: ['*.scss'],
-                    dest: '<%= dist.path %>/css/',
-                    ext: '.css'
-                }]
+                }
+                ]
                
             }
         },
