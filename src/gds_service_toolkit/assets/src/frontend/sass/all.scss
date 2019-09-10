@@ -1,0 +1,9 @@
+$govuk-assets-path: "/gds_service_toolkit/" !default;
+$govuk-compatibility-govukfrontendtoolkit: true;
+$govuk-compatibility-govuktemplate: true;
+$govuk-compatibility-govukelements: true;
+
+@import "../../../../node_modules/govuk-frontend/all";
+
+/* Include default styles to apply GOV.UK styling */
+@import "includes/defaults";
