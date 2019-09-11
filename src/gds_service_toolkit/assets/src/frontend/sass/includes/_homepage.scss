@@ -3,14 +3,12 @@
 // Vertically and horizontally aligns text within eggs/rings
 .eggs-text {
   display: flex;
-  align-items: center;
   justify-content: center;
   flex-direction: column;
   width: 100%;
   text-align: center;
   margin: 10% 0;
   background-color: rgba(33, 33, 33, .3);
-  align-items: center;
 }
 
 // Horizontally aligns rings on mobile devices etc
@@ -87,6 +85,9 @@ body.hasHover {
     a {
       &:hover {
         p {
+          color: #ffffff;
+        }
+        h2 {
           color: #ffffff;
         }
         h3 {
