@@ -52,6 +52,9 @@
           "originHostName": {
             "value": "[parameters('originHostName')]"
           },
+          "cacheExpirationOverride": {
+            "value": "7"
+          },
           "customDomainName": {
             "value": "[parameters('customCdnFqdn')]"
           },
