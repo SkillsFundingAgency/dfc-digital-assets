@@ -5,5 +5,5 @@ $govuk-compatibility-govukelements: true;
 
 @import "../../../../node_modules/govuk-frontend/all";
 
-/* Include default styles to apply GOV.UK styling */
-@import "includes/defaults";
+/* Import all custom and default patterns */
+@import "patterns/all";
