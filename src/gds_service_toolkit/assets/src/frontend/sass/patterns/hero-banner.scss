@@ -1,0 +1,207 @@
+@import '../../../../../node_modules/govuk_frontend_toolkit/stylesheets/colours/palette';
+@import '../../../../../node_modules/govuk_frontend_toolkit/stylesheets/typography';
+@import '../../../../../node_modules/govuk_frontend_toolkit/stylesheets/css3';
+@import '../../../../../node_modules/govuk_frontend_toolkit/stylesheets/shims';
+
+// Primary hero banner - this hero banner uses the NCS primary colour #207E77
+.primary-hero {
+  background-color: #207e77;
+  color: #ffffff;
+  padding: 30px 0 10px;
+
+  * {
+    color: #ffffff;
+  }
+
+  input, select {
+    border: none !important;
+    color: black;
+  }
+
+  option {
+    color: black;
+  }
+
+  button {
+    background-color: black;
+
+    &:hover {
+      background-color: black;
+      text-decoration: underline;
+    }
+  }
+  .govuk-heading-xl {
+    margin: 0 0 30px 0;
+    color: #FFFFFF;
+  }
+  p {
+    color: #FFFFFF;
+    a {
+      font-weight: bold;
+      color: #FFFFFF;
+    }
+  }}
+
+// Secondary hero banner
+.secondary-hero {
+  background-color: $grey-4;
+  width: 100%;
+  padding: 0;
+  @extend %contain-floats;
+  margin-bottom: 50px;
+
+  h1 {
+    font-size: 38px !important;
+    margin: 1em 0 0 0;
+    padding: 0;
+  }
+
+  h2 {
+    @include core-24;
+    color: $grey-1;
+  }
+
+  p {
+    @include core-19;
+    margin: 10px 0 30px 0;
+  }
+
+  .column {
+    width: 100%;
+    padding: 25px;
+    box-sizing: border-box;
+    float: left;
+
+    @include media(tablet) {
+      width: 100%;
+    }
+  }
+
+  .column-40 {
+    @extend .column;
+
+    @media (min-width: 750px) {
+      width: 40%;
+    }
+  }
+
+  .column-30 {
+    @extend .column;
+
+    @media (min-width: 750px) {
+      width: 30%;
+    }
+  }
+}
+
+.secondary-hero-block {
+  h2 {
+    width: 100%;
+    border-bottom: 1px solid $grey-3;
+    color: #207e77;
+    @include core-19;
+    line-height: 22px;
+    margin-bottom: 10px;
+    @extend %contain-floats;
+
+
+    @media (max-width: 749px) {
+      font-weight: bold;
+    }
+
+    @include media(desktop) {
+      padding: 5px 0;
+    }
+
+    span {
+      @include core-14;
+      margin-left: 5px;
+      display: inline-block;
+    }
+
+    a {
+      font-size: 12px;
+      color: #207e77;
+      float: right;
+      top: 5px;
+      position: relative;
+      margin-bottom: 5px;
+
+      @media (max-width: 749px) {
+        float: left !important;
+        font-weight: normal !important;
+      }
+    }
+  }
+
+
+  .secondary-hero-block-content {
+    padding: 10px 0;
+    float: right;
+    width: 100%;
+    position: relative;
+
+    &:before {
+      content: "";
+      float: left;
+      width: 40px;
+      height: 40px;
+      position: relative;
+      margin-right: 20px;
+    }
+
+
+    p {
+      font-size: 20px;
+      line-height: 1.25;
+      letter-spacing: -0.25px;
+      margin: 0;
+
+      span {
+        @include core-14;
+        color: #207e77;
+        width: 100%;
+        display: block;
+      }
+    }
+
+    @media (max-width: 749px) {
+
+      &:after {
+        display: none;
+      }
+
+      &:before {
+        display: none;
+      }
+
+      p {
+        text-align: right;
+      }
+    }
+  }
+
+  @media (max-width: 749px) {
+    &:nth-child(odd) {
+      background-color: darken($grey-4, 5%);
+    }
+
+    h2 {
+      width: 50%;
+      float: left;
+      border: none;
+      min-width: 150px;
+
+      span {
+        width: 100%;
+        margin: 0;
+      }
+    }
+
+    .job-profile-heroblock-content {
+      float: right;
+      width: auto;
+      padding: 0;
+    }
+  }
+}
