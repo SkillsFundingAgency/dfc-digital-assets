@@ -1,26 +1,29 @@
 ﻿$('#DateOfBirth').removeAttr("data-val-date");
 $(document).ready(function () {
-    $("button[type='submit']:not('.novalidate')").click(function () {
+    $("form.with-validation-summary").submit(function (event) {
         $('#error-validation-summary').hide();
         $('#error-validation-summary .govuk-error-summary__body ul').empty();
-        if ($('#DateOfBirth').val() !== undefined){PopulateDateOfBirth();}
+        if ($('#DateOfBirth').val() !== undefined) { 
+            PopulateDateOfBirth(); 
+        }
 
-        var validator = $('form').validate();
-        if ($('form').valid()) {
-            $("form").submit();
-        } else {
-            $('#error-validation-summary').show();
+        if (!$(this).valid()) {
+            event.preventDefault();
+            var validator = $(this).validate();
+            if (validator.errorList.length) {
+                for (var i = 0; i < validator.errorList.length; i++) {
+                    var linkElement = validator.errorList[i].element.name.split('.').join('_');
+                    $('#error-validation-summary .govuk-error-summary__body ul')
+                        .append('<li><a href="#' + linkElement + '">' + validator.errorList[i].message + '</a></li>');
+                }
 
-            for (var i = 0; i < validator.errorList.length; i++) {
-                var linkElement = validator.errorList[i].element.name.split('.').join('_');
-                $('#error-validation-summary .govuk-error-summary__body ul')
-                    .append('<li><a href="#' + linkElement + '">' + validator.errorList[i].message + '</a></li>');
+                $('#error-validation-summary').show();
+                $('html,body').animate({
+                    scrollTop: $("#error-validation-summary").offset().top
+                }, 0);
+            } else {
+                $('#error-validation-summary').hide();
             }
-
-            $('html,body').animate({
-                scrollTop: $("#error-validation-summary").offset().top
-            }, 0);
-
             return false;
         }
     });
@@ -36,12 +39,6 @@ $(document).ready(function () {
     $("#DateOfBirthYear").change(function () {
         PopulateDateOfBirth();
     });
-
-    var validator = $("form").validate();
-    if(validator)
-    {
-       validator.settings.ignore = [];
-    }
 });
 
 $.validator.setDefaults({
