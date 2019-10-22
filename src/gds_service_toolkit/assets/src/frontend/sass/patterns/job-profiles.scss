@@ -39,8 +39,19 @@
       padding: 10px 0;
       border-bottom: 1px solid $grey-3;
 
-      @media(desktop) {
-        margin-top: 1.8em !important;
+      @include govuk-media-query(desktop) {
+        margin-top: 1.25em !important;
+        margin-bottom: .5555555556em !important;
+      }
+
+      @include govuk-media-query(tablet) {
+        margin-top: 1.25em !important;
+        margin-bottom: .5555555556em !important;
+      }
+
+      @include govuk-media-query(mobile) {
+        margin-top: 1.0416666667em !important;
+        margin-bottom: .4166666667em !important;
       }
     }
   }
