@@ -434,7 +434,17 @@
 }
 
 .opportunity-item {
+  @extend .govuk-inset-text;
   border-color: #207e77;
+  padding: .7894736842em;
+  margin-top: 0;
+  margin-bottom: .7894736842em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  clear: both;
+  border-left-style: solid;
+  border-left-width: 5px;
 }
 
 .govuk-related-items {
