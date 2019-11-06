@@ -6,6 +6,7 @@
 
 /* Automatically Add Numbers To Sections & style lists within sections */
 .job-profile-sections {
+  @extend .govuk-body;
   counter-reset: section;
 
   section {
