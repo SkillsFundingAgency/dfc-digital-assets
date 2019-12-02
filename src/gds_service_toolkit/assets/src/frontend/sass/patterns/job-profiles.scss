@@ -781,6 +781,10 @@
   margin-left: -10000px;
 }
 
+.ui-menu-item {
+  @extend .govuk-body
+}
+
 .js-enabled {
 
   .js-hidden {
