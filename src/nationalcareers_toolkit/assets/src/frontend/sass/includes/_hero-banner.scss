@@ -1,0 +1,37 @@
+﻿.ec-hero {
+    background-color: #207e77;
+    color: #ffffff;
+    padding: 30px 0 10px;
+
+    * {
+        color: #ffffff;
+    }
+
+    input, select {
+        border: none !important;
+        color: black;
+    }
+
+    option {
+        color: black;
+    }
+
+    button {
+        background-color: black;
+
+        &:hover {
+            background-color: black;
+            text-decoration: underline;
+        }
+    }
+    .govuk-heading-xl {
+        margin: 0 0 30px 0;
+        color: #FFFFFF;
+    }
+    p {
+        color: #FFFFFF;
+        a {
+            font-weight: bold;
+            color: #FFFFFF;
+        }
+    }}

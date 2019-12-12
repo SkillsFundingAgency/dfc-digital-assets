@@ -1,0 +1,24 @@
+.app-your-reference {
+  background-color: govuk-colour('light-grey');
+  padding: govuk-spacing(3);
+  margin-bottom: govuk-spacing(6);
+  border-left: 10px solid $app-turquoise;
+}
+
+.app-your-reference__code {
+  margin-top: govuk-spacing(1);
+  margin-bottom: 0;
+}
+
+.app-your-reference__meta p {
+  margin-bottom: 0;
+  color: $app-text-light;
+
+  &:last-child {
+    margin-top: 5px;
+    @include govuk-media-query($from: desktop) {
+      margin-top: 0;
+      text-align: right;
+    }
+  }
+}

@@ -1,0 +1,128 @@
+/* Custom banner and side styling (for example; changes from blue to green) */
+.govuk-header__container {
+  border-bottom: transparent;
+}
+
+nav {
+  .govuk-tag {
+    margin: 0 0 0 4px;
+    top: -6px;
+    font-size: 10px;
+    position: relative;
+    padding: 2px 5px;
+  }
+}
+
+
+.govuk-secondary-colour {
+  color: $govuk-secondary-text-colour;
+}
+
+.govuk-related-items {
+  margin-top: 30px;
+  border-top: 10px solid #005ea5;
+  padding-top: 5px;
+}
+
+// Change to header to change colour of blue border underneath header to green.
+.govuk-header__container {
+  border-bottom: 10px solid #207e77;
+  @include govuk-media-query(desktop) {
+    padding-top: 7px;
+  }
+}
+
+// Change to desktop header to fix margin/padding
+.govuk-header__link--service-name {
+  @include govuk-media-query(desktop) {
+    margin-bottom: -1px;
+  }
+}
+
+.govuk-header__navigation {
+  @include govuk-media-query(desktop) {
+    margin: 0px 0px 4px;
+  }
+}
+
+.app-related-items {
+  //border-top: 10px solid govuk-colour("blue");
+  border-top: 10px solid #207e77;
+  padding-top: govuk-spacing(2);
+}
+
+.app-related-items .govuk-list > li {
+  margin-bottom: govuk-spacing(2);
+}
+
+/* Overrides to apply new GOVUK-frontend styles automatically */
+@import "cookie-banner";
+
+body {
+  @extend .govuk-template__body;
+  @extend .app-body-class !optional;
+  @extend .js-enabled
+}
+
+main {
+  @extend .govuk-main-wrapper;
+  @extend .app-main-class !optional;
+}
+
+p {
+  @extend .govuk-body-m;
+}
+
+table {
+  @extend .govuk-table
+}
+
+thead {
+  @extend .govuk-table__head !optional;
+}
+
+tr {
+  @extend .govuk-table__row !optional;
+}
+
+th {
+  @extend .govuk-table__header !optional;
+}
+
+td {
+  @extend .govuk-table__cell !optional;
+}
+
+a {
+  @extend .govuk-link
+}
+
+label {
+  @extend .govuk-label
+}
+
+h1 {
+  @extend .govuk-heading-xl
+}
+
+h2 {
+  @extend .govuk-heading-l
+}
+
+h3 {
+  @extend .govuk-heading-m
+}
+
+h4 {
+  @extend .govuk-heading-s
+}
+
+ul {
+  @extend .govuk-list;
+  @extend .govuk-list--bullet
+}
+
+ol {
+  @extend .govuk-list;
+  @extend .govuk-list--number
+}

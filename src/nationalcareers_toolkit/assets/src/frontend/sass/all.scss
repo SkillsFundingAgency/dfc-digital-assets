@@ -1,0 +1,7 @@
+$govuk-assets-path: "/gds_service_toolkit/" !default;
+$govuk-use-legacy-palette: false;
+
+@import "govuk-frontend/govuk/all";
+
+/* Import all custom and default patterns */
+@import "patterns/all";
