@@ -1,0 +1,211 @@
+.search-title {
+  @include bold-24;
+  padding-bottom: 10px
+}
+
+.search-header {
+  position: relative;
+  margin: 0;
+  padding: 10px 0 15px;
+  overflow: visible;
+
+  @include media(tablet) {
+    padding: 20px 0 30px;
+    width: 66.666%;
+  }
+
+  .searchfield {
+    position: relative
+  }
+
+  .search-input {
+    position: static;
+    margin: 0;
+  }
+
+  .search-submit {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 50px;
+    width: 50px;
+    overflow: visible;
+  }
+
+  input {
+    border: 1px solid #bbb;
+    -webkit-appearance: none;
+    border-radius: 0;
+    @include core-19;
+    font-size-adjust: 0.5;
+    @include box-sizing(border-box);
+    width: 100%;
+    margin: 0;
+    padding: 0 50px 0 10px;
+    display: block;
+    height: 50px;
+    border-color: #bfc1c3;
+    border-right: none;
+  }
+
+  button {
+    @include border-radius(0);
+    @include box-shadow(none);
+    position: absolute;
+    z-index: 4;
+    right: 0;
+    top: 0;
+    width: 50px;
+    height: 50px;
+    border: none;
+    overflow: hidden;
+    text-indent: 50000px;
+    color: $white;
+    background: $light-blue file-url("icon-search-2x.png") no-repeat 60% 50%;
+    background-size: 24px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: darken($light-blue, 5%);
+    }
+
+    &:focus {
+      background-color: $light-blue;
+    }
+
+    &:active {
+      top: 0;
+    }
+  }
+
+  .search-dym {
+    margin-top: 0.5em;
+    @include core-19;
+  }
+}
+
+#results {
+  width: 66.66667%;
+
+  @include media(mobile) {
+    width: 100%;
+  }
+
+  .results-block {
+    .result-count {
+      padding: 0;
+    }
+
+    .results-list {
+      list-style: none;
+      margin: 0;
+      padding: 30px 0;
+
+      li {
+        max-width: 32.5em;
+        margin: 0;
+        padding: 0 0 15px;
+
+        @include media(tablet) {
+          padding: 0 0 40px;
+        }
+      }
+
+      h3 {
+        @include core-24;
+        margin: 0 0 0.25em 0;
+
+        a {
+          text-decoration: none;
+          font-weight: bold;
+        }
+      }
+
+      .result-description {
+        margin: 0 0 0.5em 0;
+        @include core-19;
+      }
+
+      .meta {
+        color: $grey-1;
+        @include core-16;
+      }
+
+      .results-salary {
+        @extend .govuk-\!-font-size-16;
+        @extend .govuk-\!-font-weight-bold;
+        margin-bottom: 0.75em;
+      }
+
+      .results-categories {
+        @extend .govuk-\!-font-size-19;
+        color: $grey-1;
+
+        a:after {
+          content: ",";
+        }
+
+        a:last-child:after {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.ui-autocomplete {
+  background-color: $white;
+  color: $black;
+  border: 1px solid $grey-2;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  position: absolute;
+  width: calc(100% - 40px);
+  top: 100%;
+  z-index: 500;
+
+  li {
+    padding: 0;
+    margin: 0;
+    font-size: 19px;
+
+    div {
+      padding: 5px 10px;
+      border-bottom: 1px solid $grey-3;
+
+      &:hover {
+        background-color: $grey-3;
+        cursor: pointer;
+      }
+    }
+
+    .ui-state-active {
+      background-color: $grey-3;
+    }
+
+    &:last-child {
+      div {
+        border: none;
+      }
+    }
+  }
+}
+
+/* Autocomplete Hidden Fix for AD */
+.ui-helper-hidden-accessible {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.gem-c-input--search-icon {
+  background: #FFFFFF url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36' width='40' height='40'%3E%3Cpath d='M25.7 24.8L21.9 21c.7-1 1.1-2.2 1.1-3.5 0-3.6-2.9-6.5-6.5-6.5S10 13.9 10 17.5s2.9 6.5 6.5 6.5c1.6 0 3-.6 4.1-1.5l3.7 3.7 1.4-1.4zM12 17.5c0-2.5 2-4.5 4.5-4.5s4.5 2 4.5 4.5-2 4.5-4.5 4.5-4.5-2-4.5-4.5z' fill='currentColor'%3E%3C/path%3E%3C/svg%3E") no-repeat -5px -3px;
+  padding-left: 30px;
+}

@@ -1,0 +1,116 @@
+// Homepage with 'rings' to navigate user through products
+
+// Vertically and horizontally aligns text within eggs/rings
+.eggs-text {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  text-align: center;
+  margin: 10% 0;
+  background-color: rgba(33, 33, 33, .3);
+}
+
+// Horizontally aligns rings on mobile devices etc
+.egg-center {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+// Styles for rings border and text / links within rings
+.eggs {
+  display: inline-block;
+  position: relative;
+  a {
+    padding: 0.75em;
+    width: 11.238em;
+    height: 11.238em;
+    float: left;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    text-align: center;
+    text-decoration: none;
+    color: #0b0c0c;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    border: 0.625em solid #207e77;
+    background-color: #f8f8f8;
+    @media (max-width: 960px) {
+      width: 9.375em;
+      height: 9.375em;
+      padding: 0em 0.5em 0.5em;
+      border: 0.5em solid #207e77;
+    }
+    @media (max-width: 780px) {
+      width: 7.813em;
+      height: 7.813em;
+      border: 0.375em solid #207e77;
+    }
+    @media (max-width: 440px){
+      margin: 4px;
+    }
+    @media (min-width: 441px) and (max-width: 640px){
+      margin: 4px;
+    }
+    span {
+      background: #dee0e2;
+      float: none;
+      margin: 0 auto;
+      width: 4em;
+    }
+    p {
+      padding: 0 1em 0;
+      @media (max-width: 960px) {
+        font-size: 1.0em;
+      }
+      @media (max-width: 780px) {
+        font-size: 1em;
+        padding: 0;
+      }
+    }
+    h3 {
+      @media (max-width: 780px) {
+        font-size: 1em;
+      }
+    }
+  }
+}
+
+// Rings illuminate on devices which support hover - works along with JS file
+body.hasHover {
+  .eggs {
+    a {
+      &:hover {
+        p {
+          color: #ffffff;
+        }
+        h2 {
+          color: #ffffff;
+        }
+        h3 {
+          color: #ffffff;
+        }
+        background: #207e77;
+        transition: .1s ease-in-out;
+      }
+    }
+  }
+}
+
+// Margins for headings within rings - customised for mobile/tablet devices
+.home-headings {
+  margin-top: 0.6em;
+  margin-bottom: 0.9em;
+  font-size: 1.3em;
+  @media (max-width: 960px) {
+    margin-top: 1.7em;
+    font-size: 1.1em;
+  }
+  @media (min-width: 760px) and (max-width: 960px) {
+    font-size: 1.2em;
+  }
+
+}
