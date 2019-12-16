@@ -44,7 +44,7 @@
 
 // Secondary hero banner
 .secondary-hero {
-  background-color: $grey-4;
+  background-color: govuk-colour('light-grey');
   width: 100%;
   padding: 0;
   @extend %contain-floats;
@@ -183,7 +183,7 @@
 
   @media (max-width: 749px) {
     &:nth-child(odd) {
-      background-color: darken($grey-4, 5%);
+      background-color: darken(govuk-colour('light-grey'), 5%);
     }
 
     h2 {

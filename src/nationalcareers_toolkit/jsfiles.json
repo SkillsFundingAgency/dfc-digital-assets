@@ -22,7 +22,7 @@
         "assets/src/frontend/js/jquery-1.12.4.js"
     ],
     "concatGovUkJsFiles": [
-        "node_modules/govuk-frontend/all.js",
+        "node_modules/govuk-frontend/govuk/all.js",
         "assets/src/frontend/js/cookie-banner.js"
     ],
     "oldConcatGovUkJsFiles": [

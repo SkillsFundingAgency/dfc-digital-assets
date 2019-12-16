@@ -70,7 +70,7 @@
 }
 
 .job-profile-hero {
-  background-color: $grey-4;
+  background-color: govuk-colour('light-grey');
   width: 100%;
   padding: 1px 0 0 0;
   @extend %contain-floats;
@@ -84,7 +84,7 @@
 
   h2 {
     @include core-24;
-    color: $grey-1;
+    color: govuk-colour('dark-grey');
   }
 
   p {
@@ -327,7 +327,7 @@
 
   @media (max-width: 749px) {
     &:nth-child(odd) {
-      background-color: darken($grey-4, 5%);
+      background-color: darken(govuk-colour('light-grey'), 5%);
     }
 
     h2 {
