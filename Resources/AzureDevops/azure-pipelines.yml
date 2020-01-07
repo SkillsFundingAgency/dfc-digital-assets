@@ -6,6 +6,7 @@ resources:
   - repository: dfc-devops
     type: github
     name: SkillsFundingAgency/dfc-devops
+    ref: refs/tags/v1.9.1
     endpoint: 'GitHub (ESFA)'
 
 variables:
@@ -50,6 +51,7 @@ jobs:
   # build and publish gds_toolkit
   - template: AzureDevOpsTemplates/Build/StepTemplates/dfc-grunt-build.yml@dfc-devops
     parameters:
+      displayPrefix: 'gds_toolkit:'
       npmfolder: '$(npmroot)/gds_toolkit'
       publishpath: '$(assetpath)'
       publishname: 'gds_toolkit'
@@ -57,13 +59,23 @@ jobs:
   # build and publish gds_service_toolkit
   - template: AzureDevOpsTemplates/Build/StepTemplates/dfc-grunt-build.yml@dfc-devops
     parameters:
+      displayPrefix: 'gds_service_toolkit:'
       npmfolder: '$(npmroot)/gds_service_toolkit'
       publishpath: '$(assetpath)'
       publishname: 'gds_service_toolkit'
-      
+
   # build and publish gds_service_toolkit_BAU
   - template: AzureDevOpsTemplates/Build/StepTemplates/dfc-grunt-build.yml@dfc-devops
     parameters:
+      displayPrefix: 'gds_service_toolkit_BAU:'
       npmfolder: '$(npmroot)/gds_service_toolkit_BAU'
       publishpath: '$(assetpath)'
       publishname: 'gds_service_toolkit_BAU'      
+
+  # build and publish nationalcareers_toolkit
+  - template: AzureDevOpsTemplates/Build/StepTemplates/dfc-grunt-build.yml@dfc-devops
+    parameters:
+      displayPrefix: 'nationalcareers_toolkit:'
+      npmfolder: '$(npmroot)/nationalcareers_toolkit'
+      publishpath: '$(assetpath)'
+      publishname: 'nationalcareers_toolkit'      
