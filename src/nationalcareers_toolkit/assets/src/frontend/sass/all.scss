@@ -6,11 +6,7 @@ $govuk-assets-path: "/nationalcareers_toolkit/" !default;
 @import "patterns/all";
 
 /* Includes below to be deprecated soon */
-@import "includes/cookie-banner";
 @import "includes/defaults";
-@import "includes/facet";
-@import "includes/filters";
 @import "includes/hero-banner";
 @import "includes/homepage";
-@import "includes/pagination";
 @import "includes/search";
