@@ -70,259 +70,32 @@
 }
 
 .job-profile-hero {
-  background-color: govuk-colour('light-grey');
-  width: 100%;
-  padding: 1px 0 0 0;
-  @extend %contain-floats;
-  margin-bottom: 20px;
-
-  h1 {
-    font-size: 38px;
-    margin: 1em 0 0 0;
-    padding: 0;
-  }
-
-  h2 {
-    @include govuk-font(24);
-    color: govuk-colour('dark-grey');
-  }
-
-  p {
-    @include govuk-font(19);
-    margin: 10px 0 30px 0;
-  }
-
-  .column {
-    width: 100%;
-    padding: 25px;
-    box-sizing: border-box;
-    float: left;
-
-    @include media(tablet) {
-      width: 100%;
-    }
-  }
-
-  .column-40 {
-    @extend .column;
-
-    @media (min-width: 750px) {
-      width: 40%;
-    }
-  }
-
-  .column-30 {
-    @extend .column;
-
-    @media (min-width: 750px) {
-      width: 30%;
-    }
-  }
+  @extend .secondary-hero
 }
 
 .job-profile-heroblock {
-  h2 {
-    width: 100%;
-    border-bottom: 1px solid $grey-3;
-    color: #207e77;
-    @include govuk-font(19);
-    line-height: 22px;
-    margin-bottom: 10px;
-    @extend %contain-floats;
+  @extend .secondary-hero-block
+}
 
 
-    @media (max-width: 749px) {
-      font-weight: bold;
-    }
-
-    @include media(desktop) {
-      padding: 5px 0;
-    }
-
-    span {
-      @include govuk-font(14);
-      margin-left: 5px;
-      display: inline-block;
-    }
-
-    a {
-      font-size: 12px;
-      color: #207e77;
-      float: right;
-      top: 5px;
-      position: relative;
-      margin-bottom: 5px;
-
-      @media (max-width: 749px) {
-        float: left !important;
-        font-weight: normal !important;
-      }
-    }
-  }
-
-
-  .job-profile-heroblock-content {
-    padding: 10px 0;
-    float: right;
-    width: 100%;
-    position: relative;
-
-    &:before {
-      content: "";
-      float: left;
-      width: 40px;
-      height: 40px;
-      position: relative;
-      margin-right: 20px;
-    }
-
-
-    p {
-      font-size: 20px;
-      line-height: 1.25;
-      letter-spacing: -0.25px;
-      margin: 0;
-
-      span {
-        @include govuk-font(14);
-        color: #207e77;
-        width: 100%;
-        display: block;
-      }
-    }
-
-    @media (max-width: 749px) {
-
-      &:after {
-        display: none;
-      }
-
-      &:before {
-        display: none;
-      }
-
-      p {
-        text-align: right;
-      }
-    }
-  }
+.job-profile-heroblock-content {
+  @extend .secondary-hero-block-content
+}
 
   .job-profile-salary {
-
-    &:before {
-      background: govuk-image-url("pound-sign.svg") no-repeat center;
-    }
-
-    &:after {
-      content: "";
-      display: block;
-      right: 0;
-      position: absolute;
-      width: calc(100% - 60px);
-      border-bottom: 4px solid #207e77;
-      top: 45px;
-    }
-
-    p {
-
-      span {
-        margin-top: 20px;
-        position: relative;
-      }
-
-      &:nth-child(1) {
-        float: left;
-
-        span {
-          &:before {
-            content: "|";
-            font-size: 20px;
-            position: absolute;
-            font-weight: bold;
-            top: -21px;
-            left: -2px;
-          }
-        }
-      }
-
-      &:nth-child(3) {
-        float: right;
-        text-align: right;
-
-
-        span {
-          text-align: right;
-
-          &:after {
-            content: "|";
-            font-size: 20px;
-            position: absolute;
-            font-weight: bold;
-            top: -21px;
-            right: -2px;
-          }
-        }
-      }
-    }
-
-
-    @media (max-width: 749px) {
-
-      &:after {
-        display: none;
-      }
-
-      &:before {
-        display: none;
-      }
-
-      i {
-        margin: 0 5px;
-        font-style: normal;
-        font-weight: 400;
-        font-size: 20px;
-      }
-
-      p {
-        margin: 0;
-        float: left;
-        text-align: left;
-
-
-
-        &:nth-child(even) {
-          float: left;
-        }
-
-        span {
-          margin-top: 0;
-
-          &:after, &:before {
-            display: none;
-          }
-        }
-      }
-    }
+    @extend .pound-block
   }
 
   .job-profile-hours {
-    &:before {
-      background: govuk-image-url("clock.svg") no-repeat center;
-    }
-
-    p {
-      margin-left: 60px;
-    }
+    @extend .clock-block
   }
 
   .job-profile-pattern {
-    &:before {
-      background: govuk-image-url("calendar-alt.svg") no-repeat center;
-    }
+    @extend .calendar-block
+  }
 
-    p {
-      margin-left: 60px;
-    }
+  .dfc-code-jpsalaryblank {
+    @extend .govuk-body
   }
 
   @media (max-width: 749px) {
@@ -348,7 +121,6 @@
       padding: 0;
     }
   }
-}
 
 .jump-links {
   border-bottom: none;
