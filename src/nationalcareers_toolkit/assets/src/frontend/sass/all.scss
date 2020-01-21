@@ -2,11 +2,10 @@ $govuk-assets-path: "/nationalcareers_toolkit/" !default;
 
 @import "govuk-frontend/govuk/all";
 
-/* Import all custom and default patterns */
-@import "patterns/all";
-
 /* Includes below to be deprecated soon */
-@import "includes/defaults";
 @import "includes/hero-banner";
 @import "includes/homepage";
 @import "includes/search";
+
+/* Import all custom and default patterns */
+@import "patterns/all";

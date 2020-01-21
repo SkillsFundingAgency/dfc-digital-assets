@@ -26,9 +26,6 @@ nav {
 // Change to header to change colour of blue border underneath header to green.
 .govuk-header__container {
   border-bottom: 10px solid #207e77;
-  @include govuk-media-query(desktop) {
-    padding-top: 7px;
-  }
 }
 
 // Change to desktop header to fix margin/padding
