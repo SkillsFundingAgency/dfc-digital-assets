@@ -74,13 +74,11 @@
 }
 
 .job-profile-heroblock {
-  @extend .secondary-hero-block
-}
+  @extend .secondary-hero-block;
 
-
-.job-profile-heroblock-content {
+  .job-profile-heroblock-content {
   @extend .secondary-hero-block-content
-}
+  }
 
   .job-profile-salary {
     @extend .pound-block
@@ -121,6 +119,7 @@
       padding: 0;
     }
   }
+}
 
 .jump-links {
   border-bottom: none;

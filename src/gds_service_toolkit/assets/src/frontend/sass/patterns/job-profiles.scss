@@ -325,6 +325,10 @@
     }
   }
 
+  .dfc-code-jpsalaryblank {
+    @extend .govuk-body
+  }
+
   @media (max-width: 749px) {
     &:nth-child(odd) {
       background-color: darken($grey-4, 5%);
