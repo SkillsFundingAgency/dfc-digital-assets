@@ -150,6 +150,9 @@
       margin-right: 20px;
     }
 
+    h5 {
+      @extend .govuk-body-m
+    }
 
     p {
       font-size: 20px;

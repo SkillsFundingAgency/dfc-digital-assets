@@ -91,10 +91,6 @@
     @extend .calendar-block
   }
 
-  .dfc-code-jpsalaryblank {
-    @extend .govuk-body
-  }
-
   @media (max-width: 749px) {
     &:nth-child(odd) {
       background-color: darken(govuk-colour('light-grey'), 5%);
@@ -367,7 +363,7 @@
   background-color: $white !important;
   color: $govuk-blue !important;
   border-top: 3px solid $govuk-blue !important;
-  padding: 10px 0 30px 0 !important;
+  padding: 10px 0 45px 0 !important;
   display: none;
   z-index: 1000 !important;
   p {
