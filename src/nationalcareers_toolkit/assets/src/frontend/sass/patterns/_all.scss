@@ -10,4 +10,9 @@
 @import "layout";
 @import "pagination";
 @import "search";
+
+// Will be deprecated
 @import "job-profiles";
+
+// Import of additional libraries
+@import "/node_modules/accessible-autocomplete/dist/accessible-autocomplete.min.css";
