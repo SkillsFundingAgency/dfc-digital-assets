@@ -10,5 +10,9 @@
 @import "layout";
 @import "pagination";
 @import "search";
+
+// Will be deprecated
 @import "job-profiles";
-@import "accessible-autocomplete";
+
+// Import of additional libraries
+@import "~accessible-autocomplete/dist/accessible-autocomplete.min.css";
