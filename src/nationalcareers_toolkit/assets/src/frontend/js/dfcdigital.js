@@ -53,9 +53,9 @@ $(document).ready(function () {
     ConditionalDistanceDropDownDisplay();
 
     /* Add feedback link to job profile thumbs up and down survey */
-    var url = "https://www.smartsurvey.co.uk/s/ExploreCareersJobProfileFeedback/?url=" + window.location.href;
+    var originUrl = $("#job-profile-feedback-survey").attr("href");
+    var url = originUrl + "?url=" + window.location.href;
     document.getElementById("job-profile-feedback-survey").setAttribute("href",url)
-
 });
 
 $.extend($.ui.autocomplete.prototype, {
