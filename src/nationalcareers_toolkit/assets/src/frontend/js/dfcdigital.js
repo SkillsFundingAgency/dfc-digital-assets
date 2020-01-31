@@ -12,8 +12,29 @@ dfc.digital = {
 
 $(document).ready(function () {
     CookieBanner.addCookieMessage();
+    // JS to hide / show label for search input
+    $(".js-search-focus").focus(function(){
+        $(".input-label").hide();
+    });
+    $(".js-search-focus").blur(function() {
+        if ($('.input-search-item').val().length > 0){
+            $(".input-label").hide();
+        }
+        if ($('.input-search-item').val().length === 0){
+            $(".input-label").show();
+        }
+    });
 
-    $(".js-search-focus").ready(function () { dfc.digital.addFocus(".js-search-focus"); }).focus(function () { dfc.digital.addFocus(this) }).blur(function () { dfc.digital.addFocus(this) });
+    $('.input-label').addClass('js-search-label');
+
+    // $('.input-search-item').keyup(function(){
+    //     if($('.input-search-item').val().length === 0){
+    //         $(".input-label").show();
+    //     }  else {
+    //         $(".input-label").hide();
+    //     }
+    // });
+
 
     /* Not yet developed
     //Survey Show Hide / Cookie Functionality
