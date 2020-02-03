@@ -114,3 +114,163 @@ body.hasHover {
   }
 
 }
+
+// Explore careers homepage
+
+.js-enabled {
+  .homepage-top {
+    #header-search {
+      background: govuk-colour(white);
+    }
+
+    label {
+      @include govuk-font(19);
+      line-height: 40px !important;
+      position: absolute;
+      left: 0;
+      top: 1px;
+      z-index: 5;
+      text-indent: 15px;
+      color: #6f777b;
+      width: 100%;
+      box-sizing: border-box;
+      white-space: nowrap;
+      padding-right: 43px;
+      overflow: hidden;
+    }
+
+    .search-input {
+      background: transparent;
+
+      &:focus, &.focus {
+        background: govuk-colour(white);
+      }
+    }
+  }
+}
+
+.homepage {
+  .phase-banner {
+    border-bottom: none;
+  }
+}
+
+.homepage-top {
+  background: #207e77;
+  color: govuk-colour(white);
+  padding: 25px 30px 15px;
+
+  @include govuk-media-query(tablet) {
+    padding: 30px 30px 10px;
+  }
+
+  .content-container {
+    @include govuk-media-query(mobile) {
+      margin: 0 -15px;
+    }
+
+    @include govuk-media-query(tablet) {
+      margin: 0;
+    }
+
+    @include govuk-media-query(desktop) {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+  }
+
+  #site-header {
+    margin: 0 0 30px 0;
+  }
+
+  #header-search {
+    position: relative;
+    margin-bottom: 30px;
+    @extend %contain-floats;
+  }
+
+  label {
+  }
+
+  .search-input-wrapper {
+    box-sizing: border-box;
+    padding-right: 40px;
+    margin-right: -40px;
+    float: left;
+    width: 100%;
+  }
+
+  .search-input {
+    position: relative;
+    box-sizing: border-box;
+    z-index: 10;
+    width: 100%;
+    padding: 6px;
+    @include govuk-font(19);
+    margin: 0;
+    border: 0;
+    outline-offset: 0;
+    height: 40px;
+    background-color: govuk-colour(white);
+
+    &:focus {
+      z-index: 1000;
+    }
+  }
+
+  .submit {
+    box-sizing: border-box;
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+    overflow: hidden;
+    text-indent: 50000px;
+    background: govuk-colour(black);
+    background-image: govuk-image-url("icon-search-2x.png");
+    background-repeat: no-repeat;
+    background-position: 60% 50%;
+    background-size: 24px;
+    float: left;
+    padding: 6px;
+    border: 0;
+    color: govuk-colour(white);
+    z-index: 900;
+    position: relative;
+  }
+}
+
+.homepage-jobcategories {
+  li {
+    padding-bottom: 0.263em;
+    margin-top: 0.263em;
+    display: inline-block;
+    width: 100%;
+  }
+
+  @include govuk-media-query(tablet) {
+    -moz-column-count: 2;
+    -moz-column-gap: 30px;
+    -webkit-column-count: 2;
+    -webkit-column-gap: 30px;
+    column-count: 2;
+    column-gap: 30px;
+  }
+
+  @include govuk-media-query(desktop) {
+    -moz-column-count: 3;
+    -moz-column-gap: 30px;
+    -webkit-column-count: 3;
+    -webkit-column-gap: 30px;
+    column-count: 3;
+    column-gap: 30px;
+  }
+
+  a {
+    @include govuk-font(19, bold);
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
