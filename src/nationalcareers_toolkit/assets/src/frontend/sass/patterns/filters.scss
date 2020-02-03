@@ -1,4 +1,4 @@
-﻿﻿// Styles for filters utilised for FaC
+﻿// Styles for filters utilised for FaC
 .filters {
 
     .filters-container {
@@ -75,5 +75,27 @@
 
     .conditional-box {
         max-height: none;
+    }
+}
+
+.filters-button {
+    display: none;
+}
+
+// Filter button to show on mobile
+.js-enabled {
+    .filters-button {
+        display: none;
+        @include govuk-media-query($until: tablet) {
+            display: block;
+        }
+    }
+
+    // Show filters when no javascript on mobile
+    .filters {
+        display: block;
+        @include govuk-media-query($until: tablet) {
+            display: none;
+        }
     }
 }
