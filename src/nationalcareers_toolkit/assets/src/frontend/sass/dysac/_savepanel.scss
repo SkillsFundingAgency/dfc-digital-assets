@@ -6,9 +6,9 @@
   margin-bottom: govuk-spacing(6);
 
   .govuk-heading-m {
-    border-top: 0;
+    border-top: 0 !important;
     margin: 0;
-    padding: 0;
+    padding: 0 !important;
     margin-bottom: govuk-spacing(2);
   }
 }

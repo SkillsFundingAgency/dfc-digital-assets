@@ -7,5 +7,22 @@ $govuk-assets-path: "/nationalcareers_toolkit/" !default;
 @import "includes/homepage";
 @import "includes/search";
 
+/* DYSAC imports which will be deprecated and added into custom live service patterns */
+$app-purple: #8c0052;
+$app-purple-hover: #A73C7B;
+$app-turquoise: #207E77;
+$app-turquoise-hover: #48948E;
+$app-text-light: #646C70;
+@import "dysac/controls";
+@import "dysac/payscale";
+@import "dysac/progress";
+@import "dysac/question";
+@import "dysac/results";
+@import "dysac/resumepanel";
+@import "dysac/savepanel";
+@import "dysac/sendresults";
+@import "dysac/sidebar";
+@import "dysac/yourreference";
+
 /* Import all custom and default patterns */
 @import "patterns/all";
