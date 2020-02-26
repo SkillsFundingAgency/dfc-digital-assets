@@ -1,0 +1,15 @@
+
+@include govuk-media-query($from: desktop) {
+    .dual-checkbox-container {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .govuk-checkboxes__item {
+        flex-basis: 48%;
+        flex-grow: 0;
+        box-sizing: border-box;
+        flex-direction: row;
+        margin: 5px;
+    }
+}
