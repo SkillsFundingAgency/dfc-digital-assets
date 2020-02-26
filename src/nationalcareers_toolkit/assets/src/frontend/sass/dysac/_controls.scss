@@ -1,5 +1,5 @@
 .app-controls {
-  @extend %clearfix;
+  @extend .govuk-clearfix;
   display: flex;
   flex-wrap: wrap;
   margin-bottom: govuk-spacing(3);
