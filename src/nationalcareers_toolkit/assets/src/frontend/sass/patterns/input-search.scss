@@ -44,6 +44,7 @@
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  z-index: 4;
   
 }
 
@@ -71,5 +72,5 @@
   background-size: 24px;
   text-indent: -5000px;
   overflow: hidden;
-  margin-left: 3px;
+  margin-left: 0;
 }
