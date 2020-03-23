@@ -1,48 +1,62 @@
-var allChecked=false;
-$('#selectSkillsGovukLinkSkillSelectToggle').click(function(e) {
-    allChecked = !allChecked;
-    e.preventDefault();
-    $("input:checkbox").prop('checked', allChecked);
-    var selectAll = 'Select all';
-    $(this).text($(this).text().includes(selectAll) ? 'Clear all' : selectAll);
-});
-
-/**************************** Occupation Search *****************************/
- <script>
-    var dataFromSearch = [];
-    document.onreadystatechange = function() {
-
+    
+    document.onreadystatechange = function() 
+    {
         if (document.readyState == "complete") {
-            AutoComplete();
-            const autoCompleteElement = $('#occupationSearchGovukAutoCompleteOccupationAutoComplete');
-            const searchButton = $('#occupationSearchGovukSecondaryButtonSearch');
-            const summary = $('.govuk-error-summary');
-            const autoCompleteError = $('#occupationSearchGovukAutoCompleteErrorSearchError');
-            const display = {"display":""};
-            const form = $('#occupationSearchFormGroupAutoComplete');
-            searchButton.click(function(e) {
+                                    
+            //Back
+            if ($('#BackLink').length > 0) {
+                $('#BackLink').click(function(){history.back(); });
+            }
+            //Back end
 
-
-                if (autoCompleteElement[0].value === '' || data.length <= 0  || $.inArray(autoCompleteElement[0].value, data) === -1) {
+            var allChecked=false;            
+            //Selectall
+            if ($('#selectSkillsGovukLinkSkillSelectToggle').length > 0) {                
+                $('#selectSkillsGovukLinkSkillSelectToggle').click(function(e) {
+                    allChecked = !allChecked;
                     e.preventDefault();
-                    summary.css(display);
-                    autoCompleteError.css(display);
-                    form.addClass('govuk-form-group--error');
-                }
+                    $("input:checkbox").prop('checked', allChecked);
+                    var selectAll = 'Select all';
+                    $(this).text($(this).text().includes(selectAll) ? 'Clear all' : selectAll);
+                });
+            }
+            //Selectall end
 
-            });
+            //Occupation search                        
+            const searchForm = $('#occupationSearchFormGroupAutoComplete');                        
+            if (searchForm.length > 0) {
+                AutoComplete();
+                const searchButton = $('#occupationSearchGovukSecondaryButtonSearch');
+                const autoCompleteElement = $('#occupationSearchGovukAutoCompleteOccupationAutoComplete');            
+                const summary = $('.govuk-error-summary');
+                const autoCompleteError = $('#occupationSearchGovukAutoCompleteErrorSearchError');
+                const display = {"display":""};
+                
+                searchButton.click(function(e) {
+                    if (autoCompleteElement[0].value === '' || data.length <= 0  || $.inArray(autoCompleteElement[0].value, data) === -1) {
+                        e.preventDefault();
+                        summary.css(display);
+                        autoCompleteError.css(display);
+                        searchForm.addClass('govuk-form-group--error');
+                    }
+                });
+
+            }
+            //Occupation search end
         }
     };
 
+//******************************    
+//Occupation searh  functions
+//******************************    
     function Suggest(query, populateResults) {
         runsearch(query, populateResults);
     }
 
-
-    function runsearch(query, populateResults) {
+    function runsearch(query, populateResults) {        
         $.ajax({
             type: 'GET',
-            url: 'https://dev.api.nationalcareersservice.org.uk/matchskills/OccupationSearchAuto',
+            url: OccupationSearchAutoComplete.getAttribute("data-url"),
             contentType: "application/json;charset=utf-8",
             dataType: "json",
             data: { occupation: query },
@@ -69,5 +83,27 @@ $('#selectSkillsGovukLinkSkillSelectToggle').click(function(e) {
             }
         });
     }
-    </script>    
-/**************************************************************************************************************/
+
+    function AutoComplete () {            
+            accessibleAutocomplete({
+                    element: document.querySelector('#occupations-autocomplete-container'),
+                    id: 'occupationSearchGovukAutoCompleteOccupationAutoComplete', // To match it to the existing <label>.
+                    source: Suggest,
+                    autoselect: true,
+                    confirmOnBlur: true,
+                    cssNamespace: 'autocomplete',
+                    defaultValue: '',
+                    displayMenu: 'inline',
+                    minLength: 2,
+                    name: 'EnterJobInputAutocomplete',
+                    onConfirm: function(){},
+                    require: false,
+                    showAllValues: false,
+                    showNoOptionsFound: true
+                }
+            );
+        }
+    
+//******************************    
+//Occupation searh  functions end
+//******************************    
