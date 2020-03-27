@@ -1,13 +1,13 @@
-analyticsImport.init()
-breadcrumbsImport.init()
+analytics.init()
+breadcrumbs.init()
 
-if (helpersImport.isPage('app-page--results')) {
-  resultsImport.short()
+if (helpers.isPage('app-page--results')) {
+  results.short()
 }
 
-if (helpersImport.isPage('app-page--results-long')) {
+if (helpers.isPage('app-page--results-long')) {
   if (document.body.clientWidth >= 768) {
-    resultsImport.cardHeight()
+    results.cardHeight()
   }
-  resultsImport.long()
+  results.long()
 }
