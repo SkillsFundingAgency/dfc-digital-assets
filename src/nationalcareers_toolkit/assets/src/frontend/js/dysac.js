@@ -1,10 +1,3 @@
-const helpersImport = require('./dysac_modules/helpers.js')
-const resultsImport = require('./dysac_modules/results.js')
-const analyticsImport = require('./dysac_modules/analytics.js')
-const breadcrumbsImport = require('./dysac_modules/breadcrumbs.js')
-const GOVUKFrontendImport = require('govuk-frontend')
-
-GOVUKFrontendImport.initAll()
 analyticsImport.init()
 breadcrumbsImport.init()
 
