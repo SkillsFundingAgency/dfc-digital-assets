@@ -17,5 +17,3 @@ var breadcrumbs = (function () {
     }
   }
 })()
-
-module.exports = breadcrumbs

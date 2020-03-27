@@ -222,5 +222,3 @@ var results = (function () {
     }
   }
 })()
-
-module.exports = results
