@@ -28,6 +28,12 @@
   }
 }
 
+@for $i from 0 through 100 {
+  .ncs-progress__#{$i} {
+    width: percentage($i/100);
+}
+}
+
 .ncs-progress__count {
   color: govuk-colour('green');
   display: block;
