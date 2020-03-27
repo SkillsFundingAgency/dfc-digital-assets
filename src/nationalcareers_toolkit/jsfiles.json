@@ -56,8 +56,7 @@
     "nothing"
   ],
   "dysacJsFilesBundle": [
-    "assets/src/frontend/js/dysac.js",
-    "assets/src/frontend/js/dysac_modules/*.js"
+    "assets/src/frontend/js/dysac.js"
   ],
   "matchskillsJsFilesBundle": [
     "assets/src/frontend/js/matchskills.js"
