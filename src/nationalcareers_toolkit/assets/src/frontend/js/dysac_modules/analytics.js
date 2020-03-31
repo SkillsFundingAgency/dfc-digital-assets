@@ -331,5 +331,3 @@ var analytics = (function () {
     }
   }
 })()
-
-module.exports = analytics

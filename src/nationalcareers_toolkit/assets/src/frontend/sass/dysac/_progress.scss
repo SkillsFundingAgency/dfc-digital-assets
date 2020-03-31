@@ -28,6 +28,12 @@
   }
 }
 
+@for $i from 0 through 100 {
+  .ncs-progress__#{$i} {
+    width: percentage($i/100)!important;
+}
+}
+
 .ncs-progress__count {
   color: govuk-colour('green');
   display: block;
@@ -53,4 +59,8 @@
   .ncs-progress__bar span {
     background-color: govuk-colour('white');
   }
+}
+
+.govuk-panel__title {
+  color: govuk-colour('white')!important;
 }
