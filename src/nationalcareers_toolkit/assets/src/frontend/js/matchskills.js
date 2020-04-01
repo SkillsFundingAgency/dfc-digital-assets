@@ -1,7 +1,7 @@
     
     document.onreadystatechange = function() 
     {
-        if (document.readyState == "complete") {
+        if (document.readyState === "complete") {
                                     
             //Back
             if ($('#BackLink').length > 0) {
@@ -38,6 +38,7 @@
                         summary.css(display);
                         autoCompleteError.css(display);
                         searchForm.addClass('govuk-form-group--error');
+                        autoCompleteElement.addClass('govuk-input govuk-input--error');
                     }
                 });
 
@@ -47,7 +48,7 @@
     };
 
 //******************************    
-//Occupation searh  functions
+//Occupation search  functions
 //******************************    
     function Suggest(query, populateResults) {
         runsearch(query, populateResults);
@@ -67,9 +68,9 @@
             error: function(jqXHR, exception) {
                 if (jqXHR.status === 0) {
                     console.log('**MatchSkills:Not connect.\n Verify Network.');
-                } else if (jqXHR.status == 404) {
+                } else if (jqXHR.status === 404) {
                     alert('Requested page not found. [404]');
-                } else if (jqXHR.status == 500) {
+                } else if (jqXHR.status === 500) {
                     console.log('**MatchSkills:500 Error.');
                 } else if (exception === 'parsererror') {
                     alert('Requested JSON parse failed.');
