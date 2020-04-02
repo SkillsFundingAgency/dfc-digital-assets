@@ -23,20 +23,20 @@
             //Selectall end
 
             //Occupation search                        
-            const searchForm = $('#occupationSearchFormGroupAutoComplete');                        
+            const searchForm = $('#occupationSearchFormGroupAutoComplete');
             if (searchForm.length > 0) {
                 AutoComplete();
                 const searchButton = $('#occupationSearchGovukSecondaryButtonSearch');
-                const autoCompleteElement = $('#occupationSearchGovukAutoCompleteOccupationAutoComplete');            
+                const autoCompleteElement = $('#occupationSearchGovukAutoCompleteOccupationAutoComplete');
                 const summary = $('.govuk-error-summary');
                 const autoCompleteError = $('#occupationSearchGovukAutoCompleteErrorSearchError');
-                const display = {"display":""};
-                
-                searchButton.click(function(e) {
-                    if (autoCompleteElement[0].value === '' || data.length <= 0  || $.inArray(autoCompleteElement[0].value, data) === -1) {
+                const display = 'govuk-visually-hidden';
+
+                searchButton.click(function (e) {
+                    if (autoCompleteElement[0].value === '' || data.length <= 0 || $.inArray(autoCompleteElement[0].value, data) === -1) {
                         e.preventDefault();
-                        summary.css(display);
-                        autoCompleteError.css(display);
+                        summary.removeClass(display);
+                        autoCompleteError.removeClass(display);
                         searchForm.addClass('govuk-form-group--error');
                         autoCompleteElement.addClass('govuk-input govuk-input--error');
                     }
