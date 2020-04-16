@@ -3,6 +3,7 @@
     "assets/src/frontend/js/dfcdigital.js",
     "assets/src/frontend/js/custom-validation.js",
     "assets/src/frontend/js/cookie-prefrences.js",
+    "assets/src/frontend/js/cookie-prefrences-banner.js",
     "assets/src/frontend/js/cookie-banner.js"
   ],
     "jqueryBundle": [
