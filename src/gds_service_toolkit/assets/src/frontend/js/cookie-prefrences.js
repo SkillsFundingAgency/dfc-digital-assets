@@ -6,7 +6,6 @@
 
     var DEFAULT_COOKIE_CONSENT = {
         'essential': true,
-        'settings': false,
         'usage': false,
     }
 
@@ -52,7 +51,6 @@
     window.GOVUK.approveAllCookieTypes = function () {
         var approvedConsent = {
             'essential': true,
-            'settings': true,
             'usage': true,
         }
 
