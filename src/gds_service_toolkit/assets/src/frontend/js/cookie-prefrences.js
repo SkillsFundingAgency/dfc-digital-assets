@@ -1,4 +1,4 @@
-﻿// used by the cookie banner component
+﻿// used by the cookie banner
 
 (function (root) {
     'use strict'
@@ -8,28 +8,14 @@
         'essential': true,
         'settings': false,
         'usage': false,
-        'campaigns': false
     }
 
     var COOKIE_CATEGORIES = {
         'cookies_policy': 'essential',
-        'seen_cookie_message': 'essential',
-        'cookie_preferences_set': 'essential',
         'cookies_preferences_set': 'essential',
-        '_email-alert-frontend_session': 'essential',
-        'licensing_session': 'essential',
-        'govuk_contact_referrer': 'essential',
-        'multivariatetest_cohort_coronavirus_extremely_vulnerable_rate_limit': 'essential',
-        'dgu_beta_banner_dismissed': 'settings',
-        'global_bar_seen': 'settings',
-        'govuk_browser_upgrade_dismisssed': 'settings',
-        'govuk_not_first_visit': 'settings',
-        'analytics_next_page_call': 'usage',
         '_ga': 'usage',
         '_gid': 'usage',
         '_gat': 'usage',
-        'JS-Detection': 'usage',
-        'TLSversion': 'usage'
     }
 
     /*
@@ -68,7 +54,6 @@
             'essential': true,
             'settings': true,
             'usage': true,
-            'campaigns': true
         }
 
         window.GOVUK.setCookie('cookies_policy', JSON.stringify(approvedConsent), { days: 365 })
@@ -141,11 +126,6 @@
         // If we're setting the consent cookie OR deleting a cookie, allow by default
         if (cookieName === 'cookies_policy' || (cookieValue === null || cookieValue === false)) {
             return true
-        }
-
-        // Survey cookies are dynamically generated, so we need to check for these separately
-        if (cookieName.match('^govuk_surveySeen') || cookieName.match('^govuk_taken')) {
-            return window.GOVUK.checkConsentCookieCategory(cookieName, 'settings')
         }
 
         if (COOKIE_CATEGORIES[cookieName]) {
