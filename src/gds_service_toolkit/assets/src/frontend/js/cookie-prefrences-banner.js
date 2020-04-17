@@ -13,6 +13,7 @@ $(document).ready(function () {
     $("#accept-all-cookies").click(function () {
 
         GOVUK.approveAllCookieTypes();
+        $("#cookie-message").hide();
         $("#confirmatiom-message").show();
         window.GOVUK.cookie('cookies_preferences_set', 'true', { days: 365 })
     });
