@@ -269,3 +269,110 @@
         line-height: 1.15;
     }
 }
+.cookie-settings-confirmation {
+	display:none;
+}
+.gem-c-notice {
+    color: #0b0c0c;
+    padding: 15px;
+    margin-bottom: 30px;
+    clear: both;
+    border: 5px solid #1d70b8
+}
+
+@media print {
+    .gem-c-notice {
+        color: #000000
+    }
+}
+
+@media (min-width: 40.0625em) {
+    .gem-c-notice {
+        padding:20px
+    }
+}
+
+@media (min-width: 40.0625em) {
+    .gem-c-notice {
+        margin-bottom:50px
+    }
+}
+
+.gem-c-notice .govuk-govspeak p:last-child {
+    margin-bottom: 0
+}
+
+.gem-c-notice .govuk-body:last-child {
+    margin-bottom: 0
+}
+
+.gem-c-notice__title {
+    font-family: "nta", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.1111111111;
+    margin-top: 0;
+    margin-bottom: 15px
+}
+
+@media print {
+    .gem-c-notice__title {
+        font-family: sans-serif
+    }
+}
+
+@media (min-width: 40.0625em) {
+    .gem-c-notice__title {
+        font-size:24px;
+        line-height: 1.25
+    }
+}
+
+@media print {
+    .gem-c-notice__title {
+        font-size: 18pt;
+        line-height: 1.15
+    }
+}
+
+@media (min-width: 40.0625em) {
+    .gem-c-notice__title {
+        margin-bottom:20px
+    }
+}
+
+.gem-c-notice__title:last-child {
+    margin-bottom: 0
+}
+
+.gem-c-notice__description {
+    font-family: "nta", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.25;
+    margin: 0
+}
+
+@media print {
+    .gem-c-notice__description {
+        font-family: sans-serif
+    }
+}
+
+@media (min-width: 40.0625em) {
+    .gem-c-notice__description {
+        font-size:19px;
+        line-height: 1.3157894737
+    }
+}
+
+@media print {
+    .gem-c-notice__description {
+        font-size: 14pt;
+        line-height: 1.15
+    }
+}
