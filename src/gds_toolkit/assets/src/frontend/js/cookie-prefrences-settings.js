@@ -25,6 +25,9 @@ $(document).ready(function () {
             window.scrollTo(0, 0);
             return false;
         });
+
+        $("#cookie-settings-backto-previous").attr("href", document.referrer);
+
     }
 });
 
