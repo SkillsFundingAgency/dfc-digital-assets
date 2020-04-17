@@ -1,7 +1,10 @@
 {
   "concatCustomJsFiles": [
     "assets/src/frontend/js/dfcdigital.js",
-    "assets/src/frontend/js/custom-validation.js"
+    "assets/src/frontend/js/custom-validation.js",
+    "assets/src/frontend/js/cookie-prefrences.js",
+    "assets/src/frontend/js/cookie-prefrences-banner.js",
+    "assets/src/frontend/js/cookie-prefrences-settings.js"
   ],
   "jqueryBundle": [
     "node_modules/jquery/dist/jquery.min.js",
@@ -23,7 +26,6 @@
   ],
   "concatGovUkJsFiles": [
     "node_modules/govuk-frontend/govuk/all.js",
-    "assets/src/frontend/js/cookie-banner.js",
     "assets/src/frontend/js/jp-feedback.js",
     "node_modules/accessible-autocomplete/dist/accessible-autocomplete.min.js"
   ],
