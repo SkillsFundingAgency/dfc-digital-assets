@@ -2,7 +2,7 @@ $(document).ready(function () {
 
     //Only runn on settings page
     if ($("#form-cookie-settings").length) {
-        $("#global-cookie-message").hide();
+        $("#global-cookie-banner").hide();
 
         if (!GOVUK.cookie("cookies_preferences_set")) {
             GOVUK.setConsentCookie();

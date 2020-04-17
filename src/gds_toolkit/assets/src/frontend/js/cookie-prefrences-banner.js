@@ -5,7 +5,7 @@ $(document).ready(function () {
     //only run this is on non setting pages
     if ($("#form-cookie-settings").length === 0) {
         if (GOVUK.cookie("cookies_preferences_set")) {
-            $("#global-cookie-message").hide();
+            $("#global-cookie-banner").hide();
         }
         else {
             //set defaults
@@ -21,7 +21,7 @@ $(document).ready(function () {
         });
 
         $("#hide-cookies-message").click(function () {
-            $("#global-cookie-message").hide();
+            $("#global-cookie-banner").hide();
         });
     }
 });
