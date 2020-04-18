@@ -51,12 +51,5 @@ var CookieBanner = {
         return null
     },
     addCookieMessage: function () {
-        var message = document.querySelector('.js-cookie-banner')
-        var hasCookieMessage = (message && CookieBanner.init('seen_cookie_message') === null)
-
-        if (hasCookieMessage) {
-            message.style.display = 'block'
-            CookieBanner.init('seen_cookie_message', 'yes', { days: 28 })
-        }
     }
 }
