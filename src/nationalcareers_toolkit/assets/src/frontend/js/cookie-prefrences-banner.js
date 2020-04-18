@@ -10,6 +10,7 @@ $(document).ready(function () {
         else {
             //set defaults
             GOVUK.setConsentCookie();
+            GOVUK.deleteUnconsentedCookies();
         }
 
         $("#accept-all-cookies").click(function () {
