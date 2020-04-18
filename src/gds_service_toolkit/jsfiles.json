@@ -26,7 +26,8 @@
     ],
   "concatGovUkJsFiles": [
     "node_modules/govuk-frontend/all.js",
-     "assets/src/frontend/js/jp-feedback.js"
+    "assets/src/frontend/js/cookie-banner.js",
+    "assets/src/frontend/js/jp-feedback.js"
   ],
     "oldConcatGovUkJsFiles": [
         "node_modules/govuk_frontend_toolkit/javascripts/vendor/jquery/jquery.player.min.js",
