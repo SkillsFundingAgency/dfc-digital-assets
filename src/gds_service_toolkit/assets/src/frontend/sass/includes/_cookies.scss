@@ -70,6 +70,9 @@
     }
 }
 
+.gem-c-cookie-banner__buttons .govuk-button {
+  margin-bottom : 5px
+}
 .gem-c-cookie-banner__button.govuk-grid-column-one-half-from-desktop {
     padding: 0;
 }
@@ -269,9 +272,10 @@
         line-height: 1.15;
     }
 }
-.cookie-settings-confirmation {
+.cookie-settings__confirmation {
 	display:none;
 }
+
 .gem-c-notice {
     color: #0b0c0c;
     padding: 15px;
