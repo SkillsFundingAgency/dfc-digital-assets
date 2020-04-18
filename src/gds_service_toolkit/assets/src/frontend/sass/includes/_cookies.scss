@@ -71,7 +71,8 @@
 }
 
 .gem-c-cookie-banner__buttons .govuk-button {
-  margin-bottom : 5px
+  margin-bottom : 5px;
+  width: 100%;
 }
 .gem-c-cookie-banner__button.govuk-grid-column-one-half-from-desktop {
     padding: 0;
@@ -382,4 +383,10 @@
         font-size: 14pt;
         line-height: 1.15
     }
+}
+
+@media (max-width: 40.0525em) {
+  .gem-c-cookie-banner .govuk-form-group {
+    margin-bottom: 0;
+  }
 }

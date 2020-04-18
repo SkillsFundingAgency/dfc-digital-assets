@@ -375,6 +375,9 @@
     cursor: pointer;
     -webkit-appearance: none;
 }
+.gem-c-cookie-banner .govuk-grid-column-full {
+    width: 100%;
+}
 
 @media print {
     .gem-c-cookie-banner .govuk-button {
