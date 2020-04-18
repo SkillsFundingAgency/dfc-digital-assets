@@ -111,6 +111,9 @@
 .gem-c-cookie-banner__hide-button {
     display: block;
 }
+.gem-c-cookie-banner .gem-c-cookie-banner__confirmation .gem-c-cookie-banner__confirmation-message {
+  margin-bottom: 0;
+}
 
 @media (min-width: 48.0625em) {
     .gem-c-cookie-banner__confirmation-message,
