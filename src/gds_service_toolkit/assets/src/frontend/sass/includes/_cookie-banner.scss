@@ -4,14 +4,14 @@
 
   box-sizing: border-box;
   width: 100%;
-
+  display:none !important;
   padding-top: govuk-spacing(3);
   padding-bottom: govuk-spacing(3);
   background-color: lighten(desaturate(govuk-colour("light-blue"), 8.46), 42.55);
 }
 
 .app-cookie-banner {
-  display: none;
+  display: none !important  ;
 }
 
 @include govuk-media-query($media-type: print) {
