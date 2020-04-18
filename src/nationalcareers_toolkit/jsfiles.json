@@ -26,6 +26,7 @@
   ],
   "concatGovUkJsFiles": [
     "node_modules/govuk-frontend/govuk/all.js",
+    "assets/src/frontend/js/cookie-banner.js",
     "assets/src/frontend/js/jp-feedback.js",
     "node_modules/accessible-autocomplete/dist/accessible-autocomplete.min.js"
   ],
