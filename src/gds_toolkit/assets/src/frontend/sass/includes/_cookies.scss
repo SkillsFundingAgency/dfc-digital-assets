@@ -109,6 +109,11 @@
     display: block;
 }
 
+.gem-c-cookie-banner .gem-c-cookie-banner__confirmation .gem-c-cookie-banner__confirmation-message {
+  margin-bottom: 0;
+}
+
+
 @media (min-width: 48.0625em) {
     .gem-c-cookie-banner__confirmation-message,
     .gem-c-cookie-banner__hide-button {
@@ -184,7 +189,11 @@
         right: 5px;
     }
 }
+/* Hide old cookie banner */
 
+#global-cookie-message.app-cookie-banner {
+  display: none !important;
+}
 .gem-c-cookie-banner#global-cookie-message {
     background-color: #f3f2f1;
     padding: 20px 0;
