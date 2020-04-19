@@ -645,4 +645,19 @@
         margin-bottom:20px
     }
 }
-.gem-c-cookie-banner#global-cookie-message p {font-size: 19px}
+
+.gem-c-cookie-banner#global-cookie-message p {
+  font-size: 19px;
+}
+
+.js-enabled .cookie-settings__no-js {
+    display: none
+}
+
+.js-enabled .cookie-settings__form-wrapper {
+    display: block
+}
+
+.cookie-settings__form-wrapper {
+    display: none
+}
