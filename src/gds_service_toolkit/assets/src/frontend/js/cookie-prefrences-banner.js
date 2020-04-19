@@ -33,6 +33,17 @@ $(document).ready(function () {
 
 function setGATracking() {
     if (!window.GOVUK.checkConsentCookie("_gid", true)) {
-        window['ga-disable-GTM-554PPX9'] = true;
+        window['ga-disable-UA-75241446-1'] = true;
+        window['ga-disable-UA-75241446-2'] = true;
+        window['ga-disable-UA-75241446-3'] = true;
+        window['ga-disable-UA-75241446-4'] = true;
+        window['ga-disable-UA-75241446-5'] = true;
+        window['ga-disable-UA-75241446-6'] = true;
+        window['ga-disable-UA-75241446-8'] = true;
+        window['ga-disable-UA-75241446-9'] = true;
+        window['ga-disable-UA-75241446-10'] = true;
+        window['ga-disable-UA-75241446-13'] = true;
+        window['ga-disable-UA-75241446-19'] = true;
     }
 }
+
