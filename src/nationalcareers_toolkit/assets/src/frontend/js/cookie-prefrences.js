@@ -141,7 +141,7 @@
             if (typeof options === 'undefined') {
                 options = {}
             }
-            var cookieString = name + '=' + value + '; path=/; domain=' + window.location.hostname;
+            var cookieString = name + '=' + value + '; path=/; domain=' + window.GOVUK.getDomain();
             if (options.days) {
                 var date = new Date()
                 date.setTime(date.getTime() + (options.days * 24 * 60 * 60 * 1000))
@@ -196,5 +196,9 @@
                 }
             }
         }
+    }
+
+    window.GOVUK.getDomain = function () {
+        return (window.location.hostname.slice(window.location.hostname.indexOf('.nationalcareer')))
     }
 }(window))
