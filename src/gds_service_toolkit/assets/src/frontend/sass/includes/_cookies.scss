@@ -390,3 +390,15 @@
     margin-bottom: 0;
   }
 }
+
+.js-enabled .cookie-settings__no-js {
+    display: none
+}
+
+.js-enabled .cookie-settings__form-wrapper {
+    display: block
+}
+
+.cookie-settings__form-wrapper {
+    display: none
+}
