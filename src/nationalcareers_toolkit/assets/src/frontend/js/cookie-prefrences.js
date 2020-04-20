@@ -104,9 +104,9 @@
     window.GOVUK.checkConsentCookieCategory = function (cookieName, cookieCategory) {
         var currentConsentCookie = window.GOVUK.getConsentCookie()
 
-        // If the consent cookie doesn't exist, but the cookie is in our known list, return true
+        // If the consent cookie doesn't exist, but the cookie is in our known list, return false
         if (!currentConsentCookie && COOKIE_CATEGORIES[cookieName]) {
-            return true
+            return false
         }
 
         currentConsentCookie = window.GOVUK.getConsentCookie()
@@ -208,4 +208,22 @@
             return ('.' + window.location.hostname.slice(index))
         }
     }
+
+    window.GOVUK.setGATracking = function () {
+        if (!window.GOVUK.checkConsentCookie("_gid", true)) {
+            window['ga-disable-UA-75241446-1'] = true;
+            window['ga-disable-UA-75241446-2'] = true;
+            window['ga-disable-UA-75241446-3'] = true;
+            window['ga-disable-UA-75241446-4'] = true;
+            window['ga-disable-UA-75241446-5'] = true;
+            window['ga-disable-UA-75241446-6'] = true;
+            window['ga-disable-UA-75241446-8'] = true;
+            window['ga-disable-UA-75241446-9'] = true;
+            window['ga-disable-UA-75241446-10'] = true;
+            window['ga-disable-UA-75241446-13'] = true;
+            window['ga-disable-UA-75241446-19'] = true;
+        }
+    }
+    //set at load time
+    window.GOVUK.setGATracking();
 }(window))
