@@ -15,8 +15,6 @@ $(document).ready(function () {
             setTimeout(function () { window.GOVUK.setGATracking(); }, 1000);
         }
 
-        setGATracking();
-
         $("#accept-all-cookies").click(function () {
 
             window.GOVUK.approveAllCookieTypes();
