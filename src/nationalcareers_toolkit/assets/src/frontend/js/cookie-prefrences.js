@@ -179,7 +179,7 @@
         if (window.GOVUK.cookie(cookie)) {
             // We need to handle deleting cookies on the domain and the .domain
             document.cookie = cookie + '=;expires=' + new Date() + ';'
-            document.cookie = cookie + '=;expires=' + new Date() + ';domain=' + window.location.hostname + ';path=/'
+            document.cookie = cookie + '=;expires=' + new Date() + ';domain=' + window.GOVUK.getDomain() + ';path=/'
         }
     }
 
@@ -199,6 +199,13 @@
     }
 
     window.GOVUK.getDomain = function () {
-        return (window.location.hostname.slice(window.location.hostname.indexOf('.nationalcareer')))
+        var domain = window.location.hostname;
+        var index = domain.indexOf('nationalcareer');
+        if (index === -1) {
+            return domain
+        }
+        else {
+            return ('.' + window.location.hostname.slice(index))
+        }
     }
 }(window))
