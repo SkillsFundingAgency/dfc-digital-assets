@@ -9,21 +9,21 @@ $(document).ready(function () {
         }
         else {
             //set defaults
-            GOVUK.setConsentCookie();
+            window.GOVUK.setConsentCookie();
             //give the browser time to set the cookies before acting on them
-            setTimeout(function () { GOVUK.deleteUnconsentedCookies(); }, 500);
-            setTimeout(function () { GOVUK.window.GOVUK.setGATracking(); }, 1000);
+            setTimeout(function () { window.GOVUK.deleteUnconsentedCookies(); }, 500);
+            setTimeout(function () { window.GOVUK.setGATracking(); }, 1000);
         }
 
         setGATracking();
 
         $("#accept-all-cookies").click(function () {
 
-            GOVUK.approveAllCookieTypes();
+            window.GOVUK.approveAllCookieTypes();
             $("#cookie-message").hide();
             $("#confirmatiom-message").show();
             window.GOVUK.cookie('cookies_preferences_set', 'true', { days: 365 })
-            setTimeout(function () { GOVUK.window.GOVUK.setGATracking(); }, 1000);
+            setTimeout(function () { window.GOVUK.setGATracking(); }, 1000);
         });
 
         $("#hide-cookies-message").click(function () {
