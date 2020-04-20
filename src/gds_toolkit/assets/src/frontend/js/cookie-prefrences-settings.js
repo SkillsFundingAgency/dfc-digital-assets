@@ -4,8 +4,8 @@ $(document).ready(function () {
     if ($("#form-cookie-settings").length) {
         $("#global-cookie-banner").hide();
 
-        if (!GOVUK.cookie("cookies_preferences_set")) {
-            GOVUK.setConsentCookie();
+        if (!window.GOVUK.cookie("cookies_preferences_set")) {
+            window.GOVUK.setConsentCookie();
         }
 
         formCookiesInitalise();
