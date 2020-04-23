@@ -225,7 +225,7 @@
         }
 
         if (!window.GOVUK.checkConsentCookie('ai_user', true)) {
-            window.appInsights.config.isCookieUseDisabled = true; 
+            window.appInsights.config.isCookieUseDisabled = true
         }
     }
 
