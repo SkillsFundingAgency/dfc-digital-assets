@@ -1,6 +1,4 @@
-if (cookieprefrences === 'undefined') {
-    const cookieprefrences = require('./modules/cookie-prefrences.js')
-}
+const cookieprefrences = require('./modules/cookie-prefrences.js')
 
 $(document).ready(function () {
 
