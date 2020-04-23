@@ -1,6 +1,4 @@
-if (cookieprefrences === 'undefined') {
-  const   cookieprefrences = require('./modules/cookie-prefrences.js')
-}
+const   cookiesettingsprefrences = require('./modules/cookie-prefrences.js')
 
 $(document).ready(function () {
 
@@ -8,8 +6,8 @@ $(document).ready(function () {
     if ($('#form-cookie-settings').length) {
         $('#global-cookie-banner').hide();
 
-        if (!cookieprefrences.isCookiePrefrenceSet()) {
-            cookieprefrences.setDefault()
+        if (!cookiesettingsprefrences.isCookiePrefrenceSet()) {
+            cookiesettingsprefrences.setDefault()
         }
 
         formCookiesInitalise();
@@ -23,7 +21,7 @@ $(document).ready(function () {
                     n[r] = a
                 }
             }
-            window.GOVUK.updateConsentCookies(n)
+            cookiesettingsprefrences.updateConsentCookies(n)
              $('#cookie-settings-confirmation').show();
             window.scrollTo(0, 0);
             return false;
