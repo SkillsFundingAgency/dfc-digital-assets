@@ -259,5 +259,5 @@
     }
 })()
 
-module.exports = cookiePrefrences
+
 
