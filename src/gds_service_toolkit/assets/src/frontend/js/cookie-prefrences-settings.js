@@ -4,8 +4,8 @@ $(document).ready(function () {
     if ($('#form-cookie-settings').length) {
         $('#global-cookie-banner').hide();
 
-        if (!cookieprefrences.isCookiePrefrenceSet()) {
-            cookieprefrences.setDefault()
+        if (!cookiePrefrences.isCookiePrefrenceSet()) {
+            cookiePrefrences.setDefault()
         }
 
         formCookiesInitalise();
@@ -19,7 +19,7 @@ $(document).ready(function () {
                     n[r] = a
                 }
             }
-            cookieprefrences.updateConsentCookies(n)
+            cookiePrefrences.updateConsentCookies(n)
              $('#cookie-settings-confirmation').show();
             window.scrollTo(0, 0);
             return false;
@@ -31,7 +31,7 @@ $(document).ready(function () {
 
 
 function formCookiesInitalise() {
-    var t = window.GOVUK.cookie('cookies_policy'),
+    var t = cookiePrefrences.readPolicyCookie,
         e = JSON.parse(t);
     for (var n in delete e.essential, e) {
         (e[n] ? document.querySelector('input[name=cookies-' + n + '][value=on]') : document.querySelector('input[name=cookies-' + n + '][value=off]')).checked = !0

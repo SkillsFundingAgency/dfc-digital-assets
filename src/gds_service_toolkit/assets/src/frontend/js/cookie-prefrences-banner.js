@@ -1,17 +1,17 @@
 $(document).ready(function () {
 
-    if (typeof cookieprefrences === 'undefined') document.body.className = document.body.className.replace('js-enabled', '')
+    if (typeof cookiePrefrences === 'undefined') document.body.className = document.body.className.replace('js-enabled', '')
 
     //only run this is on non setting pages
     if ($('#form-cookie-settings').length === 0) {
-        if (cookieprefrences.isCookiePrefrenceSet()) {
+        if (cookiePrefrences.isCookiePrefrenceSet()) {
             $('#global-cookie-banner').hide()
         }
         else {
-            cookieprefrences.setDefault()
+            cookiePrefrences.setDefault()
 
             $('#accept-all-cookies').click(function () {
-                cookieprefrences.approveAll()
+                cookiePrefrences.approveAll()
                 $('#cookie-message').hide()
                 $('#confirmatiom-message').show()
             })
