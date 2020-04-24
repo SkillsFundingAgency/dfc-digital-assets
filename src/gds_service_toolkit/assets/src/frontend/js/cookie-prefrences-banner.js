@@ -1,5 +1,3 @@
-const cookieprefrences = require('./modules/cookie-prefrences.js')
-
 $(document).ready(function () {
 
     if (typeof cookieprefrences === 'undefined') document.body.className = document.body.className.replace('js-enabled', '')

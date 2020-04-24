@@ -1,13 +1,11 @@
-const   cookiesettingsprefrences = require('./modules/cookie-prefrences.js')
-
 $(document).ready(function () {
 
     //Only runn on settings page
     if ($('#form-cookie-settings').length) {
         $('#global-cookie-banner').hide();
 
-        if (!cookiesettingsprefrences.isCookiePrefrenceSet()) {
-            cookiesettingsprefrences.setDefault()
+        if (!cookieprefrences.isCookiePrefrenceSet()) {
+            cookieprefrences.setDefault()
         }
 
         formCookiesInitalise();
@@ -21,7 +19,7 @@ $(document).ready(function () {
                     n[r] = a
                 }
             }
-            cookiesettingsprefrences.updateConsentCookies(n)
+            cookieprefrences.updateConsentCookies(n)
              $('#cookie-settings-confirmation').show();
             window.scrollTo(0, 0);
             return false;
