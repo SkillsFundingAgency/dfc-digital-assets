@@ -13,7 +13,7 @@
         '_ga': 'usage',
         '_gid': 'usage',
         '_gat': 'usage',
-        'ui_user': 'usage',
+        'ai_user': 'usage',
     }
 
     /*
@@ -258,12 +258,11 @@
         },
 
         configureAppInsightsUsage: function () {
-            if (!window.GOVUK.checkConsentCookie('ai_user', true)) {
-                if (window.appInsights !== 'undefined') {
-                    window.appInsights.config.isCookieUseDisabled = true
-                }
+            if (window.appInsights !== 'undefined') {
+                window.appInsights.config.isCookieUseDisabled = !window.GOVUK.checkConsentCookie('ai_user', true)
             }
         }
+       
     }
 })()
 

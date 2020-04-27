@@ -31,7 +31,7 @@ $(document).ready(function () {
 
 
 function formCookiesInitalise() {
-    var t = cookiePrefrences.readPolicyCookie,
+    var t = cookiePrefrences.readPolicyCookie(),
         e = JSON.parse(t);
     for (var n in delete e.essential, e) {
         (e[n] ? document.querySelector('input[name=cookies-' + n + '][value=on]') : document.querySelector('input[name=cookies-' + n + '][value=off]')).checked = !0
