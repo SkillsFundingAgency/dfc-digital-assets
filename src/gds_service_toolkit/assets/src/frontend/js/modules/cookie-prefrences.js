@@ -223,12 +223,6 @@
             window['ga-disable-UA-75241446-13'] = true
             window['ga-disable-UA-75241446-19'] = true
         }
-
-        if (!window.GOVUK.checkConsentCookie('ai_user', true)) {
-            if (!window.appInsights === 'undefined') {
-                window.appInsights.config.isCookieUseDisabled = true
-            }
-        }
     }
 
     //set at load time
@@ -261,8 +255,15 @@
 
         readPolicyCookie: function () {
             return window.GOVUK.cookie('cookies_policy')
-        }
+        },
 
+        configureAppInsightsUsage: function () {
+            if (!window.GOVUK.checkConsentCookie('ai_user', true)) {
+                if (window.appInsights !== 'undefined') {
+                    window.appInsights.config.isCookieUseDisabled = true
+                }
+            }
+        }
     }
 })()
 
