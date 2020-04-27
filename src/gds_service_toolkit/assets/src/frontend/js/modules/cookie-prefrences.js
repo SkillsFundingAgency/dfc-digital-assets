@@ -258,11 +258,11 @@
         },
 
         configureAppInsightsUsage: function () {
-              if (window.appInsights !== 'undefined') {
-                   window.appInsights.config.isCookieUseDisabled = !window.GOVUK.checkConsentCookie('ai_user', true)
-              }
-           }
+            if (window.appInsights !== 'undefined') {
+                window.appInsights.config.isCookieUseDisabled = !window.GOVUK.checkConsentCookie('ai_user', true)
+            }
         }
+       
     }
 })()
 
