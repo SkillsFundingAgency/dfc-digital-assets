@@ -2,6 +2,9 @@
 $govuk-compatibility-govukfrontendtoolkit: true;
 $govuk-compatibility-govukelements: true;
 
+/* New cookie banner */
+@import "includes/_cookies.scss";
+
 @import "../../../../node_modules/govuk-frontend/all";
 
 /* Importing overridden old styles with new */
@@ -10,5 +13,3 @@ $govuk-compatibility-govukelements: true;
 /* Importing custom styles */
 @import "includes/custom";
 
-/* New cookie banner */
-@import "includes/_cookies.scss";
