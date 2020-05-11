@@ -14,6 +14,7 @@
         '_gid': 'usage',
         '_gat': 'usage',
         'ai_user': 'usage',
+        'ai_session': 'usage',
     }
 
     /*
@@ -177,9 +178,13 @@
         window.GOVUK.cookie(cookie, null)
 
         if (window.GOVUK.cookie(cookie)) {
-            // We need to handle deleting cookies on the domain and the .domain
-            document.cookie = cookie + '=;expires=' + new Date() + ';'
-            document.cookie = cookie + '=;expires=' + new Date() + ';domain=' + window.GOVUK.getDomain() + ';path=/'
+            //if its not a GA type cookie dont use the . for domain
+            if (cookie.indexOf('_ga') === -1) {
+                document.cookie = cookie + '=;expires=' + new Date() + ';path =/'
+            }
+            else {
+                document.cookie = cookie + '=;expires=' + new Date() + ';domain=' + window.GOVUK.getDomain() + ';path=/'
+            }
         }
     }
 
