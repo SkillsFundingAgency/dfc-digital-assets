@@ -180,10 +180,10 @@
         if (window.GOVUK.cookie(cookie)) {
             //if its not a GA type cookie dont use the . for domain
             if (cookie.indexOf('_ga') === -1) {
-                document.cookie = cookie + '=;expires=' + new Date() + ';path =/'
+                document.cookie = cookie + '=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path =/'
             }
             else {
-                document.cookie = cookie + '=;expires=' + new Date() + ';domain=' + window.GOVUK.getDomain() + ';path=/'
+                document.cookie = cookie + '=; expires=Thu, 01 Jan 1970 00:00:00 UTC; domain=' + window.GOVUK.getDomain() + '; path=/'
             }
         }
     }
@@ -227,6 +227,10 @@
             window['ga-disable-UA-75241446-10'] = true
             window['ga-disable-UA-75241446-13'] = true
             window['ga-disable-UA-75241446-19'] = true
+        }
+
+        if (window.appInsights !== 'undefined') {
+            window.appInsights.config.isCookieUseDisabled = !window.GOVUK.checkConsentCookie('ai_user', true)
         }
     }
 
