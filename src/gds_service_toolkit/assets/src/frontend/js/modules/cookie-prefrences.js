@@ -229,8 +229,10 @@
             window['ga-disable-UA-75241446-19'] = true
         }
 
-        if (typeof window.appInsights.config.isCookieUseDisabled !== 'undefined') {
-            window.appInsights.config.isCookieUseDisabled = !window.GOVUK.checkConsentCookie('ai_user', true)
+        if (window.appInsights && window.appInsights.config) {
+            if (typeof window.appInsights.config.isCookieUseDisabled !== 'undefined') {
+                window.appInsights.config.isCookieUseDisabled = !window.GOVUK.checkConsentCookie('ai_user', true)
+            }
         }
     }
 
