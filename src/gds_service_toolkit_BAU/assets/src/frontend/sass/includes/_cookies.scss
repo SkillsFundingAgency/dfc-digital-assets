@@ -7,7 +7,7 @@
     font-size: 0.875rem;
     line-height: 1.1428571429;
     padding: 10px 0;
-    background-color: #f3f2f1
+    background-color: #f3f2f1;
 }
 
 @media print {
@@ -675,4 +675,7 @@
 }
 .gem-c-cookie-banner .govuk-form-group {
   margin-bottom:0px;
+}
+.govuk-header__container {
+    margin-bottom: -10px;
 }
