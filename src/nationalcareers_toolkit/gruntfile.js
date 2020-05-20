@@ -19,6 +19,7 @@ module.exports = function (grunt) {
     var dysacJSFiles = grunt.file.readJSON('jsfiles.json').dysacJsFilesBundle;
     var matchskillsJSFiles = grunt.file.readJSON('jsfiles.json').matchskillsJsFilesBundle;
     var accountsJSFiles = grunt.file.readJSON('jsfiles.json').accountsJsFilesBundle;
+    var compUiJsFiles = grunt.file.readJSON('jsfiles.json').compUiJsFilesBundle;
 
     // Name of the folder that contains project specific assets (scss, js, images, etc.)
     var projectAssetsFolder = "frontend";
@@ -164,6 +165,7 @@ module.exports = function (grunt) {
                     { '<%= dist.path %>/js/dysac.min.js': dysacJSFiles },
                     { '<%= dist.path %>/js/matchskills.min.js': matchskillsJSFiles },
                     { '<%= dist.path %>/js/accounts.min.js': accountsJSFiles },
+                    { '<%= dist.path %>/js/compui.min.js': compUiJsFiles },
                     {
                         expand: true,
                         src: ['*.js', '!*.min.js'],
