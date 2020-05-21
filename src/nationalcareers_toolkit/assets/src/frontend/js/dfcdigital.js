@@ -14,7 +14,7 @@ $(document).ready(function () {
     CookieBanner.addCookieMessage();
 
     // JS to hide / show label for search input
-    if ($('.input-search-item').val().length > 0){
+    if ($('.input-search-item').val() !== undefined && $('.input-search-item').val().length > 0){
         $(".input-label").hide();
     }
     $(".js-search-focus").focus(function(){
