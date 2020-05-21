@@ -11,8 +11,3 @@ if (helpers.isPage('app-page--results-long')) {
     }
     results.long();
 }
-
-$('#dysac-print-button').on('click', function () {
-    window.print();
-    return false;
-});
