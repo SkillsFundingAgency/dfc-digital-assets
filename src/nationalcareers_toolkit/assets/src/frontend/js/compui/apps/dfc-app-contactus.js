@@ -22,7 +22,7 @@ class DfcAppContactUs {
                 var iFrame = document.createElement('iframe');
                 iFrame.setAttribute('id', 'webchatframe');
                 iFrame.src = chatUrl.value;                     // + '?GAID=' + CompUiUtilties.getCookie('_ga');
-                iFrame.classList = 'DfcAppContactUs-Webchat';
+                iFrame.classList = 'dfc-app-contact-us-Webchat';
                 iFrame.scrolling = 'no';
                 iFrame.title = 'webchat';
 

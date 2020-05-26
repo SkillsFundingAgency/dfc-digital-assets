@@ -1,4 +1,18 @@
 class CompUiUtilties {
+    static isValidDate(d) {
+        return d instanceof Date && !isNaN(d);
+    }
+
+    static getDaysInMonth(month, year) {
+        return new Date(year, month, 0).getDate();
+    }
+
+    static isInt(value) {
+        return !isNaN(value) &&
+            parseInt(Number(value)) == value &&
+            !isNaN(parseInt(value, 10));
+    }
+
     static getCookie(cname) {
         var name = cname + "=";
         var decodedCookie = decodeURIComponent(document.cookie);
