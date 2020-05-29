@@ -18,7 +18,7 @@ $(document).ready(function () {
         return false;
     });
 
-    $('input[name="ReferenceCode"]').on("", function () {
+    $('input[name="ReferenceCode"]').on("change", function () {
         var validator = $("#dysac-form").validate();
         validator.resetForm();
     });
