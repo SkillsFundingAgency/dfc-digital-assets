@@ -1,16 +1,16 @@
-analytics.init();
-breadcrumbs.init();
+//analytics.init();
+//breadcrumbs.init();
 
-if (helpers.isPage('app-page--results')) {
-    results.short();
-}
+//if (helpers.isPage('app-page--results')) {
+//    results.short();
+//}
 
-if (helpers.isPage('app-page--results-long')) {
-    if (document.body.clientWidth >= 768) {
-        results.cardHeight();
-    }
-    results.long();
-}
+//if (helpers.isPage('app-page--results-long')) {
+//    if (document.body.clientWidth >= 768) {
+//        results.cardHeight();
+//    }
+//    results.long();
+//}
 
 $(document).ready(function () {
     $('#dysac-print-button').on('click', function () {
