@@ -1,18 +1,20 @@
-analytics.init();
-breadcrumbs.init();
+//TODO - Remove this whole file when dysac.js under compui is proven working
 
-if (helpers.isPage('app-page--results')) {
-    results.short();
-}
+//analytics.init();
+//breadcrumbs.init();
 
-if (helpers.isPage('app-page--results-long')) {
-    if (document.body.clientWidth >= 768) {
-        results.cardHeight();
-    }
-    results.long();
-}
+//if (helpers.isPage('app-page--results')) {
+//    results.short();
+//}
 
-$('#dysac-print-button').on('click', function () {
-    window.print();
-    return false;
-});
+//if (helpers.isPage('app-page--results-long')) {
+//    if (document.body.clientWidth >= 768) {
+//        results.cardHeight();
+//    }
+//    results.long();
+//}
+
+//$('#dysac-print-button').on('click', function () {
+//    window.print();
+//    return false;
+//});
