@@ -18,8 +18,8 @@ $(document).ready(function () {
         return false;
     });
 
-    $('input[name="ReferenceCode"]').on("change", function () {
+    $('input[name="code"]').on("change", function () {
         var validator = $("#dysac-form").validate();
-        validator.resetForm();
+        validator.element("#code");
     });
 });
