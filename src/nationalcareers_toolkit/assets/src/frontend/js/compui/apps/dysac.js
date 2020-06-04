@@ -18,8 +18,8 @@ $(document).ready(function () {
         return false;
     });
 
-    $('input[name="code"]').on("change", function () {
-        var validator = $("#dysac-form").validate();
-        validator.element("#code");
+    $('#dysac-submit-button').on("click", function () {
+        var validator = $('#dysac-form').validate();
+        validator.element('#code');
     });
 });
