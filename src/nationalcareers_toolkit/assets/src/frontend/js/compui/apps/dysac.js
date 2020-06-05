@@ -24,7 +24,6 @@ $(document).ready(function () {
         var dysacValid = form.valid();
         if (!dysacValid) {
             $('li').each(function () {
-                var txter = $(this);
                 var txt = $(this).text();
                 $(this).html('<li><a href="#code" class="govuk-link govuk-link--no-visited-state">' + txt + '</li>');
             });
