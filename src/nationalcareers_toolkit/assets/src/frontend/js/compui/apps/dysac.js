@@ -18,8 +18,17 @@ $(document).ready(function () {
         return false;
     });
 
-    $('#dysac-submit-button').on("click", function () {
-        var validator = $('#dysac-form').validate();
-        validator.element('#code');
+    $('#dysac-submit-button').on("click", function (e) {
+        var form = $('#dysac-form');
+        form.validate();
+        var dysacValid = form.valid();
+        if (!dysacValid) {
+            $('li').each(function () {
+                var txter = $(this);
+                var txt = $(this).text();
+                $(this).html('<li><a href="#code" class="govuk-link govuk-link--no-visited-state">' + txt + '</li>');
+            });
+            e.preventDefault();
+        }
     });
 });
