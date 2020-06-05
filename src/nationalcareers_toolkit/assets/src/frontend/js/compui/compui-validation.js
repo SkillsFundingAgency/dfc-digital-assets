@@ -306,6 +306,9 @@ class CompUiValidation {
         var minuteValue = parseInt(minuteString);
         var today = new Date();
 
+        if (dayValue < 1 || dayValue > 31) {
+            return this.ValidationMessageShow(inputFields[1], validMsg, displayName + ' requires a valid day');
+        }
         if (monthValue < 1 || monthValue > 12) {
             return this.ValidationMessageShow(inputFields[1], validMsg, displayName + ' requires a valid month');
         }
