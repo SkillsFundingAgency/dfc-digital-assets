@@ -252,101 +252,101 @@ class CompUiValidation {
         var dateFormGroup = $(element).closest('.' + this.govukGroupClassName)[0];
         var validMsg = $(dateFormGroup).find('.' + this.govukErrorMessageClassName)[0];
         var inputFields = $(dateFormGroup).find('.' + this.govukInputClassName);
-        var isForDateOnly = inputFields.length == 3;
+        var isForDateOnly = inputFields.length === 3;
         var dayString = $(inputFields[0]).val();
         var monthString = $(inputFields[1]).val();
         var yearString = $(inputFields[2]).val();
         var hourString = isForDateOnly ? '0' : $(inputFields[3]).val();
         var minuteString = isForDateOnly ? '0' : $(inputFields[4]).val();
 
-        for (var i = 0; i < inputFields.length; i++) {
-            this.ValidationMessageShow(inputFields[i], validMsg, '');
-        }
-
         if (isForDateOnly && dayString === '' && monthString === '' && yearString === '') {
-            return this.ValidationMessageShow(inputFields[0], validMsg, 'Enter ' + displayNameLowerCase);
+            return this.ValidationMessageShow(inputFields, [0, 1, 2], validMsg, 'Enter ' + displayNameLowerCase);
         }
         if (!isForDateOnly && dayString === '' && monthString === '' && yearString === '' && hourString === '' && minuteString === '') {
-            return this.ValidationMessageShow(inputFields[0], validMsg, 'Enter ' + displayNameLowerCase);
+            return this.ValidationMessageShow(inputFields, [0, 1, 2, 3, 4, 5], validMsg, 'Enter ' + displayNameLowerCase);
         }
 
         if (dayString === '') {
-            return this.ValidationMessageShow(inputFields[0], validMsg, displayName + ' must include a day');
+            return this.ValidationMessageShow(inputFields, [0], validMsg, displayName + ' must include a day');
         }
         if (monthString === '') {
-            return this.ValidationMessageShow(inputFields[1], validMsg, displayName + ' must include a month');
+            return this.ValidationMessageShow(inputFields, [1], validMsg, displayName + ' must include a month');
         }
-        if (yearString === '') {
-            return this.ValidationMessageShow(inputFields[2], validMsg, displayName + ' must include a year');
-        }
-        if (hourString === '') {
-            return this.ValidationMessageShow(inputFields[3], validMsg, displayName + ' must include an hour');
-        }
-        if (minuteString === '') {
-            return this.ValidationMessageShow(inputFields[4], validMsg, displayName + ' must include a minute');
+        if (yearString === '' || yearString.length != 4) {
+            return this.ValidationMessageShow(inputFields, [2], validMsg, displayName + ' must include a year');
         }
 
         if (!CompUiUtilties.isInt(dayString)) {
-            return this.ValidationMessageShow(inputFields[0], validMsg, displayName + ' requires numbers for the day');
+            return this.ValidationMessageShow(inputFields, [0], validMsg, displayName + ' requires numbers for the day');
         }
         if (!CompUiUtilties.isInt(monthString)) {
-            return this.ValidationMessageShow(inputFields[1], validMsg, displayName + ' requires numbers for the month');
+            return this.ValidationMessageShow(inputFields, [1], validMsg, displayName + ' requires numbers for the month');
         }
         if (!CompUiUtilties.isInt(yearString)) {
-            return this.ValidationMessageShow(inputFields[2], validMsg, displayName + ' requires numbers for the year');
-        }
-        if (!CompUiUtilties.isInt(hourString)) {
-            return this.ValidationMessageShow(inputFields[3], validMsg, displayName + ' requires numbers for the hour');
-        }
-        if (!CompUiUtilties.isInt(minuteString)) {
-            return this.ValidationMessageShow(inputFields[4], validMsg, displayName + ' requires numbers for the minute');
+            return this.ValidationMessageShow(inputFields, [2], validMsg, displayName + ' requires numbers for the year');
         }
 
         var dayValue = parseInt(dayString);
         var monthValue = parseInt(monthString);
         var yearValue = parseInt(yearString);
-        var hourValue = parseInt(hourString);
-        var minuteValue = parseInt(minuteString);
 
         if (dayValue < 1 || dayValue > 31) {
-            return this.ValidationMessageShow(inputFields[1], validMsg, displayName + ' must be a real date');
+            return this.ValidationMessageShow(inputFields, [1], validMsg, displayName + ' must be a real date');
         }
         if (monthValue < 1 || monthValue > 12) {
-            return this.ValidationMessageShow(inputFields[1], validMsg, displayName + ' must be a real date');
+            return this.ValidationMessageShow(inputFields, [1], validMsg, displayName + ' must be a real date');
         }
 
         var daysInMonth = CompUiUtilties.getDaysInMonth(monthValue, yearValue);
         if (dayValue < 1 || dayValue > daysInMonth) {
-            return this.ValidationMessageShow(inputFields[0], validMsg, displayName + ' must be a real date');
+            return this.ValidationMessageShow(inputFields, [0, 1], validMsg, displayName + ' must be a real date');
         }
 
+        if (hourString === '') {
+            return this.ValidationMessageShow(inputFields, [3], validMsg, displayName + ' must include an hour');
+        }
+        if (minuteString === '') {
+            return this.ValidationMessageShow(inputFields, [4], validMsg, displayName + ' must include a minute');
+        }
+        if (!CompUiUtilties.isInt(hourString)) {
+            return this.ValidationMessageShow(inputFields, [3], validMsg, displayName + ' requires numbers for the hour');
+        }
+        if (!CompUiUtilties.isInt(minuteString)) {
+            return this.ValidationMessageShow(inputFields, [4], validMsg, displayName + ' requires numbers for the minute');
+        }
+        var hourValue = parseInt(hourString);
+        var minuteValue = parseInt(minuteString);
+
         if (hourValue < 0 || hourValue > 23) {
-            return this.ValidationMessageShow(inputFields[3], validMsg, displayName + ' must be a real time');
+            return this.ValidationMessageShow(inputFields, [3], validMsg, displayName + ' must be a real time');
         }
         if (minuteValue < 0 || minuteValue > 59) {
-            return this.ValidationMessageShow(inputFields[4], validMsg, displayName + ' must be a real time');
+            return this.ValidationMessageShow(inputFields, [4], validMsg, displayName + ' must be a real time');
         }
 
         var dateObject = new Date(yearValue, monthValue - 1, dayValue, hourValue, minuteValue);
 
         if (CompUiUtilties.isValidDate(dateObject)) {
             if (dateObject < minDate || dateObject > maxDate) {
-                return this.ValidationMessageShow(inputFields[2], validMsg, dateRangeError);
+                return this.ValidationMessageShow(inputFields, [0, 1, 2], validMsg, dateRangeError);
             }
+
+            this.ValidationMessageShow(inputFields, null, validMsg, '');
             return null;
         }
 
-        return this.ValidationMessageShow(inputFields[0], validMsg, displayName + ' is not a valid date');
+        return this.ValidationMessageShow(inputFields, null, validMsg, displayName + ' is not a valid date');
     }
 
-    ValidationMessageShow(inputElement, validMsg, message) {
-        var inputElementClassName = this.GetErrorClassForTag($(inputElement).prop("tagName"));
+    ValidationMessageShow(inputFields, errorFieldIndexes, validMsg, message) {
         var validMsgObj = $(validMsg);
+        var showError = (message && message != "" ? true : false);
 
-        if (message && message != "") {
+        validMsgObj.empty();
+
+        if (showError) {
             validMsgObj.removeClass(this.fieldValidClassName);
             validMsgObj.addClass(this.fieldErrorClassName);
-            $(inputElement).addClass(inputElementClassName);
 
             var errorSpan = document.createElement('SPAN');
             errorSpan.innerHTML = message;
@@ -354,11 +354,22 @@ class CompUiValidation {
         } else {
             validMsgObj.removeClass(this.fieldErrorClassName);
             validMsgObj.addClass(this.fieldValidClassName);
-            $(inputElement).removeClass(inputElementClassName);
-
-            validMsgObj.empty();
         }
 
+        this.ShowErrorHighlight(showError, inputFields, errorFieldIndexes)
+
         return message;
+    }
+
+    ShowErrorHighlight(showError, inputFields, errorFieldIndexes) {
+        for (var i = 0; i < inputFields.length; i++) {
+            var inputElementClassName = this.GetErrorClassForTag($(inputFields[i]).prop("tagName"));
+
+            if (showError && (errorFieldIndexes === null || errorFieldIndexes.includes(i))) {
+                $(inputFields[i]).addClass(inputElementClassName);
+            } else if (!showError && errorFieldIndexes === null) {
+                $(inputFields[i]).removeClass(inputElementClassName);
+            }
+        }
     }
 }
