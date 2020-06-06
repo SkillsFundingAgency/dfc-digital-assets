@@ -260,10 +260,10 @@ class CompUiValidation {
         var minuteString = isForDateOnly ? '0' : $(inputFields[4]).val();
 
         if (isForDateOnly && dayString === '' && monthString === '' && yearString === '') {
-            return this.ValidationMessageShow(inputFields, [0, 1, 2], validMsg, 'Enter ' + displayNameLowerCase);
+            return this.ValidationMessageShow(inputFields, null, validMsg, 'Enter ' + displayNameLowerCase);
         }
         if (!isForDateOnly && dayString === '' && monthString === '' && yearString === '' && hourString === '' && minuteString === '') {
-            return this.ValidationMessageShow(inputFields, [0, 1, 2, 3, 4, 5], validMsg, 'Enter ' + displayNameLowerCase);
+            return this.ValidationMessageShow(inputFields, null, validMsg, 'Enter ' + displayNameLowerCase);
         }
 
         if (dayString === '') {
