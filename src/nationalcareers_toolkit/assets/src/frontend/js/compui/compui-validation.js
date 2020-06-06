@@ -244,7 +244,10 @@ class CompUiValidation {
     }
 
     ValidateDateTime(value, element, params) {
-        var displayName = params;
+        var displayName = params.displayName;
+        var minDate = CompUiUtilties.stringUtcToDate(params.minDate);
+        var maxDate = CompUiUtilties.stringUtcToDate(params.maxDate);
+        var dateRangeError = params.dateRangeError;
         var displayNameLowerCase = displayName.toLowerCase();
         var dateFormGroup = $(element).closest('.' + this.govukGroupClassName)[0];
         var validMsg = $(dateFormGroup).find('.' + this.govukErrorMessageClassName)[0];
@@ -261,26 +264,26 @@ class CompUiValidation {
         }
 
         if (isForDateOnly && dayString === '' && monthString === '' && yearString === '') {
-            return this.ValidationMessageShow(inputFields[0], validMsg, 'Enter a date for ' + displayNameLowerCase);
+            return this.ValidationMessageShow(inputFields[0], validMsg, 'Enter ' + displayNameLowerCase);
         }
         if (!isForDateOnly && dayString === '' && monthString === '' && yearString === '' && hourString === '' && minuteString === '') {
-            return this.ValidationMessageShow(inputFields[0], validMsg, 'Enter a date and time for ' + displayNameLowerCase);
+            return this.ValidationMessageShow(inputFields[0], validMsg, 'Enter ' + displayNameLowerCase);
         }
 
         if (dayString === '') {
-            return this.ValidationMessageShow(inputFields[0], validMsg, 'Enter a day for ' + displayNameLowerCase);
+            return this.ValidationMessageShow(inputFields[0], validMsg, displayName + ' must include a day');
         }
         if (monthString === '') {
-            return this.ValidationMessageShow(inputFields[1], validMsg, 'Enter a month for ' + displayNameLowerCase);
+            return this.ValidationMessageShow(inputFields[1], validMsg, displayName + ' must include a month');
         }
         if (yearString === '') {
-            return this.ValidationMessageShow(inputFields[2], validMsg, 'Enter a year for ' + displayNameLowerCase);
+            return this.ValidationMessageShow(inputFields[2], validMsg, displayName + ' must include a year');
         }
         if (hourString === '') {
-            return this.ValidationMessageShow(inputFields[3], validMsg, 'Enter an hour for ' + displayNameLowerCase);
+            return this.ValidationMessageShow(inputFields[3], validMsg, displayName + ' must include an hour');
         }
         if (minuteString === '') {
-            return this.ValidationMessageShow(inputFields[4], validMsg, 'Enter a minute for ' + displayNameLowerCase);
+            return this.ValidationMessageShow(inputFields[4], validMsg, displayName + ' must include a minute');
         }
 
         if (!CompUiUtilties.isInt(dayString)) {
@@ -304,37 +307,36 @@ class CompUiValidation {
         var yearValue = parseInt(yearString);
         var hourValue = parseInt(hourString);
         var minuteValue = parseInt(minuteString);
-        var today = new Date();
 
         if (dayValue < 1 || dayValue > 31) {
-            return this.ValidationMessageShow(inputFields[1], validMsg, displayName + ' requires a valid day');
+            return this.ValidationMessageShow(inputFields[1], validMsg, displayName + ' must be a real date');
         }
         if (monthValue < 1 || monthValue > 12) {
-            return this.ValidationMessageShow(inputFields[1], validMsg, displayName + ' requires a valid month');
-        }
-        if (yearValue < 1900 || yearValue > today.getFullYear() + 10) {
-            return this.ValidationMessageShow(inputFields[2], validMsg, displayName + ' requires a valid year');
+            return this.ValidationMessageShow(inputFields[1], validMsg, displayName + ' must be a real date');
         }
 
         var daysInMonth = CompUiUtilties.getDaysInMonth(monthValue, yearValue);
         if (dayValue < 1 || dayValue > daysInMonth) {
-            return this.ValidationMessageShow(inputFields[0], validMsg, displayName + ' requires a valid day for this month');
+            return this.ValidationMessageShow(inputFields[0], validMsg, displayName + ' must be a real date');
         }
 
         if (hourValue < 0 || hourValue > 23) {
-            return this.ValidationMessageShow(inputFields[3], validMsg, displayName + ' requires a valid hour');
+            return this.ValidationMessageShow(inputFields[3], validMsg, displayName + ' must be a real time');
         }
         if (minuteValue < 0 || minuteValue > 59) {
-            return this.ValidationMessageShow(inputFields[4], validMsg, displayName + ' requires a valid minute');
+            return this.ValidationMessageShow(inputFields[4], validMsg, displayName + ' must be a real time');
         }
 
         var dateObject = new Date(yearValue, monthValue - 1, dayValue, hourValue, minuteValue);
 
         if (CompUiUtilties.isValidDate(dateObject)) {
+            if (dateObject < minDate || dateObject > maxDate) {
+                return this.ValidationMessageShow(inputFields[2], validMsg, dateRangeError);
+            }
             return null;
         }
 
-        return this.ValidationMessageShow(inputFields[0], validMsg, displayName + ' is an invalid date');
+        return this.ValidationMessageShow(inputFields[0], validMsg, displayName + ' is not a valid date');
     }
 
     ValidationMessageShow(inputElement, validMsg, message) {
