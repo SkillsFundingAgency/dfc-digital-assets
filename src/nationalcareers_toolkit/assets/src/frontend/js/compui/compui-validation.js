@@ -78,6 +78,7 @@ class CompUiValidation {
 
             if (errorsVisible) {
                 $(mainErrorSummary).removeClass(this.compUiShellHide);
+                $(mainErrorSummary).focus();
             } else {
                 $(mainErrorSummary).addClass(this.compUiShellHide);
             }
