@@ -27,7 +27,7 @@ $(document).ready(function () {
                 var txt = $(this).text();
                 $(this).html('<li><a href="#code" class="govuk-link govuk-link--no-visited-state">' + txt + '</li>');
                 $("#code").addClass('govuk-input--error');
-                $("#validation-summary").focus();
+                ShowErrorInPageTitle();
             });
             e.preventDefault();
         }
