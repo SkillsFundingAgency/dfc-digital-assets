@@ -9,9 +9,15 @@ class CompUiShell {
         this.validation.initialise();
         this.allChildApps.forEach(f => f.initialise());
     }
+
+    get Validation() {
+        return this.validation;
+    }
 }
 
-window.onload = void new CompUiShell(
+var compUiShell = new CompUiShell(
     [
         new DfcAppContactUs()
-    ]).initialise();
+    ]);
+
+window.onload = compUiShell.initialise();
