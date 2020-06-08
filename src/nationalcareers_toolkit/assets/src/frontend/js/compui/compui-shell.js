@@ -9,10 +9,6 @@ class CompUiShell {
         this.validation.initialise();
         this.allChildApps.forEach(f => f.initialise());
     }
-
-    get Validation() {
-        return this.validation;
-    }
 }
 
 var compUiShell = new CompUiShell(
@@ -21,3 +17,5 @@ var compUiShell = new CompUiShell(
     ]);
 
 window.onload = compUiShell.initialise();
+
+compUiShell.validation.ShowErrorInPageTitle();
