@@ -11,7 +11,9 @@ class CompUiShell {
     }
 }
 
-window.onload = void new CompUiShell(
+var compUiShell = new CompUiShell(
     [
         new DfcAppContactUs()
-    ]).initialise();
+    ]);
+
+window.onload = compUiShell.initialise();
