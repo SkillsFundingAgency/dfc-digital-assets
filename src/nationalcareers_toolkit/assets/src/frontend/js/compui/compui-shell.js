@@ -17,5 +17,3 @@ var compUiShell = new CompUiShell(
     ]);
 
 window.onload = compUiShell.initialise();
-
-compUiShell.validation.ShowErrorInPageTitle();
