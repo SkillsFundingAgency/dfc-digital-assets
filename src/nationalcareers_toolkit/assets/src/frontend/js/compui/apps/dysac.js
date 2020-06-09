@@ -34,7 +34,7 @@ $(document).ready(function () {
         }
     });
 
-    $('.bodytop-back-button').on("click", function (e) {
+    $('.dysac-bodytop-back-button').on("click", function (e) {
         e.preventDefault();
         window.history.back();
     });
