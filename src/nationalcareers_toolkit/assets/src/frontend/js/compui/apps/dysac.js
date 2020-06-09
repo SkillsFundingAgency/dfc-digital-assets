@@ -29,7 +29,7 @@ $(document).ready(function () {
                 $("#code").addClass('govuk-input--error');
             });
             e.preventDefault();
-            compUiShell.validation.ShowErrorInPageTitle('dysac-validation-form');
+            compUiShell.validation.ShowErrorInPageTitle('dysac-validation-summary');
             $('.validation-summary-errors').focus();
         }
     });
