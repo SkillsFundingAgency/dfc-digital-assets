@@ -33,4 +33,9 @@ $(document).ready(function () {
             $('.validation-summary-errors').focus();
         }
     });
+
+    $('.dysac-bodytop-back-button').on("click", function (e) {
+        e.preventDefault();
+        window.history.back();
+    });
 });
