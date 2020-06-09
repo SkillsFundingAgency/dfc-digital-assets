@@ -23,13 +23,14 @@ $(document).ready(function () {
         form.validate();
         var dysacValid = form.valid();
         if (!dysacValid) {
-            $('li').each(function () {
+            $('.govuk-error-summary').find('li').each(function () {
                 var txt = $(this).text();
                 $(this).html('<li><a href="#code" class="govuk-link govuk-link--no-visited-state">' + txt + '</li>');
                 $("#code").addClass('govuk-input--error');
-                compUiShell.validation.ShowErrorInPageTitle();
             });
             e.preventDefault();
+            compUiShell.validation.ShowErrorInPageTitle();
+            $('.validation-summary-errors').focus();
         }
     });
 });
