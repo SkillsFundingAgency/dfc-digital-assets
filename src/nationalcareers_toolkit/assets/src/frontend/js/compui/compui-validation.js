@@ -15,10 +15,10 @@ class CompUiValidation {
 
         if ($(this.formValidationSelectorClassName).length > 0) {
             this.CaptureAppErrorSummaryItems();
-            this.ShowErrorInPageTitle();
             this.InitialiseFieldValidationChangeCapture();
             this.InitialiseValidationMessageChangeCapture();
             this.InitialiseDateFieldValidation();
+            this.ShowErrorInPageTitle();
         }
     }
 
@@ -70,7 +70,7 @@ class CompUiValidation {
         });
     }
 
-    ShowErrorInPageTitle() {
+    ShowErrorInPageTitle(setFocus = true) {
         var errorSummary = $('.' + this.govukErrorSummaryClassName);
         if (errorSummary.length > 0) {
             var mainErrorSummary = errorSummary[0];
@@ -78,7 +78,9 @@ class CompUiValidation {
 
             if (errorsVisible) {
                 $(mainErrorSummary).removeClass(this.compUiShellHide);
-                $(mainErrorSummary).focus();
+                if (setFocus) {
+                    $(mainErrorSummary).focus();
+                }
             } else {
                 $(mainErrorSummary).addClass(this.compUiShellHide);
             }
@@ -166,7 +168,7 @@ class CompUiValidation {
                 }
 
                 outerThis.SyncErrorSummaryItem(formGroup, inputElementId, errorMessage);
-                outerThis.ShowErrorInPageTitle();
+                outerThis.ShowErrorInPageTitle(false);
             });
         });
 
