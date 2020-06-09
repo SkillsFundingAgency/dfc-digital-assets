@@ -12,13 +12,14 @@ class CompUiValidation {
         this.govukTextAreaErrorClassName = 'govuk-textarea--error';
         this.compUiValidationForDate = 'CompUiValidationForDate';
         this.compUiShellHide = 'dfc-composite-shell-hide';
+        this.mainErrorSummaryId = 'compuiShell-ErrorSummary';
 
         if ($(this.formValidationSelectorClassName).length > 0) {
             this.CaptureAppErrorSummaryItems();
             this.InitialiseFieldValidationChangeCapture();
             this.InitialiseValidationMessageChangeCapture();
             this.InitialiseDateFieldValidation();
-            this.ShowErrorInPageTitle();
+            this.ShowErrorInPageTitle(this.mainErrorSummaryId);
         }
     }
 
@@ -70,29 +71,26 @@ class CompUiValidation {
         });
     }
 
-    ShowErrorInPageTitle(setFocus = true) {
-        var errorSummary = $('.' + this.govukErrorSummaryClassName);
-        if (errorSummary.length > 0) {
-            var mainErrorSummary = errorSummary[0];
-            var errorsVisible = this.AnyVisibleErrorSummaryErrors(mainErrorSummary);
+    ShowErrorInPageTitle(errorSummaryId, setFocus = true) {
+        var errorSummary = $('#' + errorSummaryId);
+        var errorsVisible = this.AnyVisibleErrorSummaryErrors(errorSummary);
 
-            if (errorsVisible) {
-                $(mainErrorSummary).removeClass(this.compUiShellHide);
-                if (setFocus) {
-                    $(mainErrorSummary).focus();
-                }
-            } else {
-                $(mainErrorSummary).addClass(this.compUiShellHide);
+        if (errorsVisible) {
+            $(errorSummary).removeClass(this.compUiShellHide);
+            if (setFocus) {
+                $(errorSummary).focus();
             }
+        } else {
+            $(errorSummary).addClass(this.compUiShellHide);
+        }
 
-            var errorStub = "Error: ";
-            var titleBeginsWithError = document.title.indexOf(errorStub) === 0;
-            if (titleBeginsWithError && !errorsVisible) {
-                document.title = document.title.substring(errorStub.length);
-            }
-            else if (!titleBeginsWithError && errorsVisible) {
-                document.title = errorStub + document.title;
-            }
+        var errorStub = "Error: ";
+        var titleBeginsWithError = document.title.indexOf(errorStub) === 0;
+        if (titleBeginsWithError && !errorsVisible) {
+            document.title = document.title.substring(errorStub.length);
+        }
+        else if (!titleBeginsWithError && errorsVisible) {
+            document.title = errorStub + document.title;
         }
     }
 
@@ -168,7 +166,7 @@ class CompUiValidation {
                 }
 
                 outerThis.SyncErrorSummaryItem(formGroup, inputElementId, errorMessage);
-                outerThis.ShowErrorInPageTitle(false);
+                outerThis.ShowErrorInPageTitle(outerThis.mainErrorSummaryId, false);
             });
         });
 
