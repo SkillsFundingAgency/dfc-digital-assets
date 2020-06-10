@@ -12,8 +12,6 @@
 //    results.long();
 //}
 
-
-
 $(document).ready(function () {
     $('#dysac-print-button').on('click', function () {
         window.print();
