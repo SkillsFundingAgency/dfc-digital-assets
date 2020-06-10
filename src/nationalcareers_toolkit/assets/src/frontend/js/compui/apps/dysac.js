@@ -12,7 +12,7 @@
 //    results.long();
 //}
 
-$(window).load(function () {
+$(window).on('load', function () {
     checkFocusState();
 
     function checkFocusState() {
