@@ -15,6 +15,8 @@
 
 
 $(document).ready(function () {
+    ShowErrorInPageTitle('dysac-validation-summary');
+
     $('#dysac-print-button').on('click', function () {
         window.print();
         return false;
