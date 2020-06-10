@@ -34,8 +34,4 @@ $(document).ready(function () {
         }
     });
 
-    $('.dysac-bodytop-back-button').on("click", function (e) {
-        e.preventDefault();
-        window.history.back();
-    });
 });
