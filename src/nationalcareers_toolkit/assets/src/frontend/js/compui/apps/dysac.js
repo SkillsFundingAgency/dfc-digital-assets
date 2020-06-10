@@ -13,17 +13,11 @@
 //}
 
 $('#dysac-validation-summary').ready(function () {
-    //Test to see if this works on dev
-    compUiShell.validation.ShowErrorInPageTitle('dysac-validation-summary');
-
-            var form = $('#dysac-form');
-        form.validate();
-        var dysacValid = form.valid();
+    var form = $('#dysac-form');
+    form.validate();
+    var dysacValid = form.valid();
     if (!dysacValid) {
-        alert('ready');
-    }
-    else {
-        alert('not valid form');
+        compUiShell.validation.ShowErrorInPageTitle('dysac-validation-summary');
     }
 });
 
