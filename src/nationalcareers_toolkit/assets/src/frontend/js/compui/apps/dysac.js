@@ -12,15 +12,6 @@
 //    results.long();
 //}
 
-$('#dysac-validation-summary').ready(function () {
-    var form = $('#dysac-form');
-    form.validate();
-    var dysacValid = form.valid();
-    if (!dysacValid) {
-        compUiShell.validation.ShowErrorInPageTitle('dysac-validation-summary');
-    }
-});
-
 $(document).ready(function () {
     $('#dysac-print-button').on('click', function () {
         window.print();
