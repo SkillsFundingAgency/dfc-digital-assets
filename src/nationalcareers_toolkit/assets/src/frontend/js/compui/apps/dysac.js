@@ -34,4 +34,15 @@ $(document).ready(function () {
         }
     });
 
+    checkFocusState();
+
+    function checkFocusState() {
+        var form = $('#dysac-form');
+        form.validate();
+        var dysacValid = form.valid();
+        if (!dysacValid) {
+            e.preventDefault();
+            compUiShell.validation.ShowErrorInPageTitle('dysac-validation-summary');
+        }
+    }
 });
