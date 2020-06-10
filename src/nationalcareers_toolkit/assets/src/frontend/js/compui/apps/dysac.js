@@ -12,17 +12,18 @@
 //    results.long();
 //}
 
-$('#dysac-validation-summary').on('load', function (e) {
-    checkFocusState();
+$('#dysac-validation-summary').ready(function () {
+    //Test to see if this works on dev
+    compUiShell.validation.ShowErrorInPageTitle('dysac-validation-summary');
 
-    function checkFocusState() {
-        var form = $('#dysac-form');
+            var form = $('#dysac-form');
         form.validate();
         var dysacValid = form.valid();
-        if (!dysacValid) {
-            e.preventDefault();
-            compUiShell.validation.ShowErrorInPageTitle('dysac-validation-summary');
-        }
+    if (!dysacValid) {
+        alert('ready');
+    }
+    else {
+        alert('not valid form');
     }
 });
 
