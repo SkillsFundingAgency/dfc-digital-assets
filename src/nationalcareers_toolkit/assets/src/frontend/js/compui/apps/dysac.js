@@ -12,6 +12,20 @@
 //    results.long();
 //}
 
+$(window).load(function () {
+    checkFocusState();
+
+    function checkFocusState() {
+        var form = $('#dysac-form');
+        form.validate();
+        var dysacValid = form.valid();
+        if (!dysacValid) {
+            e.preventDefault();
+            compUiShell.validation.ShowErrorInPageTitle('dysac-validation-summary');
+        }
+    }
+});
+
 $(document).ready(function () {
     $('#dysac-print-button').on('click', function () {
         window.print();
@@ -33,16 +47,4 @@ $(document).ready(function () {
             $('.validation-summary-errors').focus();
         }
     });
-
-    checkFocusState();
-
-    function checkFocusState() {
-        var form = $('#dysac-form');
-        form.validate();
-        var dysacValid = form.valid();
-        if (!dysacValid) {
-            e.preventDefault();
-            compUiShell.validation.ShowErrorInPageTitle('dysac-validation-summary');
-        }
-    }
 });
