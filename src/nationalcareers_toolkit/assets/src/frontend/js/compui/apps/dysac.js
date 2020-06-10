@@ -12,7 +12,7 @@
 //    results.long();
 //}
 
-$(window).on('load', function () {
+$('#dysac-validation-summary').on('load', function (e) {
     checkFocusState();
 
     function checkFocusState() {
