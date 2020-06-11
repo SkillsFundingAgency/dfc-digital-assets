@@ -12,7 +12,11 @@
 //    results.long();
 //}
 
+
+
 $(document).ready(function () {
+    compUiShell.validation.ShowErrorInPageTitle.ShowErrorInPageTitle('dysac-validation-summary');
+
     $('#dysac-print-button').on('click', function () {
         window.print();
         return false;
