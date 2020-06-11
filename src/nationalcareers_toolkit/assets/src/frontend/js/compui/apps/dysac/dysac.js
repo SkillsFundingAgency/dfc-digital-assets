@@ -1,16 +1,16 @@
-//analytics.init();
-//breadcrumbs.init();
+dysacAnalytics.init();
+dysacBreadcrumbs.init();
 
-//if (helpers.isPage('app-page--results')) {
-//    results.short();
-//}
+if (dysacHelpers.isPage('app-page--results')) {
+    dysacResults.short();
+}
 
-//if (helpers.isPage('app-page--results-long')) {
-//    if (document.body.clientWidth >= 768) {
-//        results.cardHeight();
-//    }
-//    results.long();
-//}
+if (dysacHelpers.isPage('app-page--results-long')) {
+    if (document.body.clientWidth >= 768) {
+        dysacResults.cardHeight();
+    }
+    dysacResults.long();
+}
 
 
 

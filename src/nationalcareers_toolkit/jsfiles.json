@@ -58,10 +58,6 @@
     "node_modules/govuk_frontend_toolkit/javascripts/vendor/polyfills/bind.js",
     "nothing"
   ],
-  "dysacJsFilesBundle": [
-    "assets/src/frontend/js/dysac_modules/*.js",
-    "assets/src/frontend/js/dysac.js"
-  ],
   "matchskillsJsFilesBundle": [
     "assets/src/frontend/js/matchskills.js"
   ],
