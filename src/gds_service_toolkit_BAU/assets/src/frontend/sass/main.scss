@@ -10,3 +10,5 @@ $govuk-compatibility-govukelements: true;
 /* Importing custom styles */
 @import "includes/custom";
 
+/* New cookie banner */
+@import "includes/_cookies.scss";
