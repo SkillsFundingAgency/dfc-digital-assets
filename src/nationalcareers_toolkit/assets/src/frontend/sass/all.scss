@@ -24,5 +24,9 @@ $app-text-light: #646C70;
 @import "dysac/sidebar";
 @import "dysac/yourreference";
 
+/* Comp UI and Child apps */
+@import "compui/dfc-composite-shell";
+@import "compui/dfc-app-contactus";
+
 /* Import all custom and default patterns */
 @import "patterns/all";

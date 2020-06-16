@@ -33,7 +33,9 @@
     "assets/src/frontend/js/selection-buttons.js",
     "assets/src/frontend/js/SfaGeoLocation.js",
     "assets/src/frontend/js/cookie-banner.js",
-    "assets/src/frontend/js/skillsHealthCheck.js"
+    "assets/src/frontend/js/skillsHealthCheck.js",
+    "assets/src/frontend/js/cookie-prefrences-banner.js",
+    "assets/src/frontend/js/modules/*.js"
   ],
 
   "jqueryBundle": [
