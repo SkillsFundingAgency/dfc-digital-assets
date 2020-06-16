@@ -123,6 +123,13 @@ nav {
   padding: 0 .5em;
 }
 
+
+// ******************** Warning component
+.govuk-warning-text__icon {
+	top:7%;
+}
+// ******************** End of warning component
+
 // Ipsos survey import
 @import "ipsos";
 
@@ -209,10 +216,3 @@ details {
 
 
 // ******************** End of accounts pages
-
-
-// ******************** Warning component
-.govuk-warning-text__icon {
-	top:7%;
-}
-// ******************** End of warning component
