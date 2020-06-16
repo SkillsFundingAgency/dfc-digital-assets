@@ -126,6 +126,12 @@ nav {
 // Ipsos survey import
 @import "ipsos";
 
+// ******************** Warning component
+.govuk-warning-text__icon {
+	top:7%;
+}
+// ******************** End of warning component
+
 // ******************** Accounts pages
 
 .form-label {
@@ -204,15 +210,4 @@ details {
   @extend .govuk-input, .govuk-\!-width-one-half
 }
 
-
-
-
-
 // ******************** End of accounts pages
-
-
-// ******************** Warning component
-.govuk-warning-text__icon {
-	top:7%;
-}
-// ******************** End of warning component
