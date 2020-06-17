@@ -61,9 +61,6 @@
   "matchskillsJsFilesBundle": [
     "assets/src/frontend/js/matchskills.js"
   ],
-  "accountsJsFilesBundle": [
-    "assets/src/frontend/js/accounts.js"
-  ],
   "compUiJsFilesBundle": [
     "assets/src/frontend/js/compui/compui-utilities.js",
     "assets/src/frontend/js/compui/compui-validation.js",
