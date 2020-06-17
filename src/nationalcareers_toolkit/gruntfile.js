@@ -161,7 +161,6 @@ module.exports = function (grunt) {
                     { '<%= dist.path %>/js/ie8bundle.min.js': ie8Bundle },
                     { '<%= dist.path %>/js/cmsExtentionsBundle.min.js': cmsExtentionsBundle },
                     { '<%= dist.path %>/js/matchskills.min.js': matchskillsJSFiles },
-                    { '<%= dist.path %>/js/accounts.min.js': accountsJSFiles },
                     { '<%= dist.path %>/js/compui.min.js': compUiJsFiles },
                     {
                         expand: true,
