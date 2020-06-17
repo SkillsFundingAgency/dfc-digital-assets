@@ -30,7 +30,10 @@ $(document).ready(function () {
             $('.govuk-error-summary').find('li').each(function () {
                 var txt = $(this).text();
                 $(this).html('<li><a href="#code" class="govuk-link govuk-link--no-visited-state">' + txt + '</li>');
-                $("#code").addClass('govuk-input--error');
+                let isInputText = $('#code').is('input:text');
+                if (isInputText) {
+                    $("#code").addClass('govuk-input--error');
+                }
             });
             e.preventDefault();
             compUiShell.validation.ShowErrorInPageTitle('dysac-validation-summary');
