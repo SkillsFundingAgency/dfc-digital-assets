@@ -16,6 +16,7 @@ if (dysacHelpers.isPage('app-page--results-long')) {
 
 $(document).ready(function () {
     compUiShell.validation.ShowErrorInPageTitle('dysac-validation-summary');
+    $('#print-button-container').html('<a href="#" id="dysac-print-button">Print<span class="govuk-visually-hidden"> your results</span></a>');
 
     $('#dysac-print-button').on('click', function () {
         window.print();
