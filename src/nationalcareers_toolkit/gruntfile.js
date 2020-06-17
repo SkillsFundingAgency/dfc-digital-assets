@@ -17,7 +17,6 @@ module.exports = function (grunt) {
     var ie8Bundle = grunt.file.readJSON('jsfiles.json').ie8Bundle;
     var cmsExtentionsBundle = grunt.file.readJSON('jsfiles.json').cmsExtentionsBundle;
     var matchskillsJSFiles = grunt.file.readJSON('jsfiles.json').matchskillsJsFilesBundle;
-    var accountsJSFiles = grunt.file.readJSON('jsfiles.json').accountsJsFilesBundle;
     var compUiJsFiles = grunt.file.readJSON('jsfiles.json').compUiJsFilesBundle;
 
     // Name of the folder that contains project specific assets (scss, js, images, etc.)
@@ -162,7 +161,6 @@ module.exports = function (grunt) {
                     { '<%= dist.path %>/js/ie8bundle.min.js': ie8Bundle },
                     { '<%= dist.path %>/js/cmsExtentionsBundle.min.js': cmsExtentionsBundle },
                     { '<%= dist.path %>/js/matchskills.min.js': matchskillsJSFiles },
-                    { '<%= dist.path %>/js/accounts.min.js': accountsJSFiles },
                     { '<%= dist.path %>/js/compui.min.js': compUiJsFiles },
                     {
                         expand: true,
