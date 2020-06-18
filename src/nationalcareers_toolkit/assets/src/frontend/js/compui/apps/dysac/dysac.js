@@ -16,7 +16,11 @@ if (dysacHelpers.isPage('app-page--results-long')) {
 
 $(document).ready(function () {
     compUiShell.validation.ShowErrorInPageTitle('dysac-validation-summary');
-    $('#print-button-container').html('<a href="#" id="dysac-print-button">Print<span class="govuk-visually-hidden"> your results</span></a>');
+    var printHtml = '<div><div class="app-related-items app-print-panel"><h3 class="govuk-heading-m">Print your results</h3>' +
+        '<p class="govuk-body"></p> <a href="#" id="dysac-print-button">Print' +
+        '<span class="govuk-visually-hidden"> your results</span></a><p></p></div></div>';
+
+    $('#print-button-container').html(printHtml);
 
     $('#dysac-print-button').on('click', function () {
         window.print();
