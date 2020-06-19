@@ -248,7 +248,8 @@ class CompUiValidation {
         var displayName = params.displayName;
         var minDate = CompUiUtilties.stringUtcToDate(params.minDate);
         var maxDate = CompUiUtilties.stringUtcToDate(params.maxDate);
-        var dateRangeError = params.dateRangeError;
+        var minDateError = params.minDateError;
+        var maxDateError = params.maxDateError;
         var displayNameLowerCase = displayName.toLowerCase();
         var dateFormGroup = $(element).closest('.' + this.govukGroupClassName)[0];
         var validMsg = $(dateFormGroup).find('.' + this.govukErrorMessageClassName)[0];
@@ -278,29 +279,29 @@ class CompUiValidation {
         }
 
         if (!CompUiUtilties.isInt(dayString)) {
-            return this.ValidationMessageShow(inputFields, [0], validMsg, displayName + ' requires numbers for the day');
+            return this.ValidationMessageShow(inputFields, [0], validMsg, displayName + ' requires numbers for the day from 1 to 31');
         }
         if (!CompUiUtilties.isInt(monthString)) {
-            return this.ValidationMessageShow(inputFields, [1], validMsg, displayName + ' requires numbers for the month');
+            return this.ValidationMessageShow(inputFields, [1], validMsg, displayName + ' requires numbers for the month from 1 to 12');
         }
         if (!CompUiUtilties.isInt(yearString)) {
-            return this.ValidationMessageShow(inputFields, [2], validMsg, displayName + ' requires numbers for the year');
+            return this.ValidationMessageShow(inputFields, [2], validMsg, displayName + ' requires a 4 digit number for the year');
         }
 
-        var dayValue = parseInt(dayString);
-        var monthValue = parseInt(monthString);
-        var yearValue = parseInt(yearString);
+        var dayValue = parseInt(Number(dayString));
+        var monthValue = parseInt(Number(monthString));
+        var yearValue = parseInt(Number(yearString));
 
         if (dayValue < 1 || dayValue > 31) {
-            return this.ValidationMessageShow(inputFields, [1], validMsg, displayName + ' must be a real date');
+            return this.ValidationMessageShow(inputFields, [0], validMsg, displayName + ' requires numbers for the day from 1 to 31');
         }
         if (monthValue < 1 || monthValue > 12) {
-            return this.ValidationMessageShow(inputFields, [1], validMsg, displayName + ' must be a real date');
+            return this.ValidationMessageShow(inputFields, [1], validMsg, displayName + ' requires numbers for the month from 1 to 12');
         }
 
         var daysInMonth = CompUiUtilties.getDaysInMonth(monthValue, yearValue);
         if (dayValue < 1 || dayValue > daysInMonth) {
-            return this.ValidationMessageShow(inputFields, [0, 1], validMsg, displayName + ' must be a real date');
+            return this.ValidationMessageShow(inputFields, [0, 1], validMsg, displayName + ' is not a valid date');
         }
 
         if (hourString === '') {
@@ -310,26 +311,30 @@ class CompUiValidation {
             return this.ValidationMessageShow(inputFields, [4], validMsg, displayName + ' must include a minute');
         }
         if (!CompUiUtilties.isInt(hourString)) {
-            return this.ValidationMessageShow(inputFields, [3], validMsg, displayName + ' requires numbers for the hour');
+            return this.ValidationMessageShow(inputFields, [3], validMsg, displayName + ' requires numbers for the hour from 0 to 23');
         }
         if (!CompUiUtilties.isInt(minuteString)) {
-            return this.ValidationMessageShow(inputFields, [4], validMsg, displayName + ' requires numbers for the minute');
+            return this.ValidationMessageShow(inputFields, [4], validMsg, displayName + ' requires numbers for the minute from 0 to 59');
         }
-        var hourValue = parseInt(hourString);
-        var minuteValue = parseInt(minuteString);
+        var hourValue = parseInt(Number(hourString));
+        var minuteValue = parseInt(Number(minuteString));
 
         if (hourValue < 0 || hourValue > 23) {
-            return this.ValidationMessageShow(inputFields, [3], validMsg, displayName + ' must be a real time');
+            return this.ValidationMessageShow(inputFields, [3], validMsg, displayName + ' requires numbers for the hour from 0 to 23');
         }
         if (minuteValue < 0 || minuteValue > 59) {
-            return this.ValidationMessageShow(inputFields, [4], validMsg, displayName + ' must be a real time');
+            return this.ValidationMessageShow(inputFields, [4], validMsg, displayName + ' requires numbers for the minute from 0 to 59');
         }
 
         var dateObject = new Date(yearValue, monthValue - 1, dayValue, hourValue, minuteValue);
 
         if (CompUiUtilties.isValidDate(dateObject)) {
-            if (dateObject < minDate || dateObject > maxDate) {
-                return this.ValidationMessageShow(inputFields, [0, 1, 2], validMsg, dateRangeError);
+            if (dateObject < minDate) {
+                return this.ValidationMessageShow(inputFields, [0, 1, 2], validMsg, minDateError);
+            }
+
+            if (dateObject > maxDate) {
+                return this.ValidationMessageShow(inputFields, [0, 1, 2], validMsg, maxDateError);
             }
 
             this.ValidationMessageShow(inputFields, null, validMsg, '');
