@@ -204,10 +204,6 @@ details {
   @extend .govuk-input, .govuk-\!-width-one-half
 }
 
-
-
-
-
 // ******************** End of accounts pages
 
 
@@ -217,7 +213,7 @@ details {
 }
 // ******************** End of warning component
 
-// ******************** Warning component
+// ******************** Responsive table component
 $mobile: 768px;
 .responsive-table {
 
@@ -340,4 +336,3 @@ $mobile: 768px;
 	}
 
 	}
-// ******************** End of warning component
