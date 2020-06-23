@@ -1,6 +1,9 @@
 {
   "concatCustomJsFiles": [
-    "assets/src/frontend/js/dfcdigital.js"
+    "assets/src/frontend/js/dfcdigital.js",
+    "assets/src/frontend/js/cookie-prefrences-banner.js",
+    "assets/src/frontend/js/cookie-prefrences-settings.js",
+    "assets/src/frontend/js/modules/*.js"
   ],
 
   "jqueryBundle": [

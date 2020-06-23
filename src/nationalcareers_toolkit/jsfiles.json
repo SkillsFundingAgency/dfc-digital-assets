@@ -1,7 +1,10 @@
 {
   "concatCustomJsFiles": [
     "assets/src/frontend/js/dfcdigital.js",
-    "assets/src/frontend/js/custom-validation.js"
+    "assets/src/frontend/js/custom-validation.js",
+    "assets/src/frontend/js/cookie-prefrences-banner.js",
+    "assets/src/frontend/js/cookie-prefrences-settings.js",
+    "assets/src/frontend/js/modules/*.js"
   ],
   "jqueryBundle": [
     "node_modules/jquery/dist/jquery.min.js",
@@ -55,11 +58,13 @@
     "node_modules/govuk_frontend_toolkit/javascripts/vendor/polyfills/bind.js",
     "nothing"
   ],
-  "dysacJsFilesBundle": [
-    "assets/src/frontend/js/dysac_modules/*.js",
-    "assets/src/frontend/js/dysac.js"
-  ],
   "matchskillsJsFilesBundle": [
     "assets/src/frontend/js/matchskills.js"
+  ],
+  "compUiJsFilesBundle": [
+    "assets/src/frontend/js/compui/compui-utilities.js",
+    "assets/src/frontend/js/compui/compui-validation.js",
+    "assets/src/frontend/js/compui/apps/**/*.js",
+    "assets/src/frontend/js/compui/compui-shell.js"
   ]
 }
