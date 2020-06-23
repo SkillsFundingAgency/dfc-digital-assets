@@ -216,3 +216,95 @@ details {
 	top:7%;
 }
 // ******************** End of warning component
+
+//CUSTOM MESSAGES
+
+.banner-destructive-without-action, .banner-destructive-with-action, .banner-warning-with-action, .banner-warning-without-action, .banner-success-with-action, .banner-success-without-action, .banner-information-with-action, .banner-information-without-action, .banner-temporary-message-without-action {
+    font-family: "nta", Arial, sans-serif;
+    font-weight: 400;
+    text-transform: none;
+    font-size: 18px;
+    line-height: 1.2;
+    padding: 20px;
+    margin-top: 15px;
+    border-width: 5px;
+    border-style: solid;
+
+	.banner-content {
+		font-family: "nta", Arial, sans-serif;
+		font-weight: 400;
+		text-transform: none;
+		font-size: 16px;
+		line-height: 1.25;
+		color: #0b0c0c;
+		margin-top: 15px;
+		margin-bottom: 15px;
+
+		ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-top: 5px;
+
+			li {
+    			margin-bottom: 5px;
+			}
+		}
+	}
+
+	@media (min-width: 641px) {
+		h2 {
+			font-size: 24px;
+			line-height: 1.25;
+			font-weight: 700;
+		}
+		ul {
+			li {
+				color:#000;
+			}
+		}
+	}
+
+	@media (min-width: 641px) {
+		.banner-content {
+			font-size: 19px;
+			line-height: 1.31579;
+		}
+	}
+}
+
+
+
+.banner-destructive-without-action, .banner-destructive-with-action {
+    color: #b10e1e;
+}
+
+.banner-warning-with-action, .banner-warning-without-action {
+    color: #cd4c0b;
+}
+
+.banner-success-with-action, .banner-success-without-action {
+    color: #00823b;
+}
+
+.banner-action {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.banner-message {
+    font-weight: 400;
+    text-transform: none;
+    font-size: 18px;
+    line-height: 1.2;
+    font-weight: bold;
+    margin: 0;
+
+	@media (min-width: 641px) {
+        font-size: 24px;
+        line-height: 1.25;
+}
+}
+
+.banner-information-with-action, .banner-information-without-action {
+    color: #005ea5;
+}
