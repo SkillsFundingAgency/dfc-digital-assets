@@ -11,3 +11,14 @@
 .dfc-composite-shell-margin-left-none {
     margin-left: 0 !important;
 }
+
+.dfc-composite-shell-account-info {
+    text-align: right;
+    border-bottom: 1px solid $govuk-border-colour;
+    line-height: 1.25;
+    padding: 1em 0;
+
+    .account-link{
+        padding: 0 0.5em;
+    }
+}
