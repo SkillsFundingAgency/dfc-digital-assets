@@ -12,6 +12,10 @@
     margin-left: 0 !important;
 }
 
+label.dfc-composite-shell-multiline-label {
+    white-space: pre-wrap;
+}
+
 .dfc-composite-shell-account-info {
     text-align: right;
     border-bottom: 1px solid $govuk-border-colour;
