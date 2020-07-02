@@ -1,6 +1,8 @@
 $(document).ready(function () {
-    $('#cookie-message').show();
-    $('#confirmatiom-message').hide();
+    if (!cookiePrefrences.isCookiePrefrenceSet()) {
+        $('#cookie-message').show();
+        $('#confirmatiom-message').hide();
+    }
 
     if (typeof cookiePrefrences === 'undefined') document.body.className = document.body.className.replace('js-enabled', '');
 
