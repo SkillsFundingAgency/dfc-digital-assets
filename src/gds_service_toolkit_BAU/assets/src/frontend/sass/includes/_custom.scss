@@ -319,7 +319,15 @@ $mobile: 768px;
       font-size: 16px;
     }
   }
-  
+
+  @media (min-width: $mobile) and (max-width:966px)
+{
+    table.responsive-table.tablet-mode td,table.responsive-table.tablet-mode td.numeric,table.responsive-table.tablet-mode th {
+       zoom:.8;
+       padding:6px;
+    }
+}
+
   thead {
     border: 0;
     clip: rect(1px, 1px, 1px, 1px);
