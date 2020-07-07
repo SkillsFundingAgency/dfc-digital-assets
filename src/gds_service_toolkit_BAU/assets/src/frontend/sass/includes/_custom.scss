@@ -314,6 +314,12 @@ $mobile: 768px;
 .responsive-table {
   width: 100%;
 
+  @media (min-width: $mobile) {
+    .govuk-table__cell, .govuk-table__header {
+      font-size: 16px;
+    }
+  }
+  
   thead {
     border: 0;
     clip: rect(1px, 1px, 1px, 1px);
