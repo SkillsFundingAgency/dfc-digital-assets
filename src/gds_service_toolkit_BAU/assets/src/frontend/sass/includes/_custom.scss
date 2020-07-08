@@ -320,13 +320,7 @@ $mobile: 768px;
     }
   }
 
-  @media (min-width: $mobile) and (max-width:966px)
-{
-    table.responsive-table.tablet-mode td,table.responsive-table.tablet-mode td.numeric,table.responsive-table.tablet-mode th {
-       zoom:.8;
-       padding:6px;
-    }
-}
+
 
   thead {
     border: 0;
@@ -447,3 +441,10 @@ $mobile: 768px;
   	}
 
 	}
+  @media (min-width: $mobile) and (max-width:966px)
+  {
+      table.responsive-table.tablet-mode td,table.responsive-table.tablet-mode td.numeric,table.responsive-table.tablet-mode th {
+         zoom:.8;
+         padding:6px;
+      }
+  }
