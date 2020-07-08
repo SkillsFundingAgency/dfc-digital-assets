@@ -320,7 +320,23 @@ $mobile: 768px;
     }
   }
 
+  caption {
+  		padding-bottom: 10px;
 
+  		@media (min-width: $mobile) {
+  			padding-bottom: 0;
+  		}
+  }
+  .hidden {
+      @media (min-width: $mobile) {
+    	  position:absolute;
+    	  left:-10000px;
+    		top:auto;
+    		width:1px;
+    		height:1px;
+    		overflow:hidden;
+      }
+  }
 
   thead {
     border: 0;
@@ -350,7 +366,15 @@ $mobile: 768px;
           display: block;
         }
 
-        td {
+        th {
+    		  border-bottom-width: 2px;
+
+    		  @media (min-width: $mobile) {
+    			  border-bottom-width: 1px;
+    		  }
+    	  }
+
+        td, th {
           display: block; // For browsers that don't support flexbox
           display: flex;
           justify-content: space-between;
