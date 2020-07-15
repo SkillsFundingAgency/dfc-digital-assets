@@ -7,6 +7,10 @@ $(document).ready(function () {
         $('#confirmatiom-message').hide();
     }
 
+    // flip cookie preference setting if js enabled
+    $(".cookie-settings__form-wrapper").show();
+    $(".cookie-settings__no-js").hide();
+
     if (typeof cookiePrefrences === 'undefined') document.body.className = document.body.className.replace('js-enabled', '');
 
     //only run this is on non setting pages
