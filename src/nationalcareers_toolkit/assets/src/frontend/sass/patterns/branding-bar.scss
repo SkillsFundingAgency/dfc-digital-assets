@@ -1,0 +1,5 @@
+// Styles to override branding bar position to move it immediately under the header black bar
+
+.govuk-header__container {
+    margin-bottom: -10px;
+}
