@@ -26,3 +26,7 @@ label.dfc-composite-shell-multiline-label {
         padding: 0 0.5em;
     }
 }
+
+.govuk-phase-bannertag {
+    @extend .govuk-phase-banner__content__tag;
+}
