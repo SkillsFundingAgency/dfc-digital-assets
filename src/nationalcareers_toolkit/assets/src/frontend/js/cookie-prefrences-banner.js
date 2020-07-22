@@ -9,7 +9,6 @@ $(document).ready(function () {
 
     // flip cookie preference setting if js enabled
     $(".cookie-settings__form-wrapper").show();
-    $("#cookie-settings-confirmation").show();
     $(".cookie-settings__no-js").hide();
 
     if (typeof cookiePrefrences === 'undefined') document.body.className = document.body.className.replace('js-enabled', '');
@@ -26,6 +25,7 @@ $(document).ready(function () {
                 cookiePrefrences.approveAll();
                 $('#cookie-message').hide();
                 $('#confirmatiom-message').show();
+                $("#cookie-settings-confirmation").show();
             })
 
             $('#hide-cookies-message').click(function () {

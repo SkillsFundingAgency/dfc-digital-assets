@@ -675,3 +675,17 @@
 .cookie-settings__form-wrapper, #cookie-settings-confirmation {
     display: none;
 }
+
+.gem-c-notice {
+    color: #0b0c0c;
+    padding: 15px!important;
+    margin-bottom: 30px!important;
+    clear: both!important;
+    border: 5px solid #1d70b8!important;
+}
+
+@media (min-width: 40.0625em) {
+    .gem-c-notice {
+        padding: 20px!important;
+    }
+}
