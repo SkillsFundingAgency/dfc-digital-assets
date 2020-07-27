@@ -30,3 +30,7 @@ label.dfc-composite-shell-multiline-label {
 .govuk-phase-bannertag {
     @extend .govuk-phase-banner__content__tag;
 }
+
+dfc-no-wrap {
+    white-space: nowrap;
+}
