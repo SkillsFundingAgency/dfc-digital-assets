@@ -126,13 +126,3 @@ ol {
   @extend .govuk-list;
   @extend .govuk-list--number
 }
-
-.dfc-display-none-visibility-hidden {
-    display: none !important;
-    visibility: hidden !important;
-}
-
-.dfc-display-inherit-visibility-visible {
-    display: inherit;
-    visibility: visible;
-}
