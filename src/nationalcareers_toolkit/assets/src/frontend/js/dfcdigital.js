@@ -13,6 +13,9 @@ dfc.digital = {
 $(document).ready(function () {
     CookieBanner.addCookieMessage();
 
+    $("#ehl-hide-link").click(function () {
+    $(".ncs-toggle").slideToggle();
+
     $('#dysac-print-button').on('click', function () {
         window.print();
         return false;

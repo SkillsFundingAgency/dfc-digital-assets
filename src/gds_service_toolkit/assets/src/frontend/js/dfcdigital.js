@@ -13,6 +13,40 @@ dfc.digital = {
 $(document).ready(function () {
     CookieBanner.addCookieMessage();
 
+    //Set default state based on cookie
+    if($.cookie["ehlstate"] === undefined) {
+        $.cookie["ehlstate"] = $("#ehl-hide-link").text();
+        $("#ehl-hide-link").text("Show message");
+        $('.ncs-toggle').show();
+    }
+
+    var getCookieAccept = $.cookie["ehlstate"];
+    if (getCookieAccept !== "Show message") {
+        $("#ehl-hide-link").text("Show message");
+        $('.ncs-toggle').show();
+    } else if (getCookieAccept !== "Hide message") {
+        $("#ehl-hide-link").text("Hide message");
+        $('.ncs-toggle').hide();
+    }
+    else {
+        $(this).text("Show message");
+        $('.ncs-toggle').show();
+    }
+
+    $("#ehl-hide-link").click(function () {
+        $(".ncs-toggle").slideToggle();
+        if ($(this).text() === "Show message")
+            $(this).text("Hide message");
+        else
+            $(this).text("Show message");
+
+        //Setting cookie expiry after 6 months 
+        getCookieAccept = getCookie("ehlstate");
+        expire = new Date(expire.getTime() + 15552000000);
+        document.cookie = "ehlstate=$(this).text(); expires=" + expire;
+    });
+
+  
     $(".js-search-focus").ready(function () { dfc.digital.addFocus(".js-search-focus"); }).focus(function () { dfc.digital.addFocus(this) }).blur(function () { dfc.digital.addFocus(this) });
 
     /* Not yet developed
