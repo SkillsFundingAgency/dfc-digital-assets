@@ -391,12 +391,14 @@
   }
 }
 
-// Show none js version by default
-.cookie-settings__no-js {
-    display: block;
+.js-enabled .cookie-settings__no-js {
+    display: none
 }
 
-// Hide js version by default
+.js-enabled .cookie-settings__form-wrapper {
+    display: block
+}
+
 .cookie-settings__form-wrapper {
-    display: block;
+    display: none
 }
