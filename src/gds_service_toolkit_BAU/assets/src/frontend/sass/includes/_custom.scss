@@ -481,9 +481,11 @@ $mobile: 768px;
 
 .global-bar {
     padding: 15px 0;
+    position: relative;
 
     .global-bar-message-container {
       max-width: 960px;
+      position:relative;
 
       .govuk-warning-text__icon {
           font-family: nta,Arial,sans-serif;
