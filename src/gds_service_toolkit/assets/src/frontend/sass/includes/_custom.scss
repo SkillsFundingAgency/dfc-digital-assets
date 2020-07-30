@@ -1,0 +1,10 @@
+/* Custom banner and side styling (for example; changes from blue to green) */
+.global-bar--warning {
+    background-color: #ffdd00;
+
+	.global-bar-message-container {
+		.global-bar__dismiss {
+			color: inherit;
+		}
+	}
+}
