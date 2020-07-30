@@ -1,6 +1,46 @@
 ﻿
 (function () {
     'use strict'; 
+
+    //Set default state based on ehlstateCookie
+    var ehlstateCookie = "ehlstateCookie";
+    var ehlCookie = CookieBanner.getCookie(ehlstateCookie);
+    if (ehlCookie === null) {
+
+        //Set cookie
+        CookieBanner.setCookie(ehlstateCookie, true, 28);
+        $("#ehl-hide-link").text("Hide message");
+        $('.ncs-toggle').show();
+    }
+    else if (ehlCookie === "true") {
+        //Set cookie
+        CookieBanner.setCookie(ehlstateCookie, true, 28);
+        $("#ehl-hide-link").text("Hide message");
+        $('.ncs-toggle').show();
+    }
+    else if (ehlCookie === "false") {
+        //Set cookie
+        CookieBanner.setCookie(ehlstateCookie, false, 28);
+        $("#ehl-hide-link").text("Show message");
+        $('.ncs-toggle').hide();
+    }
+
+    //On click functionality
+    $("#ehl-hide-link").click(function () {
+        $(".ncs-toggle").slideToggle();
+        if ($(this).text() === "Show message") {
+            $(this).text("Hide message");
+
+            // Update cookie status
+            CookieBanner.setCookie(ehlstateCookie, true, 28);
+        } else {
+            $(this).text("Show message");
+            // Update cookie status
+            CookieBanner.setCookie(ehlstateCookie, false, 28);
+        }
+    });
+
+
     $("#skillsForm").submit(function (event) {
         var validator = $("#skillsForm").validate();
         if (!validator.valid()) {
