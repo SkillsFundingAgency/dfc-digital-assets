@@ -58,6 +58,14 @@
 					white-space: nowrap!important;
 				}
 			}
+      span.ncs-toggle {
+          display:block;
+          padding-left:50px;
+
+          span {
+            display: block;
+          }
+      }
 
 			.global-bar__dismiss {
 				position:absolute;
