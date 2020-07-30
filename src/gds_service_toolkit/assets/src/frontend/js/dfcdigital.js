@@ -13,86 +13,92 @@ dfc.digital = {
 $(document).ready(function () {
     CookieBanner.addCookieMessage();
 
-    //Set default state based on cookie
-    if($.cookie["ehlstate"] === undefined) {
-        $.cookie["ehlstate"] = $("#ehl-hide-link").text();
-        $("#ehl-hide-link").text("Show message");
+    //Set default state based on ehlstateCookie
+    var ehlstateCookie = "ehlstateCookie";
+    var ehlCookie = CookieBanner.getCookie(ehlstateCookie);
+    if (ehlCookie === null) {
+
+        //Set cookie
+        CookieBanner.setCookie(ehlstateCookie, true, 28);
+        $("#ehl-hide-link").text("Hide message");
         $('.ncs-toggle').show();
     }
-
-    var getCookieAccept = $.cookie["ehlstate"];
-    if (getCookieAccept !== "Show message") {
-        $("#ehl-hide-link").text("Show message");
-        $('.ncs-toggle').show();
-    } else if (getCookieAccept !== "Hide message") {
+    else if (ehlCookie === "true") {
+        //Set cookie
+        CookieBanner.setCookie(ehlstateCookie, true, 28);
         $("#ehl-hide-link").text("Hide message");
+        $('.ncs-toggle').show();
+    }
+    else if (ehlCookie === "false") {
+        //Set cookie
+        CookieBanner.setCookie(ehlstateCookie, false, 28);
+        $("#ehl-hide-link").text("Show message");
         $('.ncs-toggle').hide();
     }
-    else {
-        $(this).text("Show message");
-        $('.ncs-toggle').show();
-    }
 
+    //On click functionality
     $("#ehl-hide-link").click(function () {
         $(".ncs-toggle").slideToggle();
-        if ($(this).text() === "Show message")
+        if ($(this).text() === "Show message") { 
             $(this).text("Hide message");
-        else
+
+        // Update cookie status
+            CookieBanner.setCookie(ehlstateCookie, true, 28);
+    }else
+        {
             $(this).text("Show message");
-
-        //Setting cookie expiry after 6 months 
-        getCookieAccept = getCookie("ehlstate");
-        expire = new Date(expire.getTime() + 15552000000);
-        document.cookie = "ehlstate=$(this).text(); expires=" + expire;
-    });
-
-  
-    $(".js-search-focus").ready(function () { dfc.digital.addFocus(".js-search-focus"); }).focus(function () { dfc.digital.addFocus(this) }).blur(function () { dfc.digital.addFocus(this) });
-
-    /* Not yet developed
-    //Survey Show Hide / Cookie Functionality
-    */
-
-    //Filters Non Applicable functinality
-    $(".filter-na").change(function () {
-        if (this.checked) {
-            $('input:checked').not(".filter-na").prop('checked', false);
-            this.change;
+            // Update cookie status
+            CookieBanner.setCookie(ehlstateCookie, false, 28);
         }
     });
 
-    $('input:checkbox').not(".filter-na").change(function () {
-        if ($(".filter-na").prop('checked')) {
-            $(".filter-na").prop('checked', false);
-        }
-    });
 
-    $(".ga-additional-data").click(function () {
-        var validator = $(this).closest('form').validate();
-        if (validator.valid()) {
-            var key = $(this).data("datalayer-key");
-            var inputId = $(this).data("datalayer-input");
-            var dataValue = $("input[name=" + inputId + "]:checked").val();
-            dataLayer.push({ key: dataValue });
-        }
-    });
+$(".js-search-focus").ready(function () { dfc.digital.addFocus(".js-search-focus"); }).focus(function () { dfc.digital.addFocus(this) }).blur(function () { dfc.digital.addFocus(this) });
 
-    /*Course Search
-    */
+/* Not yet developed
+//Survey Show Hide / Cookie Functionality
+*/
 
-    $(".locationfield").on('change keyup keydown blur input', function () {
-        ConditionalDistanceDropDownDisplay($(this));
-    });
-
-    ConditionalDistanceDropDownDisplay();
-
-    /* Add feedback link to job profile thumbs up and down survey */
-    if ($('#job-profile-feedback-survey').length > 0) {
-        /* Add feedback link to job profile thumbs up and down survey */
-        var originUrl = $("#job-profile-feedback-survey").attr("href");
-        var url = originUrl + "?url=" + window.location.href;
-        document.getElementById("job-profile-feedback-survey").setAttribute("href",url)
+//Filters Non Applicable functinality
+$(".filter-na").change(function () {
+    if (this.checked) {
+        $('input:checked').not(".filter-na").prop('checked', false);
+        this.change;
     }
+});
+
+$('input:checkbox').not(".filter-na").change(function () {
+    if ($(".filter-na").prop('checked')) {
+        $(".filter-na").prop('checked', false);
+    }
+});
+
+$(".ga-additional-data").click(function () {
+    var validator = $(this).closest('form').validate();
+    if (validator.valid()) {
+        var key = $(this).data("datalayer-key");
+        var inputId = $(this).data("datalayer-input");
+        var dataValue = $("input[name=" + inputId + "]:checked").val();
+        dataLayer.push({ key: dataValue });
+    }
+});
+
+/*Course Search
+*/
+
+$(".locationfield").on('change keyup keydown blur input', function () {
+    ConditionalDistanceDropDownDisplay($(this));
+});
+
+ConditionalDistanceDropDownDisplay();
+
+/* Add feedback link to job profile thumbs up and down survey */
+if ($('#job-profile-feedback-survey').length > 0) {
+    /* Add feedback link to job profile thumbs up and down survey */
+    var originUrl = $("#job-profile-feedback-survey").attr("href");
+    var url = originUrl + "?url=" + window.location.href;
+    document.getElementById("job-profile-feedback-survey").setAttribute("href", url)
+}
 });
 
 $.extend($.ui.autocomplete.prototype, {
@@ -115,12 +121,12 @@ $('.js-autocomplete').each(function () {
             $.ajax({
                 url: $('.js-autocomplete').data("autocomplete-source"),
                 dataType: 'json',
-                data: {'term' : searchTerm,  'maxNumberDisplayed' : $('.js-autocomplete').data("autocomplete-maxnumberdisplyed"), 'fuzzySearch' : $('.js-autocomplete').data('autocomplete-fuzzysearch') },
+                data: { 'term': searchTerm, 'maxNumberDisplayed': $('.js-autocomplete').data("autocomplete-maxnumberdisplyed"), 'fuzzySearch': $('.js-autocomplete').data('autocomplete-fuzzysearch') },
                 success: function (data) {
                     response(data);
                 }
             });
-        }, 
+        },
         minLength: $(this).data('autocomplete-minlength')
     });
 });
