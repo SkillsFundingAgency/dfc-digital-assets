@@ -1,6 +1,12 @@
 ﻿
 (function () {
     'use strict'; 
+
+    //Script to set focus on accordion section links
+    $('.in-progress li a').on('click', function (e) {
+        $(e.target.hash).closest('.govuk-accordion__section').addClass('govuk-accordion__section--expanded');
+    });
+
     $("#skillsForm").submit(function (event) {
         var validator = $("#skillsForm").validate();
         if (!validator.valid()) {

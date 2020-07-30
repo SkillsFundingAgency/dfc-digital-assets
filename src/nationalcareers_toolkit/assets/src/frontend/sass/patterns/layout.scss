@@ -50,3 +50,16 @@ nav {
 .app-related-items .govuk-list > li {
   margin-bottom: govuk-spacing(2);
 }
+
+.dfc-no-wrap {
+    white-space: nowrap;
+}
+.dfc-display-none-visibility-hidden {
+    display: none !important;
+    visibility: hidden !important;
+}
+
+.dfc-display-inherit-visibility-visible {
+    display: inherit;
+    visibility: visible;
+}

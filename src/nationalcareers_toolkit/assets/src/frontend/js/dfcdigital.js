@@ -22,27 +22,29 @@ $(document).ready(function () {
     });
 
     // JS to hide / show label for search input
-    if ($('.input-search-item').val() !== undefined && $('.input-search-item').val().length > 0){
+    if ($('.input-search-item').val() !== undefined && $('.input-search-item').val().length > 0) {
         $(".input-label").hide();
     }
-    $(".js-search-focus").focus(function(){
+    $(".js-search-focus").focus(function () {
         $(".input-label").hide();
     });
-    $(".js-search-focus").blur(function() {
-        if ($('.input-search-item').val().length > 0){
-            $(".input-label").hide();
-        }
-        if ($('.input-search-item').val().length === 0){
-            $(".input-label").show();
+    $(".js-search-focus").blur(function () {
+        if ($('.input-search-item').val() !== undefined) {
+            if ($('.input-search-item').val().length > 0) {
+                $(".input-label").hide();
+            }
+            if ($('.input-search-item').val().length === 0) {
+                $(".input-label").show();
+            }
         }
     });
 
     $('.input-label').addClass('js-search-label');
 
     // Show / hide filters on mobile
-    $(".filters-button").click(function(){
-      $(".filters").toggle();
-        $(this).text(function(i, text){
+    $(".filters-button").click(function () {
+        $(".filters").toggle();
+        $(this).text(function (i, text) {
             return text === "Show filters" ? "Hide filters" : "Show filters";
         })
     });
@@ -88,7 +90,7 @@ $(document).ready(function () {
         /* Add feedback link to job profile thumbs up and down survey */
         var originUrl = $("#job-profile-feedback-survey").attr("href");
         var url = originUrl + "?url=" + window.location.href;
-        document.getElementById("job-profile-feedback-survey").setAttribute("href",url)
+        document.getElementById("job-profile-feedback-survey").setAttribute("href", url)
     }
 });
 
@@ -112,12 +114,12 @@ $('.js-autocomplete').each(function () {
             $.ajax({
                 url: $('.js-autocomplete').data("autocomplete-source"),
                 dataType: 'json',
-                data: {'term' : searchTerm,  'maxNumberDisplayed' : $('.js-autocomplete').data("autocomplete-maxnumberdisplyed"), 'fuzzySearch' : $('.js-autocomplete').data('autocomplete-fuzzysearch') },
+                data: { 'term': searchTerm, 'maxNumberDisplayed': $('.js-autocomplete').data("autocomplete-maxnumberdisplyed"), 'fuzzySearch': $('.js-autocomplete').data('autocomplete-fuzzysearch') },
                 success: function (data) {
                     response(data);
                 }
             });
-        }, 
+        },
         minLength: $(this).data('autocomplete-minlength')
     });
 });
