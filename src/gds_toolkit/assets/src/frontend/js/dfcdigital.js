@@ -133,23 +133,23 @@ $('.js-autocomplete').each(function () {
 });
 
 //Exam help lin cookie banner functionality
-var ehlCookie = CookieBanner.getCookie(ehlstateCookie);
+var ehlCookie = window.GOVUK.getCookie(ehlstateCookie);
 if (ehlCookie === null) {
 
     //Set cookie
-    CookieBanner.setCookie(ehlstateCookie, true, 28);
+    window.GOVUK.setCookie(ehlstateCookie, true, 28);
     $("#ehl-hide-link").text("Hide message");
     $('.ncs-toggle').show();
 }
 else if (ehlCookie === "true") {
     //Set cookie
-    CookieBanner.setCookie(ehlstateCookie, true, 28);
+    window.GOVUK.setCookie(ehlstateCookie, true, 28);
     $("#ehl-hide-link").text("Hide message");
     $('.ncs-toggle').show();
 }
 else if (ehlCookie === "false") {
     //Set cookie
-    CookieBanner.setCookie(ehlstateCookie, false, 28);
+    window.GOVUK.setCookie(ehlstateCookie, false, 28);
     $("#ehl-hide-link").text("Show message");
     $('.ncs-toggle').hide();
 }
@@ -161,11 +161,11 @@ $("#ehl-hide-link").click(function () {
         $(this).text("Hide message");
 
         // Update cookie status
-        CookieBanner.setCookie(ehlstateCookie, true, 28);
+        window.GOVUK.setCookie(ehlstateCookie, true, 28);
     } else {
         $(this).text("Show message");
         // Update cookie status
-        CookieBanner.setCookie(ehlstateCookie, false, 28);
+        window.GOVUK.setCookie(ehlstateCookie, false, 28);
     }
 });
 
