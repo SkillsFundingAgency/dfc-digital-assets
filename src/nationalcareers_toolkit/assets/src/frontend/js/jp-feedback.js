@@ -114,17 +114,18 @@ $(document).ready(function () {
         $(".job-profile-feedback").addClass("js-visible");
     };
 
-    $("#jp-feedback-yes").click(function () {
+    $("#jp-feedback-yes").click(function (event) {
         GOVUK.cookie('JPsurvey', 'dismissed', { days: 31 });
         $(".job-profile-feedback-start").addClass("js-hidden");
         $(".job-profile-feedback-end-yes").removeClass("js-hidden");
+        event.preventDefault();
     });
 
-    $("#jp-feedback-no").click(function () {
+    $("#jp-feedback-no").click(function (event) {
         GOVUK.cookie('JPsurvey', 'dismissed', { days: 31 });
         $(".job-profile-feedback-start").addClass("js-hidden");
         $(".job-profile-feedback-end-no").removeClass("js-hidden");
-
+        event.preventDefault();
     });
 
     $("#job-profile-feedback-survey").click(function (e) {
