@@ -13,42 +13,42 @@ dfc.digital = {
 $(document).ready(function () {
     CookieBanner.addCookieMessage();
 
-    //Set default state based on ehlstateCookie
-    var ehlstateCookie = "ehlstateCookie";
-    var ehlCookie = CookieBanner.getCookie(ehlstateCookie);
-    if (ehlCookie === null) {
+    //Set default state based on customBannerStatusCookie
+    var customBannerStatusCookie = "customBannerStatusCookie";
+    var customBannerCookie = CookieBanner.getCookie(customBannerStatusCookie);
+    if (customBannerCookie === null) {
 
         //Set cookie
-        CookieBanner.setCookie(ehlstateCookie, true, 28);
-        $("#ehl-hide-link").text("Hide message");
+        CookieBanner.setCookie(customBannerStatusCookie, true, 28);
+        $("#custom-banner-hide-link").text("Hide message");
         $('.ncs-toggle').show();
     }
-    else if (ehlCookie === "true") {
+    else if (customBannerCookie === "true") {
         //Set cookie
-        CookieBanner.setCookie(ehlstateCookie, true, 28);
-        $("#ehl-hide-link").text("Hide message");
+        CookieBanner.setCookie(customBannerStatusCookie, true, 28);
+        $("#custom-banner-hide-link").text("Hide message");
         $('.ncs-toggle').show();
     }
-    else if (ehlCookie === "false") {
+    else if (customBannerCookie === "false") {
         //Set cookie
-        CookieBanner.setCookie(ehlstateCookie, false, 28);
-        $("#ehl-hide-link").text("Show message");
+        CookieBanner.setCookie(customBannerStatusCookie, false, 28);
+        $("#custom-banner-hide-link").text("Show message");
         $('.ncs-toggle').hide();
     }
 
     //On click functionality
-    $("#ehl-hide-link").click(function () {
+    $("#custom-banner-hide-link").click(function () {
         $(".ncs-toggle").slideToggle();
         if ($(this).text() === "Show message") { 
             $(this).text("Hide message");
 
         // Update cookie status
-            CookieBanner.setCookie(ehlstateCookie, true, 28);
+            CookieBanner.setCookie(customBannerStatusCookie, true, 28);
     }else
         {
             $(this).text("Show message");
             // Update cookie status
-            CookieBanner.setCookie(ehlstateCookie, false, 28);
+            CookieBanner.setCookie(customBannerStatusCookie, false, 28);
         }
     });
 

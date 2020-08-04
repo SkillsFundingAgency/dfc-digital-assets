@@ -9,8 +9,8 @@ dfc.digital = {
         }
     }
 };
-//Set default state for ehl banner based on ehlstateCookie
-var ehlstateCookie = "ehlstateCookie";
+//Set default state for custom banner based on customBannerStatusCookie
+var customBannerStatusCookie = "customBannerStatusCookie";
 
 $(document).ready(function () {
     $(".js-search-focus").ready(function () { dfc.digital.addFocus(".js-search-focus"); }).focus(function () { dfc.digital.addFocus(this) }).blur(function () { dfc.digital.addFocus(this) });
@@ -132,40 +132,40 @@ $('.js-autocomplete').each(function () {
     });
 });
 
-//Exam help lin cookie banner functionality
-var ehlCookie = window.GOVUK.getCookie(ehlstateCookie);
-if (ehlCookie === null) {
+//Exam help line cookie banner functionality
+var customBannerCookie = window.GOVUK.getCookie(customBannerStatusCookie);
+if (customBannerCookie === null) {
 
     //Set cookie
-    window.GOVUK.setCookie(ehlstateCookie, true, 28);
-    $("#ehl-hide-link").text("Hide message");
+    window.GOVUK.setCookie(customBannerStatusCookie, true, 28);
+    $("#custom-banner-hide-link").text("Hide message");
     $('.ncs-toggle').show();
 }
-else if (ehlCookie === "true") {
+else if (customBannerCookie === "true") {
     //Set cookie
-    window.GOVUK.setCookie(ehlstateCookie, true, 28);
-    $("#ehl-hide-link").text("Hide message");
+    window.GOVUK.setCookie(customBannerStatusCookie, true, 28);
+    $("#custom-banner-hide-link").text("Hide message");
     $('.ncs-toggle').show();
 }
-else if (ehlCookie === "false") {
+else if (customBannerCookie === "false") {
     //Set cookie
-    window.GOVUK.setCookie(ehlstateCookie, false, 28);
-    $("#ehl-hide-link").text("Show message");
+    window.GOVUK.setCookie(customBannerStatusCookie, false, 28);
+    $("#custom-banner-hide-link").text("Show message");
     $('.ncs-toggle').hide();
 }
 
 //On click functionality
-$("#ehl-hide-link").click(function () {
+$("#custom-banner-hide-link").click(function () {
     $(".ncs-toggle").slideToggle();
     if ($(this).text() === "Show message") {
         $(this).text("Hide message");
 
         // Update cookie status
-        window.GOVUK.setCookie(ehlstateCookie, true, 28);
+        window.GOVUK.setCookie(customBannerStatusCookie, true, 28);
     } else {
         $(this).text("Show message");
         // Update cookie status
-        window.GOVUK.setCookie(ehlstateCookie, false, 28);
+        window.GOVUK.setCookie(customBannerStatusCookie, false, 28);
     }
 });
 
