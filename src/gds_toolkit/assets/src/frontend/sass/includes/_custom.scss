@@ -131,8 +131,8 @@
       .global-bar-message-container {
         .global-bar__dismiss {
           margin-left:50px;
-          position: relative;
-          margin-top: 20px;
+          position: relative !important;
+          margin-top: 20px !important;
         }
       }
     }
