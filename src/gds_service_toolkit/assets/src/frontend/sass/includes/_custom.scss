@@ -8,3 +8,20 @@
 		}
 	}
 }
+.global-bar__dismiss--show {
+  display:none !important;
+}
+.js-enabled {
+  .global-bar__dismiss--show {
+    display:block !important;
+  }
+}
+@media (max-width: 48.0525em) {
+    .global-bar {
+      .global-bar-message-container {
+        .global-bar__dismiss {
+          margin-left:50px;
+        }
+      }
+    }
+}
