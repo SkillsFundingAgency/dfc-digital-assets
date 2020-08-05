@@ -4,6 +4,7 @@
     "assets/src/frontend/js/custom-validation.js",
     "assets/src/frontend/js/cookie-prefrences-banner.js",
     "assets/src/frontend/js/cookie-prefrences-settings.js",
+    "assets/src/frontend/js/custom-banner.js",
     "assets/src/frontend/js/modules/*.js"
   ],
     "jqueryBundle": [
