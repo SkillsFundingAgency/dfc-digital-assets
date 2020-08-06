@@ -2071,3 +2071,7 @@ input[type=number] {
 .word-break {
     word-break: break-word;
 }
+
+.ncs-toggle {
+    display: block;
+}
