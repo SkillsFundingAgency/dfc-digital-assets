@@ -483,6 +483,7 @@ $mobile: 768px;
 .global-bar {
     padding: 12px 0;
     position: relative;
+    overflow: hidden;
 
     .global-bar-message-container {
       max-width: 960px;
@@ -584,6 +585,10 @@ $mobile: 768px;
            margin-left:50px;
            position:relative;
            padding-top:10px;
+
+           &:focus {
+             float:left;
+           }
          }
        }
      }
