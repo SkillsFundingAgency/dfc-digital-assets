@@ -10,7 +10,7 @@ $(document).ready(function () {
     }
    
     $("#custom-banner-hide-link").click(function (event) {
-        $(".ncs-toggle").slideToggle(600);
+        $(".ncs-toggle").slideToggle(1500);
         if ($(this).text() === "Show message") {
             $(this).text("Hide message")
             CookieBanner.setCookie(customBannerStatusCookie, false, {});
