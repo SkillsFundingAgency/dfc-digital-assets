@@ -8,6 +8,7 @@ $global-bar-background-colour: #ffdd00;
   padding: 15px 0;
   font-family: "nta", Arial, sans-serif;
   position: relative;
+  overflow: hidden;
 
   .global-bar-message-container {
     max-width: 960px;
@@ -105,6 +106,11 @@ $global-bar-background-colour: #ffdd00;
            margin-left:50px;
            position:relative;
            padding-top:10px;
+
+           &:focus {
+             float:left;
+           }
+
          }
        }
      }
