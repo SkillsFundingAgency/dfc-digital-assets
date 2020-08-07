@@ -7,6 +7,7 @@
 .global-bar {
 	background-color: #ffdd00;
 	padding: 15px 0;
+  overflow: hidden;
 
 	.global-bar-message-container {
 		margin: 0 30px;
@@ -133,6 +134,10 @@
           margin-left:50px;
           position: relative !important;
           margin-top: 10px !important;
+
+          &:focus {
+            float:left;
+          }
         }
       }
     }
