@@ -21,6 +21,10 @@
       .global-bar-message-container {
         .global-bar__dismiss {
           margin-left:50px;
+          float: left;
+        }
+        .govuk-warning-text__icon {
+          top:55%;
         }
       }
     }
