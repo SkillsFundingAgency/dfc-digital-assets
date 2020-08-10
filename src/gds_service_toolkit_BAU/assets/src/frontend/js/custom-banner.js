@@ -8,9 +8,9 @@ $(document).ready(function () {
         $("#custom-banner-hide-link").text("Show message");
         $('.ncs-toggle').hide();
     }
-   
+
     $("#custom-banner-hide-link").click(function (event) {
-        $(".ncs-toggle").slideToggle();
+        $(".ncs-toggle").toggleClass("toggled");
         if ($(this).text() === "Show message") {
             $(this).text("Hide message")
             CookieBanner.setCookie(customBannerStatusCookie, false, {});
@@ -22,5 +22,3 @@ $(document).ready(function () {
     });
 
 });
-
-
