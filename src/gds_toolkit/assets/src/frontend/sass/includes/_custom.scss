@@ -134,10 +134,14 @@
           margin-left:50px;
           position: relative !important;
           margin-top: 10px !important;
+          float:left;
 
           &:focus {
             float:left;
           }
+        }
+        .govuk-warning-text__icon {
+          top: 55%;
         }
       }
     }
