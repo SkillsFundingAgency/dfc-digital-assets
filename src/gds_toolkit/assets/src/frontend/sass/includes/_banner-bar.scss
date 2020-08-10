@@ -35,7 +35,11 @@
     position:absolute;
     margin-top: 0;
     right: 0;
-    top: 0
+    top: 0;
+    float:left;
+  }
+  .global-bar .global-bar-message-container .global-bar-message .govuk-warning-text__icon {
+    top: 55%;
   }
 }
 

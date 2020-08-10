@@ -38,6 +38,10 @@ $global-bar-background-colour: #ffdd00;
         -moz-user-select: none;
         -ms-user-select: none;
         user-select: none;
+
+        @media (min-width: 40.0625em) {
+          top:55%;
+        }
     }
     strong.govuk-warning-text__text {
         display: block;
@@ -106,6 +110,7 @@ $global-bar-background-colour: #ffdd00;
            margin-left:50px;
            position:relative;
            padding-top:10px;
+           float: left;
 
            &:focus {
              float:left;

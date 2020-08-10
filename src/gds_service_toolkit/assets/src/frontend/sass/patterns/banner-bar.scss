@@ -50,6 +50,10 @@
     margin-top: 0;
     right: 0;
     top: 0;
+    float:left;
+  }
+  .govuk-warning-text__icon {
+    top:55%;
   }
 }
 
@@ -87,7 +91,9 @@
 }
 
 .global-bar--warning .global-bar__dismiss {
-  color: #ffffff
+  color: #ffffff;
+
+
 }
 
 .global-bar--warning .global-bar__dismiss:focus {
