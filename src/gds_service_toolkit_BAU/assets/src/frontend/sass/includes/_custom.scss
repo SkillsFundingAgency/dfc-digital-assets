@@ -513,6 +513,10 @@ $mobile: 768px;
           -moz-user-select: none;
           -ms-user-select: none;
           user-select: none;
+
+          @media (max-width: 48.0525em) {
+                top: 55%;
+          }
       }
 
       strong.govuk-warning-text__text {
@@ -609,6 +613,7 @@ $mobile: 768px;
            margin-left:50px;
            position:relative;
            padding-top:10px;
+           float:left;
 
            &:focus {
              float:left;
