@@ -536,6 +536,17 @@ $mobile: 768px;
 
       }
 
+      .ncs-toggle {
+          height: 55px;
+          -webkit-transition: height .3s linear, padding-top .3s linear, padding-bottom .3s linear, border-top-width .3s linear, border-top-width .3s linear;
+          transition: height .3s linear, padding-top .3s linear, padding-bottom .3s linear, border-top-width .3s linear, border-top-width .3s linear;
+      }
+      .ncs-toggle.toggled {
+          overflow: hidden;
+          padding-top: 0;
+          padding-bottom: 0;
+          height: 0;
+      }
 
       .global-bar__dismiss {
           color: inherit;
