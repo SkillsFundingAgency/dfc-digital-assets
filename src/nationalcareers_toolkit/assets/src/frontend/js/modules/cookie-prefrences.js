@@ -10,6 +10,7 @@
     var COOKIE_CATEGORIES = {
         'cookies_policy': 'essential',
         'cookies_preferences_set': 'essential',
+        'ncs_hide_custom_banner': 'essential',
         '_ga': 'usage',
         '_gid': 'usage',
         '_gat': 'usage',
