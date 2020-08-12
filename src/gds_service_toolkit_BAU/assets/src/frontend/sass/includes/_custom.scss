@@ -606,6 +606,10 @@ $mobile: 768px;
         margin-top:5px!important
     }
  }
+ .global-bar.global-bar--warning {
+     background-color: #ffdd00;
+     font-size: 119%;
+ }
  @media (max-width: 48.0525em) {
      .global-bar {
        .global-bar-message-container {
@@ -621,4 +625,8 @@ $mobile: 768px;
          }
        }
      }
+     .global-bar.global-bar--warning {
+      font-size:100%;
+      line-height: normal;
+    }
  }

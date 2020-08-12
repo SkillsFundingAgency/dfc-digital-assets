@@ -47,7 +47,7 @@ $global-bar-background-colour: #ffdd00;
         display: block;
         padding-left: 50px;
         font-weight: normal;
-        font-size: inherit;
+        font-size: 115%;
         font-weight: bold;
 
         .govuk-warning-text__assistive {
@@ -71,6 +71,7 @@ $global-bar-background-colour: #ffdd00;
        margin-top: 0;
        right: 0;
        top: 0;
+       font-size: 113%;
 
        &:focus {
            outline: transparent solid 3px;
