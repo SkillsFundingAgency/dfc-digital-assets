@@ -38,6 +38,11 @@
 				-moz-user-select: none;
 				-ms-user-select: none;
 				user-select: none;
+
+        @media (max-width: 48.0525em) {
+              top: 45%;
+              margin-top: 0;
+        }
 			}
 
 			strong.govuk-warning-text__text {
@@ -131,7 +136,7 @@
     .global-bar {
       .global-bar-message-container {
         margin: 0 15px;
-        
+
         .global-bar__dismiss {
           margin-left:50px;
           position: relative !important;
@@ -141,9 +146,6 @@
           &:focus {
             float:left;
           }
-        }
-        .govuk-warning-text__icon {
-          top: 55%;
         }
       }
     }
