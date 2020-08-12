@@ -40,8 +40,8 @@ $global-bar-background-colour: #ffdd00;
         user-select: none;
 
         @media (max-width: 48.0525em) {
-              top: 45%;
-              margin-top: 0;
+              top: 45% !important;
+              margin-top: 0 !important;
         }
     }
     strong.govuk-warning-text__text {
