@@ -108,15 +108,12 @@ $global-bar-background-colour: #ffdd00;
  @media (max-width: 48.0525em) {
      .global-bar {
        .global-bar-message-container {
-         strong.govuk-warning-text__text {
-           font-size:100%;
-         }
+
          .global-bar__dismiss {
            margin-left:50px;
            position:relative;
            padding-top:10px;
            float: left;
-           font-size:100%;
 
            &:focus {
              float:left;
@@ -126,6 +123,20 @@ $global-bar-background-colour: #ffdd00;
        }
      }
  }
+
+@media (max-width: 47.0525em) {
+  .global-bar {
+    .global-bar-message-container {
+      strong.govuk-warning-text__text {
+        font-size:100%;
+      }
+      .global-bar__dismiss {
+        font-size:100%;
+      }
+    }
+  }
+
+}
 
 .ncs-toggle {
     display: block;
