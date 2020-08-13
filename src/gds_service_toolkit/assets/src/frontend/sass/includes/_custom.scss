@@ -22,6 +22,8 @@
         .global-bar__dismiss {
           margin-left:50px;
           float: left;
+          postion: relative;
+          margin-top:10px;
         }
         .govuk-warning-text__icon {
           top:45%;
