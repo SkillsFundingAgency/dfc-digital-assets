@@ -514,7 +514,7 @@ $mobile: 768px;
           -ms-user-select: none;
           user-select: none;
 
-          @media (max-width: 48.0525em) {
+          @media (max-width: 640px) {
                 top: 45%;
                 margin-top: 0;
           }
@@ -561,7 +561,7 @@ $mobile: 768px;
           }
 
           @media (max-width: 338px) {
-            height:150px;
+            height:155px;
           }
           @media (max-width: 280px) {
             height:170px;
