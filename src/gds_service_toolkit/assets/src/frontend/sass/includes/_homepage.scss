@@ -269,7 +269,6 @@ body.hasHover {
 .gem-c-share-links--columns {
 	.gem-c-share-links__list {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 	}
 	&:after {
 		content: "";
