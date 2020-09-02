@@ -35,3 +35,20 @@
             color: #FFFFFF;
         }
     }}
+
+
+  /* secondary-hero */
+
+  .secondary-hero {
+      background-color: #f3f2f1;
+      width: 100%;
+      padding: 30px 0 10px 0;
+
+  	p.govuk-body-m {
+  		min-height: 74px;
+
+  		 @media (max-width: 780px) {
+  			min-height: auto;
+  		 }
+  	}
+  }
