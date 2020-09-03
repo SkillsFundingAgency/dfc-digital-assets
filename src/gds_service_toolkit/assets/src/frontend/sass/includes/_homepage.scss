@@ -148,6 +148,32 @@ body.hasHover {
 		padding: 10px;
 		margin-bottom:15px;
 
+		@media (max-width: 1019px) {
+		    min-height: 190px;
+		}
+		@media (max-width: 893px) {
+		    min-height: 215px;
+		}
+		@media (max-width: 784px) {
+		    min-height: 240px;
+		}
+		@media (max-width: 751px) {
+		    min-height: 265px;
+		}
+		@media (max-width: 713px) {
+		    min-height: 290px;
+		}
+
+		@media (max-width: 648px) {
+		    min-height: 315px;
+		}
+		@media (max-width: 640px) {
+		    min-height: auto;
+		}
+		a {
+		    text-decoration: none;
+		}
+
 		&:hover {
 			background: #207e77;
 			cursor: pointer;
