@@ -213,3 +213,55 @@
     }
   }
 }
+
+
+/* NCS HERO */
+
+.ncs-hero {
+  @extend .secondary-hero
+}
+
+.ncs-heroblock {
+  @extend .secondary-hero-block;
+
+  .ncs-heroblock-content {
+  @extend .secondary-hero-block-content
+  
+  }
+
+  .ncs-salary {
+    @extend .pound-block
+  }
+
+  .ncs-hours {
+    @extend .clock-block
+  }
+
+  .ncs-pattern {
+    @extend .calendar-block
+  }
+
+  @media (max-width: 749px) {
+    &:nth-child(odd) {
+      background-color: darken(govuk-colour('light-grey'), 5%);
+    }
+
+    h2 {
+      width: 50%;
+      float: left;
+      border: none;
+      min-width: 150px;
+
+      span {
+        width: 100%;
+        margin: 0;
+      }
+    }
+
+    .ncs-heroblock-content {
+      float: right;
+      width: auto;
+      padding: 0;
+    }
+  }
+}
