@@ -1,0 +1,215 @@
+// GOVUK colour palette
+$careers-turquoise: #207e77;
+
+// Brand colours
+$govuk-blue: #005ea5;
+$mainstream-brand: $govuk-blue;
+$ncs-green: #207e77;
+
+// Standard palette, colours
+$purple: #2e358b;
+$purple-50: #9799c4;
+$purple-25: #d5d6e7;
+$mauve: #6f72af;
+$mauve-50: #b7b9d7;
+$mauve-25: #e2e2ef;
+$fuschia: #912b88;
+$fuschia-50: #c994c3;
+$fuschia-25: #e9d4e6;
+$pink: #d53880;
+$pink-50: #eb9bbe;
+$pink-25: #f6d7e5;
+$baby-pink: #f499be;
+$baby-pink-50: #faccdf;
+$baby-pink-25: #fdebf2;
+$red: #b10e1e;
+$red-50: #d9888c;
+$red-25: #efcfd1;
+$mellow-red: #df3034;
+$mellow-red-50: #ef9998;
+$mellow-red-25: #f9d6d6;
+$orange: #f47738;
+$orange-50: #fabb96;
+$orange-25: #fde4d4;
+$brown: #b58840;
+$brown-50: #dac39c;
+$brown-25: #f0e7d7;
+$yellow: #ffbf47;
+$yellow-50: #ffdf94;
+$yellow-25: #fff2d3;
+$grass-green: #85994b;
+$grass-green-50: #c2cca3;
+$grass-green-25: #e7ebda;
+$green: #006435;
+$green-50: #7fb299;
+$green-25: #cce0d6;
+$turquoise: #28a197;
+$turquoise-50: #95d0cb;
+$turquoise-25: #d5ecea;
+$light-blue: #2b8cc4;
+$light-blue-50: #96c6e2;
+$light-blue-25: #d5e8f3;
+
+// Standard palette, greys
+$black: #0b0c0c;
+$grey-1: #6f777b;
+$grey-2: #bfc1c3;
+$grey-3: #dee0e2;
+$grey-4: #f8f8f8;
+$white: #fff;
+
+// Semantic colour names
+$link-colour: $govuk-blue;
+$link-active-colour: $light-blue;
+$link-hover-colour: $light-blue;
+$link-visited-colour: #4c2c92;
+$button-colour: #00823b;
+$focus-colour: $yellow;
+$text-colour: $black;             // Standard text colour
+$secondary-text-colour: $grey-1;  // Section headers, help text etc.
+$border-colour: $grey-2;          // Borders, seperators, rules, keylines etc.
+$panel-colour: $grey-3;           // Related links panel, page footer etc.
+$canvas-colour: $grey-4;          // Page background
+$highlight-colour: $grey-4;       // Table stripes etc.
+$page-colour: $white;             // The page
+$discovery-colour: $govuk-blue;   // Discovery badges and banners
+$alpha-colour: $govuk-blue;       // Alpha badges and banners
+$beta-colour: $govuk-blue;        // Beta badges and banners
+$live-colour: $grass-green;       // Live badges and banners
+$banner-text-colour: #000;        // Text colour for Alpha & Beta banners
+$error-colour: $red;              // Error text and border colour
+$error-background: #fef7f7;       // Error background colour
+
+
+// Standard GDS colour styles
+.ncs-green { color: $ncs-green }
+.ncs-green-background { background-color: $ncs-green }
+.purple { color: $purple }
+.purple-50 { color: $purple-50 }
+.purple-25 { color: $purple-25 }
+.mauve{ color: $mauve }
+.mauve-50{ color: $mauve-50 }
+.mauve-25{ color: $mauve-25 }
+.fuschia{ color: $fuschia }
+.fuschia-50{ color: $fuschia-50 }
+.fuschia-25{ color: $fuschia-25 }
+.pink{ color:  $pink }
+.pink-50{ color: $pink-50 }
+.pink-25{ color: $pink-25 }
+.baby-pink{ color: $baby-pink }
+.baby-pink-50{ color: $baby-pink-50 }
+.baby-pink-25{ color: $baby-pink-25 }
+.red{ color: $red }
+.red-50{ color: $red-50 }
+.red-25{ color: $red-25 }
+.mellow-red{ color: $mellow-red }
+.mellow-red-50{ color: $mellow-red-50 }
+.mellow-red-25{ color: $mellow-red-25 }
+.orange{ color: $orange }
+.orange-50{ color: $orange-50 }
+.orange-25{ color: $orange-25 }
+.brown{ color: $brown }
+.brown-50{ color: $brown-50 }
+.brown-25{ color: $brown-25 }
+.yellow{ color: $yellow }
+.yellow-50{ color: $yellow-50 }
+.yellow-25{ color: $yellow-25 }
+.grass-green{ color: $grass-green }
+.grass-green-50{ color: $grass-green-50 }
+.grass-green-25{ color: $grass-green-25 }
+.green{ color: $green }
+.green-50{ color: $green-50 }
+.green-25{ color: $green-25 }
+.turquoise{ color: $turquoise }
+.turquoise-50{ color: $turquoise-50 }
+.turquoise-25{ color: $turquoise-25 }
+.light-blue{ color: $light-blue }
+.light-blue-50{ color: $light-blue-50 }
+.light-blue-25{ color: $light-blue-25 }
+
+// Standard palette, greys
+.black { color : $black }
+.grey-1 { color :  $grey-1 }
+.grey-2  { color : $grey-2 }
+.grey-3  { color : $grey-3 }
+.grey-4 { color : $grey-4 }
+.white  { color : $white }
+
+
+// Standard palette background, greys
+
+// Standard palette, greys
+.black-background { background-color : $black }
+.grey-1-background { background-color :  $grey-1 }
+.grey-2-background  { background-color : $grey-2 }
+.grey-3-background  { background-color : $grey-3 }
+.grey-4-background { background-color : $grey-4 }
+.white-background  { background-color : $white }
+
+
+// Standard GDS background-colour styles
+.ncs-green-background { background-color: $ncs-green }
+.purple-background { background-color: $purple }
+.purple-50-background { background-color: $purple-50 }
+.purple-25-background { background-color: $purple-25 }
+.mauve-background { background-color: $mauve }
+.mauve-50-background { background-color: $mauve-50 }
+.mauve-25-background { background-color: $mauve-25 }
+.fuschia-background { background-color: $fuschia }
+.fuschia-50-background { background-color: $fuschia-50 }
+.fuschia-25-background { background-color: $fuschia-25 }
+.pink-background { background-color:  $pink }
+.pink-50-background { background-color: $pink-50 }
+.pink-25-background { background-color: $pink-25 }
+.baby-pink-background { background-color: $baby-pink }
+.baby-pink-50-background { background-color: $baby-pink-50 }
+.baby-pink-25-background { background-color: $baby-pink-25 }
+.red-background { background-color: $red }
+.red-50-background { background-color: $red-50 }
+.red-25-background { background-color: $red-25 }
+.mellow-red-background { background-color: $mellow-red }
+.mellow-red-50-background { background-color: $mellow-red-50 }
+.mellow-red-25-background { background-color: $mellow-red-25 }
+.orange-background { background-color: $orange }
+.orange-50-background { background-color: $orange-50 }
+.orange-25-background { background-color: $orange-25 }
+.brown-background { background-color: $brown }
+.brown-50-background { background-color: $brown-50 }
+.brown-25-background { background-color: $brown-25 }
+.yellow-background { background-color: $yellow }
+.yellow-50-background { background-color: $yellow-50 }
+.yellow-25-background { background-color: $yellow-25 }
+.grass-green-background { background-color: $grass-green }
+.grass-green-50-background { background-color: $grass-green-50 }
+.grass-green-25-background { background-color: $grass-green-25 }
+.green-background { background-color: $green }
+.green-50-background { background-color: $green-50 }
+.green-25-background { background-color: $green-25 }
+.turquoise-background { background-color: $turquoise }
+.turquoise-50-background { background-color: $turquoise-50 }
+.turquoise-25-background { background-color: $turquoise-25 }
+.light-blue-background { background-color: $light-blue }
+.light-blue-50-background { background-color: $light-blue-50 }
+.light-blue-25-background { background-color: $light-blue-25 }
+
+
+// Semantic colour names classes
+.link-colour { color : $link-colour }
+.link-active-colour{ color : $link-active-colour }
+.link-hover-colour{ color : $link-hover-colour }
+.link-visited-colour{ color : $link-visited-colour }
+.button-colour { color : $button-colour }
+.focus-colour { color : $focus-colour }
+.text-colour { color : $text-colour }  // Standard text colour
+.secondary-text-colour { color : $border-colour } // Borders, seperators, rules, keylines etc.
+.panel-colour { color : $panel-colour }           // Related links panel, page footer etc.
+.canvas-colour { color : $canvas-colour }          // Page background
+.highlight-colour { color : $highlight-colour }      // Table stripes etc.
+.page-colour { color : $page-colour }             // The page
+.discovery-colour { color : $discovery-colour }   // Discovery badges and banners
+.alpha-colour { color : $alpha-colour }       // Alpha badges and banners
+.beta-colour { color : $beta-colour }       // Beta badges and banners
+.live-colour { color : $live-colour }      // Live badges and banners
+.banner-text-colour { color : $banner-text-colour}        // Text colour for Alpha & Beta banners
+.error-colour { color : $error-colour}           // Error text and border colour
+.error-background { background-color : $error-background }       // Error background colour
