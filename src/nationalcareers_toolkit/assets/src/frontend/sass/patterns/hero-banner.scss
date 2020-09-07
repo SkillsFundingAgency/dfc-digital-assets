@@ -4,7 +4,7 @@
 @import '../../../../../node_modules/govuk_frontend_toolkit/stylesheets/shims';
 
 // Primary hero banner - this hero banner uses the NCS primary colour #207E77
-.primary-hero {
+.primary-hero, .ncs-hero {
   background-color: #207e77;
   color: #ffffff;
   padding: 30px 0 10px;
@@ -15,15 +15,15 @@
 
   input, select {
     border: none !important;
-    color: black;
+    color: #000;
   }
 
   option {
-    color: black;
+    color: #000;
   }
 
   button {
-    background-color: black;
+    background-color: #000;
 
     &:focus {
       outline: $govuk-focus-width solid $govuk-focus-colour;
@@ -31,7 +31,7 @@
     }
 
     &:hover {
-      background-color: black;
+      background-color: #000;
       text-decoration: underline;
     }
   }
@@ -42,10 +42,18 @@
   p {
     color: #FFFFFF;
     a {
-      font-weight: bold;
+      font-weight: 700;
       color: #FFFFFF;
     }
-  }}
+  }
+}
+@media (max-width: 768px) {
+    .primary-hero, .ncs-hero {
+    		.govuk-grid-column-full-width {
+    			margin:0 20px
+    		}
+	   }
+}
 
 // Secondary hero banner
 .secondary-hero {
@@ -215,18 +223,18 @@
 }
 
 
-/* NCS HERO */
+/* NCS HERO SECONDARY */
 
-.ncs-hero {
+.ncs-hero-secondary {
   @extend .secondary-hero
 }
 
-.ncs-heroblock {
+.ncs-hero-secondary-block {
   @extend .secondary-hero-block;
 
-  .ncs-heroblock-content {
+  .ncs-hero-secondary-block-content {
   @extend .secondary-hero-block-content
-  
+
   }
 
   .ncs-salary {
@@ -258,7 +266,7 @@
       }
     }
 
-    .ncs-heroblock-content {
+    .ncs-hero-secondary-block-content {
       float: right;
       width: auto;
       padding: 0;
