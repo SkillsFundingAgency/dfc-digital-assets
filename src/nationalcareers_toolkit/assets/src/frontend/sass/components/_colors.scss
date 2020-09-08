@@ -194,7 +194,7 @@ $error-background: #fef7f7;       // Error background colour
 
 
 // Semantic colour names classes
-.link-colour { color : $link-colour }
+.link-colour { color : $link-colour !important;}
 .link-active-colour{ color : $link-active-colour }
 .link-hover-colour{ color : $link-hover-colour }
 .link-visited-colour{ color : $link-visited-colour }
