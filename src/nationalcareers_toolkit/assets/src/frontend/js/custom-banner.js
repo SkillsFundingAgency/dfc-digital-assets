@@ -1,4 +1,6 @@
+/*
 $(document).ready(function () {
+ 
     //only inject it on pages where its not there already
     if ($('.global-bar-message-container').length === 0) {
         var bannerHTML = `
@@ -18,6 +20,7 @@ $(document).ready(function () {
 
         $('.govuk-header').after(bannerHTML);
     }
+ 
 
     //Set default state based on customBannerStatusCookie
     var customBannerStatusCookie = "ncs_hide_custom_banner";
@@ -27,6 +30,7 @@ $(document).ready(function () {
         $("#custom-banner-hide-link").text("Show message");
         $('.ncs-toggle').hide();
     }
+
    
     $(document).on('click', '#custom-banner-hide-link', function (event) {
         $(".ncs-toggle").slideToggle();
@@ -40,5 +44,4 @@ $(document).ready(function () {
         event.preventDefault();
     });
 });
-
-
+*/
