@@ -82,7 +82,7 @@
         GOVUK.addCookieMessage();
     }
 
-    // header navigation toggle
+    /* header navigation toggle
     if (document.querySelectorAll && document.addEventListener){
         var els = document.querySelectorAll('.js-header-toggle'),
             i, _i;
@@ -105,7 +105,7 @@
                 }
             });
         }
-    }
+    }*/
 }).call(this);
 
 $(document).ready(function () {
