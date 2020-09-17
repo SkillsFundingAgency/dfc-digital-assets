@@ -43,7 +43,6 @@ $yellow-50: #ffdf94;
 $yellow-25: #fff2d3;
 $grass-green: #85994b;
 $light-green: #85994b;
-$light-green: #85994b;
 $grass-green-50: #c2cca3;
 $grass-green-25: #e7ebda;
 $green: #00703c;
@@ -158,6 +157,8 @@ $error-background: #fef7f7;       // Error background colour
 
 // Standard palette, greys
 .black-background { background-color : $black }
+.mid-grey-background { background-color : $mid-grey }
+.light-grey-background { background-color : $light-grey }
 .grey-1-background { background-color :  $grey-1 }
 .grey-2-background  { background-color : $grey-2 }
 .grey-3-background  { background-color : $grey-3 }
