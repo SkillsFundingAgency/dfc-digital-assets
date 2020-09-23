@@ -18,6 +18,8 @@ module.exports = function (grunt) {
     var cmsExtentionsBundle = grunt.file.readJSON('jsfiles.json').cmsExtentionsBundle;
     var matchskillsJSFiles = grunt.file.readJSON('jsfiles.json').matchskillsJsFilesBundle;
     var compUiJsFiles = grunt.file.readJSON('jsfiles.json').compUiJsFilesBundle;
+    var shcJsFiles = grunt.file.readJSON('jsfiles.json').SHCJsFilesBundle;
+
 
     // Name of the folder that contains project specific assets (scss, js, images, etc.)
     var projectAssetsFolder = "frontend";
@@ -84,7 +86,7 @@ module.exports = function (grunt) {
                     ext: '.css'
                 }
                 ]
-               
+
             }
         },
 
@@ -147,7 +149,7 @@ module.exports = function (grunt) {
                 warnings: true,
                 ie8: true,
                 mangle: {
-                    reserved: ['jQuery', 'Modernizr', 'selectivizr']                  
+                    reserved: ['jQuery', 'Modernizr', 'selectivizr']
                 },
                 compress: true
             },
@@ -162,6 +164,7 @@ module.exports = function (grunt) {
                     { '<%= dist.path %>/js/cmsExtentionsBundle.min.js': cmsExtentionsBundle },
                     { '<%= dist.path %>/js/matchskills.min.js': matchskillsJSFiles },
                     { '<%= dist.path %>/js/compui.min.js': compUiJsFiles },
+                    { '<%= dist.path %>/js/shc.min.js': shcJsFiles },
                     {
                         expand: true,
                         src: ['*.js', '!*.min.js'],
