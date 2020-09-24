@@ -18,7 +18,7 @@ module.exports = function (grunt) {
     var cmsExtentionsBundle = grunt.file.readJSON('jsfiles.json').cmsExtentionsBundle;
     var matchskillsJSFiles = grunt.file.readJSON('jsfiles.json').matchskillsJsFilesBundle;
     var compUiJsFiles = grunt.file.readJSON('jsfiles.json').compUiJsFilesBundle;
-    var shcJsFiles = grunt.file.readJSON('jsfiles.json').SHCJsFilesBundle;
+    var shcJsFiles = grunt.file.readJSON('jsfiles.json').shcJsFilesBundle;
 
 
     // Name of the folder that contains project specific assets (scss, js, images, etc.)

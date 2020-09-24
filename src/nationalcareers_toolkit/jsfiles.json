@@ -68,7 +68,7 @@
     "assets/src/frontend/js/compui/apps/**/*.js",
     "assets/src/frontend/js/compui/compui-shell.js"
   ],
-  "SHCJsFilesBundle": [
+  "shcJsFilesBundle": [
     "assets/src/frontend/js/shc/d3.v3.min.js",
     "assets/src/frontend/js/shc/bind.js",
     "assets/src/frontend/js/shc/_search.js",
