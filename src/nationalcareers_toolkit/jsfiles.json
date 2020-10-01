@@ -69,29 +69,8 @@
     "assets/src/frontend/js/compui/compui-shell.js"
   ],
   "SHCJsFilesBundle": [
-    "assets/src/frontend/js/shc/d3.v3.min.js",
-    "assets/src/frontend/js/shc/bind.js",
-    "assets/src/frontend/js/shc/_search.js",
-    "assets/src/frontend/js/shc/redirect.js",
-    "assets/src/frontend/js/shc/coursesearch.js",
-    "assets/src/frontend/js/shc/coursesearch-results.js",
-    "assets/src/frontend/js/shc/coursesearchresults.js",
-    "assets/src/frontend/js/shc/customvalidation.js",
-    "assets/src/frontend/js/shc/editdetails.js",
-    "assets/src/frontend/js/shc/employment-graph.js",
-    "assets/src/frontend/js/shc/GenericFunctions.js",
-    "assets/src/frontend/js/shc/search-box.js",
-    "assets/src/frontend/js/shc/search-results.js",
-    "assets/src/frontend/js/shc/skillsHealthCheck.js",
     "assets/src/frontend/js/shc/application.js",
-    "assets/src/frontend/js/shc/kendo.editor.js",
-    "assets/src/frontend/js/shc/42e09914.ipsos-overlay.js",
-    "assets/src/frontend/js/shc/contactadvisor.js",
-    "assets/src/frontend/js/shc/details.polyfill.js",
-    "assets/src/frontend/js/shc/dialog.js",
-    "assets/src/frontend/js/shc/dialog-polyfill.0.4.3-01.js",
-    "assets/src/frontend/js/shc/SfaGeoLocation.js",
-    "assets/src/frontend/js/shc/cookie-prefrences-banner.js",
-    "assets/src/frontend/js/shc/modules/*.js"
+    "assets/src/frontend/js/shc/customvalidation.js",
+    "assets/src/frontend/js/shc/skillsHealthCheck.js"
   ]
 }

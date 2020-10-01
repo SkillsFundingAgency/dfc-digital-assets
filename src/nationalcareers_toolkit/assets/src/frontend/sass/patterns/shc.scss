@@ -460,3 +460,58 @@ $mobile: 768px;
       line-height: normal;
     }
  }
+
+/* ASSESSMENTS STYLES */
+.block-label {
+    float: none;
+    display: block;
+    clear: left;
+    position: relative;
+    background: #dee0e2;
+    border: 1px solid #dee0e2;
+    padding: 18px 30px 15px 54px;
+    margin-bottom: 10px;
+    cursor: pointer;
+
+    &:hover {
+        border-color: #0b0c0c
+    }
+    &:last-child {
+        margin-bottom: 0
+    }
+    input {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        cursor: pointer;
+        margin: 0;
+        width: 29px;
+        height: 29px
+    }
+}
+
+.inline .block-label {
+    clear: none;
+    margin-right: 10px
+}
+
+
+@media (min-width: 641px) {
+    .block-label {
+        float: left
+    }
+}
+
+.js-enabled  {
+  label.selected {
+      background: #fff;
+      border-color: #0b0c0c;
+  }
+  label.focused {
+      outline: #ffbf47 solid 3px;
+
+      input:focus {
+          outline: 0
+      }
+  }
+}
