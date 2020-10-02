@@ -1,6 +1,6 @@
 ﻿
 (function () {
-    'use strict'; 
+    'use strict';
 
     //Script to set focus on accordion section links
     $('.in-progress li a').on('click', function (e) {
@@ -10,36 +10,36 @@
     $("#skillsForm").submit(function (event) {
         var validator = $("#skillsForm").validate();
         if (!validator.valid()) {
-            $(".field-validation-error").closest(".form-group").addClass("error");
+            $(".field-validation-error").closest(".form-group").addClass("govuk-form-group--error");
             event.preventDefault();
-        } 
+        }
     });
 
     $("#skillsCheckingForm").submit(function (event) {
         RemoveErrorOnField("#answerSelectionError");
         var answerSelectionList = $("input[name='AnswerSelection']:checked");
         if (answerSelectionList && answerSelectionList.length > 0) {
-          
+
             if (answerSelectionList.length > 1) {
                 $.each(answerSelectionList, function (i, val) {
                     if ("E" === val.value) {
                         AddErrorOnField("#answerSelectionError", shcClientValMsgs.cannotSelectBothTypes, event);
                     }
                 });
-          
+
             }
         } else {
             AddErrorOnField("#answerSelectionError", shcClientValMsgs.chooseAnswer, event);
         }
     });
-    
+
 
     $("#skillsListForm").submit(function (event) {
-      
+
         var skillsAssessmentComplete = $("#skillsAssessmentComplete").val();
 
         if (skillsAssessmentComplete === "True") {
-                
+
             var selectedJobs = $("input[name='JobFamilyList.SelectedJobs']:checked");
 
             if(selectedJobs && selectedJobs.length > 3)
@@ -58,7 +58,7 @@
                 $("#selectedJobError").removeClass("field-validation-error").addClass("field-validation-valid");
             }
         }
-        
+
     });
 })();
 
