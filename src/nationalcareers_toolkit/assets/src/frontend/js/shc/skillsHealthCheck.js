@@ -46,7 +46,7 @@
             {
                 $("#selectedJobError").text(shcClientValMsgs.maxJobSel);
                 $("#selectedJobError").addClass("field-validation-error").removeClass("field-validation-valid");
-                $(".field-validation-error").closest(".form-group").addClass("error");
+                $(".field-validation-error").closest(".form-group").addClass("govuk-form-group--error");
                 event.preventDefault();
 
                 $('html, body').animate({
@@ -54,7 +54,7 @@
                 }, 5000);
             } else {
                 $("#selectedJobError").text("");
-                $(".field-validation-error").closest(".form-group").removeClass("error");
+                $(".field-validation-error").closest(".form-group").removeClass("govuk-form-group--error");
                 $("#selectedJobError").removeClass("field-validation-error").addClass("field-validation-valid");
             }
         }
@@ -66,13 +66,13 @@
 function RemoveErrorOnField(id) {
     $(id).text("");
     $(id).removeClass("field-validation-error");
-    $(".field-validation-error").closest(".form-group").removeClass("error");
+    $(".field-validation-error").closest(".form-group").removeClass("govuk-form-group--error");
 
 }
 
 function AddErrorOnField(id, errorText, event) {
     $(id).text(errorText);
     $(id).addClass("field-validation-error").removeClass("field-validation-valid");
-    $(".field-validation-error").closest(".form-group").addClass("error");
+    $(".field-validation-error").closest(".form-group").addClass("govuk-form-group--error");
     event.preventDefault();
 }

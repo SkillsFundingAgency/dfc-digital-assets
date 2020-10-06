@@ -84,15 +84,15 @@ $.validator.setDefaults({
             $('#divDOB').addClass("error");
         }
         else if ($(element).attr('id') == "CurrentSearchRequest_StartDateDobModel_Day" || $(element).attr('id') == "CurrentSearchRequest_StartDateDobModel_Month" || $(element).attr('id') == "CurrentSearchRequest_StartDateDobModel_Year" || $(element).attr('id') == "CurrentSearchRequest_StartDateDobModel_SelectedDateFrom") {
-            $('#select-date').addClass("error");
+            $('#select-date').addClass("govuk-form-group--error");
         }
         else {
-            var groupElement = $(element).closest(".form-group").addClass("error");
+            var groupElement = $(element).closest(".form-group").addClass("govuk-form-group--error");
         }
 
         // The code bellow probably is not used
         var validator = this;
-        $('form .error-summary ul li').each(function () {
+        $('form .govuk-error-summary ul li').each(function () {
             var liItem = $(this);
             if (liItem.find('a').length == 0) {
                 var errorMessage = liItem.html();
@@ -125,10 +125,10 @@ $.validator.setDefaults({
             }
         }
         if ($(element).attr('id') == "CurrentSearchRequest_StartDateDobModel_SelectedDateFrom") {
-            $('#select-date').removeClass("error");
+            $('#select-date').removeClass("govuk-form-group--error");
         }
         else {
-            $(element).closest(".form-group").removeClass("error");
+            $(element).closest(".form-group").removeClass("govuk-form-group--error");
         }
     }
 });
