@@ -515,3 +515,22 @@ $mobile: 768px;
       }
   }
 }
+
+
+//Error validation - custom changes
+
+.error {
+    border-left: 5px solid #d4351c;
+    padding-left: 10px
+}
+
+@media (min-width: 641px) {
+
+    .error,.error-summary {
+         border-left: 5px solid #d4351c;
+        padding-left: 15px
+    }
+}
+.error .input-validation-error {
+    border: 2px solid #d4351c;
+}
