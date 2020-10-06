@@ -563,3 +563,16 @@ $mobile: 768px;
       padding-bottom: 0;
   }
 }
+
+.form-block {
+    float: left;
+    width: 100%;
+    margin-top: -5px;
+    margin-bottom: 5px
+}
+@media (min-width: 641px) {
+    .form-block {
+        margin-top: 0;
+        margin-bottom: 10px
+    }
+}
