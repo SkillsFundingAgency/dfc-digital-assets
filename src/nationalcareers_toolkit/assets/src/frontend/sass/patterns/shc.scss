@@ -521,16 +521,45 @@ $mobile: 768px;
 
 .error {
     border-left: 5px solid #d4351c;
-    padding-left: 10px
+    padding-left: 10px;
+
+    .input-validation-error {
+      border: 2px solid #d4351c;
+    }
 }
 
 @media (min-width: 641px) {
 
-    .error,.error-summary {
+    .error {
          border-left: 5px solid #d4351c;
         padding-left: 15px
     }
 }
-.error .input-validation-error {
-    border: 2px solid #d4351c;
+
+
+.panel {
+  clear: both;
+  border-left-style: solid;
+  border-color: #bfc1c3;
+  padding: .7894736842em;
+  margin-bottom: .7894736842em;
+
+  &:first-child {
+    margin-top: 0;
+  }
+  &:last-child, &:only-child {
+    margin-bottom: 0;
+  }
+}
+.panel-border-wide {
+  border-left-width: 10px;
+}
+.panel-border-narrow {
+  border-left-width: 5px;
+}
+
+.form-group {
+  .panel-border-narrow {
+      padding-bottom: 0;
+  }
 }
