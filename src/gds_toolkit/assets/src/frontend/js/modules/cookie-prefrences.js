@@ -248,6 +248,13 @@
         }
     }
 
+    window.GOVUK.UpdateGAForCurrentPage = function () {
+        //If we have consent update GA for current page
+        if (window.GOVUK.checkConsentCookie('_gid', true)) {
+            location.reload()
+        }
+    }
+
     //set at load time
     window.GOVUK.disableUnconsented()
 
@@ -273,7 +280,7 @@
         approveAll: function () {
             window.GOVUK.approveAllCookieTypes()
             window.GOVUK.cookie('cookies_preferences_set', 'true', { days: 365 })
-
+            window.GOVUK.UpdateGAForCurrentPage()
         },
 
         readPolicyCookie: function () {
