@@ -252,7 +252,8 @@
 
     window.GOVUK.setGAConsented = function () {
         window.GOVUK.disableUnconsented()
-        dataLayer.push({ event: 'pageview' })
+        //Send the pageview event using the last tracker that was created
+        ga(ga.getAll()[ga.getAll().length - 1].get('name') + '.send', "pageview")
     }
 
     //set at load time
