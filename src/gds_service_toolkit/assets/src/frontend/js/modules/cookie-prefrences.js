@@ -228,19 +228,20 @@
     }
 
     window.GOVUK.disableUnconsented = function () {
-        if (!window.GOVUK.checkConsentCookie('_gid', true)) {
-            window['ga-disable-UA-75241446-1'] = true
-            window['ga-disable-UA-75241446-2'] = true
-            window['ga-disable-UA-75241446-3'] = true
-            window['ga-disable-UA-75241446-4'] = true
-            window['ga-disable-UA-75241446-5'] = true
-            window['ga-disable-UA-75241446-6'] = true
-            window['ga-disable-UA-75241446-8'] = true
-            window['ga-disable-UA-75241446-9'] = true
-            window['ga-disable-UA-75241446-10'] = true
-            window['ga-disable-UA-75241446-13'] = true
-            window['ga-disable-UA-75241446-19'] = true
-        }
+
+        var consentState = !window.GOVUK.checkConsentCookie('_gid', true)
+        window['ga-disable-UA-75241446-1'] = consentState
+        window['ga-disable-UA-75241446-2'] = consentState
+        window['ga-disable-UA-75241446-3'] = consentState
+        window['ga-disable-UA-75241446-4'] = consentState
+        window['ga-disable-UA-75241446-5'] = consentState
+        window['ga-disable-UA-75241446-6'] = consentState
+        window['ga-disable-UA-75241446-8'] = consentState
+        window['ga-disable-UA-75241446-9'] = consentState
+        window['ga-disable-UA-75241446-10'] = consentState
+        window['ga-disable-UA-75241446-13'] = consentState
+        window['ga-disable-UA-75241446-19'] = consentState
+
 
         if (window.appInsights && window.appInsights.config) {
             if (typeof window.appInsights.config.isCookieUseDisabled !== 'undefined') {
@@ -249,11 +250,9 @@
         }
     }
 
-    window.GOVUK.UpdateGAForCurrentPage = function () {
-        //If we have consent update GA for current page
-        if (window.GOVUK.checkConsentCookie('_gid', true)) {
-            location.reload()
-        }
+    window.GOVUK.setGAConsented = function () {
+        window.GOVUK.disableUnconsented()
+        dataLayer.push({ event: 'pageview' })
     }
 
     //set at load time
@@ -281,7 +280,7 @@
         approveAll: function () {
             window.GOVUK.approveAllCookieTypes()
             window.GOVUK.cookie('cookies_preferences_set', 'true', { days: 365 })
-            window.GOVUK.UpdateGAForCurrentPage()
+            setTimeout(function () { window.GOVUK.setGAConsented() }, 1000)
         },
 
         readPolicyCookie: function () {
