@@ -27,7 +27,7 @@ $(document).ready(function () {
             cookiePrefrences.updateConsentCookies(n)
 
             //if we have switched from not consented to consented for the first time on this page 
-            if (!previousConsentState && window.GOVUK.checkConsentCookie('_gid', true) && firstSwitch) {
+            if (!previousConsentState && n.usage === true && firstSwitch) {
                 firstSwitch = false;
                 setTimeout(function () { window.GOVUK.setGAConsented() }, 1000)
             }
