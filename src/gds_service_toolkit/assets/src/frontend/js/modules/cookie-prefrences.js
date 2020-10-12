@@ -275,13 +275,13 @@
         updateConsentCookies: function (cookieSettings) {
             window.GOVUK.setConsentCookie(cookieSettings);
             window.GOVUK.setCookie('cookies_preferences_set', !0, { days: 365 });
-            setTimeout(function () { window.GOVUK.setAnalyticsTrackingState() }, 1000)
+            setTimeout(function () { window.GOVUK.setAnalyticsTrackingState() }, 500)
         },
 
         approveAll: function () {
             window.GOVUK.approveAllCookieTypes()
             window.GOVUK.cookie('cookies_preferences_set', 'true', { days: 365 })
-            setTimeout(function () { window.GOVUK.setGAConsented() }, 1000)
+            setTimeout(function () { window.GOVUK.setGAConsented() }, 500)
         },
 
         readPolicyCookie: function () {
