@@ -2,6 +2,8 @@ $(document).ready(function () {
 
     //Only runn on settings page
     if ($('#form-cookie-settings').length) {
+
+        var firstSwitch = true;
         $('#global-cookie-banner').hide();
 
         if (!cookiePrefrences.isCookiePrefrenceSet()) {
@@ -19,7 +21,17 @@ $(document).ready(function () {
                     n[r] = a
                 }
             }
+
+            //Save the current consent for GA tracking
+            var previousConsentState = window.GOVUK.checkConsentCookie('_gid', true)
             cookiePrefrences.updateConsentCookies(n)
+
+            //if we have switched from not consented to consented for the first time on this page 
+            if (!previousConsentState && n.usage === true && firstSwitch) {
+                firstSwitch = false;
+                setTimeout(function () { window.GOVUK.setGAConsented() }, 1000)
+            }
+
             $('#cookie-settings-confirmation').show();
             window.scrollTo(0, 0);
             return false;
