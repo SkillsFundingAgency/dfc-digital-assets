@@ -252,8 +252,10 @@
 
     window.GOVUK.setGAConsented = function () {
         window.GOVUK.setAnalyticsTrackingState()
-        //Send the pageview event using the last tracker that was created
-        ga(ga.getAll()[ga.getAll().length - 1].get('name') + '.send', "pageview")
+
+        //Send the pageview event using the last tracker that was created to create a new tracker
+        ga("create", ga.getAll()[ga.getAll().length - 1].get('trackingId'), { name: "ncs_tracker", cookieDomain: "auto" })
+        ga("ncs_tracker.send", "pageview")
     }
       
     //set at load time
