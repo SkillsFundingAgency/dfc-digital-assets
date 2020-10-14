@@ -576,3 +576,37 @@ $mobile: 768px;
         margin-bottom: 10px
     }
 }
+
+/*Abstract problems */
+
+.abstract-images {
+    float: left;
+    margin-bottom: 1.0526315789em;
+
+    img {
+        padding: 0 2% 0 0;
+    }
+}
+
+.image_numbers {
+    float: left;
+    padding: 0 2% 0 0;
+
+    span {
+        display: block;
+        text-align: center;
+        margin: 0 auto;
+    }
+}
+
+.mechanical-images {
+  img {
+      max-width: 100%
+  }
+}
+
+.js-enabled, body  {
+  .govuk-accordion__section-button {
+    color: $govuk-blue;
+  }
+}
