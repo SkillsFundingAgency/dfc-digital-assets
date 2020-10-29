@@ -1,20 +1,7 @@
-$app-warning-background-colour: #ffffff;
-$app-warning-colour: #ff0000;
-
 iframe.dfc-app-contact-us-Webchat {
     border-width: 0px;
     height: 100%;
     width: 100%;
-}
-
-span.dfc-app-contact-us-IsProdWarning {
-    background-color: $app-warning-background-colour;
-    color: $app-warning-colour;
-}
-
-span.dfc-app-contact-us-IsProdHightlight {
-    text-decoration: underline;
-    color: $app-warning-colour;
 }
 
 div.dfc-app-contact-us-IframeContainer {
