@@ -1,22 +1,18 @@
-class DfcAppContactUs {
-    constructor() {
-        this.compUiPathForContatUs = 'contact-us';
-        this.compUiPathForWebchat = 'webchat';
-        this.pathForWebchat = '/' + this.compUiPathForWebchat + '/' + 'chat';
-        this.pathForlocalWebchat = '/pages/chat';
-        this.compUiPathForEnterYourDetails = 'enter-your-details';
-        this.pathForEnterYourDetails = '/' + this.compUiPathForContatUs + '/' + this.compUiPathForEnterYourDetails;
-        this.pathForlocalEnterYourDetails = '/pages/' + this.compUiPathForEnterYourDetails;
-    }
+var DfcAppContactUs = function () {
+    this.compUiPathForContatUs = 'contact-us';
+    this.compUiPathForEnterYourDetails = 'enter-your-details';
+    this.pathForEnterYourDetails = '/' + this.compUiPathForContatUs + '/' + this.compUiPathForEnterYourDetails;
+    this.pathForlocalEnterYourDetails = '/pages/' + this.compUiPathForEnterYourDetails;
+}
 
-    initialise() {
-
-        if (window.location.pathname.endsWith(this.pathForEnterYourDetails) || window.location.pathname.endsWith(this.pathForlocalEnterYourDetails)) {
+DfcAppContactUs.prototype = {
+    initialise: function () {
+        if (window.location.pathname.toLowerCase() == this.pathForEnterYourDetails || window.location.pathname.toLowerCase() == this.pathForlocalEnterYourDetails) {
             this.initialisEnterYourDetailsView();
         }
-    }
+    },
 
-    initialisEnterYourDetailsView() {
+    initialisEnterYourDetailsView: function () {
         var outerThis = this;
 
         $('input[name="CallbackDateOptionSelected"]').change(function () {
@@ -24,9 +20,9 @@ class DfcAppContactUs {
         });
 
         outerThis.disableCallbackTimeOptions();
-    }
+    },
 
-    disableCallbackTimeOptions() {
+    disableCallbackTimeOptions: function () {
         $('input[name="CallbackTimeOptionSelected"]').each(function () {
             var isDisabled = false;
 
@@ -36,5 +32,5 @@ class DfcAppContactUs {
 
             $(this).attr('disabled', isDisabled);
         });
-    }
+    },
 }
