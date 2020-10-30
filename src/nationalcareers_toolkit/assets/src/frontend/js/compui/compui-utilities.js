@@ -1,18 +1,21 @@
-class CompUiUtilties {
-    static isValidDate(d) {
+var CompUiUtiltiesClass = function () {
+}
+
+CompUiUtiltiesClass.prototype = {
+    isValidDate: function (d) {
         return d instanceof Date && !isNaN(d);
-    }
+    },
 
-    static getDaysInMonth(month, year) {
+    getDaysInMonth: function (month, year) {
         return new Date(year, month, 0).getDate();
-    }
+    },
 
-    static stringUtcToDate(d) {
+    stringUtcToDate: function (d) {
         var parts = d.split('-');
         return new Date(parts[0], parts[1] - 1, parts[2]);
-    }
+    },
 
-    static dateToDmyString(d) {
+    dateToDmyString: function (d) {
         var dd = d.getDate();
         var mm = d.getMonth() + 1;
         var yyyy = d.getFullYear();
@@ -23,15 +26,15 @@ class CompUiUtilties {
             mm = '0' + mm;
         }
         return dd + '/' + mm + '/' + yyyy;
-    }
+    },
 
-    static isInt(value) {
+    isInt: function (value) {
         return !isNaN(value) &&
             parseInt(Number(value)) == value &&
             !isNaN(parseInt(value, 10));
-    }
+    },
 
-    static getCookie(cname) {
+    getCookie: function (cname) {
         var name = cname + "=";
         var decodedCookie = decodeURIComponent(document.cookie);
         var ca = decodedCookie.split(';');
@@ -47,3 +50,5 @@ class CompUiUtilties {
         return "";
     }
 }
+
+var CompUiUtilties = new CompUiUtiltiesClass();
