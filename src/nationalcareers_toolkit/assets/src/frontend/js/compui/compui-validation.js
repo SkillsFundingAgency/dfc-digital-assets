@@ -1,8 +1,5 @@
-var CompUiValidation = function () {
-}
-
-CompUiValidation.prototype = {
-    initialise: function () {
+class CompUiValidation {
+    initialise() {
         this.formValidationSelectorClassName = 'form.compui-validation';
         this.fieldErrorClassName = 'field-validation-error';
         this.fieldValidClassName = 'field-validation-valid';
@@ -24,14 +21,14 @@ CompUiValidation.prototype = {
             this.InitialiseDateFieldValidation();
             this.ShowErrorInPageTitle(this.mainErrorSummaryId);
         }
-    },
+    }
 
-    CaptureAppErrorSummaryItems: function () {
+    CaptureAppErrorSummaryItems() {
         this.CaptureAppErrorSummaryItemsNonFieldErrors();
         this.CaptureErrorSummaryItemsFieldErrors();
-    },
+    }
 
-    CaptureAppErrorSummaryItemsNonFieldErrors: function () {
+    CaptureAppErrorSummaryItemsNonFieldErrors() {
         var errorSummary = $('.' + this.govukErrorSummaryClassName);
         var mainErrorSummary = errorSummary[0];
         var mainErrorList = $(mainErrorSummary).find('UL');
@@ -53,9 +50,9 @@ CompUiValidation.prototype = {
 
             $(appErrorSummary).addClass(this.compUiShellHide);
         }
-    },
+    }
 
-    CaptureErrorSummaryItemsFieldErrors: function () {
+    CaptureErrorSummaryItemsFieldErrors() {
         var formValidationSelectors = this.formValidationSelectorClassName + ' .' + this.govukErrorMessageClassName;
         var outerThis = this;
 
@@ -72,15 +69,15 @@ CompUiValidation.prototype = {
 
             outerThis.SyncErrorSummaryItem(formGroup, inputElementId, errorMessage);
         });
-    },
+    }
 
-    ShowErrorInPageTitle: function (errorSummaryId, setFocus) {
+    ShowErrorInPageTitle(errorSummaryId, setFocus = true) {
         var errorSummary = $('#' + errorSummaryId);
         var errorsVisible = this.AnyVisibleErrorSummaryErrors(errorSummary);
 
         if (errorsVisible) {
             $(errorSummary).removeClass(this.compUiShellHide);
-            if (setFocus != undefined && setFocus) {
+            if (setFocus) {
                 $(errorSummary).focus();
             }
         } else {
@@ -95,9 +92,9 @@ CompUiValidation.prototype = {
         else if (!titleBeginsWithError && errorsVisible) {
             document.title = errorStub + document.title;
         }
-    },
+    }
 
-    AnyVisibleErrorSummaryErrors: function (errorSummary) {
+    AnyVisibleErrorSummaryErrors(errorSummary) {
         var allItems = $(errorSummary).find('LI');
 
         for (var i = 0; i < allItems.length; i++) {
@@ -107,9 +104,9 @@ CompUiValidation.prototype = {
         }
 
         return false;
-    },
+    }
 
-    InitialiseFieldValidationChangeCapture: function () {
+    InitialiseFieldValidationChangeCapture() {
         // override add/remove class to trigger a change event
         (function (func) {
             $.fn.addClass = function () {
@@ -138,18 +135,18 @@ CompUiValidation.prototype = {
         $(formValidationSelectors).on('classChanged', function () {
             outerThis.InitialiseFieldErrorClassChangeCapture(this);
         });
-    },
+    }
 
-    InitialiseValidationMessageChangeCapture: function () {
+    InitialiseValidationMessageChangeCapture() {
         var formValidationSelectors = this.formValidationSelectorClassName + ' .' + this.govukErrorMessageClassName;
         var outerThis = this;
 
         $(formValidationSelectors).each(function () {
             outerThis.InitialiseValidationMessageChange(this);
         });
-    },
+    }
 
-    InitialiseValidationMessageChange: function (validMsg) {
+    InitialiseValidationMessageChange(validMsg) {
         var outerThis = this;
 
         var observer = new MutationObserver(function (records) {
@@ -174,9 +171,9 @@ CompUiValidation.prototype = {
         });
 
         observer.observe(validMsg, { childList: true, subtree: true });
-    },
+    }
 
-    InitialiseFieldErrorClassChangeCapture: function (validMsg) {
+    InitialiseFieldErrorClassChangeCapture(validMsg) {
         var formGroup = $(validMsg).closest('.' + this.govukGroupClassName);
         var inputElementId = '#' + $(validMsg).data('valmsg-for').replace('.', '_');
         var errorCount = formGroup.find('.' + this.fieldErrorClassName).length;
@@ -195,13 +192,13 @@ CompUiValidation.prototype = {
         } else {
             inputElement.removeClass(inputElementClassName);
         }
-    },
+    }
 
-    GetErrorClassForTag: function (tagName) {
+    GetErrorClassForTag(tagName) {
         return tagName === 'TEXTAREA' ? this.govukTextAreaErrorClassName : this.govukInputErrorClassName;
-    },
+    }
 
-    SyncErrorSummaryItem: function (formGroup, inputElementId, message) {
+    SyncErrorSummaryItem(formGroup, inputElementId, message) {
         var inputElement = $(inputElementId);
         if (inputElement.prop("tagName") != 'INPUT' && inputElement.prop("tagName") != 'TEXTAREA') {
             inputElementId = '#' + $(formGroup).find('INPUT,TEXTAREA')[0].id;
@@ -226,9 +223,9 @@ CompUiValidation.prototype = {
                 errorList.appendChild(errorItem);
             }
         }
-    },
+    }
 
-    InitialiseDateFieldValidation: function () {
+    InitialiseDateFieldValidation() {
         var outerThis = this;
 
         $.validator.unobtrusive.adapters.add(
@@ -245,9 +242,9 @@ CompUiValidation.prototype = {
 
             return result === null;
         }, '');
-    },
+    }
 
-    ValidateDateTime: function (value, element, params) {
+    ValidateDateTime(value, element, params) {
         var displayName = params.displayName;
         var minDate = CompUiUtilties.stringUtcToDate(params.minDate);
         var maxDate = CompUiUtilties.stringUtcToDate(params.maxDate);
@@ -268,7 +265,7 @@ CompUiValidation.prototype = {
             return this.ValidationMessageShow(inputFields, null, validMsg, 'Enter ' + displayNameLowerCase);
         }
         if (!isForDateOnly && dayString === '' && monthString === '' && yearString === '' && hourString === '' && minuteString === '') {
-            return this.ValidationMessageShow(inputFields, null, validMsg, 'Enter ' + dispayNameLowerCase);
+            return this.ValidationMessageShow(inputFields, null, validMsg, 'Enter ' + displayNameLowerCase);
         }
 
         if (dayString === '') {
@@ -345,9 +342,9 @@ CompUiValidation.prototype = {
         }
 
         return this.ValidationMessageShow(inputFields, null, validMsg, displayName + ' is not a valid date');
-    },
+    }
 
-    ValidationMessageShow: function (inputFields, errorFieldIndexes, validMsg, message) {
+    ValidationMessageShow(inputFields, errorFieldIndexes, validMsg, message) {
         var validMsgObj = $(validMsg);
         var showError = (message && message != "" ? true : false);
 
@@ -368,13 +365,13 @@ CompUiValidation.prototype = {
         this.ShowErrorHighlight(showError, inputFields, errorFieldIndexes)
 
         return message;
-    },
+    }
 
-    ShowErrorHighlight: function (showError, inputFields, errorFieldIndexes) {
+    ShowErrorHighlight(showError, inputFields, errorFieldIndexes) {
         for (var i = 0; i < inputFields.length; i++) {
             var inputElementClassName = this.GetErrorClassForTag($(inputFields[i]).prop("tagName"));
 
-            if (showError && (errorFieldIndexes === null || errorFieldIndexes.indexOf(i)) != -1) {
+            if (showError && (errorFieldIndexes === null || errorFieldIndexes.includes(i))) {
                 $(inputFields[i]).addClass(inputElementClassName);
             } else if (!showError && errorFieldIndexes === null) {
                 $(inputFields[i]).removeClass(inputElementClassName);
