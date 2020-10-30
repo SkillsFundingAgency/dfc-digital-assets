@@ -1,17 +1,14 @@
-var CompUiShell = function (allChildApps) {
-    this.allChildApps = allChildApps;
+class CompUiShell {
+    constructor(allChildApps) {
+        this.allChildApps = allChildApps;
 
-    this.validation = new CompUiValidation();
-}
+        this.validation = new CompUiValidation();
+    }
 
-CompUiShell.prototype = {
-    initialise: function () {
+    initialise() {
         this.validation.initialise();
-
-        this.allChildApps.forEach(function (app) {
-            app.initialise();
-        });
-    },
+        this.allChildApps.forEach(f => f.initialise());
+    }
 }
 
 var compUiShell = new CompUiShell(
@@ -19,4 +16,4 @@ var compUiShell = new CompUiShell(
         new DfcAppContactUs()
     ]);
 
-compUiShell.initialise();
+window.onload = compUiShell.initialise();
