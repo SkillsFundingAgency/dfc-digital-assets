@@ -1,12 +1,12 @@
 
 $(document).ready(function () {
-    $('#orderBy-Input, #distance-select, #startdate-select').on('change', function (e) {
+    $('.find-a-course-page #orderBy-Input, .find-a-course-page #distance-select, .find-a-course-page #startdate-select').on('change', function (e) {
         makeAjaxCall(getParams());
         e.preventDefault();
         return false;
     });
 
-    $('#search-input, #location-input').keypress(function (e) {
+    $('.find-a-course-page #search-input, #location-input').keypress(function (e) {
         if (e.which === 13) {
             makeAjaxCall(getParams());
             e.preventDefault();
@@ -14,13 +14,13 @@ $(document).ready(function () {
         }
     });
 
-    $('#search-input, #location-input').on("blur", function (e) {
+    $('.find-a-course-page #search-input, #location-input').on("blur", function (e) {
         makeAjaxCall(getParams());
         e.preventDefault();
         return false;
     });
 
-    $('#courseType input[type=checkbox]').change(function (e) {
+    $('.find-a-course-page #courseType input[type=checkbox]').change(function (e) {
         makeAjaxCall(getParams());
         e.preventDefault();
         return false;
@@ -30,13 +30,13 @@ $(document).ready(function () {
         e.preventDefault();
         return false;
     });
-    $('#courseStudyTime input[type=checkbox]').change(function (e) {
+    $('.find-a-course-page #courseStudyTime input[type=checkbox]').change(function (e) {
         makeAjaxCall(getParams());
         e.preventDefault();
         return false;
     });
 
-    $("form").submit(function (e) {
+    $(".find-a-course-pages").submit(function (e) {
         return false;
     });
 
@@ -67,10 +67,10 @@ $(document).ready(function () {
             data: { path: apiCall.path, method: apiCall.method, appData: stringifield },
             success: function (data) {
                 let parsedData = JSON.parse(data.payload);
-                $('#result-list').html("");
-                $('#result-list').html(parsedData.html);
-                $('.result-count').html("");
-                $('.result-count').html(addCommas(parsedData.count));
+                $('#fac-result-list').html("");
+                $('#fac-result-list').html(parsedData.html);
+                $('.fac-result-count').html("");
+                $('.fac-result-count').html(addCommas(parsedData.count));
             },
             failure: function (jqXHR, textStatus, errorThrown) {
                 alert('Failure');
@@ -82,21 +82,21 @@ $(document).ready(function () {
     }
 
     function getParams() {
-        let orderByValue = $('#orderBy-Input').val();
-        let searchTerm = $('#search-input').val();
-        let distance = $('#distance-select').val();
-        let town = $('#location-input').val();
-        let startDate = $('#startdate-select').val();
+        let orderByValue = $('.find-a-course-page #orderBy-Input').val();
+        let searchTerm = $('.find-a-course-page #search-input').val();
+        let distance = $('.find-a-course-page #distance-select').val();
+        let town = $('.find-a-course-page #location-input').val();
+        let startDate = $('.find-a-course-page#startdate-select').val();
         var courseType = [];
         var courseHours = [];
         var courseStudyTime = [];
-        $('#courseType input[type=checkbox]:checked').each(function () {
+        $('.find-a-course-page #courseType input[type=checkbox]:checked').each(function () {
             courseType.push(this.value);
         });
-        $('#courseHours input[type=checkbox]:checked').each(function () {
+        $('.find-a-course-page #courseHours input[type=checkbox]:checked').each(function () {
             courseHours.push(this.value);
         });
-        $('#courseStudyTime input[type=checkbox]:checked').each(function () {
+        $('.find-a-course-page #courseStudyTime input[type=checkbox]:checked').each(function () {
             courseStudyTime.push(this.value);
         });
 
