@@ -32,5 +32,5 @@ DfcAppContactUs.prototype = {
 
             $(this).attr('disabled', isDisabled);
         });
-    },
+    }
 }

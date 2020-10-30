@@ -12,6 +12,11 @@ CompUiShell.prototype = {
             app.initialise();
         });
     },
+
+    activateWebChat: function (shellWebchatDomain) {
+        this.dfcAppWebchat = new DfcAppWebchat();
+        this.dfcAppWebchat.initialise(shellWebchatDomain);
+    }
 }
 
 var compUiShell = new CompUiShell(
