@@ -11,6 +11,13 @@ CompUiShell.prototype = {
         this.allChildApps.forEach(function (app) {
             app.initialise();
         });
+    },
+
+    activateWebChat: function (shellWebchatDomain) {
+        if (typeof DfcAppWebchat != "undefined") {
+            this.dfcAppWebchat = new DfcAppWebchat();
+            this.dfcAppWebchat.initialise(shellWebchatDomain);
+        }
     }
 }
 
