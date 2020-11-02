@@ -1,35 +1,41 @@
 ﻿/* Pre Search Filters custom styles */
 .filter-form {
   .govuk-checkboxes__input~.govuk-checkboxes__label::before {
-    @extend .govuk-checkboxes__input+.govuk-checkboxes__label::before;
+    content: "";
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    border: 2px solid currentColor;
+    background: 0 0
   }
 
   .govuk-checkboxes__input~.govuk-checkboxes__label::after {
-      @extend .govuk-checkboxes__input~.govuk-checkboxes__label::after;
+      content: "";
+      position: absolute;
+      top: 11px;
+      left: 9px;
+      width: 18px;
+      height: 7px;
+      -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+      border: solid;
+      border-width: 0 0 5px 5px;
+      border-top-color: transparent;
+      opacity: 0;
+      background: 0 0
   }
 
   .govuk-checkboxes__input:focus~.govuk-checkboxes__label::before {
-      @extend .govuk-checkboxes__input:focus~.govuk-checkboxes__label::before;
+       outline: transparent solid 3px;
+      outline-offset: 3px;
+      box-shadow: 0 0 0 3px #ffbf47
   }
 
   .govuk-checkboxes__input:checked~.govuk-checkboxes__label::after {
-      @extend .govuk-checkboxes__input:checked~.govuk-checkboxes__label::after;
-  }
-
-
-  .govuk-radios__input~.govuk-radios__label::before {
-      @extend .govuk-radios__input~.govuk-radios__label::before;
-  }
-
-  .govuk-radios__input~.govuk-radios__label::after {
-      @extend .govuk-radios__input~.govuk-radios__label::after;
-  }
-
-  .govuk-radios__input:focus~.govuk-radios__label::before {
-     @extend .govuk-radios__input:focus~.govuk-radios__label::before;
-  }
-
-  .govuk-radios__input:checked~.govuk-radios__label::after {
-      @extend .govuk-radios__input:checked~.govuk-radios__label::after;
+       opacity: 1
   }
 }
