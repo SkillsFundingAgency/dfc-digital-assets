@@ -1,0 +1,149 @@
+﻿/* Pre Search Filters custom styles */
+.filter-form {
+  .govuk-checkboxes__input~.govuk-checkboxes__label::before {
+    content: "";
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    border: 2px solid currentColor;
+    background: 0 0
+  }
+
+  .govuk-checkboxes__input~.govuk-checkboxes__label::after {
+      content: "";
+      position: absolute;
+      top: 11px;
+      left: 9px;
+      width: 18px;
+      height: 7px;
+      -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+      border: solid;
+      border-width: 0 0 5px 5px;
+      border-top-color: transparent;
+      opacity: 0;
+      background: 0 0
+  }
+
+  .govuk-checkboxes__input:focus~.govuk-checkboxes__label::before {
+       outline: transparent solid 3px;
+      outline-offset: 3px;
+      box-shadow: 0 0 0 3px #ffbf47
+  }
+
+  .govuk-checkboxes__input:checked~.govuk-checkboxes__label::after {
+       opacity: 1
+  }
+
+
+  /* SEARCH RESULTS */
+  #results {
+    width: 66.66667%;
+
+	a:link {
+ 	   color: #005ea5;
+	}
+	a:visited {
+		color:#4c2c92;
+	}
+  a:active,a:hover {
+    color: #2b8cc4
+  }
+	b, strong {
+		font-weight: 600;
+	}
+	a:focus {
+		background-color: #ffbf47;
+		outline: #ffbf47 solid 3px;
+	}
+	a:link:focus {
+		color: #005798;
+	}
+
+	.results-block {
+		.result-count {
+			padding: 0;
+		}
+		.results-list {
+			list-style: none;
+			margin: 0;
+			padding: 30px 0;
+
+			li {
+				max-width: 32.5em;
+				margin: 0;
+				padding: 0 0 15px;
+			}
+			h3 {
+				font-family: nta,Arial,sans-serif;
+				font-weight: 400;
+				text-transform: none;
+				font-size: 18px;
+				line-height: 1.2;
+				margin: 0 0 .25em;
+
+				a {
+					text-decoration: none;
+					font-weight: 700;
+				}
+			}
+
+			.result-description {
+				margin: 0 0 .5em;
+				font-family: nta,Arial,sans-serif;
+				font-weight: 400;
+				text-transform: none;
+				font-size: 16px;
+				line-height: 1.25;
+			}
+
+			.meta {
+				color: #6f777b;
+				font-family: nta,Arial,sans-serif;
+				font-weight: 400;
+				text-transform: none;
+				font-size: 14px;
+				line-height: 1.1428571429;
+			}
+			.results-salary {
+				margin-bottom: .75em;
+			}
+			.results-categories {
+
+				 a:after {
+					content: ",";
+				}
+				a:last-child:after {
+					display: none;
+				}
+			}
+
+		}
+	}
+}
+
+@media (min-width: 641px) {
+
+    #results {
+		.results-block {
+			.results-list {
+				li {
+					padding: 0 0 40px
+				}
+				h3 {
+					font-size: 24px;
+					line-height: 1.25
+				}
+				.result-description {
+					font-size: 19px;
+					line-height: 1.3157894737
+				}
+			}
+		}
+	}
+}
+}
