@@ -1,35 +1,35 @@
 ﻿/* Pre Search Filters custom styles */
 .filter-form {
   .govuk-checkboxes__input~.govuk-checkboxes__label::before {
-    &:extend(.govuk-checkboxes__input+.govuk-checkboxes__label::before);
+    @extend .govuk-checkboxes__input+.govuk-checkboxes__label::before;
   }
 
   .govuk-checkboxes__input~.govuk-checkboxes__label::after {
-      &:extend(.govuk-checkboxes__input~.govuk-checkboxes__label::after);
+      @extend .govuk-checkboxes__input~.govuk-checkboxes__label::after;
   }
 
   .govuk-checkboxes__input:focus~.govuk-checkboxes__label::before {
-      &:extend(.govuk-checkboxes__input:focus~.govuk-checkboxes__label::before);
+      @extend .govuk-checkboxes__input:focus~.govuk-checkboxes__label::before;
   }
 
   .govuk-checkboxes__input:checked~.govuk-checkboxes__label::after {
-      &:extend(.govuk-checkboxes__input:checked~.govuk-checkboxes__label::after);
+      @extend .govuk-checkboxes__input:checked~.govuk-checkboxes__label::after;
   }
 
 
   .govuk-radios__input~.govuk-radios__label::before {
-      &:extend(.govuk-radios__input~.govuk-radios__label::before);
+      @extend .govuk-radios__input~.govuk-radios__label::before;
   }
 
   .govuk-radios__input~.govuk-radios__label::after {
-      &:extend(.govuk-radios__input~.govuk-radios__label::after);
+      @extend .govuk-radios__input~.govuk-radios__label::after;
   }
 
   .govuk-radios__input:focus~.govuk-radios__label::before {
-     &:extend(.govuk-radios__input:focus~.govuk-radios__label::before);
+     @extend .govuk-radios__input:focus~.govuk-radios__label::before;
   }
 
   .govuk-radios__input:checked~.govuk-radios__label::after {
-      &:extend(.govuk-radios__input:checked~.govuk-radios__label::after);
+      @extend .govuk-radios__input:checked~.govuk-radios__label::after;
   }
 }
