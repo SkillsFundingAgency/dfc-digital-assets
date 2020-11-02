@@ -50,6 +50,9 @@
 	a:visited {
 		color:#4c2c92;
 	}
+  a:active,a:hover {
+    color: #2b8cc4
+  }
 	b, strong {
 		font-weight: 600;
 	}
