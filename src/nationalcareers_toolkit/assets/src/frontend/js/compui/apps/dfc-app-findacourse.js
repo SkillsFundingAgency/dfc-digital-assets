@@ -36,9 +36,11 @@ $(document).ready(function () {
         return false;
     });
 
-    $(".find-a-course-pages").submit(function (e) {
+    $("#fac-search-course-form, #fac-filter-form").submit(function (e) {
         return false;
     });
+
+    $("#applyfilters-button").hide();
 
     function addCommas(nStr) {
         nStr += '';
@@ -71,6 +73,7 @@ $(document).ready(function () {
                 $('#fac-result-list').html(parsedData.html);
                 $('.fac-result-count').html("");
                 $('.fac-result-count').html(addCommas(parsedData.count));
+                $("#fac-clear-filters").show();
             },
             failure: function (jqXHR, textStatus, errorThrown) {
                 alert('Failure');
@@ -86,7 +89,7 @@ $(document).ready(function () {
         let searchTerm = $('.find-a-course-page #search-input').val();
         let distance = $('.find-a-course-page #distance-select').val();
         let town = $('.find-a-course-page #location-input').val();
-        let startDate = $('.find-a-course-page#startdate-select').val();
+        let startDate = $('.find-a-course-page #startdate-select').val();
         var courseType = [];
         var courseHours = [];
         var courseStudyTime = [];
