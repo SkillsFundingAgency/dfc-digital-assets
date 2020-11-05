@@ -11,11 +11,13 @@ $(document).ready(function () {
     });
 
     $('.find-a-course-page #location-input').keypress(function (e) {
-        let distance = $(this).val();
-        IsPostcode(distance);
-        makeAjaxCall(getParams());
-        e.preventDefault();
-        return false;
+        if (e.which === 13) {
+            let distance = $(this).val();
+            IsPostcode(distance);
+            makeAjaxCall(getParams());
+            e.preventDefault();
+            return false;
+        }
     });
 
     $('.find-a-course-page #location-input').on("blur", function (e) {
