@@ -2,6 +2,7 @@
 $(document).ready(function () {
     $('.find-a-course-page #distance-block').hide();
     $(".find-a-course-page #orderBy-Input option[value='Distance']").remove();
+    $(".fac-filters-block").hide();
 
     $('.find-a-course-page #orderBy-Input, .find-a-course-page #distance-select, .find-a-course-page #startdate-select').on('change', function (e) {
         makeAjaxCall(getParams());
@@ -125,6 +126,9 @@ $(document).ready(function () {
                 $('.fac-result-count').html("");
                 $('.fac-result-count').html(addCommas(parsedData.count));
                 $("#fac-clear-filters").show();
+                $(".fac-filters-block").show();
+                let searchTerm = $('.find-a-course-page #search-input').val();
+                $(".fac-filters-block").html("<p id='fac-clear-filters'><a href='/find-a-course/searchcourse?searchTerm=" + searchTerm + "' aria-label='ClearFilters'>Clear filters</a></p>");
             },
             failure: function (jqXHR, textStatus, errorThrown) {
                 alert('Failure');
