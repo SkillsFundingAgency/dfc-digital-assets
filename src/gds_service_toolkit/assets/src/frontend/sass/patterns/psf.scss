@@ -41,6 +41,13 @@
 
 
     /* SEARCH RESULTS */
+    .filter-results-header {
+      width: 66.66667%;
+
+
+    }
+
+
     #results {
       width: 66.66667%;
 
@@ -136,7 +143,9 @@
   	}
   }
 
-
+  .active .search-title {
+      font-weight: normal;
+  }
 
 
   .govuk-breadcrumbs {
@@ -244,23 +253,41 @@
 
 
   @media (min-width: 641px) {
-
       #results {
   		.results-block {
   			.results-list {
   				li {
-  					padding: 0 0 40px
+  					padding: 0 0 40px;
   				}
   				h3 {
   					font-size: 24px;
-  					line-height: 1.25
+  					line-height: 1.25;
   				}
   				.result-description {
   					font-size: 19px;
-  					line-height: 1.3157894737
+  					line-height: 1.3157894737;
   				}
   			}
   		}
   	}
+    .active .search-title {
+        font-size: 19px;
+        line-height: 1.25;
+        font-weight: normal;
+    }
+  }
+
+  @media (max-width: 640px) {
+    #results {
+        width:100%;
+    }
+    .previous-next-navigation li.next,
+    .previous-next-navigation li.previous {
+        float: right;
+        width: 50%;
+    }
+    .filter-results-header {
+        width: 100%;
+    }
   }
 }
