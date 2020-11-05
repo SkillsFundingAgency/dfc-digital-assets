@@ -1,12 +1,31 @@
 
 $(document).ready(function () {
+    $('.find-a-course-page #distance-block').hide();
+    $(".find-a-course-page #orderBy-Input option[value='Distance']").remove();
+
     $('.find-a-course-page #orderBy-Input, .find-a-course-page #distance-select, .find-a-course-page #startdate-select').on('change', function (e) {
         makeAjaxCall(getParams());
         e.preventDefault();
         return false;
     });
 
-    $('.find-a-course-page #search-input, #location-input').keypress(function (e) {
+    $('.find-a-course-page #location-input').keypress(function (e) {
+        let distance = $(this).val();
+        IsPostcode(distance);
+        makeAjaxCall(getParams());
+        e.preventDefault();
+        return false;
+    });
+
+    $('.find-a-course-page #location-input').on("blur", function (e) {
+        let distance = $(this).val();
+        IsPostcode(distance);
+        makeAjaxCall(getParams());
+        e.preventDefault();
+        return false;
+    });
+
+    $('.find-a-course-page #search-input').keypress(function (e) {
         if (e.which === 13) {
             makeAjaxCall(getParams());
             e.preventDefault();
@@ -14,7 +33,7 @@ $(document).ready(function () {
         }
     });
 
-    $('.find-a-course-page #search-input, #location-input').on("blur", function (e) {
+    $('.find-a-course-page #search-input').on("blur", function (e) {
         makeAjaxCall(getParams());
         e.preventDefault();
         return false;
@@ -52,6 +71,38 @@ $(document).ready(function () {
             x1 = x1.replace(rgx, '$1' + ',' + '$2');
         }
         return x1 + x2;
+    }
+
+    function IsPostcode(postcode) {
+        var apiCall = {
+            url: '/api/Ajax/Action',
+            path: 'find-a-course',
+            method: 'IsValidPostcode'
+        };
+
+        $.ajax({
+            type: "GET",
+            url: apiCall.url,
+            contentType: "application/json",
+            dataType: "json",
+            data: { path: apiCall.path, method: apiCall.method, appData: JSON.stringify(postcode) },
+            success: function (data) {
+                if (data.payload === "true") {
+                    $('.find-a-course-page #distance-block').show();
+                    $("#orderBy-Input")[0].options.add(new Option("Distance", "Distance"));
+                }
+                else {
+                    $('.find-a-course-page #distance-block').hide();
+                    $(".find-a-course-page #orderBy-Input option[value='Distance']").remove();
+                }
+            },
+            failure: function (jqXHR, textStatus, errorThrown) {
+                alert('Failure');
+            },
+            error: function (data) {
+                alert('error');
+            }
+        });
     }
 
     function makeAjaxCall(stringifield) {
