@@ -10,25 +10,7 @@ $(document).ready(function () {
         return false;
     });
 
-    $('.find-a-course-page #location-input').keypress(function (e) {
-        if (e.which === 13) {
-            let distance = $(this).val();
-            IsPostcode(distance);
-            makeAjaxCall(getParams());
-            e.preventDefault();
-            return false;
-        }
-    });
-
-    $('.find-a-course-page #location-input').on("blur", function (e) {
-        let distance = $(this).val();
-        IsPostcode(distance);
-        makeAjaxCall(getParams());
-        e.preventDefault();
-        return false;
-    });
-
-    $('.find-a-course-page #search-input').keypress(function (e) {
+    $('.find-a-course-page #search-input, .find-a-course-page #location-input').keypress(function (e) {
         if (e.which === 13) {
             makeAjaxCall(getParams());
             e.preventDefault();
@@ -36,7 +18,7 @@ $(document).ready(function () {
         }
     });
 
-    $('.find-a-course-page #search-input').on("blur", function (e) {
+    $('.find-a-course-page #search-input, .find-a-course-page #location-input').on("blur", function (e) {
         makeAjaxCall(getParams());
         e.preventDefault();
         return false;
@@ -123,6 +105,14 @@ $(document).ready(function () {
             data: { path: apiCall.path, method: apiCall.method, appData: stringifield },
             success: function (data) {
                 let parsedData = JSON.parse(data.payload);
+                if (parsedData.ispostcode === "true") {
+                    $('.find-a-course-page #distance-block').show();
+                    $("#orderBy-Input")[0].options.add(new Option("Distance", "Distance"));
+                }
+                else {
+                    $('.find-a-course-page #distance-block').hide();
+                    $(".find-a-course-page #orderBy-Input option[value='Distance']").remove();
+                }
                 $('#fac-result-list').html("");
                 $('#fac-result-list').html(parsedData.html);
                 $('.fac-result-count').html("");
