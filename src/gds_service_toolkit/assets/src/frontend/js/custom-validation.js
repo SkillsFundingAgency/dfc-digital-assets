@@ -3,8 +3,8 @@ $(document).ready(function () {
     $("form.with-validation-summary").submit(function (event) {
         $('#error-validation-summary').hide();
         $('#error-validation-summary .govuk-error-summary__body ul').empty();
-        if ($('#DateOfBirth').val() !== undefined) { 
-            PopulateDateOfBirth(); 
+        if ($('#DateOfBirth').val() !== undefined) {
+            PopulateDateOfBirth();
         }
 
         if (!$(this).valid()) {
@@ -39,6 +39,30 @@ $(document).ready(function () {
     $("#DateOfBirthYear").change(function () {
         PopulateDateOfBirth();
     });
+
+    //// *** Pre Serch filters - Skills accordion selected skills count  ***
+    $("#accordion-filter-skills-list input[type=checkbox]").each(function () {
+        $(this).change(updateCount);
+    });
+
+    function updateCount() {
+      var count = $("#accordion-filter-skills-list input[type=checkbox]:checked").size();
+      $("#continueForm #count span").text(count);
+    }
+
+    //// *** Pre Serch filters - Skills accordion  section selected skills count  ***
+    function updateSectionCount() {
+      var sectionCounts = $(this).closest('.govuk-accordion__section').find("input[type=checkbox]:checked").size();
+      $(this).closest('.govuk-accordion__section').find('.section-count').text(sectionCounts).toggle(sectionCounts > 0)
+    }
+
+    $('#accordion-filter-skills-list .govuk-accordion__section').each(function() {
+      var sectionCount = $(this).closest('.govuk-accordion__section').find("input[type=checkbox]:checked").size();
+      $('.section-count').toggle(sectionCount > 0);
+      $("input[type=checkbox]").each(function () {
+        $(this).change(updateSectionCount);
+      });
+    })
 });
 
 $.validator.setDefaults({
@@ -299,7 +323,7 @@ $(function () {
     $.validator.addMethod(
         "date",
         function (value, element) {
-            
+
             var bits = value.match(/([0-9]+)/gi), str;
             if (!bits)
                 return this.optional(element) || false;
