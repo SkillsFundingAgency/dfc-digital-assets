@@ -18,15 +18,15 @@ trigger:
   branches:
     include:
     - master
-    - release
-    - hotfix
+    - release/*
+    - hotfix/*
 
 pr:
   branches:
     include:
     - master
-    - release
-    - hotfix
+    - release/*
+    - hotfix/*
 
 jobs:
 
