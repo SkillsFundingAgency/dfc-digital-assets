@@ -3,6 +3,12 @@ $(document).ready(function () {
     $('.find-a-course-page #distance-block').hide();
     $(".find-a-course-page #orderBy-Input option[value='Distance']").remove();
     $(".fac-filters-block").hide();
+    const urlParams = new URLSearchParams(window.location.search);
+    const distance = urlParams.get('d');
+    if (distance === 1) {
+        $('.find-a-course-page #distance-block').show();
+        $("#orderBy-Input")[0].options.add(new Option("Distance", "Distance"));
+    }
 
     $('.find-a-course-page #orderBy-Input, .find-a-course-page #distance-select, .find-a-course-page #startdate-select').on('change', function (e) {
         makeAjaxCall(getParams());
@@ -75,6 +81,12 @@ $(document).ready(function () {
                 if (data.payload === "true") {
                     $('.find-a-course-page #distance-block').show();
                     $("#orderBy-Input")[0].options.add(new Option("Distance", "Distance"));
+                    var a = document.getElementById('fac-result-list').getElementsByTagName('a'),
+                        length = a.length;
+
+                    for (var i = 0; i < length; i++) {
+                        a[i].href += '&d=1';
+                    }
                 }
                 else {
                     $('.find-a-course-page #distance-block').hide();
