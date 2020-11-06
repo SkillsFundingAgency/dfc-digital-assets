@@ -12,7 +12,7 @@ dfc.digital = {
 
 $(document).ready(function () {
     CookieBanner.addCookieMessage();
-    
+
 $(".js-search-focus").ready(function () { dfc.digital.addFocus(".js-search-focus"); }).focus(function () { dfc.digital.addFocus(this) }).blur(function () { dfc.digital.addFocus(this) });
 
 /* Not yet developed
@@ -59,6 +59,14 @@ if ($('#job-profile-feedback-survey').length > 0) {
     var url = originUrl + "?url=" + window.location.href;
     document.getElementById("job-profile-feedback-survey").setAttribute("href", url)
 }
+
+/* Pre-search-filter - Skip link */
+$(".skip-filter").click(function () {
+    $('#continueForm input:checked').not(".filter-na").prop('checked', false);
+    $('#continueForm').submit();
+});
+
+
 });
 
 $.extend($.ui.autocomplete.prototype, {
