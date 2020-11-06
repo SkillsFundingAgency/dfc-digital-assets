@@ -81,12 +81,7 @@ $(document).ready(function () {
                 if (data.payload === "true") {
                     $('.find-a-course-page #distance-block').show();
                     $("#orderBy-Input")[0].options.add(new Option("Distance", "Distance"));
-                    var a = document.getElementById('fac-result-list').getElementsByTagName('a'),
-                        length = a.length;
-
-                    for (var i = 0; i < length; i++) {
-                        a[i].href += '&d=1';
-                    }
+                    generateClearLink();
                 }
                 else {
                     $('.find-a-course-page #distance-block').hide();
@@ -100,6 +95,16 @@ $(document).ready(function () {
                 alert('error');
             }
         });
+    }
+
+    function generateClearLink() {
+        let length;
+        var a = document.getElementById('fac-result-list').getElementsByTagName('a');
+        length = a.length;
+
+        for (var i = 0; i < length; i++) {
+            a[i].href += '&d=1';
+        }
     }
 
     function makeAjaxCall(stringifield) {
