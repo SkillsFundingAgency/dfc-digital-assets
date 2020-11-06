@@ -105,7 +105,7 @@ $(document).ready(function () {
             data: { path: apiCall.path, method: apiCall.method, appData: stringifield },
             success: function (data) {
                 let parsedData = JSON.parse(data.payload);
-                if (parsedData.ispostcode === true) {
+                if (parsedData.isPostcode === true) {
                     $('.find-a-course-page #distance-block').show();
                     $("#orderBy-Input")[0].options.add(new Option("Distance", "Distance"));
                 }
