@@ -98,13 +98,9 @@ $(document).ready(function () {
     }
 
     function generateClearLink() {
-        let length;
-        var a = document.getElementById('fac-result-list').getElementsByTagName('a');
-        length = a.length;
-
-        for (var i = 0; i < length; i++) {
-            a[i].href += '&d=1';
-        }
+        $('#fac-result-list a').each(function () {
+            this.href += 'd=1';
+        });
     }
 
     function makeAjaxCall(stringifield) {
