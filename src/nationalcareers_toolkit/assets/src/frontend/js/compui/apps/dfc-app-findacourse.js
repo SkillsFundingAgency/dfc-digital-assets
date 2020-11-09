@@ -64,43 +64,14 @@ $(document).ready(function () {
         return x1 + x2;
     }
 
-    function IsPostcode(postcode) {
-        var apiCall = {
-            url: '/api/Ajax/Action',
-            path: 'find-a-course',
-            method: 'IsValidPostcode'
-        };
-
-        $.ajax({
-            type: "GET",
-            url: apiCall.url,
-            contentType: "application/json",
-            dataType: "json",
-            data: { path: apiCall.path, method: apiCall.method, appData: JSON.stringify(postcode) },
-            success: function (data) {
-                if (data.payload === "true") {
-                    $('.find-a-course-page #distance-block').show();
-                    $("#orderBy-Input")[0].options.add(new Option("Distance", "Distance"));
-                    generateClearLink();
-                }
-                else {
-                    $('.find-a-course-page #distance-block').hide();
-                    $(".find-a-course-page #orderBy-Input option[value='Distance']").remove();
-                }
-            },
-            failure: function (jqXHR, textStatus, errorThrown) {
-                alert('Failure');
-            },
-            error: function (data) {
-                alert('error');
-            }
-        });
-    }
-
     function generateClearLink() {
-        $('#fac-result-list a').each(function () {
-            this.href += 'd=1';
-        });
+        let length;
+        var a = document.getElementById('fac-result-list').getElementsByTagName('a');
+        length = a.length;
+
+        for (var i = 0; i < length; i++) {
+            a[i].href += '&d=1';
+        }
     }
 
     function makeAjaxCall(stringifield) {
@@ -121,6 +92,7 @@ $(document).ready(function () {
                 if (parsedData.isPostcode === true) {
                     $('.find-a-course-page #distance-block').show();
                     $("#orderBy-Input")[0].options.add(new Option("Distance", "Distance"));
+                    generateClearLink();
                 }
                 else {
                     $('.find-a-course-page #distance-block').hide();
