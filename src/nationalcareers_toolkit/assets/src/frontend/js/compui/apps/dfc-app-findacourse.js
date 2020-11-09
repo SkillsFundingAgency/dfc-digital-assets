@@ -85,6 +85,14 @@ $(document).ready(function () {
             data: { path: apiCall.path, method: apiCall.method, appData: stringifield },
             success: function (data) {
                 let parsedData = JSON.parse(data.payload);
+                $('#fac-result-list').html("");
+                $('#fac-result-list').html(parsedData.html);
+                $('.fac-result-count').html("");
+                $('.fac-result-count').html(addCommas(parsedData.count));
+                $("#fac-clear-filters").show();
+                $(".fac-filters-block").show();
+                let searchTerm = $('.find-a-course-page #search-input').val();
+                $(".fac-filters-block").html("<p id='fac-clear-filters'><a href='/find-a-course/searchcourse?searchTerm=" + searchTerm + "' aria-label='ClearFilters'>Clear filters</a></p>");
                 if (parsedData.isPostcode === true) {
                     $('.find-a-course-page #distance-block').show();
                     $("#orderBy-Input")[0].options.add(new Option("Distance", "Distance"));
@@ -94,14 +102,6 @@ $(document).ready(function () {
                     $('.find-a-course-page #distance-block').hide();
                     $(".find-a-course-page #orderBy-Input option[value='Distance']").remove();
                 }
-                $('#fac-result-list').html("");
-                $('#fac-result-list').html(parsedData.html);
-                $('.fac-result-count').html("");
-                $('.fac-result-count').html(addCommas(parsedData.count));
-                $("#fac-clear-filters").show();
-                $(".fac-filters-block").show();
-                let searchTerm = $('.find-a-course-page #search-input').val();
-                $(".fac-filters-block").html("<p id='fac-clear-filters'><a href='/find-a-course/searchcourse?searchTerm=" + searchTerm + "' aria-label='ClearFilters'>Clear filters</a></p>");
             },
             failure: function (jqXHR, textStatus, errorThrown) {
                 alert('Failure');
