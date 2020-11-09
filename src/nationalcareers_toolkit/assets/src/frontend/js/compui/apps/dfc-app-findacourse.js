@@ -66,7 +66,7 @@ $(document).ready(function () {
 
     function generateClearLink() {
         $('#fac-result-list a').each(function () {
-            this.href += 'd=1';
+            this.href += '&d=1';
         });
     }
 
@@ -103,11 +103,11 @@ $(document).ready(function () {
                     $(".find-a-course-page #orderBy-Input option[value='Distance']").remove();
                 }
             },
-            failure: function (jqXHR, textStatus, errorThrown) {
-                alert('Failure');
+            failure: function () {
+                console.log('Failure, in ajax call');
             },
-            error: function (data) {
-                alert('error');
+            error: function() {
+                console.log('Error, calling ajax call');
             }
         });
     }
