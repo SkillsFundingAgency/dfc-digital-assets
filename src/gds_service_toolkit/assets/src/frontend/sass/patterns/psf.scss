@@ -363,11 +363,12 @@
     }
   }
 
-@media (max-width: 640px) {
-  .govuk-checkboxes {
-    .govuk-radios--inline {
-      float:none;
-      margin-top:15px;
+  @media (max-width: 640px) {
+    .govuk-checkboxes {
+      .govuk-radios--inline {
+        float:none;
+        margin-top:15px;
+      }
     }
   }
 }
