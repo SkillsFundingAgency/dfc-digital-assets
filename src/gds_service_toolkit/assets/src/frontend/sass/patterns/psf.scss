@@ -39,8 +39,31 @@
        opacity: 1
   }
 
-  //custom govuk-checkboxes--small 
-  .govuk-checkboxes--small {
+  .govuk-checkboxes__label {
+    	span {
+        display: block;
+        padding-right: 15px;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 1.25;
+        display: block;
+        margin-bottom: 15px;
+        color: #505a5f;
+
+        @media (min-width: 40.0625em) {
+          font-size: 19px;
+          line-height: 1.31579;
+        }
+      }
+    }
+    .section-count {
+      display: none;
+    }
+
+    //custom govuk-checkboxes--small
+    .govuk-checkboxes--small {
       .govuk-checkboxes__item {
           min-height: 0;
           margin-bottom: 0;
