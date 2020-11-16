@@ -375,16 +375,21 @@
 
 /* CUSTOM STYLES FOR MAIN BREADCRUMBS */
 .breadcrumbs.govuk-breadcrumbs {
-  &:focus {
-      outline: #ffbf47 solid 3px;
-      outline-offset: 0;
-      background-color: #ffbf47;
+  a {
+    &:focus {
+        outline: #ffbf47 solid 3px;
+        outline-offset: 0;
+        background-color: #ffbf47;
+    }
+  	&:focus {
+        outline: #ffbf47 solid 3px;
+        outline-offset: 0;
+        background-color: #ffbf47;
+  	}
+    &:active, &:focus, &:hover, &:link, &:visited {
+      color: #0b0c0c;
+    }
   }
-	&:active, &:focus, &:hover, &:link, &:visited {
-      outline: #ffbf47 solid 3px;
-      outline-offset: 0;
-      background-color: #ffbf47;
-	}
   span {
       visibility:hidden;
   }
