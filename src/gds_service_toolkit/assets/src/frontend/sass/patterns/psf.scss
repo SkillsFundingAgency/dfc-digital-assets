@@ -200,6 +200,8 @@
       ul.previous-next-navigation {
       	li.previous, li.next {
           button {
+            cursor : pointer;
+            
             &:focus {
               outline: #ffbf47 solid 3px;
             }
