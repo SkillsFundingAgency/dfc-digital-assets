@@ -1,12 +1,15 @@
-﻿DfcAppWebchat = {
+﻿var DfcAppWebchat = function () {
+}
+
+DfcAppWebchat.prototype = {
     initialise: function (webchatDomain) {
+        var chatRed = new ChatRed('NCS-Live', shellWebchatDomain);
+        chatRed.run();
         $('a[href^="/webchat/chat"]').click(function (e) {
             if (typeof ChatRed != "undefined") {
-                var chatRed = new ChatRed('NCS-Live', webchatDomain);
-                chatRed.run();
-                if (typeof window.botmanWidget != "undefined") {
+                if (typeof window.botmanChatWidget != "undefined") {
                     e.preventDefault();
-                    window.botmanWidget.open();
+                    window.botmanChatWidget.open();
                 }
             }
         });
