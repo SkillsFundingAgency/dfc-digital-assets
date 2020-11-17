@@ -1,12 +1,22 @@
 
 $(document).ready(function () {
+    $('.find-a-course-page #distance-block').hide();
+    $(".find-a-course-page #orderBy-Input option[value='Distance']").remove();
+    $(".fac-filters-block").hide();
+    const urlParams = new URLSearchParams(window.location.search);
+    const distance = urlParams.get('d');
+    if (distance === 1) {
+        $('.find-a-course-page #distance-block').show();
+        $("#orderBy-Input")[0].options.add(new Option("Distance", "Distance"));
+    }
+
     $('.find-a-course-page #orderBy-Input, .find-a-course-page #distance-select, .find-a-course-page #startdate-select').on('change', function (e) {
         makeAjaxCall(getParams());
         e.preventDefault();
         return false;
     });
 
-    $('.find-a-course-page #search-input, #location-input').keypress(function (e) {
+    $('.find-a-course-page #search-input, .find-a-course-page #location-input').keypress(function (e) {
         if (e.which === 13) {
             makeAjaxCall(getParams());
             e.preventDefault();
@@ -14,7 +24,7 @@ $(document).ready(function () {
         }
     });
 
-    $('.find-a-course-page #search-input, #location-input').on("blur", function (e) {
+    $('.find-a-course-page #search-input, .find-a-course-page #location-input').on("blur", function (e) {
         makeAjaxCall(getParams());
         e.preventDefault();
         return false;
@@ -54,6 +64,12 @@ $(document).ready(function () {
         return x1 + x2;
     }
 
+    function generateClearLink() {
+        $('#fac-result-list a').each(function () {
+            this.href += '&d=1';
+        });
+    }
+
     function makeAjaxCall(stringifield) {
         var apiCall = {
             url: '/api/Ajax/Action',
@@ -74,12 +90,24 @@ $(document).ready(function () {
                 $('.fac-result-count').html("");
                 $('.fac-result-count').html(addCommas(parsedData.count));
                 $("#fac-clear-filters").show();
+                $(".fac-filters-block").show();
+                let searchTerm = $('.find-a-course-page #search-input').val();
+                $(".fac-filters-block").html("<p id='fac-clear-filters'><a href='/find-a-course/searchcourse?searchTerm=" + searchTerm + "' aria-label='ClearFilters'>Clear filters</a></p>");
+                if (parsedData.isPostcode === true) {
+                    $('.find-a-course-page #distance-block').show();
+                    $("#orderBy-Input")[0].options.add(new Option("Distance", "Distance"));
+                    generateClearLink();
+                }
+                else {
+                    $('.find-a-course-page #distance-block').hide();
+                    $(".find-a-course-page #orderBy-Input option[value='Distance']").remove();
+                }
             },
-            failure: function (jqXHR, textStatus, errorThrown) {
-                alert('Failure');
+            failure: function () {
+                console.log('Failure, in ajax call');
             },
-            error: function (data) {
-                alert('error');
+            error: function() {
+                console.log('Error, calling ajax call');
             }
         });
     }

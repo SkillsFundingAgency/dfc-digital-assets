@@ -3,8 +3,8 @@ $(document).ready(function () {
     $("form.with-validation-summary").submit(function (event) {
         $('#error-validation-summary').hide();
         $('#error-validation-summary .govuk-error-summary__body ul').empty();
-        if ($('#DateOfBirth').val() !== undefined) { 
-            PopulateDateOfBirth(); 
+        if ($('#DateOfBirth').val() !== undefined) {
+            PopulateDateOfBirth();
         }
 
         if (!$(this).valid()) {
@@ -299,7 +299,7 @@ $(function () {
     $.validator.addMethod(
         "date",
         function (value, element) {
-            
+
             var bits = value.match(/([0-9]+)/gi), str;
             if (!bits)
                 return this.optional(element) || false;

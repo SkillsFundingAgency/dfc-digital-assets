@@ -5,7 +5,11 @@
     "assets/src/frontend/js/cookie-prefrences-banner.js",
     "assets/src/frontend/js/cookie-prefrences-settings.js",
     "assets/src/frontend/js/custom-banner.js",
-    "assets/src/frontend/js/modules/*.js"
+    "assets/src/frontend/js/modules/*.js",
+    "assets/src/frontend/js/shell/compui-utilities.js",
+    "assets/src/frontend/js/shell/compui-validation.js",
+    "assets/src/frontend/js/shell/apps/**/*.js",
+    "assets/src/frontend/js/shell/compui-shell.js"
   ],
   "jqueryBundle": [
     "node_modules/jquery/dist/jquery.min.js",
@@ -63,10 +67,7 @@
     "assets/src/frontend/js/matchskills.js"
   ],
   "compUiJsFilesBundle": [
-    "assets/src/frontend/js/compui/compui-utilities.js",
-    "assets/src/frontend/js/compui/compui-validation.js",
-    "assets/src/frontend/js/compui/apps/**/*.js",
-    "assets/src/frontend/js/compui/compui-shell.js"
+    "assets/src/frontend/js/compui/apps/**/*.js"
   ],
   "SHCJsFilesBundle": [
     "assets/src/frontend/js/shc/application.js",

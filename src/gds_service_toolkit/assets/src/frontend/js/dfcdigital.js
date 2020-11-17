@@ -12,7 +12,7 @@ dfc.digital = {
 
 $(document).ready(function () {
     CookieBanner.addCookieMessage();
-    
+
 $(".js-search-focus").ready(function () { dfc.digital.addFocus(".js-search-focus"); }).focus(function () { dfc.digital.addFocus(this) }).blur(function () { dfc.digital.addFocus(this) });
 
 /* Not yet developed
@@ -59,6 +59,46 @@ if ($('#job-profile-feedback-survey').length > 0) {
     var url = originUrl + "?url=" + window.location.href;
     document.getElementById("job-profile-feedback-survey").setAttribute("href", url)
 }
+
+/* Pre-search-filter - Skip link */
+$(".skip-filter").click(function () {
+    $('#continueForm input:checked').not(".filter-na").prop('checked', false);
+    $('#continueForm').submit();
+});
+
+
+/* Pre Serch filters - skills count */
+var skillsCheckboxes = $("#accordion-filter-skills-list input[type=checkbox]");
+skillsCheckboxes.each(function () {
+  $(this).change(updateCount);
+});
+
+function updateCount() {
+	var target = $(this),
+	parent = target.closest('.govuk-accordion__section'),
+	checked = parent.find('input[type="checkbox"]:checked'),
+	checkedAll = $('#accordion-filter-skills-list input[type="checkbox"]:checked').length,
+	sectionCount = parent.find('.section-count'),
+
+	sectionCountLength = checked.length,
+	count = $("#count span");
+
+	count.text(checkedAll);
+	sectionCount.text(sectionCountLength).toggle(sectionCountLength > 0);
+}
+
+/* retain skills selection on browser back or forward*/
+$(window).on("load", function() {
+	updateCount();
+
+	/* accordion section selected checkbox count again */
+	var accordionSection = $('#accordion-filter-skills-list .govuk-accordion__section');
+	accordionSection.each(function () {
+  	var sectionCheckedLength = $(this).find('input[type="checkbox"]:checked').length;
+		$(this).find('.section-count').text(sectionCheckedLength).toggle(sectionCheckedLength > 0);
+	});
+});
+
 });
 
 $.extend($.ui.autocomplete.prototype, {
