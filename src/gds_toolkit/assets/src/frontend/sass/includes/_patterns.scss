@@ -198,3 +198,40 @@
 .govuk-list--bullet>li,.govuk-list--number>li {
     margin-bottom: 0
 }
+
+/* Explore careers landing page secondaray hero styling */
+
+.govuk-grid-column-two-thirds {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0 15px;
+
+    @media (min-width: 40.0625em) {
+        width: 66.6666%;
+    }
+}
+
+.secondary-hero {
+    background-color: #f3f2f1;
+    width: 100%;
+    padding: 10px 0 10px;
+
+    h2 {
+        margin: 20px 0 30px;
+    }
+    .govuk-grid-row {
+        margin: 0 -15px;
+    }
+
+    @media (min-width: 641px) {
+        padding: 10px 0px 10px;
+    }
+
+    @media (max-width: 1019px) {
+        padding: 10px 10px 10px;
+    }
+
+    @media (max-width: 640px) {
+        padding: 10px 0px;
+    }
+}
