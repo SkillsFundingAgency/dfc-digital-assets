@@ -1,13 +1,10 @@
-var DfcAppContactUs = function () {
-    this.compUiPathForContatUs = 'contact-us';
-    this.compUiPathForEnterYourDetails = 'enter-your-details';
-    this.pathForEnterYourDetails = '/' + this.compUiPathForContatUs + '/' + this.compUiPathForEnterYourDetails;
-    this.pathForlocalEnterYourDetails = '/pages/' + this.compUiPathForEnterYourDetails;
-}
+var EnterYourDetailsView = function () { }
 
-DfcAppContactUs.prototype = {
+EnterYourDetailsView.prototype = {
     initialise: function () {
-        if (window.location.pathname.toLowerCase() == this.pathForEnterYourDetails || window.location.pathname.toLowerCase() == this.pathForlocalEnterYourDetails) {
+        var paths = ["/contact-us/enter-your-details", "/pages/enter-your-details"];
+
+        if (paths.indexOf(window.location.pathname.toLowerCase()) > -1) {
             this.initialisEnterYourDetailsView();
         }
     },
@@ -34,3 +31,6 @@ DfcAppContactUs.prototype = {
         });
     }
 }
+
+var enterYourDetailsView = new EnterYourDetailsView();
+enterYourDetailsView.initialise();
