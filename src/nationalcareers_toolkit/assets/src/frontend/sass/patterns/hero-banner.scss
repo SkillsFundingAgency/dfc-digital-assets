@@ -46,6 +46,10 @@
       color: #FFFFFF;
     }
   }
+  .govuk-link--light:link{
+    color:  #FFFFFF; }
+  .govuk-link--light:hover{
+    color: #DDDCDB; }
 }
 @media (max-width: 768px) {
     .primary-hero, .ncs-hero {
