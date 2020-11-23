@@ -1,16 +1,10 @@
-var CompUiShell = function (allChildApps) {
-    this.allChildApps = allChildApps;
-
+var CompUiShell = function () {
     this.validation = new CompUiValidation();
 }
 
 CompUiShell.prototype = {
     initialise: function () {
         this.validation.initialise();
-
-        this.allChildApps.forEach(function (app) {
-            app.initialise();
-        });
     },
 
     activateWebChat: function (shellWebchatDomain) {
@@ -21,9 +15,6 @@ CompUiShell.prototype = {
     }
 }
 
-var compUiShell = new CompUiShell(
-    [
-        new DfcAppContactUs()
-    ]);
+var compUiShell = new CompUiShell();
 
 compUiShell.initialise();

@@ -12,6 +12,7 @@ module.exports = function (grunt) {
     // Project assets
     // Loads project js files which will be concatenated and minified in one file
     var projectJsfiles = grunt.file.readJSON('jsfiles.json').concatCustomJsFiles;
+    var compuiDfcContactUsJsFiles = grunt.file.readJSON('jsfiles.json').compuiDfcContactUsJsFiles;
     var govukJsfiles = grunt.file.readJSON('jsfiles.json').concatGovUkJsFiles;
     var jqueryBundle = grunt.file.readJSON('jsfiles.json').jqueryBundle;
     var ie8Bundle = grunt.file.readJSON('jsfiles.json').ie8Bundle;
@@ -158,6 +159,7 @@ module.exports = function (grunt) {
                     // Project assets
                     // Concatenates project files listed in jsfiles.json
                     { '<%= dist.path %>/js/dfcdigital.min.js': projectJsfiles },
+                    { '<%= dist.path %>/js/dfc-app-contactus.min.js': compuiDfcContactUsJsFiles },
                     { '<%= dist.path %>/js/jquerybundle.min.js': jqueryBundle },
                     { '<%= dist.path %>/js/all.min.js': govukJsfiles },
                     { '<%= dist.path %>/js/ie8bundle.min.js': ie8Bundle },
