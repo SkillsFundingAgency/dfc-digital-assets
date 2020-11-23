@@ -66,6 +66,9 @@
   "compuiDfcContactUsJsFiles": [
     "assets/src/frontend/js/compui.bundles/dfc-app-contactus/**/*.js"
   ],
+  "compuiDfcFindACourseJsFiles": [
+    "assets/src/frontend/js/compui.bundles/dfc-app-findacourse/**/*.js"
+  ],
   "matchskillsJsFilesBundle": [
     "assets/src/frontend/js/matchskills.js"
   ],
