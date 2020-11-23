@@ -5,13 +5,6 @@ var CompUiShell = function () {
 CompUiShell.prototype = {
     initialise: function () {
         this.validation.initialise();
-    },
-
-    activateWebChat: function (shellWebchatDomain) {
-        if (typeof DfcAppWebchat != "undefined") {
-            this.dfcAppWebchat = new DfcAppWebchat();
-            this.dfcAppWebchat.initialise(shellWebchatDomain);
-        }
     }
 }
 
