@@ -13,13 +13,13 @@ module.exports = function (grunt) {
     // Loads project js files which will be concatenated and minified in one file
     var projectJsfiles = grunt.file.readJSON('jsfiles.json').concatCustomJsFiles;
     var compuiDfcContactUsJsFiles = grunt.file.readJSON('jsfiles.json').compuiDfcContactUsJsFiles;
+    var compuiDfcAppDiscoverSkillsAndCareersJsFiles = grunt.file.readJSON('jsfiles.json').compuiDfcAppDiscoverSkillsAndCareersJsFiles;
     var compuiDfcFindACourseJsFiles = grunt.file.readJSON('jsfiles.json').compuiDfcFindACourseJsFiles;
     var govukJsfiles = grunt.file.readJSON('jsfiles.json').concatGovUkJsFiles;
     var jqueryBundle = grunt.file.readJSON('jsfiles.json').jqueryBundle;
     var ie8Bundle = grunt.file.readJSON('jsfiles.json').ie8Bundle;
     var cmsExtentionsBundle = grunt.file.readJSON('jsfiles.json').cmsExtentionsBundle;
     var matchskillsJSFiles = grunt.file.readJSON('jsfiles.json').matchskillsJsFilesBundle;
-    var compUiJsFiles = grunt.file.readJSON('jsfiles.json').compUiJsFilesBundle;
     var shcJsFiles = grunt.file.readJSON('jsfiles.json').SHCJsFilesBundle;
 
 
@@ -161,13 +161,13 @@ module.exports = function (grunt) {
                     // Concatenates project files listed in jsfiles.json
                     { '<%= dist.path %>/js/dfcdigital.min.js': projectJsfiles },
                     { '<%= dist.path %>/js/dfc-app-contactus.min.js': compuiDfcContactUsJsFiles },
+                    { '<%= dist.path %>/js/dfc-app-discoverskillsandcareers.min.js': compuiDfcAppDiscoverSkillsAndCareersJsFiles },
                     { '<%= dist.path %>/js/dfc-app-findacourse.min.js': compuiDfcFindACourseJsFiles },
                     { '<%= dist.path %>/js/jquerybundle.min.js': jqueryBundle },
                     { '<%= dist.path %>/js/all.min.js': govukJsfiles },
                     { '<%= dist.path %>/js/ie8bundle.min.js': ie8Bundle },
                     { '<%= dist.path %>/js/cmsExtentionsBundle.min.js': cmsExtentionsBundle },
                     { '<%= dist.path %>/js/matchskills.min.js': matchskillsJSFiles },
-                    { '<%= dist.path %>/js/compui.min.js': compUiJsFiles },
                     { '<%= dist.path %>/js/shc.min.js': shcJsFiles },
                     {
                         expand: true,
