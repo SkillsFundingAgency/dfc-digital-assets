@@ -66,14 +66,14 @@
   "compuiDfcContactUsJsFiles": [
     "assets/src/frontend/js/compui.bundles/dfc-app-contactus/**/*.js"
   ],
+  "compuiDfcAppDiscoverSkillsAndCareersJsFiles": [
+    "assets/src/frontend/js/compui.bundles/dfc-app-discoverskillsandcareers/**/*.js"
+  ],
   "compuiDfcFindACourseJsFiles": [
     "assets/src/frontend/js/compui.bundles/dfc-app-findacourse/**/*.js"
   ],
   "matchskillsJsFilesBundle": [
     "assets/src/frontend/js/matchskills.js"
-  ],
-  "compUiJsFilesBundle": [
-    "assets/src/frontend/js/compui/apps/**/*.js"
   ],
   "SHCJsFilesBundle": [
     "assets/src/frontend/js/shc/application.js",
