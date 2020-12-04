@@ -2,7 +2,7 @@ var ChatView = function () { }
 
 ChatView.prototype = {
     initialise: function () {
-        var paths = ["/contact-us/chat", "/webchat/chat", "/pages/chat"];
+        var paths = ["/webchat/chat", "/webchat/chat/", "/contact-us/chat", "/contact-us/chat/", "/pages/chat", "/pages/chat/"];
 
         if (paths.indexOf(window.location.pathname.toLowerCase()) > -1) {
             this.initialisChatView();
