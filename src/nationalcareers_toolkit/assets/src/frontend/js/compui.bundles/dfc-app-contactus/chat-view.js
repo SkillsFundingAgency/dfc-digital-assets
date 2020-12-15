@@ -2,7 +2,7 @@ var ChatView = function () { }
 
 ChatView.prototype = {
     initialise: function () {
-        var paths = ["/contact-us/chat", "/webchat/chat", "/pages/chat"];
+        var paths = ["/webchat/chat", "/webchat/chat/", "/contact-us/chat", "/contact-us/chat/", "/pages/chat", "/pages/chat/"];
 
         if (paths.indexOf(window.location.pathname.toLowerCase()) > -1) {
             this.initialisChatView();
@@ -10,9 +10,8 @@ ChatView.prototype = {
     },
 
     initialisChatView: function () {
-        //     <iframe id="webchatframe" src="@Model.ChatUrl" title="webchat" scrolling="no" class="dfc-app-contact-us-Webchat"></iframe>
         $('.dfc-app-contact-us-IframeContainer').each(function () {
-            var iFrameTag = "<iframe id='webchatframee' src='" + $(this).attr("data-chaturl") + "' title='webchat' scrolling='no' class='dfc-app-contact-us-Webchat'></iframe>";
+            var iFrameTag = "<iframe id='webchatframee' src='" + $(this).attr("data-chaturl") + "' title='Chatbot' scrolling='no' class='dfc-app-contact-us-Webchat'></iframe>";
             $(this).append(iFrameTag);
         });
     }
