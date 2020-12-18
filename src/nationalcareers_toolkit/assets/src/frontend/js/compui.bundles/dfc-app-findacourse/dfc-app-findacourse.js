@@ -95,7 +95,9 @@ $(document).ready(function () {
                 $(".fac-filters-block").html("<p id='fac-clear-filters'><a href='/find-a-course/searchcourse?searchTerm=" + searchTerm + "' aria-label='ClearFilters'>Clear filters</a></p>");
                 if (parsedData.isPostcode === true) {
                     $('.find-a-course-page #distance-block').show();
+                    if($(".find-a-course-page #orderBy-Input option[value='Distance']").length < 1){
                     $("#orderBy-Input")[0].options.add(new Option("Distance", "Distance"));
+                    }
                     generateClearLink();
                 }
                 else {
