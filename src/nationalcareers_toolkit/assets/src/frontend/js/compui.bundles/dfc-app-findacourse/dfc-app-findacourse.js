@@ -70,7 +70,9 @@ $(document).ready(function () {
         });
     }
 
-    function makeAjaxCall(stringifield) {
+    function makeAjaxCall(paramValues) {
+        var stringifield = JSON.stringify(paramValues);
+        var updatedUrl = getUpdatedUrl(paramValues);
         var apiCall = {
             url: '/api/Ajax/Action',
             path: 'find-a-course',
@@ -84,19 +86,27 @@ $(document).ready(function () {
             dataType: "json",
             data: { path: apiCall.path, method: apiCall.method, appData: stringifield },
             success: function (data) {
-                let parsedData = JSON.parse(data.payload);
+                var replacementMarkup = data.offlineHtml;
+                var resultCount = "no ";
+                var isPostcode = false;
+                if (data.isHealthy === true && data.payload != null) {
+                    var parsedData = JSON.parse(data.payload);
+                    replacementMarkup = parsedData.html;
+                    resultCount = parsedData.count;
+                    isPostcode = parsedData.isPostcode;
+                }
                 $('#fac-result-list').html("");
-                $('#fac-result-list').html(parsedData.html);
+                $('#fac-result-list').html(replacementMarkup);
                 $('.fac-result-count').html("");
-                $('.fac-result-count').html(addCommas(parsedData.count));
+                $('.fac-result-count').html(addCommas(resultCount));
                 $("#fac-clear-filters").show();
                 $(".fac-filters-block").show();
-                let searchTerm = $('.find-a-course-page #search-input').val();
+                var searchTerm = $('.find-a-course-page #search-input').val();
                 $(".fac-filters-block").html("<p id='fac-clear-filters'><a href='/find-a-course/searchcourse?searchTerm=" + searchTerm + "' aria-label='ClearFilters'>Clear filters</a></p>");
-                if (parsedData.isPostcode === true) {
+                if (isPostcode === true) {
                     $('.find-a-course-page #distance-block').show();
-                    if($(".find-a-course-page #orderBy-Input option[value='Distance']").length < 1){
-                    $("#orderBy-Input")[0].options.add(new Option("Distance", "Distance"));
+                    if ($(".find-a-course-page #orderBy-Input option[value='Distance']").length < 1) {
+                        $("#orderBy-Input")[0].options.add(new Option("Distance", "Distance"));
                     }
                     generateClearLink();
                 }
@@ -104,22 +114,46 @@ $(document).ready(function () {
                     $('.find-a-course-page #distance-block').hide();
                     $(".find-a-course-page #orderBy-Input option[value='Distance']").remove();
                 }
+
+                window.history.pushState({ path: updatedUrl }, '', updatedUrl);
             },
             failure: function () {
                 console.log('Failure, in ajax call');
             },
-            error: function() {
+            error: function () {
                 console.log('Error, calling ajax call');
             }
         });
     }
 
+    function getUpdatedUrl(paramValues) {
+        var query = "searchTerm=" + paramValues.SearchTerm + "&" +
+            "distance=" + paramValues.Distance + "&" +
+            "town=" + paramValues.Town + "&" +
+            "orderByValue=" + paramValues.OrderByValue + "&" +
+            "startDate=" + paramValues.StartDate + "&" +
+            "courseType=" + paramValues.CourseType + "&" +
+            "courseHours=" + paramValues.CourseHours + "&" +
+            "studyTime=" + paramValues.CourseStudyTime + "&" +
+            "filterA=" + paramValues.FilterA + "&" +
+            "page=" + paramValues.Page;
+
+        var url = window.location.pathname;
+        if (!url.endsWith("/page")) {
+            url += "/page";
+        }
+        url += "?" + query;
+
+        return url;
+    }
+
     function getParams() {
-        let orderByValue = $('.find-a-course-page #orderBy-Input').val();
-        let searchTerm = $('.find-a-course-page #search-input').val();
-        let distance = $('.find-a-course-page #distance-select').val();
-        let town = $('.find-a-course-page #location-input').val();
-        let startDate = $('.find-a-course-page #startdate-select').val();
+        var orderByValue = $('.find-a-course-page #orderBy-Input').val();
+        var searchTerm = $('.find-a-course-page #search-input').val();
+        var distance = $('.find-a-course-page #distance-select').val();
+        var town = $('.find-a-course-page #location-input').val();
+        var page = $('.find-a-course-page #RequestPage').val();
+        var startDate = $('.find-a-course-page #startdate-select').val();
         var courseType = [];
         var courseHours = [];
         var courseStudyTime = [];
@@ -133,7 +167,7 @@ $(document).ready(function () {
             courseStudyTime.push(this.value);
         });
 
-        let paramValues = {
+        var paramValues = {
             SearchTerm: searchTerm,
             Distance: distance,
             Town: town,
@@ -141,9 +175,11 @@ $(document).ready(function () {
             StartDate: startDate,
             CourseType: courseType.toString(),
             CourseHours: courseHours.toString(),
-            CourseStudyTime: courseStudyTime.toString()
+            CourseStudyTime: courseStudyTime.toString(),
+            FilterA: true,
+            Page: parseInt(page)
         };
-        let stringified = JSON.stringify(paramValues);
-        return stringified;
+
+        return paramValues;
     }
 });
