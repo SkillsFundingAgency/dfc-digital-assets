@@ -138,13 +138,7 @@ $(document).ready(function () {
             "filterA=" + paramValues.FilterA + "&" +
             "page=" + paramValues.Page;
 
-        var url = window.location.pathname;
-        if (!url.endsWith("/page")) {
-            url += "/page";
-        }
-        url += "?" + query;
-
-        return url;
+        return "/find-a-course/page?" + query;
     }
 
     function getParams() {
