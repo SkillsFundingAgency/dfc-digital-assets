@@ -16,7 +16,23 @@ $(document).ready(function () {
         return false;
     });
 
-    $('.find-a-course-page #search-input, .find-a-course-page #location-input').keypress(function (e) {
+    $('.find-a-course-page #search-input').keypress(function (e) {
+        if (e.which === 13) {
+            $('.find-a-course-page #RequestPage').val(1);
+            makeAjaxCall(getParams());
+            e.preventDefault();
+            return false;
+        }
+    });
+
+    $('.find-a-course-page #search-input').on("blur", function (e) {
+        $('.find-a-course-page #RequestPage').val(1);
+        makeAjaxCall(getParams());
+        e.preventDefault();
+        return false;
+    });
+
+    $('.find-a-course-page #location-input').keypress(function (e) {
         if (e.which === 13) {
             makeAjaxCall(getParams());
             e.preventDefault();
@@ -24,7 +40,7 @@ $(document).ready(function () {
         }
     });
 
-    $('.find-a-course-page #search-input, .find-a-course-page #location-input').on("blur", function (e) {
+    $('.find-a-course-page #location-input').on("blur", function (e) {
         makeAjaxCall(getParams());
         e.preventDefault();
         return false;
