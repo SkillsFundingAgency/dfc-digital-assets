@@ -150,7 +150,7 @@ $(document).ready(function () {
             "startDate=" + paramValues.StartDate + "&" +
             "courseType=" + paramValues.CourseType + "&" +
             "courseHours=" + paramValues.CourseHours + "&" +
-            "studyTime=" + paramValues.CourseStudyTime + "&" +
+            "courseStudyTime=" + paramValues.CourseStudyTime + "&" +
             "filterA=" + paramValues.FilterA + "&" +
             "page=" + paramValues.Page;
 
