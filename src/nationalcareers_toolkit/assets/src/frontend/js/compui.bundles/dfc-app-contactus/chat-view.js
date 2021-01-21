@@ -11,7 +11,7 @@ ChatView.prototype = {
 
     initialisChatView: function () {
         $('.dfc-app-contact-us-IframeContainer').each(function () {
-            var iFrameTag = "<iframe id='webchatframee' src='" + $(this).attr("data-chaturl") + "' title='Chatbot' scrolling='no' class='dfc-app-contact-us-Webchat'></iframe>";
+            var iFrameTag = "<iframe id='webchatframee' src='" + $(this).attr("data-chaturl") + "' title='Chatbot' class='dfc-app-contact-us-Webchat'></iframe>";
             $(this).append(iFrameTag);
         });
     }
