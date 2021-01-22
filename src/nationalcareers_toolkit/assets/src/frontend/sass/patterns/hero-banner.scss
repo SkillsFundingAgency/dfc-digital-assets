@@ -117,16 +117,30 @@
       width: 30%;
     }
   }
+
+  @media (max-width: 640px) {
+        padding:10px 0
+  }
+
 }
 .secondary-hero.advanced-search-filters {
   h2 {
-        font-size: 36px;
+        font-size: 24px;
         font-weight: 700;
         color: #0b0c0c;
+        line-height: 1.0416666667;
     }
     .govuk-button {
 		    margin-bottom: 0;
 	  }
+
+    @media (min-width: 641px) {
+      h2 {
+            font-size: 36px;
+            line-height: 1.1111111111;
+            margin: 20px 0 30px;
+        }
+    }
 }
 
 .secondary-hero-block {
