@@ -13,6 +13,14 @@
     color: #ffffff;
   }
 
+  .ui-autocomplete {
+    .ui-menu-item {
+      .ui-menu-item-wrapper {
+        color: #0b0c0c;
+      }
+    }
+  }
+
   input, select {
     border: none !important;
     color: #000;
@@ -109,6 +117,16 @@
       width: 30%;
     }
   }
+}
+.secondary-hero.advanced-search-filters {
+  h2 {
+        font-size: 36px;
+        font-weight: 700;
+        color: #0b0c0c;
+    }
+    .govuk-button {
+		    margin-bottom: 0;
+	  }
 }
 
 .secondary-hero-block {
