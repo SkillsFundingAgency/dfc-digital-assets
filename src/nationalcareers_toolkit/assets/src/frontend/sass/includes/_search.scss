@@ -95,7 +95,7 @@
 
 @media (min-width: 641px) {
     #results .results-block .results-list .results-categories, .font-xsmall {
-        font-size:16px;
+        font-size:16px !important;
         line-height: 1.25;
     }
 }
@@ -104,7 +104,6 @@
   .results-block {
     .results-list {
         li {
-          max-width: 100%;
           .result-description {
             font-family: "GDS Transport", Arial, sans-serif;
           }
