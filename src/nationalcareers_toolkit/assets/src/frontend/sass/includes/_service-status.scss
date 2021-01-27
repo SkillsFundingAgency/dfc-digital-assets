@@ -18,6 +18,22 @@
 
 		.govuk-grid-column-one-half:first-child {
 			color: #b10e1e;
+
+			.list-service.govuk-list {
+				margin:0;
+				color: #b10e1e;
+
+				li.list-service_Amber {
+					color: #f47738;
+				}
+				li.list-service_Red {
+					color: #b10e1e;
+				}
+				li.list-service_Green {
+					color: #006435;
+				}
+			}
+
 		}
 	}
 
@@ -27,6 +43,22 @@
 
 		.govuk-grid-column-one-half:first-child {
 			color: #006435;
+
+			.list-service.govuk-list {
+				margin:0;
+				color: #006435;
+
+				li.list-service_Amber {
+					color: #f47738;
+				}
+				li.list-service_Red {
+					color: #b10e1e;
+				}
+				li.list-service_Green {
+					color: #006435;
+				}
+			}
+
 		}
 	}
 
@@ -36,6 +68,22 @@
 
 		.govuk-grid-column-one-half:first-child {
 			color: #f47738;
+
+			.list-service.govuk-list {
+				margin:0;
+				color: #f47738;
+
+				li.list-service_Amber {
+					color: #f47738;
+				}
+				li.list-service_Red {
+					color: #b10e1e;
+				}
+				li.list-service_Green {
+					color: #006435;
+				}
+
+			}
 		}
 	}
 
