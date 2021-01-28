@@ -1,13 +1,14 @@
 
 $(document).ready(function () {
-    $('.find-a-course-page #distance-block').hide();
-    $(".find-a-course-page #orderBy-Input option[value='Distance']").remove();
     $(".fac-filters-block").hide();
-    const urlParams = new URLSearchParams(window.location.search);
-    const distance = urlParams.get('d');
-    if (distance === 1) {
+    var urlParams = new URLSearchParams(window.location.search);
+    var distance = urlParams.get('D');
+    if (distance === "1") {
         $('.find-a-course-page #distance-block').show();
         $("#orderBy-Input")[0].options.add(new Option("Distance", "Distance"));
+    } else {
+        $('.find-a-course-page #distance-block').hide();
+        $(".find-a-course-page #orderBy-Input option[value='Distance']").remove();
     }
 
     $('.find-a-course-page #orderBy-Input, .find-a-course-page #distance-select, .find-a-course-page #startdate-select').on('change', function (e) {
@@ -80,15 +81,14 @@ $(document).ready(function () {
         return x1 + x2;
     }
 
-    function generateClearLink() {
+    function generateClearLink(d) {
         $('#fac-result-list a').each(function () {
-            this.href += '&d=1';
+            this.href += '&D=' + d;
         });
     }
 
     function makeAjaxCall(paramValues) {
         var stringifield = JSON.stringify(paramValues);
-        var updatedUrl = getUpdatedUrl(paramValues);
         var apiCall = {
             url: '/api/Ajax/Action',
             path: 'find-a-course',
@@ -124,13 +124,15 @@ $(document).ready(function () {
                     if ($(".find-a-course-page #orderBy-Input option[value='Distance']").length < 1) {
                         $("#orderBy-Input")[0].options.add(new Option("Distance", "Distance"));
                     }
-                    generateClearLink();
                 }
                 else {
                     $('.find-a-course-page #distance-block').hide();
                     $(".find-a-course-page #orderBy-Input option[value='Distance']").remove();
                 }
+                paramValues.d = isPostcode === true ? 1 : 0;
+                generateClearLink(paramValues.d);
 
+                var updatedUrl = getUpdatedUrl(paramValues);
                 window.history.pushState({ path: updatedUrl }, '', updatedUrl);
             },
             failure: function () {
@@ -152,7 +154,8 @@ $(document).ready(function () {
             "courseHours=" + paramValues.CourseHours + "&" +
             "courseStudyTime=" + paramValues.CourseStudyTime + "&" +
             "filterA=" + paramValues.FilterA + "&" +
-            "page=" + paramValues.Page;
+            "page=" + paramValues.Page + "&" +
+            "D=" + paramValues.d;
 
         return "/find-a-course/page?" + query;
     }
@@ -187,7 +190,8 @@ $(document).ready(function () {
             CourseHours: courseHours.toString(),
             CourseStudyTime: courseStudyTime.toString(),
             FilterA: true,
-            Page: parseInt(page)
+            Page: parseInt(page),
+            d: 0
         };
 
         return paramValues;
