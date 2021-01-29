@@ -1,15 +1,12 @@
 
 $(document).ready(function () {
-    $(".fac-filters-block").hide();
-    var urlParams = new URLSearchParams(window.location.search);
-    var distance = urlParams.get('D');
-    if (distance === "1") {
-        $('.find-a-course-page #distance-block').show();
-        $("#orderBy-Input")[0].options.add(new Option("Distance", "Distance"));
-    } else {
-        $('.find-a-course-page #distance-block').hide();
-        $(".find-a-course-page #orderBy-Input option[value='Distance']").remove();
-    }
+    $(".find-a-course-page:first").each(function () {
+        var urlParams = new URLSearchParams(window.location.search);
+        var distance = urlParams.get('D');
+        showHideDistanceInput(distance === "1");
+        generateClearLink(distance === "1" ? 1 : 0);
+        $(".fac-filters-block").hide();
+    });
 
     $('.find-a-course-page #orderBy-Input, .find-a-course-page #distance-select, .find-a-course-page #startdate-select').on('change', function (e) {
         makeAjaxCall(getParams());
@@ -83,8 +80,21 @@ $(document).ready(function () {
 
     function generateClearLink(d) {
         $('#fac-result-list a').each(function () {
-            this.href += '&D=' + d;
+            this.href = this.href.replace('&D=0', '').replace('&D=1', '') + '&D=' + d;
         });
+    }
+
+    function showHideDistanceInput(show) {
+        if (show === true) {
+            $('.find-a-course-page #distance-block').show();
+            if ($(".find-a-course-page #orderBy-Input option[value='Distance']").length < 1) {
+                $("#orderBy-Input")[0].options.add(new Option("Distance", "Distance"));
+            }
+        }
+        else {
+            $('.find-a-course-page #distance-block').hide();
+            $(".find-a-course-page #orderBy-Input option[value='Distance']").remove();
+        }
     }
 
     function makeAjaxCall(paramValues) {
@@ -119,18 +129,9 @@ $(document).ready(function () {
                 $(".fac-filters-block").show();
                 var searchTerm = $('.find-a-course-page #search-input').val();
                 $(".fac-filters-block").html("<p id='fac-clear-filters'><a href='/find-a-course/searchcourse?searchTerm=" + searchTerm + "' aria-label='ClearFilters'>Clear filters</a></p>");
-                if (isPostcode === true) {
-                    $('.find-a-course-page #distance-block').show();
-                    if ($(".find-a-course-page #orderBy-Input option[value='Distance']").length < 1) {
-                        $("#orderBy-Input")[0].options.add(new Option("Distance", "Distance"));
-                    }
-                }
-                else {
-                    $('.find-a-course-page #distance-block').hide();
-                    $(".find-a-course-page #orderBy-Input option[value='Distance']").remove();
-                }
-                paramValues.d = isPostcode === true ? 1 : 0;
-                generateClearLink(paramValues.d);
+                paramValues.D = isPostcode === true ? 1 : 0;
+                showHideDistanceInput(isPostcode);
+                generateClearLink(paramValues.D);
 
                 var updatedUrl = getUpdatedUrl(paramValues);
                 window.history.pushState({ path: updatedUrl }, '', updatedUrl);
@@ -155,7 +156,7 @@ $(document).ready(function () {
             "courseStudyTime=" + paramValues.CourseStudyTime + "&" +
             "filterA=" + paramValues.FilterA + "&" +
             "page=" + paramValues.Page + "&" +
-            "D=" + paramValues.d;
+            "D=" + paramValues.D;
 
         return "/find-a-course/page?" + query;
     }
@@ -191,7 +192,7 @@ $(document).ready(function () {
             CourseStudyTime: courseStudyTime.toString(),
             FilterA: true,
             Page: parseInt(page),
-            d: 0
+            D: 0
         };
 
         return paramValues;
