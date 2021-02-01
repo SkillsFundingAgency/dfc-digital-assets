@@ -3,12 +3,19 @@ $(document).ready(function () {
     $(".find-a-course-page:first").each(function () {
         var urlParams = new URLSearchParams(window.location.search);
         var distance = urlParams.get('D');
-        showHideDistanceInput(distance === "1");
-        generateClearLink(distance === "1" ? 1 : 0);
+        showHideDistanceInput(distance != null && distance === "1");
+        generateClearLink(distance != null && distance === "1" ? 1 : 0);
         $(".fac-filters-block").hide();
     });
 
-    $('.find-a-course-page #orderBy-Input, .find-a-course-page #distance-select, .find-a-course-page #startdate-select').on('change', function (e) {
+    $('.find-a-course-page #distance-select, .find-a-course-page #startdate-select').on('change', function (e) {
+        makeAjaxCall(getParams());
+        e.preventDefault();
+        return false;
+    });
+
+    $('.find-a-course-page #orderBy-Input').on('change', function (e) {
+        $('.find-a-course-page #RequestPage').val(1);
         makeAjaxCall(getParams());
         e.preventDefault();
         return false;
