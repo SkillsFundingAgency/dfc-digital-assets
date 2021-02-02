@@ -13,7 +13,7 @@ $govuk-assets-path: "/nationalcareers_toolkit/" !default;
 @import "includes/_service-status.scss";
 @import "includes/_cookie-banner.scss";
 @import "includes/_custom-banner.scss";
-@import "includes/_custom.scss";
+
 
 /* DYSAC imports which will be deprecated and added into custom live service patterns */
 $app-purple: #8c0052;
@@ -41,3 +41,4 @@ $app-text-light: #646C70;
 @import "compui/skills-toolkit.scss";
 /* Import all custom and default patterns */
 @import "patterns/all";
+@import "includes/_custom.scss";
