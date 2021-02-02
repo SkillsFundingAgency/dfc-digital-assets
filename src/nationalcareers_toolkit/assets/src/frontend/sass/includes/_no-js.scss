@@ -1,0 +1,24 @@
+/*** Menu custom styles **/
+body {
+	.govuk-header__navigation {
+	    display: block;
+	    margin: 0;
+	    padding: 0;
+	    list-style: none
+	}
+	.govuk-header__menu-button {
+	    display: none;
+
+	}
+}
+.js-enabled {
+	.govuk-header__navigation {
+	    display: none
+	}
+	.govuk-header__navigation--open {
+	    display: block
+	}
+	.govuk-header__menu-button {
+	    display: block
+	}
+}
