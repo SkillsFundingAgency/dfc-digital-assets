@@ -3,9 +3,13 @@ $(document).ready(function () {
     $(".find-a-course-page:first").each(function () {
         var urlParams = new URLSearchParams(window.location.search);
         var distance = urlParams.get('D');
+        var searchTerm = urlParams.get('searchTerm');
+        if (searchTerm == null) {
+            searchTerm = urlParams.get('SearchTerm');
+        }
         showHideDistanceInput(distance != null && distance === "1");
         generateClearLink(distance != null && distance === "1" ? 1 : 0);
-        showHideClearFilters(anyFiltersSelected(getParams()), urlParams.get('searchTerm'));
+        showHideClearFilters(anyFiltersSelected(getParams()), searchTerm);
     });
 
     $('.find-a-course-page #distance-select, .find-a-course-page #startdate-select').on('change', function (e) {
@@ -151,7 +155,7 @@ $(document).ready(function () {
                 $('#fac-result-list').html(replacementMarkup);
                 $('.fac-result-count').html("");
                 $('.fac-result-count').html(addCommas(resultCount));
-                showHideClearFilters(anyFiltersSelected(paramValues), paramValues.searchTerm);
+                showHideClearFilters(anyFiltersSelected(paramValues), paramValues.SearchTerm);
                 paramValues.D = isPostcode === true ? 1 : 0;
                 showHideDistanceInput(isPostcode);
                 generateClearLink(paramValues.D);
