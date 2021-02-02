@@ -15,7 +15,6 @@ $(document).ready(function () {
     });
 
     $('.find-a-course-page #orderBy-Input').on('change', function (e) {
-        $('.find-a-course-page #RequestPage').val(1);
         makeAjaxCall(getParams());
         e.preventDefault();
         return false;
@@ -23,7 +22,6 @@ $(document).ready(function () {
 
     $('.find-a-course-page #search-input').keypress(function (e) {
         if (e.which === 13) {
-            $('.find-a-course-page #RequestPage').val(1);
             makeAjaxCall(getParams());
             e.preventDefault();
             return false;
@@ -31,7 +29,6 @@ $(document).ready(function () {
     });
 
     $('.find-a-course-page #search-input').on("blur", function (e) {
-        $('.find-a-course-page #RequestPage').val(1);
         makeAjaxCall(getParams());
         e.preventDefault();
         return false;
@@ -169,6 +166,7 @@ $(document).ready(function () {
     }
 
     function getParams() {
+        $('.find-a-course-page #RequestPage').val(1);
         var orderByValue = $('.find-a-course-page #orderBy-Input').val();
         var searchTerm = $('.find-a-course-page #search-input').val();
         var distance = $('.find-a-course-page #distance-select').val();
