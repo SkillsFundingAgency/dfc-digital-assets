@@ -39,5 +39,9 @@ $app-text-light: #646C70;
 @import "compui/dfc-app-jobprofiles.scss";
 @import "compui/dfc-app-pages.scss";
 @import "compui/skills-toolkit.scss";
+
 /* Import all custom and default patterns */
 @import "patterns/all";
+
+/* Import no-js custom styles */
+@import "includes/_no-js.scss";
