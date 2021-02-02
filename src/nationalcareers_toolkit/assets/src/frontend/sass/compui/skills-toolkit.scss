@@ -6,10 +6,10 @@
 
 /* CUSTOM STYLES FOR ACCORDION Non Javascript   */
 body .govuk-accordion__section-content {
- display: block;
+ display: block !important;
 }
 .js-enabled .govuk-accordion__section-content {
- display: none;
+ display: none !important;
 }
 
 body .govuk-accordion__section-button {
