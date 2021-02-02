@@ -5,7 +5,7 @@ $(document).ready(function () {
         var distance = urlParams.get('D');
         showHideDistanceInput(distance != null && distance === "1");
         generateClearLink(distance != null && distance === "1" ? 1 : 0);
-        $(".fac-filters-block").hide();
+        showHideClearFilters(anyFiltersSelected(getParams()), urlParams.get('searchTerm'));
     });
 
     $('.find-a-course-page #distance-select, .find-a-course-page #startdate-select').on('change', function (e) {
@@ -101,6 +101,28 @@ $(document).ready(function () {
         }
     }
 
+    function showHideClearFilters(show, searchTerm) {
+        if (show === true) {
+            $(".fac-filters-block").html("<p id='fac-clear-filters'><a href='/find-a-course/searchcourse?searchTerm=" + searchTerm + "' aria-label='ClearFilters'>Clear filters</a></p>");
+            $(".fac-filters-block").show();
+        }
+        else {
+            $(".fac-filters-block").hide();
+        }
+    }
+
+    function anyFiltersSelected(paramValues) {
+        if (paramValues.Town != '' ||
+            paramValues.StartDate != 'Anytime' ||
+            paramValues.CourseType.length > 1 ||
+            paramValues.CourseHours.length > 1 ||
+            paramValues.CourseStudyTime.length > 1) {
+            return true;
+        }
+
+        return false;
+    }
+
     function makeAjaxCall(paramValues) {
         var stringifield = JSON.stringify(paramValues);
         var apiCall = {
@@ -129,10 +151,7 @@ $(document).ready(function () {
                 $('#fac-result-list').html(replacementMarkup);
                 $('.fac-result-count').html("");
                 $('.fac-result-count').html(addCommas(resultCount));
-                $("#fac-clear-filters").show();
-                $(".fac-filters-block").show();
-                var searchTerm = $('.find-a-course-page #search-input').val();
-                $(".fac-filters-block").html("<p id='fac-clear-filters'><a href='/find-a-course/searchcourse?searchTerm=" + searchTerm + "' aria-label='ClearFilters'>Clear filters</a></p>");
+                showHideClearFilters(anyFiltersSelected(paramValues), paramValues.searchTerm);
                 paramValues.D = isPostcode === true ? 1 : 0;
                 showHideDistanceInput(isPostcode);
                 generateClearLink(paramValues.D);
