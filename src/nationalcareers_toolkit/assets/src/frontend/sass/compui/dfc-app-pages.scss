@@ -14,3 +14,25 @@ div.dfc-app-pages-alignment-justify {
     text-align: justify;
     text-justify: inter-word;
 }
+.brand--ncs {
+	.brand__color {
+		&:link, &:visited, &:active {
+			color: #207e77;
+		}
+		&:hover,&:focus {
+			color: #0b0c0c;
+		}
+	}
+  &.brand__border-color{
+    border-color: #009390;
+  }
+  .brand__border-color{
+    border-color: #009390;
+  }
+}
+
+
+.organisation__brand-border-top {
+  border-top-width: 5px;
+  border-top-style: solid;
+}
