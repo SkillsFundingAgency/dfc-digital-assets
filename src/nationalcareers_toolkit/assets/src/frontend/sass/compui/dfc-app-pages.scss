@@ -36,3 +36,154 @@ div.dfc-app-pages-alignment-justify {
   border-top-width: 5px;
   border-top-style: solid;
 }
+
+/*SOCIAL MEDIA */
+.gem-c-share-links__list {
+    list-style: none;
+    margin: 0;
+    padding: 0
+}
+
+.gem-c-share-links__list-item {
+    box-sizing: border-box;
+    position: relative;
+    display: inline-block;
+    min-height: 32px;
+    padding-left: 42px;
+    padding-right: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    line-height: 32px
+}
+
+.gem-c-share-links__link {
+    font-family: "nta",Arial,sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.1428571429;
+    margin-right: 30px;
+    text-decoration: none
+}
+
+@media print {
+    .gem-c-share-links__link {
+        font-family: sans-serif
+    }
+}
+
+@media (min-width: 40.0625em) {
+    .gem-c-share-links__link {
+        font-size:16px;
+        line-height: 1.25
+    }
+}
+
+@media print {
+    .gem-c-share-links__link {
+        font-size: 14pt;
+        line-height: 1.2
+    }
+}
+
+.gem-c-share-links__link:focus,.gem-c-share-links__link:active:focus,.gem-c-share-links__link:link:focus,.gem-c-share-links__link:visited:focus {
+    outline: 3px solid transparent;
+    color: #0b0c0c;
+    background-color: #fd0;
+    box-shadow: 0 -2px #fd0,0 4px #0b0c0c;
+    text-decoration: none;
+    color: #0b0c0c !important
+}
+
+.gem-c-share-links__title {
+    color: #0b0c0c;
+    font-family: "nta",Arial,sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 0 0 10px 0
+}
+
+@media print {
+    .gem-c-share-links__title {
+        color: #000
+    }
+}
+
+@media print {
+    .gem-c-share-links__title {
+        font-family: sans-serif
+    }
+}
+
+@media (min-width: 40.0625em) {
+    .gem-c-share-links__title {
+        font-size:16px;
+        line-height: 1.5
+    }
+}
+
+@media print {
+    .gem-c-share-links__title {
+        font-size: 14pt;
+        line-height: 1.5
+    }
+}
+
+.gem-c-share-links__link-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 32px;
+    height: 32px;
+    vertical-align: top
+}
+
+.direction-rtl .gem-c-share-links__link {
+    display: inline-block;
+    margin-right: 0;
+    margin-left: 30px
+}
+
+.direction-rtl .gem-c-share-links__list-item {
+    padding-left: 10px;
+    padding-right: 42px
+}
+
+.direction-rtl .gem-c-share-links__link-icon {
+    left: auto;
+    right: 0
+}
+
+.gem-c-share-links--columns .gem-c-share-links__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr))
+}
+
+.gem-c-share-links--columns .gem-c-share-links__list:after {
+    content: "";
+    display: block;
+    clear: both
+}
+
+.gem-c-share-links--columns .gem-c-share-links__list-item {
+    float: left;
+    min-width: 150px
+}
+
+.gem-c-share-links--columns .gem-c-share-links__link {
+    margin: 0
+}
+
+.gem-c-share-links--stacked .gem-c-share-links__list-item {
+    display: block
+}
+.brand--ncs .brand__color:link,.brand--ncs .brand__color:visited,.brand--ncs .brand__color:active {
+    color: #207e77;
+}
+.brand--ncs .brand__color:hover,.brand--ncs .brand__color:focus {
+    color: #0b0c0c
+}
