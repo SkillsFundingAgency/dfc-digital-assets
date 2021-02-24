@@ -52,6 +52,12 @@ jobs:
       pathtoPublish: 'Resources/PSScripts'
       artifactName: resources
 
+  - task: PublishBuildArtifacts@1
+    displayName: 'Publish media folder'
+    inputs:
+      PathtoPublish: 'src/media'
+      artifactName: media
+
   # build and publish gds_toolkit
   - template: AzureDevOpsTemplates/Build/StepTemplates/dfc-grunt-build.yml@dfc-devops
     parameters:
