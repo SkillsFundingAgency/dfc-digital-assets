@@ -4,6 +4,7 @@ div.dfc-app-lmi-panel {
     border-width: 3px;
     -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
     box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    font-family: "GDS Transport",Arial,sans-serif;
 
     .panel-heading {
       background-color: #207e77;
@@ -13,24 +14,41 @@ div.dfc-app-lmi-panel {
       position: relative;
       margin-top: -1px;
       margin-right: -1px;
-      padding: 10px 15px;
+      padding: 5px 10px;
+
 
       .panel-left {
         margin:0;
         padding:0;
+        height: 110px;
+        width: 110px;
 
-        img {
-          height: 100%;
-          max-height: 100px;
-          float:left;
-
-          @media (max-width: 40.0625em) {
-            max-height: 70px;
-          }
+        @media (max-width: 40.0625em) {
+          float: left;
+          width: 25%;
+          width:80px; height:80px;
+          padding: 0; margin:0
         }
+
+      }
+      .panel-left.job-decline {
+        background: govuk-image-url("chart-line-solid3.svg") no-repeat left;
+
+      }
+      .panel-left.job-growth {
+        background: govuk-image-url("chart-line-solid4.svg") no-repeat left;
       }
       .panel-right {
         text-align: right;
+        float:right;
+        font-weight: bold;
+        padding-top: 10px;
+        padding-right: 0;
+
+        @media (max-width: 40.0625em) {
+          float: right;
+          width: 70%;
+        }
 
         span {
           display: block
@@ -48,6 +66,7 @@ div.dfc-app-lmi-panel {
 div.dfc-app-lmi-panel.panel-qualifications {
   display: flex;
   padding:10px;
+  font-family: "GDS Transport",Arial,sans-serif;
 
   .panel-section-levels {
     background-color: #000;
