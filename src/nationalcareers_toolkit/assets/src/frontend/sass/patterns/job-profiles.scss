@@ -181,17 +181,10 @@
 .job-profile-subsection {
   margin-bottom: 40px;
 
-  .job-profile-subsection-content {
-    padding-left: 20px;
-    border-left: 3px solid $grey-3;
-  }
-
   h3 {
     margin-bottom: 20px;
     font-size: 22px;
     font-weight: bold;
-    background-color: $grey-3;
-    padding: 15px 20px;
     border-radius: 5px;
   }
 
@@ -560,5 +553,11 @@
 
   .js-visible {
     display: block;
+  }
+}
+.govuk-accordion__section-content {
+  h2.job-profile-headings,
+  h2.job-profile-heading {
+    display:none;
   }
 }
