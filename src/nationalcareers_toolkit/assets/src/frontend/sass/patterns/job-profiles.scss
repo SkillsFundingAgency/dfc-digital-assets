@@ -69,7 +69,8 @@
 }
 
 .job-profile-hero {
-  @extend .secondary-hero
+  @extend .secondary-hero;
+  margin-bottom: 0px;
 }
 
 .job-profile-heroblock {
@@ -88,7 +89,14 @@
   }
 
   .job-profile-pattern {
-    @extend .calendar-block
+    @extend .calendar-block;
+  }
+
+  .job-profile-group {
+    @extend .chart-line-block;
+    display: block;
+    min-height: 100px;
+    width: 50px;
   }
 
   @media (max-width: 749px) {
@@ -115,6 +123,67 @@
     }
   }
 }
+
+.job-profile-hero-additional {
+  @extend .secondary-hero
+}
+
+.job-profile-heroblock-additional {
+  @extend .secondary-hero-block;
+
+  .job-profile-heroblock-content {
+  @extend .secondary-hero-block-content
+  }
+
+  .job-profile-salary {
+    @extend .pound-block
+  }
+
+  .job-profile-hours {
+    @extend .clock-block
+  }
+
+  .job-profile-pattern {
+    @extend .calendar-block;
+  }
+
+  .job-profile-group {
+    @extend .chart-line-block;
+    display: block;
+    min-height: 100px;
+
+     &:before {
+    			width: 50px;
+          display: block;
+          min-height: 100px;
+        }
+  }
+
+  @media (max-width: 749px) {
+    &:nth-child(odd) {
+      background-color: darken(govuk-colour('light-grey'), 5%);
+    }
+
+    h2 {
+      width: 50%;
+      float: left;
+      border: none;
+      min-width: 150px;
+
+      span {
+        width: 100%;
+        margin: 0;
+      }
+    }
+
+    .job-profile-heroblock-content {
+      float: right;
+      width: auto;
+      padding: 0;
+    }
+  }
+}
+
 
 .jump-links {
   border-bottom: none;
