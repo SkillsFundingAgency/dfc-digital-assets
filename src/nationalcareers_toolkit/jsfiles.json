@@ -9,7 +9,8 @@
     "assets/src/frontend/js/shell/compui-utilities.js",
     "assets/src/frontend/js/shell/compui-validation.js",
     "assets/src/frontend/js/shell/apps/**/*.js",
-    "assets/src/frontend/js/shell/compui-shell.js"
+    "assets/src/frontend/js/shell/compui-shell.js",
+    "assets/src/frontend/js/youtube-no-cookie-gtm.js"
   ],
   "jqueryBundle": [
     "node_modules/jquery/dist/jquery.min.js",
