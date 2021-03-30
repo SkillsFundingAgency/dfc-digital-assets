@@ -255,7 +255,6 @@ if (window.location.href.indexOf("find-a-course") > -1) {
                 event.preventDefault(); // or return false;
             }
         });
-        $('#location-input').attr('autocomplete', 'on')
     });
 
     //close autoselect if return is pressed on the input
