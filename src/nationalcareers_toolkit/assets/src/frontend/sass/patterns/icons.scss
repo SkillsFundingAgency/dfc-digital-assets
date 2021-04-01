@@ -117,3 +117,8 @@
     margin-left: 60px !important;
   }
 }
+.chart-line-block {
+  &:before {
+    background: govuk-image-url("chart-line-solid2.svg") no-repeat center;
+  }
+}
