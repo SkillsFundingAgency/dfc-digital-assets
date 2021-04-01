@@ -101,6 +101,21 @@
       width: 100%;
     }
   }
+  .column-60 {
+          @extend .column;
+
+          @media (min-width: 750px) {
+            width:66.66%;
+          }
+
+          @media (max-width: 749px) {
+              background-color: govuk-colour('light-grey');
+
+              h2 {
+                width: 100%;
+              }
+          }
+  }
 
   .column-40 {
     @extend .column;
@@ -254,6 +269,10 @@
       float: right;
       width: auto;
       padding: 0;
+
+      p {
+        font-size: 16px;
+      }
     }
   }
 }
