@@ -144,20 +144,21 @@ function makeAjaxCall(paramValues) {
         success: function (data) {
             var replacementMarkup = data.offlineHtml;
             var resultCount = "no ";
-            var isPostcode = false;
+            var showDistanceSelector = false;
             if (data.isHealthy === true && data.payload != null) {
                 var parsedData = JSON.parse(data.payload);
                 replacementMarkup = parsedData.html;
                 resultCount = parsedData.count;
-                isPostcode = parsedData.isPostcode;
+                showDistanceSelector = parsedData.isPostcode || parsedData.showDistanceSelector;
+                /* Once this code and the FAC app with location is fully deployed the  parsedData.isPostcode can be removed */
             }
             $('#fac-result-list').html("");
             $('#fac-result-list').html(replacementMarkup);
             $('.fac-result-count').html("");
             $('.fac-result-count').html(addCommas(resultCount));
             showHideClearFilters(anyFiltersSelected(paramValues), paramValues.SearchTerm);
-            paramValues.D = isPostcode === true ? 1 : 0;
-            showHideDistanceInput(isPostcode);
+            paramValues.D = showDistanceSelector === true ? 1 : 0;
+            showHideDistanceInput(showDistanceSelector);
             generateClearLink(paramValues.D);
 
             var updatedUrl = getUpdatedUrl(paramValues);
