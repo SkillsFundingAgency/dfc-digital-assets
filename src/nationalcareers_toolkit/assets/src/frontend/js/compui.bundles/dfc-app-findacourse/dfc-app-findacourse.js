@@ -244,7 +244,7 @@ if (window.location.href.indexOf("find-a-course") > -1) {
             minLength: 3,
             position: {
                 my: "left top",
-                at: "left-23 bottom+10"
+                at: "left bottom"
             },
             select: function (event, ui) {
                 $('#location-input').val(ui.item.label); // display the selected text
