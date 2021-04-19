@@ -174,7 +174,13 @@
 
   @media (max-width: 749px) {
     &:nth-child(odd) {
-      background-color: darken(govuk-colour('light-grey'), 5%);
+      background-color: govuk-colour('light-grey');
+    }
+
+    .job-profile-group {  
+       &:before {
+            display: none;
+          }
     }
 
     h2 {
