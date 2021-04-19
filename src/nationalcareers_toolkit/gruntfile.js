@@ -12,6 +12,7 @@ module.exports = function (grunt) {
     // Project assets
     // Loads project js files which will be concatenated and minified in one file
     var projectJsfiles = grunt.file.readJSON('jsfiles.json').concatCustomJsFiles;
+    var compuiDfcPagesJsFiles = grunt.file.readJSON('jsfiles.json').compuiDfcPagesJsFiles;
     var compuiDfcContactUsJsFiles = grunt.file.readJSON('jsfiles.json').compuiDfcContactUsJsFiles;
     var compuiDfcAppDiscoverSkillsAndCareersJsFiles = grunt.file.readJSON('jsfiles.json').compuiDfcAppDiscoverSkillsAndCareersJsFiles;
     var compuiDfcFindACourseJsFiles = grunt.file.readJSON('jsfiles.json').compuiDfcFindACourseJsFiles;
@@ -160,6 +161,7 @@ module.exports = function (grunt) {
                     // Project assets
                     // Concatenates project files listed in jsfiles.json
                     { '<%= dist.path %>/js/dfcdigital.min.js': projectJsfiles },
+                    { '<%= dist.path %>/js/dfc-app-pages.min.js': compuiDfcPagesJsFiles },
                     { '<%= dist.path %>/js/dfc-app-contactus.min.js': compuiDfcContactUsJsFiles },
                     { '<%= dist.path %>/js/dfc-app-discoverskillsandcareers.min.js': compuiDfcAppDiscoverSkillsAndCareersJsFiles },
                     { '<%= dist.path %>/js/dfc-app-findacourse.min.js': compuiDfcFindACourseJsFiles },

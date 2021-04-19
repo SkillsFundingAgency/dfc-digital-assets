@@ -9,8 +9,7 @@
     "assets/src/frontend/js/shell/compui-utilities.js",
     "assets/src/frontend/js/shell/compui-validation.js",
     "assets/src/frontend/js/shell/apps/**/*.js",
-    "assets/src/frontend/js/shell/compui-shell.js",
-    "assets/src/frontend/js/youtube-no-cookie-gtm.js"
+    "assets/src/frontend/js/shell/compui-shell.js"
   ],
   "jqueryBundle": [
     "node_modules/jquery/dist/jquery.min.js",
@@ -63,6 +62,9 @@
     "node_modules/govuk_frontend_toolkit/javascripts/govuk/modules/auto-track-event.js",
     "node_modules/govuk_frontend_toolkit/javascripts/vendor/polyfills/bind.js",
     "nothing"
+  ],
+  "compuiDfcPagesJsFiles": [
+    "assets/src/frontend/js/compui.bundles/dfc-app-pages/**/*.js"
   ],
   "compuiDfcContactUsJsFiles": [
     "assets/src/frontend/js/compui.bundles/dfc-app-contactus/**/*.js"
