@@ -75,10 +75,4 @@
     .conditional-box {
         max-height: none;
     }
-
-    @media (max-width: 40.0625em) {
-      #location-input.govuk-input--width-10 {
-          max-width: none;
-      }
-    }
 }
