@@ -125,15 +125,28 @@
 }
 
 .job-profile-hero-additional {
-  @extend .secondary-hero
+  @extend .secondary-hero;
+  .column-60 {
+    padding-left: 0px;
+    @media (max-width: 749px) {      
+        padding-top: 0px;    
+    }    
+  }
 }
 
 .job-profile-heroblock-additional {
   @extend .secondary-hero-block;
 
   .job-profile-heroblock-content {
-  @extend .secondary-hero-block-content
-  }
+  @extend .secondary-hero-block-content;
+  @media (max-width: 749px) {
+        p {
+          text-align: left;
+        }
+      }
+    
+  }   
+  
 
   .job-profile-salary {
     @extend .pound-block
@@ -161,7 +174,13 @@
 
   @media (max-width: 749px) {
     &:nth-child(odd) {
-      background-color: darken(govuk-colour('light-grey'), 5%);
+      background-color: govuk-colour('light-grey');
+    }
+
+    .job-profile-group {  
+       &:before {
+            display: none;
+          }
     }
 
     h2 {
