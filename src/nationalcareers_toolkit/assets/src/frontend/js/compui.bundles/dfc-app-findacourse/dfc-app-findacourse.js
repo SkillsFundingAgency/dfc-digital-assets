@@ -213,7 +213,7 @@ function getParams() {
     });
 
     var paramValues = {
-        SearchTerm: searchTerm,
+        SearchTerm: encodeURIComponent(searchTerm),
         Distance: distance,
         Town: town,
         OrderByValue: orderByValue,
