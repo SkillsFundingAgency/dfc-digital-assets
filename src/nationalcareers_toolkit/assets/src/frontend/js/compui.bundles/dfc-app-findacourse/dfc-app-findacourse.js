@@ -212,10 +212,11 @@ function getParams() {
         courseStudyTime.push(this.value);
     });
 
-    var encodedSearchTerm = encodeURIComponent(searchTerm);
+    //Strip the special characters
+    var trimmedSearchTerm = searchTerm.replace(/[^A-Z0-9]+/ig, "");
 
     var paramValues = {
-        SearchTerm: encodedSearchTerm,
+        SearchTerm: trimmedSearchTerm,
         Distance: distance,
         Town: town,
         OrderByValue: orderByValue,
