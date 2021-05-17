@@ -72,3 +72,19 @@ div.dfc-app-triage-panel {
 .filters-button, .js-enabled .filters-button, body .filters-button {
     display: none
 }
+
+/* show /hide */
+.triage-tool-results {
+  display:none;
+
+  @media (max-width: 43.75em) {
+       display:block;
+   }
+}
+.triage-tool-sidebar {
+  display:block;
+
+  @media (max-width: 43.75em) {
+      display:none;
+  }
+}
