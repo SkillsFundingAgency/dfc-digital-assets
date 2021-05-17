@@ -234,7 +234,9 @@ function getParams() {
 }
 
 //Location suggest code
-if (window.location.href.indexOf("find-a-course") > -1) {
+//Note the location search of FaC has been disabled for now
+//to enable remove -disabled from the page name check below and these comments
+if (window.location.href.indexOf("find-a-course-disabed") > -1) {
     $(document).ready(function () {
         $("#location-input").autocomplete({
             source: function (request, response) {
