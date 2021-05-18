@@ -213,7 +213,7 @@ function getParams() {
     });
 
     //Strip the special characters
-    var trimmedSearchTerm = searchTerm.replace(/[^A-Z0-9]+/ig, "");
+    var trimmedSearchTerm = searchTerm.replace(/[^A-Z0-9 ]+/ig, "");
 
     var paramValues = {
         SearchTerm: trimmedSearchTerm,
