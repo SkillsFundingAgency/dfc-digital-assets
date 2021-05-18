@@ -126,6 +126,7 @@ $(document).ready(function () {
                         }
                     });
                 updatePageOnly(generatedPages, option.title, selectedFilters);
+                updateGtm(selectedFilters, generatedPages.length, selectedOption)  
             } else {
                 $.each(option.pages,
                     function (index, page) {
@@ -134,8 +135,24 @@ $(document).ready(function () {
                 $.each(option.filters, function(index, filter) {
                     generatedFilters.push(generateFilterItemHtml(filter, []));
                 });
-                updatePageAndFilters(generatedPages, option.title, selectedFilters, generatedFilters);  
+                updatePageAndFilters(generatedPages, option.title, selectedFilters, generatedFilters);
+                updateGtm(selectedFilters, generatedPages.length, selectedOption)  
             }
+        }
+
+        function updateGtm(selectedFilters, pageCount, selectedOption){
+
+            const filters = [];
+            $.each(selectedFilters, function(index, filter){
+                filters.push(filter.title);
+            });
+
+            dataLayer.push({
+                'Event': 'resultsUpdate',
+                 'filters': filters.toString(),
+                 'optionstate': selectedOption,
+                 'Results': pageCount,
+                })
         }
 
         function getSelectedOptionData(selectedOption, options) {
