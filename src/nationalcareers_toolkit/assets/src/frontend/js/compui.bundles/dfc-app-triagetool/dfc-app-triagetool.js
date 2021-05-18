@@ -148,7 +148,7 @@ $(document).ready(function () {
             });
 
             dataLayer.push({
-                'Event': 'resultsUpdate',
+                'event': 'resultsUpdate',
                  'filters': filters.toString(),
                  'optionstate': selectedOption,
                  'Results': pageCount,
