@@ -4,6 +4,7 @@ div.dfc-app-triage-panel-banner {
         .triage-search-item-wrapper {
           display: table;
           width: 90%;
+          margin-bottom: 20px;
 
           .triage-select-label {
             display: block;
@@ -23,29 +24,33 @@ div.dfc-app-triage-panel-banner {
       }
     }
 }
+.triage-tool-sidebar {
+  border-top: 6px solid #207e77;
+}
 
 
-div.dfc-app-triage-panel {
 
-  ol.triage-result-list {
-    li.triage-search-result-item {
-          padding: 0 ;
-          background-color: #fff;
-          margin-bottom: 20px;
-          border-bottom: 1px solid #ccc;
+ol.triage-result-list {
+  list-style : none;
+  padding-left:  0;
 
-          &:last-child {
-            border-bottom:0px solid #ccc;
-          }
+  li.triage-search-result-item {
+      padding: 0 ;
+      background-color: #fff;
+      margin-bottom: 20px;
+      border-bottom: 1px solid #ccc;
 
-          h3 {
-            margin-bottom: 5px;
+      &:last-child {
+        border-bottom:0px solid #ccc;
+      }
 
-            a {
-              text-decoration: none;
-            }
-          }
+      h3 {
+        margin-bottom: 5px;
+
+        a {
+          text-decoration: none;
         }
+      }
     }
 }
 
@@ -55,6 +60,7 @@ div.dfc-app-triage-panel {
 
       .triage-select-label {
         display: inline-block;
+        margin-right:10px;
       }
       .triage-start-btn {
         display: none;
