@@ -191,16 +191,16 @@ $(document).ready(function () {
         }
 
         function generatePageItemHtml(page) {
-            return '<li class="dfc-code-search-resultitem info-card" id="' +
+            return '<li class="dfc-code-search-resultitem triage-search-result-item info-card" id="' +
                 page.title +
-                '" style="display: list - item; ">' +
-                '<div class="info - card - content">' +
-                '<h3 class="govuk - heading - m">' +
-                '<a class="govuk - link" href="' +
+                '">' +
+                '<div class="info-card-content">' +
+                '<h3 class="govuk-heading-m">' +
+                '<a class="govuk-link" href="' +
                 page.link +
                 '">' +
                 page.title +
-                '</a></h3><p class="govuk - body">' +
+                '</a></h3><p class="govuk-body">' +
                 page.summary +
                 '</p></div></li>';
         }
