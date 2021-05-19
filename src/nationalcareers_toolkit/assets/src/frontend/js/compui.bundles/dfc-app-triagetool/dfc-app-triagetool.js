@@ -99,6 +99,12 @@ $(document).ready(function () {
 
             clearFilters.click(function (e) {
                 e.preventDefault();
+                $.each($(checkboxes), function (index, value) {
+                    const checkbox = $(value);
+                    if (checkbox.prop('checked')) {
+                        checkbox.prop('checked', false);
+                        };
+                    });
                 updateData(true);
             });
         }
