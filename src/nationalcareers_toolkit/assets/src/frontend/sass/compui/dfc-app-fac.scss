@@ -1,0 +1,9 @@
+.govuk-accordion__section-content {
+	table.govuk-table {
+		tr:last-child {
+			td, th {
+				border-bottom: 0;
+			}
+		}
+	}
+}
