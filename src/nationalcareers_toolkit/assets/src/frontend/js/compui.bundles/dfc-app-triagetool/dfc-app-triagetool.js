@@ -219,7 +219,7 @@ $(document).ready(function () {
             });
 
             return '<div class="govuk-checkboxes__item">' +
-                '<input class="govuk-checkboxes__input" id="item.Title" type="checkbox" value="' +
+                '<input class="govuk-checkboxes__input" id="'+ item.title + '" type="checkbox" value="' +
                 item.url +
                 '" name="Filters"' +
                 '>' +
