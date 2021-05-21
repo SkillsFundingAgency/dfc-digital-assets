@@ -317,11 +317,11 @@ body.hasHover {
   margin: 0 10px;
 
   @media (max-width: 43.75em) {
-      width: 85%;
+      width: 70%;
     }
 }
 
-.ncs-triage-start-btn {
+.triage-start-btn {
    display: inline-block;
 
    @media (max-width: 43.75em) {
