@@ -1,10 +1,11 @@
 $(document).ready(function () {
-
     var checkboxes = '#filterCheckboxes input[type=checkbox]';
+    var radioFilters = '#filterCheckboxes input[type=radio]';
     var optionSelect = $('#triageSelect');
+    var pocSelect = $('#pocSelect');
     var filterForm = $("#TriageToolFilters");
     var optionForm = $('#triage-search-form');
-    var clearFilters = $('#clearFilters');    
+    var clearFilters = $('#clearFilters');
 
     optionSelect.val($('#SelectedOption').val());
     setUpSinglePageSolution();
@@ -97,14 +98,18 @@ $(document).ready(function () {
                 updateData(true);
             });
 
+            pocSelect.change(function () {
+                updateData(true);
+            });
+
             clearFilters.click(function (e) {
                 e.preventDefault();
                 $.each($(checkboxes), function (index, value) {
                     const checkbox = $(value);
                     if (checkbox.prop('checked')) {
                         checkbox.prop('checked', false);
-                        };
-                    });
+                    };
+                });
                 updateData(true);
             });
         }
@@ -116,11 +121,12 @@ $(document).ready(function () {
                 }
             );
         }
-        
+
         function generateHtml(options, allData) {
             const selectedOption = optionSelect.val();
             const option = getSelectedOptionData(selectedOption, options);
             const selectedFilters = getSelectedFilters();
+            var pagesToShow = [];
             var generatedPages = [];
             var generatedFilters = [];
 
@@ -128,37 +134,59 @@ $(document).ready(function () {
                 $.each(option.pages,
                     function (index, page) {
                         if (shouldPageBeShown(page, selectedFilters)) {
+                            pagesToShow.push(page);
                             generatedPages.push(generatePageItemHtml(page));
                         }
                     });
-                updatePageOnly(generatedPages, option.title, selectedFilters);
-                updateGtm(selectedFilters, generatedPages.length, selectedOption)  
+
+                const selectedPoc = pocSelect.val();
+
+                switch (selectedPoc) {
+                    case "filters":
+                        $.each(option.filters, function (index, filter) {
+                            if (shouldFilterBeShown(filter, pagesToShow)) {
+                                generatedFilters.push(generateFilterItemHtml(filter, selectedFilters));
+                            }
+                        });
+                        updatePageAndFilters(generatedPages, option.title, selectedFilters, generatedFilters);
+                        break;
+                    case "disable":
+                        $.each(option.filters, function (index, filter) {
+                            var enable = shouldFilterBeShown(filter, pagesToShow);
+                            generatedFilters.push(generateFilterItemHtml(filter, selectedFilters, enable));
+                        });
+                        updatePageAndFilters(generatedPages, option.title, selectedFilters, generatedFilters);
+                        break;
+                    default:
+                        updatePageOnly(generatedPages, option.title, selectedFilters);
+                }
+                updateGtm(selectedFilters, generatedPages.length, selectedOption)
             } else {
                 $.each(option.pages,
                     function (index, page) {
                         generatedPages.push(generatePageItemHtml(page));
                     });
-                $.each(option.filters, function(index, filter) {
+                $.each(option.filters, function (index, filter) {
                     generatedFilters.push(generateFilterItemHtml(filter, []));
                 });
                 updatePageAndFilters(generatedPages, option.title, selectedFilters, generatedFilters);
-                updateGtm(selectedFilters, generatedPages.length, selectedOption)  
+                updateGtm(selectedFilters, generatedPages.length, selectedOption)
             }
         }
 
-        function updateGtm(selectedFilters, pageCount, selectedOption){
+        function updateGtm(selectedFilters, pageCount, selectedOption) {
 
             const filters = [];
-            $.each(selectedFilters, function(index, filter){
+            $.each(selectedFilters, function (index, filter) {
                 filters.push(filter.title);
             });
 
             dataLayer.push({
                 'event': 'resultsUpdate',
-                 'filters': filters.toString(),
-                 'optionstate': selectedOption,
-                 'Results': pageCount,
-                })
+                'filters': filters.toString(),
+                'optionstate': selectedOption,
+                'Results': pageCount,
+            })
         }
 
         function getSelectedOptionData(selectedOption, options) {
@@ -187,6 +215,17 @@ $(document).ready(function () {
                 }
             });
 
+            $.each($(radioFilters), function (index, value) {
+                const radioButton = $(value);
+                if (radioButton.prop('checked')) {
+                    filters.push({
+                        url: radioButton.val(),
+                        title: $(radioButton.prop("labels")).prop("innerText"),
+                        selected: radioButton.prop('checked')
+                    });
+                }
+            });
+
             return filters;
         }
 
@@ -205,23 +244,54 @@ $(document).ready(function () {
                 '</p></div></li>';
         }
 
-        function generateFilterItemHtml(item, selectedFilters) {
+        function generateFilterItemHtml(item, selectedFilters, enable = true) {
+            const selectedPoc = pocSelect.val();
 
-            var checked = false;
+            switch (selectedPoc) {
+                case "radio":
+                    return generateFilterRadioButtonHtml(item, selectedFilters);
+                default:
+                    return generateFilterCheckboxHtml(item, selectedFilters, enable);
+            }
+        }
 
-            $.each(selectedFilters, function(index, filter) {
-                if (checked === "checked") {
-                    return false;
-                }
+        function generateFilterRadioButtonHtml(item, selectedFilters) {
+            var checked = "";
+
+            $.each(selectedFilters, function (index, filter) {
                 if (filter.url === item.url) {
-                    checked = "checked";
-                };
+                    checked = " checked";
+                }
+            });
+
+            return '<div class="govuk-radios__item">' +
+                '<input class="govuk-radios__input" id="' + item.title + '" type="radio" value="' +
+                item.url +
+                '" name="Filters"' +
+                checked +
+                '>' +
+                '<label class="govuk-label govuk-radios__label" for="' +
+                item.title +
+                '">' +
+                item.title +
+                '</label></div>';
+        }
+
+        function generateFilterCheckboxHtml(item, selectedFilters, enable) {
+            var checked = "";
+            var disabled = enable ? "" : " disabled";
+
+            $.each(selectedFilters, function (index, filter) {
+                if (filter.url === item.url) {
+                    checked = " checked";
+                }
             });
 
             return '<div class="govuk-checkboxes__item">' +
-                '<input class="govuk-checkboxes__input" id="'+ item.title + '" type="checkbox" value="' +
+                '<input class="govuk-checkboxes__input" id="' + item.title + '" type="checkbox" value="' +
                 item.url +
                 '" name="Filters"' +
+                checked + disabled +
                 '>' +
                 '<label class="govuk-label govuk-checkboxes__label" for="' +
                 item.title +
@@ -261,27 +331,37 @@ $(document).ready(function () {
             const multipleArticleString = "{replace} suggestions";
 
             switch (generatedPages.length) {
-            case 1:
-                totalArticles.text(singleArticleString);
+                case 1:
+                    totalArticles.text(singleArticleString);
 
-                break;
-            default:
+                    break;
+                default:
 
-                totalArticles.text(multipleArticleString.replace(tag,generatedPages.length));
+                    totalArticles.text(multipleArticleString.replace(tag, generatedPages.length));
 
-                break;
+                    break;
             }
 
-            
+
             pageResults.html(generatedPages.toHtmlString());
         }
 
         function updateFilterArea(generatedFilters) {
+            const selectedPoc = pocSelect.val();
             var filtersSelectedElement = $('#secondaryFiltersSelected1');
             var filterHtml = $('#filterCheckboxes');
             const filterSelectedString = "{replace} selected";
             const tag = "{replace}";
-            filterHtml.html(generatedFilters.toHtmlString());
+            var markup = "";
+
+            if (selectedPoc === "radio") {
+                markup = "<div class ='govuk-radios'>"
+            } else {
+                markup = "<div class ='govuk-checkboxes'>"
+            }
+            markup += generatedFilters.toHtmlString();
+            markup += "</div>";
+            filterHtml.html(markup);
             $.each($(checkboxes),
                 function (index, checkbox) {
                     $(checkbox).click(function () {
@@ -289,16 +369,69 @@ $(document).ready(function () {
                     });
                 });
 
+            $.each($(radioFilters),
+                function (index, radio) {
+                    $(radio).click(function () {
+                        updateData(false);
+                    });
+                });
         }
 
         function shouldPageBeShown(page, selectedFilters) {
+            const selectedPoc = pocSelect.val();
+
+            switch (selectedPoc) {
+                case "union":
+                case "radio":
+                    return shouldPageBeShownUnion(page, selectedFilters);
+                default:
+                    return shouldPageBeShownIntersection(page, selectedFilters);
+            }
+        }
+
+        function shouldPageBeShownUnion(page, selectedFilters) {
 
             var filterFound = false;
 
             $.each(selectedFilters,
-                function(index, filter) {
+                function (index, filter) {
 
-                    $.each(page.filters, function(pfIndex, pageFilter) {
+                    $.each(page.filters, function (pfIndex, pageFilter) {
+                        if (filter.url === pageFilter) {
+                            filterFound = true;
+                        }
+                    });
+
+                });
+
+            return filterFound;
+        }
+
+        function shouldPageBeShownIntersection(page, selectedFilters) {
+
+            var filterCount = 0;
+
+            $.each(selectedFilters,
+                function (index, filter) {
+
+                    $.each(page.filters, function (pfIndex, pageFilter) {
+                        if (filter.url === pageFilter) {
+                            filterCount++;
+                        }
+                    });
+
+                });
+
+            return filterCount == selectedFilters.length;
+        }
+
+        function shouldFilterBeShown(filter, pages) {
+            var filterFound = false;
+
+            $.each(pages,
+                function (index, page) {
+
+                    $.each(page.filters, function (pfIndex, pageFilter) {
                         if (filter.url === pageFilter) {
                             filterFound = true;
                         }
@@ -312,7 +445,7 @@ $(document).ready(function () {
         Array.prototype.toHtmlString = function () {
             var string = "";
             $.each(this,
-                function(index, item) {
+                function (index, item) {
                     string = string + item;
                 });
 
