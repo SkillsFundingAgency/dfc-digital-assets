@@ -1,6 +1,6 @@
 div.dfc-app-triage-panel-banner {
     .triage-panel-search-form {
-      section.triage-banner.primary-hero {
+      section.triage-search-banner.primary-hero {
         .triage-search-item-wrapper {
           display: table;
           width: 90%;
@@ -24,6 +24,18 @@ div.dfc-app-triage-panel-banner {
       }
     }
 }
+div.dfc-app-triage-panel-banner {
+    .triage-panel-search-form {
+        .triage-select {
+          @media (max-width: 43.75em) {
+               width:100%;
+               margin-bottom: 10px;
+               margin-top:10px;
+           }
+        }
+    }
+  }
+
 .triage-tool-sidebar {
   border-top: 6px solid #207e77;
 }
@@ -64,6 +76,7 @@ ol.triage-result-list {
       }
       .triage-start-btn {
         display: none;
+        line-height: 1.1;
       }
     }
   }
