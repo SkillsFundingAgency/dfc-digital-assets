@@ -2,3 +2,16 @@
     border: 5px solid #1d70b8;
     padding: 10px 20px;
 }
+@media (max-width: 770px){
+    .dfc-app-actionplans-mobile-auth-link {
+        text-align: right;
+    }
+}
+
+.dfc-app-actionplans-table-one-third {
+    width:33.33%!important
+}
+
+.dfc-app-actionplans-table-two-thirds {
+    width:66.66%!important
+}
