@@ -18,6 +18,13 @@ $(document).ready(function () {
                 });
             });
 
+        $.each($(radioFilters),
+            function (index, radioFilter) {
+                $(radioFilter).click(function () {
+                    filterForm.submit();
+                });
+            });
+
         optionSelect.change(function () {
             optionForm.submit();
         });
@@ -82,6 +89,7 @@ $(document).ready(function () {
                 if (data.length < 1) {
                     return setUpPageRefreshSolution();
                 }
+                generateHtml(data, true);
                 return setUpSinglePageEvents();
             }
         );
@@ -90,6 +98,13 @@ $(document).ready(function () {
             $.each($(checkboxes),
                 function (index, checkbox) {
                     $(checkbox).click(function () {
+                        updateData(false);
+                    });
+                });
+
+            $.each($(radioFilters),
+                function (index, radio) {
+                    $(radio).click(function () {
                         updateData(false);
                     });
                 });
@@ -245,14 +260,10 @@ $(document).ready(function () {
         }
 
         function generateFilterItemHtml(item, selectedFilters, enable = true) {
-            const selectedPoc = pocSelect.val();
-
-            switch (selectedPoc) {
-                case "radio":
-                    return generateFilterRadioButtonHtml(item, selectedFilters);
-                default:
-                    return generateFilterCheckboxHtml(item, selectedFilters, enable);
+            if (pocSelect.val() == "radio") {
+                return generateFilterRadioButtonHtml(item, selectedFilters);
             }
+            return generateFilterCheckboxHtml(item, selectedFilters, enable);
         }
 
         function generateFilterRadioButtonHtml(item, selectedFilters) {
@@ -348,10 +359,7 @@ $(document).ready(function () {
 
         function updateFilterArea(generatedFilters) {
             const selectedPoc = pocSelect.val();
-            var filtersSelectedElement = $('#secondaryFiltersSelected1');
             var filterHtml = $('#filterCheckboxes');
-            const filterSelectedString = "{replace} selected";
-            const tag = "{replace}";
             var markup = "";
 
             if (selectedPoc === "radio") {
