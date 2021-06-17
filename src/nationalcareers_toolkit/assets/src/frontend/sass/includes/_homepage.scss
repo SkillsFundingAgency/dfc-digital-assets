@@ -331,3 +331,17 @@ body.hasHover {
 .ncs-triage-select-label {
     display: inline-block;
 }
+
+.ncs-home-grid-wrapper {
+  min-height: 74px;
+
+  @media (max-width: 780px) {
+      min-height: auto;
+  }
+  @media (max-width: 715px) {
+    min-height: 100px;
+  }
+  @media (max-width: 640px) {
+    min-height: auto;
+  }
+}
