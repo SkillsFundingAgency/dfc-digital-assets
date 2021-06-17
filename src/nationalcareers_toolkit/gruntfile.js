@@ -164,7 +164,6 @@ module.exports = function (grunt) {
                     { '<%= dist.path %>/js/dfc-app-discoverskillsandcareers.min.js': compuiDfcAppDiscoverSkillsAndCareersJsFiles },
                     { '<%= dist.path %>/js/dfc-app-findacourse.min.js': compuiDfcFindACourseJsFiles },
                     { '<%= dist.path %>/js/jquerybundle.min.js': jqueryBundle },
-                    { '<%= dist.path %>/js/all.min.js': govukJsfiles },
                     { '<%= dist.path %>/js/ie8bundle.min.js': ie8Bundle },
                     { '<%= dist.path %>/js/cmsExtentionsBundle.min.js': cmsExtentionsBundle },
                     { '<%= dist.path %>/js/matchskills.min.js': matchskillsJSFiles },
