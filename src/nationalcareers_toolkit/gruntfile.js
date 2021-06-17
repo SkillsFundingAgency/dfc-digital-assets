@@ -17,7 +17,6 @@ module.exports = function (grunt) {
     var compuiDfcAppDiscoverSkillsAndCareersJsFiles = grunt.file.readJSON('jsfiles.json').compuiDfcAppDiscoverSkillsAndCareersJsFiles;
     var compuiDfcFindACourseJsFiles = grunt.file.readJSON('jsfiles.json').compuiDfcFindACourseJsFiles;
     var compuiDfcTriageToolJsFiles = grunt.file.readJSON('jsfiles.json').compuiDfcTriageToolJsFiles;
-    //var govukJsfiles = grunt.file.readJSON('jsfiles.json').concatGovUkJsFiles;
     var jqueryBundle = grunt.file.readJSON('jsfiles.json').jqueryBundle;
     var ie8Bundle = grunt.file.readJSON('jsfiles.json').ie8Bundle;
     var cmsExtentionsBundle = grunt.file.readJSON('jsfiles.json').cmsExtentionsBundle;
