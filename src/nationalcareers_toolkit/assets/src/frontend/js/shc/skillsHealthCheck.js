@@ -76,3 +76,7 @@ function AddErrorOnField(id, errorText, event) {
     $(".field-validation-error").closest(".form-group").addClass("govuk-form-group--error");
     event.preventDefault();
 }
+$('.govuk-js-header-toggle').on("click", function(){
+    $(this).toggleClass("govuk-header__menu-button--open");
+    $(this).next().find('ul#navigation').toggleClass('govuk-header__navigation--open');
+});
