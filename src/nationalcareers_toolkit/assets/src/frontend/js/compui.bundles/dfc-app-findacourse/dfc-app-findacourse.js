@@ -231,7 +231,6 @@ function getParams() {
 }
 
 //Location suggest code
-
 if (window.location.href.indexOf("find-a-course-disabed") > -1) {
     $(document).ready(function () {
         $("#location-input").autocomplete({
