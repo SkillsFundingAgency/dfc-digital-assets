@@ -26,8 +26,7 @@ $(document).ready(function () {
 
 
     $(document).ready(function () {
-
-        $(".find-a-course-page #location-input").bind('blur keyup', function (e) {
+        $('.find-a-course-page #location-input').on('blur keyup', function (e) {
             if (e.type === 'blur' || e.keyCode === 13) {
                 $('#location-input').autocomplete('close');
                 makeAjaxCall(getParams());
@@ -36,14 +35,13 @@ $(document).ready(function () {
             return false;
         });
 
-        $(".find-a-course-page #search-input").bind('blur keyup', function (e) {
+        $('.find-a-course-page #search-input').on('blur keyup', function (e) {
             if (e.type === 'blur' || e.keyCode === 13) {
                 makeAjaxCall(getParams());
             }
             e.preventDefault();
             return false;
         });
-
     });
 
 
