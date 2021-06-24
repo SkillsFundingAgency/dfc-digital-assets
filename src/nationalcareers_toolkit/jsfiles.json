@@ -61,6 +61,9 @@
     "node_modules/govuk_frontend_toolkit/javascripts/vendor/polyfills/bind.js",
     "nothing"
   ],
+  "compuiDfcPagesJsFiles": [
+    "assets/src/frontend/js/compui.bundles/dfc-app-pages/**/*.js"
+  ],
   "compuiDfcContactUsJsFiles": [
     "assets/src/frontend/js/compui.bundles/dfc-app-contactus/**/*.js"
   ],
