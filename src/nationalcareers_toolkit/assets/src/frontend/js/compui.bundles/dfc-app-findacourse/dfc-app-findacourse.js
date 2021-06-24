@@ -11,6 +11,7 @@ $(document).ready(function () {
         showHideClearFilters(anyFiltersSelected(getParams()), searchTerm);
     });
 
+
     $('.find-a-course-page #distance-select, .find-a-course-page #startdate-select').on('change', function (e) {
         makeAjaxCall(getParams());
         e.preventDefault();
@@ -23,33 +24,26 @@ $(document).ready(function () {
         return false;
     });
 
-    $('.find-a-course-page #search-input').keypress(function (e) {
-        if (e.which === 13) {
-            makeAjaxCall(getParams());
+
+    $(document).ready(function () {
+        $('.find-a-course-page #location-input').on('blur keyup', function (e) {
+            if (e.type === 'blur' || e.keyCode === 13) {
+                $('#location-input').autocomplete('close');
+                makeAjaxCall(getParams());
+            }
             e.preventDefault();
             return false;
-        }
-    });
+        });
 
-    $('.find-a-course-page #search-input').on("blur", function (e) {
-        makeAjaxCall(getParams());
-        e.preventDefault();
-        return false;
-    });
-
-    $('.find-a-course-page #location-input').keypress(function (e) {
-        if (e.which === 13) {
-            makeAjaxCall(getParams());
+        $('.find-a-course-page #search-input').on('blur keyup', function (e) {
+            if (e.type === 'blur' || e.keyCode === 13) {
+                makeAjaxCall(getParams());
+            }
             e.preventDefault();
             return false;
-        }
+        });
     });
 
-    $('.find-a-course-page #location-input').on("blur", function (e) {
-        makeAjaxCall(getParams());
-        e.preventDefault();
-        return false;
-    });
 
     $('.find-a-course-page #courseType input[type=checkbox]').change(function (e) {
         makeAjaxCall(getParams());
@@ -84,6 +78,14 @@ function addCommas(nStr) {
         x1 = x1.replace(rgx, '$1' + ',' + '$2');
     }
     return x1 + x2;
+}
+
+function CheckLocationAndSearchIfValid(e) {
+    if (isEnteringPostCode) {
+        makeAjaxCall(getParams());
+    }
+    e.preventDefault();
+    return false;
 }
 
 function generateClearLink(d) {
@@ -128,7 +130,10 @@ function anyFiltersSelected(paramValues) {
 }
 
 function makeAjaxCall(paramValues) {
-    var stringifield = JSON.stringify(paramValues);
+
+    console.info("making ajax request");
+
+    var stringifield = JSON.stringify(paramValues, paramReplacer);
     var apiCall = {
         url: '/api/Ajax/Action',
         path: 'find-a-course',
@@ -160,7 +165,7 @@ function makeAjaxCall(paramValues) {
             paramValues.D = showDistanceSelector === true ? 1 : 0;
             showHideDistanceInput(showDistanceSelector);
             generateClearLink(paramValues.D);
-
+            updateLocationSuggestions(parsedData);
             var updatedUrl = getUpdatedUrl(paramValues);
             window.history.pushState({ path: updatedUrl }, '', updatedUrl);
         },
@@ -171,6 +176,13 @@ function makeAjaxCall(paramValues) {
             console.log('Error, calling ajax call');
         }
     });
+}
+
+function paramReplacer(key, value) {
+    if (key === 'Town') {
+        return value.substring(0, 25);
+    }
+    return value;
 }
 
 function getUpdatedUrl(paramValues) {
@@ -234,9 +246,7 @@ function getParams() {
 }
 
 //Location suggest code
-//Note the location search of FaC has been disabled for now
-//to enable remove -disabled from the page name check below and these comments
-if (window.location.href.indexOf("find-a-course-disabed") > -1) {
+if (window.location.href.indexOf("find-a-course") > -1) {
     $(document).ready(function () {
         $("#location-input").autocomplete({
             source: function (request, response) {
@@ -245,6 +255,9 @@ if (window.location.href.indexOf("find-a-course-disabed") > -1) {
                 if (!isEnteringPostCode(request.term)) {
                     getLocations(request, response)
                 }
+                else {
+                    inLocationMode = false;
+                }
             },
             minLength: 3,
             position: {
@@ -252,24 +265,17 @@ if (window.location.href.indexOf("find-a-course-disabed") > -1) {
                 at: "left bottom"
             },
             select: function (event, ui) {
-                $('#location-input').val(ui.item.label); // display the selected text
-                $('#coordinates').val(ui.item.value); // save selected id to hidden input
-                makeAjaxCall(getParams());
-                return false;
+                if (inLocationMode) {
+                    $('#coordinates').val(ui.item.value); // save selected id to hidden input
+                    $('#location-input').val(ui.item.label).blur(); // display the selected text and force refresh
+                    return false;
+                }
+                return true;
             },
             focus: function (event, ui) {
                 event.preventDefault(); // or return false;
             }
         });
-    });
-
-    //close autoselect if return is pressed on the input
-    $("#location-input").keypress(function (e) {
-        if (!e) e = window.event;
-        if (e.keyCode == '13') {
-            $('#location-input').autocomplete('close');
-            return false;
-        }
     });
 }
 
@@ -279,6 +285,7 @@ function isEnteringPostCode(term) {
 }
 
 var locationData;
+var inLocationMode = false;
 function getLocations(request, response) {
 
     var apiCall = {
@@ -297,6 +304,7 @@ function getLocations(request, response) {
             if (data.isHealthy === true && data.payload != null) {
                 locationData = JSON.parse(data.payload)
                 response(locationData)
+                inLocationMode = true;
             }
         },
         failure: function () {
@@ -307,3 +315,29 @@ function getLocations(request, response) {
         }
     });
 }
+
+function updateLocationSuggestions(dataModel) {
+    if (dataModel.usingAutoSuggestedLocation) {
+        $('.find-a-course-page #location-input').val(dataModel.autoSuggestedTown)
+        $('.find-a-course-page #coordinates').val(dataModel.autoSuggestedCoordinates)
+
+        if (dataModel.didYouMeanLocations.length > 0) {
+            $('.find-a-course-page #suggest-location').show();
+            var didYouMeanList = $('.find-a-course-page #suggested-locations')
+            didYouMeanList.empty();
+            for (ii = 0; ii < dataModel.didYouMeanLocations.length; ii++) {
+                $("<li data-coordinates='" + dataModel.didYouMeanLocations[ii].value + "' >" + dataModel.didYouMeanLocations[ii].label + "</li>").appendTo(didYouMeanList);
+            }
+        }
+    }
+    else {
+        $('.find-a-course-page #suggest-location').hide();
+    }
+}
+
+$('.find-a-course-page #suggested-locations').on("click", 'li', function (event) {
+    $('#coordinates').val($(this).attr("data-coordinates")); // save selected id to hidden input
+    $('#location-input').val($(this).text()).blur(); // display the selected text and force refresh
+    $('.find-a-course-page #suggest-location').hide();
+});
+
