@@ -21,12 +21,22 @@
 	details {
 		summary.govuk-details__summary {
 			padding-left: 0;
+			display: block;
+
+			@media(min-width: 641px) {
+					display: inline-block;
+			}
+
+			@media(min-width: 769px) {
+					display: inline-block;
+			}
+
 
 			&:focus {
 				color: #1d70b8;
 			}
 			&:hover {
-				color: #2b8cc4;
+				color: #1d70b8;
 			}
 		}
 		.suggest-locations-text {
@@ -36,6 +46,8 @@
 			border-left: 5px solid #bfc1c3;
 			overflow-y: auto;
 			overflow-x: hidden;
+			width: 100%;
+
 
 			@media(min-width: 641px) {
 			    max-height:20em;
