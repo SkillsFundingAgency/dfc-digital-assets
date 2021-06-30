@@ -8,13 +8,56 @@
 	}
 }
 
-.ui-autocomplete, .suggest-locations-text {
-	max-height: 250px;
-	overflow-y: auto;
-	overflow-x: hidden;
-	padding-right: 20px;
-}
+/* ###### Location suggest ###### */
 
 .location-suggest {
-	display: none
+	display: none;
+	margin-top: 20px;
+
+	.govuk-details[open]>.govuk-details__summary:before {
+		display:none;
+	}
+
+	details {
+		summary.govuk-details__summary {
+			padding-left: 0;
+
+			&:focus {
+				color: #1d70b8;
+			}
+			&:hover {
+				color: #2b8cc4;
+			}
+		}
+		.suggest-locations-text {
+			padding: 0;
+			max-height:11em;
+			margin-top:10px;
+			border-left: 5px solid #bfc1c3;
+			overflow-y: auto;
+			overflow-x: hidden;
+
+			@media(min-width: 641px) {
+			    max-height:20em;
+			}
+
+			@media(min-width: 769px) {
+			    max-height:31em;
+			}
+
+				ul#suggested-locations {
+					padding:.78947em;
+					margin-top:0px;
+					padding-bottom: 0;
+					margin-bottom: 0;
+
+					li {
+						list-style: none;
+						text-decoration: underline;
+						margin-bottom:5px;
+					}
+				}
+		}
+	}
 }
+/* ###### Location suggest END ###### */
