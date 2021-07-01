@@ -8,6 +8,17 @@
 	}
 }
 
+.ui-autocomplete {
+	max-height: 350px;
+	overflow-y: auto;
+	overflow-x: hidden;
+	padding-right: 20px;
+
+	@media(max-width: 641px) {
+			max-height: 250px;
+	}
+}
+
 /* ###### Location suggest ###### */
 
 .location-suggest {
@@ -16,6 +27,12 @@
 
 	.govuk-details[open]>.govuk-details__summary:before {
 		display:none;
+	}
+
+	.govuk-details__summary {
+		&:hover {
+			color: #1d70b8;
+		}
 	}
 
 	details {
