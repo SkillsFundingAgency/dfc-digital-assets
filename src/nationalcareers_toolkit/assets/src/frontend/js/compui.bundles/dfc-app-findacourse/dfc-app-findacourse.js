@@ -13,12 +13,14 @@ $(document).ready(function () {
 
 
     $('.find-a-course-page #distance-select, .find-a-course-page #startdate-select').on('change', function (e) {
+        $('.find-a-course-page #suggest-location').hide();
         makeAjaxCall(getParams());
         e.preventDefault();
         return false;
     });
 
     $('.find-a-course-page #orderBy-Input').on('change', function (e) {
+        $('.find-a-course-page #suggest-location').hide();
         makeAjaxCall(getParams());
         e.preventDefault();
         return false;
@@ -46,16 +48,19 @@ $(document).ready(function () {
 
 
     $('.find-a-course-page #courseType input[type=checkbox]').change(function (e) {
+        $('.find-a-course-page #suggest-location').hide();
         makeAjaxCall(getParams());
         e.preventDefault();
         return false;
     });
     $('#courseHours input[type=checkbox]').change(function (e) {
+        $('.find-a-course-page #suggest-location').hide();
         makeAjaxCall(getParams());
         e.preventDefault();
         return false;
     });
     $('.find-a-course-page #courseStudyTime input[type=checkbox]').change(function (e) {
+        $('.find-a-course-page #suggest-location').hide();
         makeAjaxCall(getParams());
         e.preventDefault();
         return false;
@@ -330,9 +335,6 @@ function updateLocationSuggestions(dataModel) {
             }
         }
     }
-    else {
-        $('.find-a-course-page #suggest-location').hide();
-    }
 }
 
 $('.find-a-course-page #suggested-locations').on("click", 'li', function (event) {
@@ -340,4 +342,3 @@ $('.find-a-course-page #suggested-locations').on("click", 'li', function (event)
     $('#location-input').val($(this).text()).blur(); // display the selected text and force refresh
     $('.find-a-course-page #suggest-location').hide();
 });
-
