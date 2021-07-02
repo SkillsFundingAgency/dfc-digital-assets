@@ -258,6 +258,7 @@ if (window.location.href.indexOf("find-a-course") > -1) {
                 $('#coordinates').val('')
                 //Do not make call to location search, if this may be a postcode
                 if (!isEnteringPostCode(request.term)) {
+                    $('.find-a-course-page #suggest-location').hide();
                     getLocations(request, response)
                 }
                 else {
