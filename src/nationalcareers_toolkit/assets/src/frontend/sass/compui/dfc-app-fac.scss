@@ -26,7 +26,7 @@
 .location-suggest, .location-suggest-show {
 	margin-top: 20px;
 
-	.govuk-details[open]>.govuk-details__summary:before {
+	.govuk-details .govuk-details__summary:before {
 		display:none;
 	}
 
