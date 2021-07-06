@@ -334,6 +334,7 @@ function updateLocationSuggestions(dataModel) {
             for (ii = 0; ii < dataModel.didYouMeanLocations.length; ii++) {
                 $("<li data-coordinates='" + dataModel.didYouMeanLocations[ii].value + "' ><a href='#'>" + dataModel.didYouMeanLocations[ii].label + "</a></li>").appendTo(didYouMeanList);
             }
+            $('.find-a-course-page #suggested-locations-text').animate({ scrollTop: (0) });
         }
     }
 }
