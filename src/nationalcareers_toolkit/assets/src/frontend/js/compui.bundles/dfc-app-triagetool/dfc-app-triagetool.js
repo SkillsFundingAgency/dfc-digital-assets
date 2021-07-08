@@ -1,4 +1,4 @@
-$(document).ready(function () {
+fgovuk$(document).ready(function () {
     var checkboxes = '#filterCheckboxes input[type=checkbox]';
     var radioFilters = '#filterCheckboxes input[type=radio]';
     var optionSelect = $('#triageSelect');
@@ -254,9 +254,9 @@ $(document).ready(function () {
                 page.link +
                 '">' +
                 page.title +
-                '</a></h3><p class="govuk-body">' +
+                '</a></h3>' +
                 page.summary +
-                '</p></div></li>';
+                '</div></li>';
         }
 
         function generateFilterItemHtml(item, selectedFilters, enable = true) {
