@@ -278,6 +278,15 @@ body.hasHover {
 	}
 }
 
+.organisation__brand-border-top {
+    border-top-width: 5px;
+    border-top-style: solid;
+}
+.organisation__brand-border-bottom {
+    border-bottom-width: 5px;
+    border-bottom-style: solid;
+}
+
 @media print {
     .gem-c-share-links__link {
         font-family: sans-serif

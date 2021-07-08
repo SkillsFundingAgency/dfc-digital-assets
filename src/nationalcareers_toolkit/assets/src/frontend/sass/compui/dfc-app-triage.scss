@@ -107,3 +107,9 @@ ol.triage-result-list {
       display:none;
   }
 }
+.triage-hide, .triage-filter-hide {
+  display:none;
+}
+.triage-show, .triage-filter-show {
+  display:block;
+}
