@@ -1,4 +1,4 @@
-fgovuk$(document).ready(function () {
+$(document).ready(function () {
     var checkboxes = '#filterCheckboxes input[type=checkbox]';
     var radioFilters = '#filterCheckboxes input[type=radio]';
     var optionSelect = $('#triageSelect');
