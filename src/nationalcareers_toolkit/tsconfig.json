@@ -1,0 +1,20 @@
+{
+  "extends": "./node_modules/@tsconfig/node14/tsconfig.json",
+  "compileOnSave": true,
+
+  "compilerOptions": {
+    "baseUrl": "./",
+    "noImplicitAny": true,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "target": "es5",
+    "lib": [ "DOM", "es5" ],
+    "experimentalDecorators": true,
+    "typeRoots": [
+      "./node_modules/@types"
+    ]
+  },
+  "include": [
+    "assets/src/frontend/js/**/*.ts"
+  ]
+}

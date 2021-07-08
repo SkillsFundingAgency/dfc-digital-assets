@@ -83,5 +83,8 @@
     "assets/src/frontend/js/shc/application.js",
     "assets/src/frontend/js/shc/customvalidation.js",
     "assets/src/frontend/js/shc/skillsHealthCheck.js"
+  ],
+  "testJsFilesBundle": [
+    "assets/src/frontend/js/compui.bundles/test-ts/**/*.js"
   ]
 }
