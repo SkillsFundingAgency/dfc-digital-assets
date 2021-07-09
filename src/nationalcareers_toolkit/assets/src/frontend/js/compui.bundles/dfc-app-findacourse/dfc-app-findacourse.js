@@ -280,6 +280,9 @@ if (window.location.href.indexOf("find-a-course") > -1) {
             },
             focus: function (event, ui) {
                 event.preventDefault(); // or return false;
+            },
+            open: function (event, ui) {
+                $('ul.ui-autocomplete').scrollTop(0);
             }
         });
     });
