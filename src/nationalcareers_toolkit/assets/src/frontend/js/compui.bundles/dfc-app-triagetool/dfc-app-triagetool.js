@@ -36,13 +36,13 @@ $(document).ready(function () {
     }
 
     function triageOptions() {
-        let options = [];
+        var options = [];
 
-        const getTriageData = function () {
+        var getTriageData = function () {
             var promise = jQuery.Deferred();
             if (options.length < 1) {
 
-                const apiCall = {
+                var apiCall = {
                     url: '/api/Ajax/Action',
                     path: 'triagetool',
                     method: 'Ajax'
@@ -77,12 +77,12 @@ $(document).ready(function () {
 
         return {
             getTriageData
-        }
+        };
     }
 
     function setUpSinglePageSolution() {
 
-        const optionData = triageOptions();
+        var optionData = triageOptions();
 
         $.when(optionData.getTriageData()).then(
             function (data) {
@@ -120,7 +120,7 @@ $(document).ready(function () {
             clearFilters.click(function (e) {
                 e.preventDefault();
                 $.each($(checkboxes), function (index, value) {
-                    const checkbox = $(value);
+                    var checkbox = $(value);
                     if (checkbox.prop('checked')) {
                         checkbox.prop('checked', false);
                     };
@@ -138,9 +138,9 @@ $(document).ready(function () {
         }
 
         function generateHtml(options, allData) {
-            const selectedOption = optionSelect.val();
-            const option = getSelectedOptionData(selectedOption, options);
-            const selectedFilters = getSelectedFilters();
+            var selectedOption = optionSelect.val();
+            var option = getSelectedOptionData(selectedOption, options);
+            var selectedFilters = getSelectedFilters();
             var pagesToShow = [];
             var generatedPages = [];
             var generatedFilters = [];
@@ -154,7 +154,7 @@ $(document).ready(function () {
                         }
                     });
 
-                const selectedPoc = pocSelect.val();
+                var selectedPoc = pocSelect.val();
 
                 switch (selectedPoc) {
                     case "filters":
@@ -191,7 +191,7 @@ $(document).ready(function () {
 
         function updateGtm(selectedFilters, pageCount, selectedOption) {
 
-            const filters = [];
+            var filters = [];
             $.each(selectedFilters, function (index, filter) {
                 filters.push(filter.title);
             });
@@ -217,10 +217,10 @@ $(document).ready(function () {
         }
 
         function getSelectedFilters() {
-            const filters = [];
+            var filters = [];
 
             $.each($(checkboxes), function (index, value) {
-                const checkbox = $(value);
+                var checkbox = $(value);
                 if (checkbox.prop('checked')) {
                     filters.push({
                         url: checkbox.val(),
@@ -231,7 +231,7 @@ $(document).ready(function () {
             });
 
             $.each($(radioFilters), function (index, value) {
-                const radioButton = $(value);
+                var radioButton = $(value);
                 if (radioButton.prop('checked')) {
                     filters.push({
                         url: radioButton.val(),
@@ -326,8 +326,8 @@ $(document).ready(function () {
             var selectOptionText = $('#primaryFiltersSelectedValue');
             var filtersSelectedElement = $('#secondaryFiltersSelected1');
 
-            const filterSelectedString = "{replace} selected";
-            const tag = "{replace}";
+            var filterSelectedString = "{replace} selected";
+            var tag = "{replace}";
 
             filtersSelectedElement.text(filterSelectedString.replace(tag, selectedFilters.length));
             selectOptionText.text(optionTitle);
@@ -335,11 +335,11 @@ $(document).ready(function () {
 
         function updatePageArea(generatedPages) {
             var pageResults = $('.results-list');
-            const tag = "{replace}";
+            var tag = "{replace}";
 
-            const totalArticles = $('#totalArticles');
-            const singleArticleString = "1 suggestion";
-            const multipleArticleString = "{replace} suggestions";
+            var totalArticles = $('#totalArticles');
+            var singleArticleString = "1 suggestion";
+            var multipleArticleString = "{replace} suggestions";
 
             switch (generatedPages.length) {
                 case 1:
@@ -358,7 +358,7 @@ $(document).ready(function () {
         }
 
         function updateFilterArea(generatedFilters) {
-            const selectedPoc = pocSelect.val();
+            var selectedPoc = pocSelect.val();
             var filterHtml = $('#filterCheckboxes');
             var markup = "";
 
@@ -386,7 +386,7 @@ $(document).ready(function () {
         }
 
         function shouldPageBeShown(page, selectedFilters) {
-            const selectedPoc = pocSelect.val();
+            var selectedPoc = pocSelect.val();
 
             switch (selectedPoc) {
                 case "union":
