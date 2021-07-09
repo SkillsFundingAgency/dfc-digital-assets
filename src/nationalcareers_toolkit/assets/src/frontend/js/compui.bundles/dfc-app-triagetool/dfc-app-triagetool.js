@@ -81,7 +81,6 @@ $(document).ready(function () {
     }
 
     function setUpSinglePageSolution() {
-
         var optionData = triageOptions();
 
         $.when(optionData.getTriageData()).then(
@@ -135,6 +134,11 @@ $(document).ready(function () {
                     generateHtml(options, allData);
                 }
             );
+
+            if (allData) {
+                var updatedUrl = "/triagetool/" + optionSelect.val();
+                window.history.pushState({ path: updatedUrl }, '', updatedUrl);
+            }
         }
 
         function generateHtml(options, allData) {
@@ -190,8 +194,8 @@ $(document).ready(function () {
         }
 
         function updateGtm(selectedFilters, pageCount, selectedOption) {
-
             var filters = [];
+
             $.each(selectedFilters, function (index, filter) {
                 filters.push(filter.title);
             });
@@ -398,7 +402,6 @@ $(document).ready(function () {
         }
 
         function shouldPageBeShownUnion(page, selectedFilters) {
-
             var filterFound = false;
 
             $.each(selectedFilters,
@@ -416,7 +419,6 @@ $(document).ready(function () {
         }
 
         function shouldPageBeShownIntersection(page, selectedFilters) {
-
             var filterCount = 0;
 
             $.each(selectedFilters,
