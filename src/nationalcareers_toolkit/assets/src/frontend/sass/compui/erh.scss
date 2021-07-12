@@ -614,70 +614,7 @@
   	}
   }
 
-  /*Banner */
-  .global-bar--warning {
-      background-color: #fd0;
-      padding: 15px 0;
-      overflow: hidden;
-  }
-  .global-bar .global-bar-message-container {
-      font-family: nta,Arial,sans-serif;
-      font-weight: 400;
-      text-transform: none;
-      font-size: 16px;
-      line-height: 1.25;
-      position: relative;
 
-      @media(max-width: 641px) {
-
-      }
-  }
-  .global-bar .global-bar-message-container {
-      max-width: 960px;
-      margin: 0 15px
-  }
-
-  @media (min-width: 40.0625em) {
-      .global-bar .global-bar-message-container {
-          margin: 0 40px
-      }
-  }
-
-  @media (min-width: 1020px) {
-      .global-bar .global-bar-message-container {
-          margin:0 auto
-      }
-  }
-  .global-bar .govuk-warning-text__text {
-      display: inline-block;
-
-      @media(max-width: 641px) {
-        margin-left:20px;
-      }
-    }
-    .global-bar  .ncs-banner__text {
-      margin-left: 10px;
-      font-size: 110%;
-
-      @media(max-width: 641px) {
-        display: block;
-        padding-left:55px;
-        font-size: 100%;
-      }
-    }
-    .global-bar .ncs-banner__separator {
-      margin-left: 10px;
-      @media(max-width: 641px) {
-        display: none;
-      }
-    }
-
-    .global-bar .govuk-warning-text__icon {
-        @media(max-width: 641px) {
-          margin-left:15px;
-          margin-top:0px;
-        }
-     }
    .organisation_float_adjust {
      float:right;
 
@@ -711,4 +648,62 @@
   .hero-banner-full-width {
     background-color: rgba(210, 226, 241, 0.3);
   }
+}
+
+/*Banner ERH */
+.global-bar.global-bar--warning.single-row-banner {
+    background-color: #fd0;
+    padding: 15px 0;
+    overflow: hidden;
+
+    .global-bar-message-container {
+        font-family: nta,Arial,sans-serif;
+        font-weight: 400;
+        text-transform: none;
+        font-size: 16px;
+        line-height: 1.25;
+        position: relative;
+        max-width: 960px;
+        margin: 0 15px;
+
+        @media(max-width: 641px) {
+            top: 0% !important;
+            margin-top: 0 !important;
+        }
+        .global-bar-message {
+            .govuk-warning-text__icon {
+
+              @media (max-width: 640px) {
+                  top: 0%;
+                  margin-top: 0;
+              }
+            }
+
+            strong.govuk-warning-text__text {
+              display: inline-block;
+              margin-right: 10px;
+
+              @media(max-width: 641px) {
+                display: block;
+              }
+            }
+
+            .ncs-banner__separator {
+              margin-right: 10px;
+
+              @media(max-width: 641px) {
+                display: none;
+              }
+            }
+
+            .ncs-banner__text {
+                margin-left: 0;
+
+                @media(max-width: 641px) {
+                  margin-left: 50px;
+                  line-height: 30px;
+                }
+            }
+        }
+    }
 }
