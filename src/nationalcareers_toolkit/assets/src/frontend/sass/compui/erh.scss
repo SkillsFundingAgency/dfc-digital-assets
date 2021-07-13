@@ -634,7 +634,7 @@
   			background: #207e77 !important;
   		}
       @media(max-width: 641px) {
-        min-height: auto;
+        min-height: auto !important;
       }
   	}
   }
@@ -686,6 +686,7 @@
       color: #fff;
       background: #4c2c92;
       font-size: 40px;
+      line-height: 49px;
   }
   .govuk-warning-text__text {
     padding-left: 70px;
