@@ -1,5 +1,11 @@
 .exam-result-help-wrapper {
 
+  .ncs-hero h1 {
+    @media(max-width: 641px) {
+      margin: 0 0 10px;
+    }
+
+  }
   .erh-card-half {
     background-color: RGBA(252,214,195,.40);
     padding-bottom: 5px;
@@ -28,6 +34,11 @@
     }
     .govuk-image-card__text-wrapper {
       padding:10px 20px 0 20px;
+
+      @media(max-width: 641px) {
+        padding: 10px 0 0;
+      }
+
     }
   }
 
@@ -65,12 +76,18 @@
       z-index: 1;
       background: #fff;
       box-shadow: 0 20px 15px -10px #fff;
-  }
 
-  .govuk-contents-list__title {
-      color: #0b0c0c;
-      line-height: 1.5;
-      margin: 0;
+      .govuk-contents-list__title {
+          color: #0b0c0c;
+          line-height: 1.5;
+          margin: 0;
+          font-size: 19px;
+          font-weight: 400;
+      }
+      ol.govuk-list-list {
+        margin: 0;
+        padding: 0;
+      }
   }
 
   @media print {
@@ -220,7 +237,8 @@
   .govuk-image-card__header-and-context-wrapper {
       display: flex;
       flex-direction: column-reverse;
-      -ms-flex-direction: column-reverse
+      -ms-flex-direction: column-reverse;
+      padding: 0px 10px;
   }
 
   .govuk-image-card__image-wrapper {
@@ -248,7 +266,11 @@
       .govuk-image-card__image-wrapper {
           box-sizing: border-box;
           width: 100%;
-          padding: 0 15px
+          padding: 0 15px;
+
+          @media(max-width: 641px) {
+            padding: 0 15px 0 0;
+          }
       }
   }
 
@@ -611,6 +633,9 @@
   		&:hover {
   			background: #207e77 !important;
   		}
+      @media(max-width: 641px) {
+        min-height: auto;
+      }
   	}
   }
 
@@ -622,11 +647,14 @@
         float:left;
       }
     img {
-    width:340px;
-    margin:-40px 0px -30px -30px;
-      @media(max-width: 641px) {
-        margin:0px; margin-bottom: 20px; width:100%;
-      }
+        width:340px;
+        margin:-40px 0px -30px 0px;
+
+        @media(max-width: 641px) {
+          margin:0px;
+          margin-bottom: 20px;
+          width:100%;
+        }
     }
   }
 
@@ -648,6 +676,27 @@
   .hero-banner-full-width {
     background-color: rgba(210, 226, 241, 0.3);
   }
+  .govuk-warning-text {
+    .govuk-warning-text__icon {
+      min-width: 49px;
+      min-height: 49px;
+      margin-top: -7px;
+      border: 3px solid #4c2c92;
+      border-radius: 50%;
+      color: #fff;
+      background: #4c2c92;
+      font-size: 40px;
+  }
+  .govuk-warning-text__text {
+    padding-left: 70px;
+  }
+  p {
+    padding-left: 70px;
+    padding-top: 10px;
+  }
+}
+
+
 }
 
 /*Banner ERH */
