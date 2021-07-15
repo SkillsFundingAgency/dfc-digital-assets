@@ -125,15 +125,28 @@
 }
 
 .job-profile-hero-additional {
-  @extend .secondary-hero
+  @extend .secondary-hero;
+  .column-60 {
+    padding-left: 0px;
+    @media (max-width: 749px) {      
+        padding-top: 0px;    
+    }    
+  }
 }
 
 .job-profile-heroblock-additional {
   @extend .secondary-hero-block;
 
   .job-profile-heroblock-content {
-  @extend .secondary-hero-block-content
-  }
+  @extend .secondary-hero-block-content;
+  @media (max-width: 749px) {
+        p {
+          text-align: left;
+        }
+      }
+    
+  }   
+  
 
   .job-profile-salary {
     @extend .pound-block
