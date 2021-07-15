@@ -11,8 +11,18 @@
     padding-bottom: 5px;
     box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.1), 0 1px 1px 0 rgba(0, 0, 0, 0.10);
 
+    @media(max-width: 641px) {
+      background-color: none;
+      padding-bottom: 5px;
+      box-shadow: none;
+    }
+
     h3 {
       padding:10px;
+
+      @media(max-width: 641px) {
+        padding:10px 0;
+      }
     }
   }
   .erh-card-half-white {
@@ -260,7 +270,7 @@
 
   @media (min-width: 20em) and (max-width: 40.0525em) {
       .govuk-image-card {
-          margin:0 -15px 30px -15px
+          margin:10px 0px 20px;
       }
 
       .govuk-image-card__image-wrapper {
@@ -278,6 +288,7 @@
       .govuk-image-card__image-wrapper {
           width:33.3333%;
           float: left;
+          padding: 0;
           padding-top:10px;
       }
   }
@@ -286,7 +297,7 @@
       .govuk-image-card__text-wrapper {
           box-sizing:border-box;
           width: 100%;
-          padding: 0 15px
+          padding: 0;
       }
   }
 
@@ -640,23 +651,26 @@
   }
 
 
-   .organisation_float_adjust {
-     float:right;
-
-      @media(max-width: 641px) {
-        float:left;
-      }
-    img {
-        width:340px;
-        margin:-40px 0px -30px 0px;
+    .organisation_float_adjust {
+        float:right;
 
         @media(max-width: 641px) {
-          margin:0px;
-          margin-bottom: 20px;
-          width:100%;
+          float:left;
         }
-    }
-  }
+        img {
+            max-width:340px;
+            margin:-39px 0px -26px -52px;
+            border: 6px solid #207e77;
+
+            @media(max-width: 641px) {
+              margin:0px;
+              margin-bottom: 20px;
+              width:100%;
+              max-width:100%;
+              border: 0px solid #207e77;
+            }
+        }
+      }
 
   .govuk-link--no-underline:not(:hover):not(:active) {
     text-decoration: none;
@@ -669,8 +683,13 @@
       }
   }
   .erh-card-group {
-    .card {
+    .card.card-white {
       min-height: 145px;
+
+      @media(max-width: 641px) {
+        min-height: 65px;
+        margin-bottom: 20px;
+      }
     }
   }
   .hero-banner-full-width {
@@ -697,6 +716,11 @@
   }
 }
 
+  .govuk-body-l, .govuk-body-lead {
+    @media(max-width: 641px) {
+      line-height: 1.25;
+    }
+  }
 
 }
 
