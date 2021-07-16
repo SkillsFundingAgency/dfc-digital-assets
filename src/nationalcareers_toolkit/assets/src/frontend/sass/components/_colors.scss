@@ -49,6 +49,7 @@ $turquoise-25: #d5ecea;
 $light-blue: #2b8cc4;
 $light-blue-50: #96c6e2;
 $light-blue-25: #d5e8f3;
+$light-blue-15 : #f1f6fb;
 
 // Standard palette, greys
 $black: #0b0c0c;
@@ -191,7 +192,7 @@ $error-background: #fef7f7;       // Error background colour
 .light-blue-background { background-color: $light-blue }
 .light-blue-50-background { background-color: $light-blue-50 }
 .light-blue-25-background { background-color: $light-blue-25 }
-
+.light-blue-15-background { background-color: $light-blue-15 }
 
 // Semantic colour names classes
 .link-colour { color : $link-colour !important;}
