@@ -49,6 +49,8 @@ $turquoise-25: #d5ecea;
 $light-blue: #2b8cc4;
 $light-blue-50: #96c6e2;
 $light-blue-25: #d5e8f3;
+$light-blue-15 : #f1f6fb;
+
 
 // Standard palette, greys
 $black: #0b0c0c;
@@ -79,6 +81,7 @@ $live-colour: $grass-green;       // Live badges and banners
 $banner-text-colour: #000;        // Text colour for Alpha & Beta banners
 $error-colour: $red;              // Error text and border colour
 $error-background: #fef7f7;       // Error background colour
+
 
 
 // Standard GDS colour styles
@@ -126,6 +129,7 @@ $error-background: #fef7f7;       // Error background colour
 .light-blue{ color: $light-blue }
 .light-blue-50{ color: $light-blue-50 }
 .light-blue-25{ color: $light-blue-25 }
+
 
 // Standard palette, greys
 .black { color : $black }
@@ -191,6 +195,7 @@ $error-background: #fef7f7;       // Error background colour
 .light-blue-background { background-color: $light-blue }
 .light-blue-50-background { background-color: $light-blue-50 }
 .light-blue-25-background { background-color: $light-blue-25 }
+.light-blue-15-background { background-color: $light-blue-15 }
 
 
 // Semantic colour names classes
