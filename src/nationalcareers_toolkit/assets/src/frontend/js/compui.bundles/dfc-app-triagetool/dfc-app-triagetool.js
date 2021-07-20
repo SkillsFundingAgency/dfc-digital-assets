@@ -253,12 +253,12 @@ $(document).ready(function () {
                 page.title +
                 '">' +
                 '<div class="info-card-content">' +
-                '<h3 class="govuk-heading-m">' +
+                '<h2 class="govuk-heading-m">' +
                 '<a class="govuk-link" href="' +
                 page.link +
                 '">' +
                 page.title +
-                '</a></h3>' +
+                '</a></h2>' +
                 page.summary +
                 '</div></li>';
         }
