@@ -127,10 +127,8 @@
 
 
 /* ###### Location suggest END ###### */
-#fac-result-list {
-	#fac-result-list-Result {
+#fac-result-list,  #classroom-details-block, #online-details-block, #work-details-block {
 		p {
 			word-wrap: break-word;
 		}
-	}
 }
