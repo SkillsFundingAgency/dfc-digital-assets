@@ -14,8 +14,6 @@ $govuk-assets-path: "/nationalcareers_toolkit/" !default;
 @import "includes/_cookie-banner.scss";
 @import "includes/_custom-banner.scss";
 
-/* custom styles */
-@import 'includes/_custom.scss';
 
 /* DYSAC imports which will be deprecated and added into custom live service patterns */
 $app-purple: #8c0052;
@@ -51,3 +49,6 @@ $app-text-light: #646C70;
 
 /* Import no-js custom styles */
 @import "includes/_no-js.scss";
+
+/* custom styles */
+@import "includes/_custom.scss";

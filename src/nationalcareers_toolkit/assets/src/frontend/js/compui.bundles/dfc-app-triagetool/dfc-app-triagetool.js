@@ -76,7 +76,7 @@ $(document).ready(function () {
         }
 
         return {
-            getTriageData
+            getTriageData: getTriageData
         };
     }
 
@@ -164,7 +164,7 @@ $(document).ready(function () {
                     case "filters":
                         $.each(option.filters, function (index, filter) {
                             if (shouldFilterBeShown(filter, pagesToShow)) {
-                                generatedFilters.push(generateFilterItemHtml(filter, selectedFilters));
+                                generatedFilters.push(generateFilterItemHtml(filter, selectedFilters, true));
                             }
                         });
                         updatePageAndFilters(generatedPages, option.title, selectedFilters, generatedFilters);
@@ -186,7 +186,7 @@ $(document).ready(function () {
                         generatedPages.push(generatePageItemHtml(page));
                     });
                 $.each(option.filters, function (index, filter) {
-                    generatedFilters.push(generateFilterItemHtml(filter, []));
+                    generatedFilters.push(generateFilterItemHtml(filter, [], true));
                 });
                 updatePageAndFilters(generatedPages, option.title, selectedFilters, generatedFilters);
                 updateGtm(selectedFilters, generatedPages.length, selectedOption)
@@ -253,17 +253,17 @@ $(document).ready(function () {
                 page.title +
                 '">' +
                 '<div class="info-card-content">' +
-                '<h3 class="govuk-heading-m">' +
+                '<h2 class="govuk-heading-m">' +
                 '<a class="govuk-link" href="' +
                 page.link +
                 '">' +
                 page.title +
-                '</a></h3>' +
+                '</a></h2>' +
                 page.summary +
                 '</div></li>';
         }
 
-        function generateFilterItemHtml(item, selectedFilters, enable = true) {
+        function generateFilterItemHtml(item, selectedFilters, enable) {
             if (pocSelect.val() == "radio") {
                 return generateFilterRadioButtonHtml(item, selectedFilters);
             }
