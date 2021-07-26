@@ -23,7 +23,7 @@
 
 .global-bar .global-bar-message-container {
   @extend .govuk-width-container;
-  font-family: "nta", Arial, sans-serif;
+  font-family: "GDS Transport", Arial,sans-serif;
   font-weight: 400;
   text-transform: none;
   font-size: 16px;
@@ -109,27 +109,23 @@
 }
 
 /*Banner ERH */
-.global-bar.global-bar--warning.single-row-banner {
+  .global-bar.global-bar--warning.single-row-banner {
     background-color: #fd0;
     padding: 15px 0;
     overflow: hidden;
 }
-
-.global-bar-message-container {
-	font-weight: 400;
-	text-transform: none;
-	font-size: 16px;
-	line-height: 1.25;
-	position: relative;
-	max-width: 960px;
-
-	@media(max-width: 641px) {
-		top: 0% !important;
-		margin-top: 0 !important;
-	}
+.global-bar.global-bar--warning.single-row-banner .global-bar-message-container {
+    font-family: "GDS Transport", Arial,sans-serif;
+    font-weight: 400;
+    text-transform: none;
+    font-size: 16px;
+    line-height: 1.25;
+    position: relative;
+    max-width: 960px
 }
+
 .global-bar-message .govuk-warning-text__icon {
-  @media (max-width: 640px) {
+  @media (max-width: 641px) {
 	  top: 0%;
 	  margin-top: 0;
   }
@@ -156,13 +152,11 @@
 	margin-left: 0;
 
 	@media(max-width: 641px) {
-	  margin-left: 50px;
 	  line-height: 30px;
 	}
 }
 @media(max-width: 641px) {
 	.global-bar-message .ncs-banner__text {
-		margin-left: 50px;
 		line-height: 30px;
 	}
 	.global-bar-message .ncs-banner__separator {
@@ -181,4 +175,14 @@
 		top: 0%;
 		margin-top: 0;
 	}
+  .global-bar-message .ncs-banner__text {
+    display: block;
+    line-height: 21px;
+    margin-top: 5px;
+  }
+
+  .global-bar.global-bar--warning.single-row-banner .global-bar-message-container .global-bar-message .govuk-warning-text__icon {
+      top: 0;
+      margin-top: 0;
+  }
 }

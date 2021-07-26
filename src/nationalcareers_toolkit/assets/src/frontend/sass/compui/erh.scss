@@ -130,7 +130,7 @@
 
   .govuk-contents-list__list,.govuk-contents-list__nested-list {
       color: #0b0c0c;
-      font-family: "nta",arial,sans-serif;
+      font-family: "GDS Transport", Arial,sans-serif;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
       font-weight: 400;
@@ -325,7 +325,7 @@
   }
 
   .govuk-image-card__title {
-      font-family: "nta",arial,sans-serif;
+      font-family: "GDS Transport", Arial,sans-serif;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
       font-weight: 700;
@@ -391,7 +391,7 @@
   }
 
   .govuk-image-card__context,.govuk-image-card__metadata {
-      font-family: "nta",arial,sans-serif;
+      font-family: "GDS Transport", Arial,sans-serif;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
       font-weight: 400;
@@ -428,7 +428,7 @@
   }
 
   .govuk-image-card__description {
-      font-family: "nta",arial,sans-serif;
+      font-family: "GDS Transport", Arial,sans-serif;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
       font-weight: 400;
@@ -459,7 +459,7 @@
   }
 
   .govuk-image-card__list {
-      font-family: "nta",arial,sans-serif;
+      font-family: "GDS Transport", Arial,sans-serif;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
       font-weight: 400;
@@ -574,7 +574,7 @@
   }
 
   .govuk-image-card--large .govuk-image-card__title {
-      font-family: "nta",arial,sans-serif;
+      font-family: "GDS Transport", Arial,sans-serif;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
       font-weight: 700;
@@ -609,7 +609,7 @@
   }
 
   .govuk-image-card--large .govuk-image-card__description {
-      font-family: "nta",arial,sans-serif;
+      font-family: "GDS Transport", Arial,sans-serif;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
       font-weight: 400;
@@ -742,7 +742,7 @@
     overflow: hidden;
 
     .global-bar-message-container {
-        font-family: nta,Arial,sans-serif;
+        font-family: "GDS Transport", Arial,sans-serif;
         font-weight: 400;
         text-transform: none;
         font-size: 16px;
@@ -788,8 +788,10 @@
                 margin-left: 0;
 
                 @media(max-width: 641px) {
-                  margin-left: 50px;
-                  line-height: 30px;
+                  display: block;
+                  line-height: 21px;
+                  margin-top: 5px;
+                  margin-left:50px;
                 }
             }
         }
