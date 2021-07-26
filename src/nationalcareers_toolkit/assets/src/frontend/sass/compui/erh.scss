@@ -788,9 +788,10 @@
                 margin-left: 0;
 
                 @media(max-width: 641px) {
-                  display: block; 
+                  display: block;
                   line-height: 21px;
-                  margin-top: 5px
+                  margin-top: 5px;
+                  margin-left:50px;
                 }
             }
         }
