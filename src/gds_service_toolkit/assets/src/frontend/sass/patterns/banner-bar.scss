@@ -157,10 +157,7 @@
 	}
 }
 @media(max-width: 641px) {
-	.global-bar-message .ncs-banner__text {
-		margin-left: 50px;
-		line-height: 30px;
-	}
+
 	.global-bar-message .ncs-banner__separator {
 		display: none;
 	}
@@ -168,19 +165,17 @@
 		display: block;
 	}
 
-	.global-bar-message .govuk-warning-text__icon  {
+	.global-bar-message .govuk-warning-text__icon,
+  .global-bar-message-container  {
 		top: 0%;
 		margin-top: 0;
 	}
 
-	.global-bar-message-container  {
-		top: 0%;
-		margin-top: 0;
-	}
   .global-bar-message .ncs-banner__text {
     display: block;
     line-height: 21px;
     margin-top: 5px;
+    margin-left: 50px;
   }
 
   .global-bar.global-bar--warning.single-row-banner .global-bar-message-container .global-bar-message .govuk-warning-text__icon {
