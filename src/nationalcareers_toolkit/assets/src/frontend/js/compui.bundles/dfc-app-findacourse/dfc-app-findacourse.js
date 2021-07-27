@@ -202,7 +202,8 @@ function getUpdatedUrl(paramValues) {
         "filterA=" + paramValues.FilterA + "&" +
         "page=" + paramValues.Page + "&" +
         "D=" + paramValues.D + "&" +
-        "coordinates=" + paramValues.Coordinates;
+        "coordinates=" + paramValues.Coordinates + "&" +
+        "campaignCode=" + paramValues.CampaignCode;
 
     return "/find-a-course/page?" + query;
 }
