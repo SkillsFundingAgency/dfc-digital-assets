@@ -114,7 +114,14 @@ function showHideDistanceInput(show) {
 
 function showHideClearFilters(show, searchTerm) {
     if (show === true) {
-        $(".fac-filters-block").html("<p id='fac-clear-filters'><a href='/find-a-course/searchcourse?searchTerm=" + searchTerm + "' aria-label='ClearFilters'>Clear filters</a></p>");
+        if($('#facFreeCourseSearch'))
+        {
+            $(".fac-filters-block").html("<p id='fac-clear-filters'><a href='/find-a-course/searchFreeCourse?searchTerm=" + searchTerm + "' aria-label='ClearFilters'>Clear filters</a></p>");
+        }
+        else
+        {
+            $(".fac-filters-block").html("<p id='fac-clear-filters'><a href='/find-a-course/searchcourse?searchTerm=" + searchTerm + "' aria-label='ClearFilters'>Clear filters</a></p>");
+        }
         $(".fac-filters-block").show();
     }
     else {
