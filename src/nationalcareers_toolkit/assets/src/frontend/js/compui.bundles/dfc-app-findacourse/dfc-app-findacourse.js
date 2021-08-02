@@ -236,7 +236,7 @@ function getParams() {
     $('.find-a-course-page #courseStudyTime input[type=checkbox]:checked').each(function () {
         courseStudyTime.push(this.value);
     });
-    var CampaignCode = $("#facCampaignCode").val();
+    var campaignCode = $("#facCampaignCode").val();
 
     //Strip the special characters
     var trimmedSearchTerm = searchTerm.replace(/[^A-Z0-9 ]+/ig, "");
@@ -254,7 +254,7 @@ function getParams() {
         Page: parseInt(page),
         D: 0,
         Coordinates: coordinates,
-        CampaignCode: CampaignCode
+        CampaignCode: campaignCode
     };
 
     return paramValues;
