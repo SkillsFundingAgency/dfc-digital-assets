@@ -114,7 +114,14 @@ function showHideDistanceInput(show) {
 
 function showHideClearFilters(show, searchTerm) {
     if (show === true) {
-        $(".fac-filters-block").html("<p id='fac-clear-filters'><a href='/find-a-course/searchcourse?searchTerm=" + searchTerm + "' aria-label='ClearFilters'>Clear filters</a></p>");
+        if($('#facFreeCourseSearch'))
+        {
+            $(".fac-filters-block").html("<p id='fac-clear-filters'><a href='/find-a-course/searchFreeCourse?searchTerm=" + searchTerm + "' aria-label='ClearFilters'>Clear filters</a></p>");
+        }
+        else
+        {
+            $(".fac-filters-block").html("<p id='fac-clear-filters'><a href='/find-a-course/searchcourse?searchTerm=" + searchTerm + "' aria-label='ClearFilters'>Clear filters</a></p>");
+        }
         $(".fac-filters-block").show();
     }
     else {
@@ -202,7 +209,8 @@ function getUpdatedUrl(paramValues) {
         "filterA=" + paramValues.FilterA + "&" +
         "page=" + paramValues.Page + "&" +
         "D=" + paramValues.D + "&" +
-        "coordinates=" + paramValues.Coordinates;
+        "coordinates=" + paramValues.Coordinates + "&" +
+        "campaignCode=" + paramValues.CampaignCode;
 
     return "/find-a-course/page?" + query;
 }
@@ -228,6 +236,7 @@ function getParams() {
     $('.find-a-course-page #courseStudyTime input[type=checkbox]:checked').each(function () {
         courseStudyTime.push(this.value);
     });
+    var campaignCode = $("#facCampaignCode").val();
 
     //Strip the special characters
     var trimmedSearchTerm = searchTerm.replace(/[^A-Z0-9 ]+/ig, "");
@@ -244,7 +253,8 @@ function getParams() {
         FilterA: true,
         Page: parseInt(page),
         D: 0,
-        Coordinates: coordinates
+        Coordinates: coordinates,
+        CampaignCode: campaignCode
     };
 
     return paramValues;
