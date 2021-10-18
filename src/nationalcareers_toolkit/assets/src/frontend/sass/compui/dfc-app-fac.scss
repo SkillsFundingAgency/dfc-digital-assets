@@ -125,6 +125,12 @@
 	}
 }
 
+#fac-result-list, #classroom-details-block, #online-details-block, #work-details-block {
+	a.fac-url-link-break {
+		overflow-wrap: break-word;
+		word-wrap: break-word;
+	}
+}
 
 /* ###### Location suggest END ###### */
 #fac-result-list,  #classroom-details-block, #online-details-block, #work-details-block {
