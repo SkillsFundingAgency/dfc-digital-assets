@@ -114,7 +114,7 @@ function showHideDistanceInput(show) {
 
 function showHideClearFilters(show, searchTerm) {
     if (show === true) {
-        if($('#facFreeCourseSearch'))
+        if(typeof($('#facFreeCourseSearch:input')[0]) != "undefined" && $('#facFreeCourseSearch:input')[0].value === 'True')
         {
             $(".fac-filters-block").html("<p id='fac-clear-filters'><a href='/find-a-course/searchFreeCourse?searchTerm=" + searchTerm + "' aria-label='ClearFilters'>Clear filters</a></p>");
         }
