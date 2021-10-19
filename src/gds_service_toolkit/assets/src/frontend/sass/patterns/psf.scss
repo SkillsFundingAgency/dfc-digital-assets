@@ -152,7 +152,7 @@
   				padding: 0 0 15px;
   			}
   			h2, h3 {
-  				font-family: nta,Arial,sans-serif;
+  				font-family: "GDS Transport",Arial,sans-serif;
   				font-weight: 400;
   				text-transform: none;
   				font-size: 18px;
@@ -167,7 +167,7 @@
 
   			.result-description {
   				margin: 0 0 .5em;
-  				font-family: nta,Arial,sans-serif;
+  				font-family: "GDS Transport",Arial,sans-serif;
   				font-weight: 400;
   				text-transform: none;
   				font-size: 16px;
@@ -176,7 +176,7 @@
 
   			.meta {
   				color: #6f777b;
-  				font-family: nta,Arial,sans-serif;
+  				font-family: "GDS Transport",Arial,sans-serif;
   				font-weight: 400;
   				text-transform: none;
   				font-size: 14px;
@@ -201,7 +201,7 @@
       	li.previous, li.next {
           button {
             cursor : pointer;
-            
+
             &:focus {
               outline: #ffbf47 solid 3px;
             }

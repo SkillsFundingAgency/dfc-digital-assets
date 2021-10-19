@@ -6,7 +6,7 @@ $global-bar-background-colour: #ffdd00;
 
 .global-bar {
   padding: 15px 0;
-  font-family: "nta", Arial, sans-serif;
+  font-family: "GDS Transport", Arial, sans-serif;
   position: relative;
 
   .global-bar-message-container {
@@ -14,7 +14,7 @@ $global-bar-background-colour: #ffdd00;
     position: relative;
 
     .govuk-warning-text__icon {
-        font-family: nta,Arial,sans-serif;
+        font-family: "GDS Transport",Arial,sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         font-weight: 700;
