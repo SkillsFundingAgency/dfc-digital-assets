@@ -173,6 +173,7 @@ function makeAjaxCall(paramValues) {
             $('#fac-result-list').html(replacementMarkup);
             $('.fac-result-count').html("");
             $('.fac-result-count').html(addCommas(resultCount));
+            (resultCount > 0) ? $('.no-count-block').show() : $('.no-count-block').hide();
             showHideClearFilters(anyFiltersSelected(paramValues), paramValues.SearchTerm);
             paramValues.D = showDistanceSelector === true ? 1 : 0;
             showHideDistanceInput(showDistanceSelector);
