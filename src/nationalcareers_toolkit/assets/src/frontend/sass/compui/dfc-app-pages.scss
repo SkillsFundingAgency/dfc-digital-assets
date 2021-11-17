@@ -155,5 +155,10 @@ div.dfc-app-pages-alignment-justify {
 }
 
 .govuk-full-width-container > .govuk-grid-row{
+
+  .govuk-grid-column-full{
+    padding: 0px;
+  }
+
   margin: 0 auto;
 }
