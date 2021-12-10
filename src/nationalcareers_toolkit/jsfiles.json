@@ -83,5 +83,13 @@
     "assets/src/frontend/js/shc/application.js",
     "assets/src/frontend/js/shc/customvalidation.js",
     "assets/src/frontend/js/shc/skillsHealthCheck.js"
+  ],
+  "compuiSHCJsFilesBundle": [
+    "assets/src/frontend/js/compui.bundles/dfc-app-skillshealthcheck/application.js",
+    "assets/src/frontend/js/compui.bundles/dfc-app-skillshealthcheck/customvalidation.js",
+    "assets/src/frontend/js/compui.bundles/dfc-app-skillshealthcheck/skillsHealthCheck.js"
+  ],
+  "compuiDfcAccountsFiles": [
+    "assets/src/frontend/js/compui.bundles/dfc-app-accounts/**/*.js"
   ]
 }
