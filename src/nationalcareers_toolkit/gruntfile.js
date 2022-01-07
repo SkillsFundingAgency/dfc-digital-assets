@@ -23,6 +23,7 @@ module.exports = function (grunt) {
     var cmsExtentionsBundle = grunt.file.readJSON('jsfiles.json').cmsExtentionsBundle;
     var matchskillsJSFiles = grunt.file.readJSON('jsfiles.json').matchskillsJsFilesBundle;
     var shcJsFiles = grunt.file.readJSON('jsfiles.json').SHCJsFilesBundle;
+    var compuiDfcAccountsFiles = grunt.file.readJSON('jsfiles.json').compuiDfcAccountsFiles;
 
 
     // Name of the folder that contains project specific assets (scss, js, images, etc.)
@@ -173,6 +174,7 @@ module.exports = function (grunt) {
                     { '<%= dist.path %>/js/cmsExtentionsBundle.min.js': cmsExtentionsBundle },
                     { '<%= dist.path %>/js/matchskills.min.js': matchskillsJSFiles },
                     { '<%= dist.path %>/js/shc.min.js': shcJsFiles },
+                    {'<%= dist.path %>/js/dfc-app-accounts.min.js' : compuiDfcAccountsFiles},
                     {
                         expand: true,
                         src: ['*.js', '!*.min.js'],
