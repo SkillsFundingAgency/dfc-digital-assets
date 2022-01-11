@@ -76,6 +76,9 @@
   "compuiDfcTriageToolJsFiles": [
     "assets/src/frontend/js/compui.bundles/dfc-app-triagetool/**/*.js"
   ],
+  "compuiYPFCJsFiles": [
+    "assets/src/frontend/js/compui.bundles/ypfc/**/*.js"
+  ],
   "matchskillsJsFilesBundle": [
     "assets/src/frontend/js/matchskills.js"
   ],
