@@ -69,6 +69,10 @@
         right: 280px;
     }
 
+    .strapline {
+        font-size: 1.1rem;
+    }
+
     @media only screen and (max-width: 768px) {
         .ypfc-hero .govuk-grid-column-one-half {
             width: 50%;
@@ -235,37 +239,37 @@
         }
 
         .image-tlevel {
-            bottom: -50px;
+            bottom: -30px;
             right: 25px;
         }
 
         .image-apprent {
-            bottom: -50px;
+            bottom: -30px;
             right: 25px;
         }
 
         .image-kickstart {
             bottom: 0;
             right: 2px;
-            bottom: -50px;
+            bottom: -30px;
             right: 10px;
             height: 280px;
         }
 
         .image-higher {
-            bottom: -50px;
+            bottom: -30px;
             right: 25px;
             height: 285px;
         }
 
         .image-trainee {
-            bottom: -50px;
+            bottom: -30px;
             right: 30px;
             height: 285px;
         }
 
         .image-intern {
-            bottom: -50px;
+            bottom: -30px;
             right: 25px;
         }
 
