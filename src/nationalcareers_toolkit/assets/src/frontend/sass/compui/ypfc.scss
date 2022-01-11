@@ -218,6 +218,32 @@
         color: black;
     }
 
+    .ec-hero-black a {
+        color: white;
+    }
+
+    .ec-hero-black * {
+        color: white;
+    }
+
+    .ec-hero-black {
+        background: black;
+        margin: 1em calc(50% - 50vw);
+        padding: 30px;
+        color: white;
+    }
+
+    .inline-ul li {
+        display: inline-block;
+        margin-left: 20px;
+    }
+
+    .inline-ul {
+        text-align: right;
+        font-family: "GDS Transport", Arial, sans-serif;
+        font-size: 19px;
+    }
+
     @media only screen and (min-width: 769px) {
         .govuk-grid-row {
             padding: 0;
