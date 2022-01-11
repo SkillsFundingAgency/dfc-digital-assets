@@ -7,6 +7,7 @@
         background: black;
         padding: 30px 0 30px 0;
         position: relative;
+        margin: 1em calc(50% - 50vw);
     }
 
     .ypfc-hero .govuk-body-lead {
@@ -14,8 +15,36 @@
         font-size: 1rem;
     }
 
+    .ypfc-hero .main-header {
+        color: #fff;
+        font-size: 2.6rem;
+        font-weight: 700;
+        text-align: left;
+        font-family: "GDS Transport", arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    .heading-smaller-text {
+        font-size: 1.06rem;
+    }
+
+    .ec-hero-black {
+        background-color: #111;
+        max-height: 23em;
+        color: #ffffff;
+        padding: 30px 0 10px;
+    }
+
     .title-yellow {
         color: #ffff00;
+    }
+
+    .yellow-text {
+        color: #FEEf00
+    }
+
+    .speech-details {
+        font-weight: bold;
     }
 
     .main-header {
@@ -41,11 +70,25 @@
     }
 
     @media only screen and (max-width: 768px) {
-        .ypfc-hero .govuk-grid-column-one-half { width: 50%;} 
-        .header-image-sub { width: 130px; position: absolute; bottom: 80px; right: 10px; }
-        .header-image { position: absolute; width: 400px; right: -250px; height: 250px; top: -40px;
-                        clip: rect(0px, 150px, 250px,0px);
-        } 
+        .ypfc-hero .govuk-grid-column-one-half {
+            width: 50%;
+        }
+
+        .header-image-sub {
+            width: 130px;
+            position: absolute;
+            bottom: 80px;
+            right: 10px;
+        }
+
+        .header-image {
+            position: absolute;
+            width: 400px;
+            right: -250px;
+            height: 250px;
+            top: -40px;
+            clip: rect(0px, 150px, 250px,0px);
+        }
     }
 }
 
@@ -63,6 +106,7 @@
     .strong {
         font-weight: bold;
     }
+
     .inline-ul {
         text-align: right;
     }
@@ -94,6 +138,7 @@
     .bold {
         font-weight: bold;
     }
+
     .image-t-level {
         position: absolute;
         width: auto;
@@ -158,10 +203,15 @@
     .ncs-speak-to-advisor {
         background: #F2F6FA;
         margin-top: 100px;
+        margin: 1em calc(50% - 50vw);
     }
 
     .footer-wrapper {
         padding: 0 20px 0 20px;
+    }
+
+    .footer-wrapper * {
+        color: black;
     }
 
     @media only screen and (min-width: 769px) {
@@ -177,9 +227,11 @@
 
         .ypfc-box .ncs-home-grid-wrapper {
             background: #F5F5F5;
-            height: 240px;
             padding-top: 20px;
             padding: 15px;
+            box-shadow: 1px 1px 10px 1px #cccccc;
+            height: 100%;
+            text-align: left;
         }
 
         .image-tlevel {
@@ -275,6 +327,7 @@
         .inline-ul {
             left: -10px;
         }
+
         .image-kickstart {
             bottom: 0;
             right: 0;
