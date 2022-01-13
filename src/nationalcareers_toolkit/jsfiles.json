@@ -62,7 +62,8 @@
     "nothing"
   ],
   "compuiDfcPagesJsFiles": [
-    "assets/src/frontend/js/compui.bundles/dfc-app-pages/**/*.js"
+    "assets/src/frontend/js/compui.bundles/dfc-app-pages/**/*.js",
+    "assets/src/frontend/js/compui.bundles/ypfc/**/*.js"
   ],
   "compuiDfcContactUsJsFiles": [
     "assets/src/frontend/js/compui.bundles/dfc-app-contactus/**/*.js"
