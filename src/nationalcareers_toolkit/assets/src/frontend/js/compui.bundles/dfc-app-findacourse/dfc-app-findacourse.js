@@ -95,7 +95,8 @@ function CheckLocationAndSearchIfValid(e) {
 
 function generateClearLink(d) {
     $('#fac-result-list a').each(function () {
-        if (urlString.indexOf('http://') != 0 || urlString.indexOf('https://') != 0) {
+        var isExternalLink = this.indexOf('http') === 0;
+        if (!isExternalLink) {
             this.href = this.href.replace('&D=0', '').replace('&D=1', '') + '&D=' + d;
         }
     });
