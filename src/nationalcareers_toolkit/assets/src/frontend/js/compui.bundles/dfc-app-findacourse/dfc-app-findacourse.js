@@ -95,7 +95,9 @@ function CheckLocationAndSearchIfValid(e) {
 
 function generateClearLink(d) {
     $('#fac-result-list a').each(function () {
-        this.href = this.href.replace('&D=0', '').replace('&D=1', '') + '&D=' + d;
+        if (urlString.indexOf('http://') != 0 || urlString.indexOf('https://') != 0) {
+            this.href = this.href.replace('&D=0', '').replace('&D=1', '') + '&D=' + d;
+        }
     });
 }
 
@@ -114,12 +116,10 @@ function showHideDistanceInput(show) {
 
 function showHideClearFilters(show, searchTerm) {
     if (show === true) {
-        if(typeof($('#facFreeCourseSearch:input')[0]) != "undefined" && $('#facFreeCourseSearch:input')[0].value === 'True')
-        {
+        if (typeof ($('#facFreeCourseSearch:input')[0]) != "undefined" && $('#facFreeCourseSearch:input')[0].value === 'True') {
             $(".fac-filters-block").html("<p id='fac-clear-filters'><a href='/find-a-course/searchFreeCourse?searchTerm=" + searchTerm + "' aria-label='ClearFilters'>Clear filters</a></p>");
         }
-        else
-        {
+        else {
             $(".fac-filters-block").html("<p id='fac-clear-filters'><a href='/find-a-course/searchcourse?searchTerm=" + searchTerm + "' aria-label='ClearFilters'>Clear filters</a></p>");
         }
         $(".fac-filters-block").show();
