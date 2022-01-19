@@ -10,13 +10,6 @@
         margin: 1em calc(50% - 50vw);
     }
 
-    .ypfc-box-heading {
-        color: #1d70b8 !important;
-        text-decoration: underline;
-        text-decoration-thickness: 3px;
-        line-height: 1.5;
-    }
-
     .header-image-sub-extended {
         width: 223px;
     }
@@ -131,12 +124,19 @@
         }
     }
 }
-
+///////////////////////////////////////////////////
 #ypfc-main-body {
     margin-top: -50px;
 
     .govuk-body-m {
         font-size: 1rem !important;
+    }
+
+    .ypfc-box-heading {
+        color: #1d70b8 !important;
+        text-decoration: underline;
+        text-decoration-thickness: 3px;
+        line-height: 1.5;
     }
 
     .govuk-heading-m a {
@@ -254,6 +254,11 @@
         margin-top: -30px;
     }
 
+    .ncs-speak-to-advisor a {
+        color: #1d70b8 !important;
+        text-decoration: underline;
+    }
+
     .ypfc-footer-links a:hover {
         color: #feef00 !important;
     }
@@ -279,6 +284,10 @@
         margin: 1em calc(50% - 50vw);
         padding: 30px;
         color: white;
+    }
+
+    .footer-wrapper a, .footer-wrapper strong {
+        color: #1d70b8 !important;
     }
 
     .inline-ul li {
@@ -316,9 +325,13 @@
             text-align: left;
         }
 
+        .traineeship-box {
+            height: 270px;
+        }
+
         .image-tlevel {
             bottom: -30px;
-            right: 25px;
+            right: 15px !important;
         }
 
         .image-apprent {
@@ -441,7 +454,7 @@
         }
 
         .image-tlevel {
-            max-height: 220px !important;
+            max-height: 200px !important;
             right: 0 !important;
         }
 
