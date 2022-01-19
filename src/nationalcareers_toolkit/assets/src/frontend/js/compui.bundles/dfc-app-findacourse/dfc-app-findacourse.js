@@ -94,10 +94,10 @@ function CheckLocationAndSearchIfValid(e) {
 }
 
 function generateClearLink(d) {
-    $('#fac-result-list a').each(function (index, element) {
-        var isExternalLink = element.indexOf('http') === 0;
+    $('#fac-result-list a').each(function () {
+        var isExternalLink = this.href.indexOf('http') === 0;
         if (!isExternalLink) {
-            element.href = element.href.replace('&D=0', '').replace('&D=1', '') + '&D=' + d;
+            this.href = this.href.replace('&D=0', '').replace('&D=1', '') + '&D=' + d;
         }
     });
 }
