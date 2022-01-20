@@ -468,101 +468,6 @@
         }
 
         .image-apprent {
-            bottom: 0 !important;
-        }
-
-        .image-tlevel {
-            bottom: 0 !important;
-            height: 220px;
-        }
-
-        .image-trainee {
-            bottom: 0 !important;
-            height: 265px;
-        }
-
-        .image-intern {
-            bottom: 0 !important;
-            max-height: 230px;
-        }
-
-        .traineeship-box img {
-            bottom: -30px !important;
-            height: 240px !important;
-        }
-
-        .image-kickstart {
-            bottom: 0;
-            height: 245px !important;
-        }
-
-        #ypfc-main-body .traineeship-box {
-            height: 320px !important;
-        }
-    }
-
-    @media only screen and (device-width: 896px) and (device-height: 414px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape) {
-        .ypfc-box {
-            height: 100%;
-            display: flex;
-        }
-
-        .image-apprent {
-            bottom: 0 !important;
-        }
-
-        .image-tlevel {
-            bottom: 0 !important;
-            height: 220px;
-        }
-
-        .image-trainee {
-            bottom: 0 !important;
-            height: 265px;
-        }
-
-        .image-intern {
-            bottom: 0 !important;
-            max-height: 230px;
-        }
-
-        .traineeship-box img {
-            bottom: -30px !important;
-            height: 230px !important;
-        }
-
-        .image-kickstart {
-            bottom: 0 !important;
-            height: 240px !important;
-        }
-
-        .traineeship-box {
-            height: 320px !important;
-        }
-    }
-
-    @media only screen and (device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait) {
-        #ypfc-hero .header-image-sub {
-            width: 130px;
-            position: absolute;
-            right: 20px !important;
-            bottom: 20px !important;
-            left: unset !important;
-        }
-
-
-        #ypfc-hero .header-image {
-            top: -80px !important;
-            right: -190px !important;
-            clip: rect(0,310px,250px,0) !important;
-        }
-
-        .ypfc-box {
-            height: 100%;
-            display: flex;
-        }
-
-        .image-apprent {
             bottom: 0;
         }
 
@@ -691,7 +596,7 @@
         }
 
         .ypfc-box:hover {
-            outline: 2px solid black;
+            border: 2px solid black;
         }
 
         .ypfc-box .govuk-grid-column-two-thirds, .ypfc-box .govuk-grid-column-one-third {
