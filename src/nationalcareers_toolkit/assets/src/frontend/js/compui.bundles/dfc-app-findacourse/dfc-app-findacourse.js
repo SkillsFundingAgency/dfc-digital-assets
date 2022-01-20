@@ -66,6 +66,13 @@ $(document).ready(function () {
         return false;
     });
 
+    $('.find-a-course-page #qualificationLevels input[type=checkbox]').change(function (e) {
+        $('.find-a-course-page #suggest-location').hide();
+        makeAjaxCall(getParams());
+        e.preventDefault();
+        return false;
+    });
+
     $("#fac-search-course-form, #fac-filter-form").submit(function (e) {
         return false;
     });
@@ -94,8 +101,8 @@ function CheckLocationAndSearchIfValid(e) {
 }
 
 function generateClearLink(d) {
-    $('#fac-result-list a').each(function (index,element) {
-        var isExternalLink = element.href.indexOf('http') === 0;
+    $('#fac-result-list a').each(function (index, element) {
+        var isExternalLink = element.getAttribute('href').indexOf('http') === 0;
         if (!isExternalLink) {
             element.href = element.href.replace('&D=0', '').replace('&D=1', '') + '&D=' + d;
         }
@@ -228,6 +235,7 @@ function getParams() {
     var courseType = [];
     var courseHours = [];
     var courseStudyTime = [];
+    var qualificationLevels = [];
     var coordinates = $('.find-a-course-page #coordinates').val();
     $('.find-a-course-page #courseType input[type=checkbox]:checked').each(function () {
         courseType.push(this.value);
@@ -237,6 +245,9 @@ function getParams() {
     });
     $('.find-a-course-page #courseStudyTime input[type=checkbox]:checked').each(function () {
         courseStudyTime.push(this.value);
+    });
+    $('.find-a-course-page #qualificationLevels input[type=checkbox]:checked').each(function () {
+        qualificationLevels.push(this.value);
     });
     var campaignCode = $("#facCampaignCode").val();
 
@@ -256,7 +267,8 @@ function getParams() {
         Page: parseInt(page),
         D: 0,
         Coordinates: coordinates,
-        CampaignCode: campaignCode
+        CampaignCode: campaignCode,
+        QualificationLevels: qualificationLevels.toString()
     };
 
     return paramValues;
