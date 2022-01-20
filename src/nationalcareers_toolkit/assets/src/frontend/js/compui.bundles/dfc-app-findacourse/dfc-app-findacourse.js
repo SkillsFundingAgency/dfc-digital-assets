@@ -142,7 +142,8 @@ function anyFiltersSelected(paramValues) {
         paramValues.StartDate != 'Anytime' ||
         paramValues.CourseType.length > 1 ||
         paramValues.CourseHours.length > 1 ||
-        paramValues.CourseStudyTime.length > 1) {
+        paramValues.CourseStudyTime.length > 1 ||
+        paramValues.QualificationLevels.length > 1) {
         return true;
     }
 
