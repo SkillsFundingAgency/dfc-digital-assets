@@ -1,8 +1,3 @@
-
-
-
-
-
 #ypfc-hero {
     #main-content {
         padding-top: 50px !important;
@@ -95,7 +90,7 @@
         color: #feef00 !important;
     }
 
-    a, .ec-hero-black a {
+    a {
         background: transparent !important;
     }
 
@@ -354,6 +349,10 @@
     .ypfc-box .ncs-home-grid-wrapper:hover {
         outline: 2px solid black;
         border-radius: 2px;
+    }
+
+    .ec-hero-black a {
+        background: transparent !important;
     }
 
     .image-tlevel {
