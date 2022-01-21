@@ -143,7 +143,7 @@ function anyFiltersSelected(paramValues) {
         paramValues.CourseType.length > 1 ||
         paramValues.CourseHours.length > 1 ||
         paramValues.CourseStudyTime.length > 1 ||
-        paramValues.QualificationLevels.length > 1) {
+        paramValues.QualificationLevels.length > 0) {
         return true;
     }
 
@@ -220,7 +220,8 @@ function getUpdatedUrl(paramValues) {
         "page=" + paramValues.Page + "&" +
         "D=" + paramValues.D + "&" +
         "coordinates=" + paramValues.Coordinates + "&" +
-        "campaignCode=" + paramValues.CampaignCode;
+        "campaignCode=" + paramValues.CampaignCode + "&" +
+        "qualificationLevels=" + paramValues.QualificationLevels;
 
     return "/find-a-course/page?" + query;
 }
