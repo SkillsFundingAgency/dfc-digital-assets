@@ -1,4 +1,8 @@
 #ypfc-hero {
+    a {
+        background: transparent !important;
+    }
+
     #main-content {
         padding-top: 50px !important;
     }
@@ -282,7 +286,21 @@
     }
 }
 ///////////////////////////////////////////////////
+#ypfc-sidebar {
+    a {
+        background: transparent !important;
+    }
+
+    .app-related-items a {
+        font-size: 16px !important;
+    }
+}
+
 #ypfc-main-body {
+    a {
+        background: transparent !important;
+    }
+
     margin-top: -50px;
 
     .govuk-body-m {
@@ -461,6 +479,9 @@
         font-size: 19px;
     }
 
+    .dfc-app-pages-alignment-left {
+    }
+
     @media only screen and (device-width: 844px) and (device-height: 390px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape) {
         .ypfc-box {
             height: 100%;
@@ -634,7 +655,7 @@
             bottom: 0;
             right: 2px;
             bottom: -30px;
-            right: 10px;
+            right: 20px;
             height: 280px;
         }
 
