@@ -25,6 +25,12 @@ $(document).ready(function () {
             //Save the current consent for GA tracking
             var previousConsentState = window.GOVUK.checkConsentCookie('_gid', true)
             cookiePrefrences.updateConsentCookies(n)
+            appInsights.trackEvent({
+                name: 'cookie-consent-set',
+                properties: {
+                  usage: n,
+                }
+              });
 
             dataLayer.push({
                   'event': 'cookie-consent-set',
