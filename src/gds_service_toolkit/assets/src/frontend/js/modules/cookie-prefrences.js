@@ -282,6 +282,19 @@
 
         approveAll: function () {
             window.GOVUK.approveAllCookieTypes()
+
+            appInsights.trackEvent({
+                name: 'cookie-consent-set',
+                properties: {
+                  usage: true,
+                }
+              });
+
+            dataLayer.push({
+                'event': 'cookie-consent-set',
+                'Usage': true
+              })
+              
             window.GOVUK.cookie('cookies_preferences_set', 'true', { days: 365 })
             setTimeout(function () { window.GOVUK.setGAConsented() }, 500)
         },

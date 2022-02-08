@@ -26,6 +26,11 @@ $(document).ready(function () {
             var previousConsentState = window.GOVUK.checkConsentCookie('_gid', true)
             cookiePrefrences.updateConsentCookies(n)
 
+            dataLayer.push({
+                  'event': 'cookie-consent-set',
+                  'Usage': n
+                })
+
             //if we have switched from not consented to consented for the first time on this page 
             if (!previousConsentState && n.usage === true && firstSwitch) {
                 firstSwitch = false;
