@@ -32,6 +32,11 @@ $(document).ready(function () {
                 }
               });
 
+            dataLayer.push({
+                  'event': 'cookie-consent-set',
+                  'Usage': n
+                })
+
             //if we have switched from not consented to consented for the first time on this page 
             if (!previousConsentState && n.usage === true && firstSwitch) {
                 firstSwitch = false;
