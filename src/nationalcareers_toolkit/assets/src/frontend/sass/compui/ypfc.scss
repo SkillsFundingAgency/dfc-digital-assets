@@ -225,7 +225,7 @@
     }
 
     .app-related-items a {
-        font-size: 16px !important;
+        font-size: 19px !important;
     }
 }
 
@@ -575,7 +575,7 @@
             width: auto;
             float: right !important;
             margin-top: -17px !important;
-            margin-left: 10px;
+            margin-right: -10px;
         }
 
         .image-intern {
@@ -598,7 +598,7 @@
             width: auto;
             float: right !important;
             margin-top: -17px !important;
-            right: -30px;
+            right: -15px;
             margin-left: 10px;
         }
 
@@ -609,6 +609,7 @@
             float: right !important;
             margin-top: -23px !important;
             margin-left: 10px;
+            margin-right: -20px;
         }
 
         .image-apprent {
@@ -617,9 +618,8 @@
             width: auto;
             float: right !important;
             margin-top: -35px !important;
-            margin-left: 10px;
             padding-top: 20px;
-            margin-right: -40px;
+            margin-right: -10px;
         }
     }
 }
