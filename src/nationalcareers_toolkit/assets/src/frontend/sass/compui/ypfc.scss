@@ -409,11 +409,11 @@
 
     @media only screen and (min-width: 769px) {
         #ypfc-main-body .custom-width-largescreen {
-            width: 100%;
+            width: 100% !important;
         }
 
         #ypfc-main-body .custom-width-largescreen2 {
-            width: 100%;
+            width: 100% !important;
         }
 
         .govuk-grid-row {
@@ -590,7 +590,7 @@
             float: right !important;
             margin-top: -17px !important;
             right: -15px;
-            margin-left: 10px;
+            margin-right: -15px;
         }
 
         .image-trainee {
