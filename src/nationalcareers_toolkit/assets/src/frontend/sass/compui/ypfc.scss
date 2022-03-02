@@ -160,6 +160,7 @@
             width: 130px;
             position: absolute;
             bottom: 40px !important;
+            left: unset;
             right: 30px;
         }
 
@@ -317,11 +318,18 @@
         max-height: 300px;
         max-width: 100%;
         display: flex;
-        margin-right: -55px;
-        padding-left: 30px;
+        margin-top: -75px;
     }
 
-    .image-higher, .image-kickstart {
+    .image-kickstart {
+        max-height: 300px;
+        max-width: 100%;
+        display: flex;
+        bottom: 0;
+        right: 2px;
+    }
+
+    .image-higher {
         max-height: 300px;
         max-width: 100%;
         display: flex;
@@ -454,6 +462,7 @@
         }
 
         .image-kickstart {
+            bottom: 0;
             right: 2px;
             right: 20px;
             height: 280px;
@@ -575,8 +584,8 @@
             width: auto;
             float: right !important;
             margin-top: -17px !important;
+            margin-left: 10px;
             padding-top: 20px;
-            margin-right: -30px;
         }
 
         .image-trainee {
@@ -605,6 +614,7 @@
         .image-apprent {
             width: 150px !important;
             position: relative !important;
+            width: auto;
             float: right !important;
             margin-top: -35px !important;
             padding-top: 20px;
