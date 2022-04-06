@@ -442,10 +442,7 @@
         position: absolute;
     }
 
-    .ypfc-box .ncs-home-grid-wrapper:hover {
-        outline: 2px solid black;
-        border-radius: 2px;
-    }
+   
 
     .ec-hero-black a {
         background: transparent !important;
@@ -708,11 +705,14 @@
 
         .ypfc-box .ncs-home-grid-wrapper {
             background: #F5F5F5;
-            padding-top: 20px;
             padding: 15px;
             box-shadow: 1px 1px 10px 1px #cccccc;
             height: 100%;
             text-align: left;
+        }
+        .ypfc-box .ncs-home-grid-wrapper:hover {
+            outline: 2px solid black;
+            border-radius: 2px;
         }
 
         .traineeship-box {
