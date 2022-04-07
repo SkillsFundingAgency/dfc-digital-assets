@@ -263,7 +263,7 @@
 
     .ypfc-box {
         background: #F5F5F5;
-        height: 240px;
+        height: 280px;
         padding-top: 20px;
         position: relative;
     }
@@ -540,6 +540,16 @@
         }
     }
 
+    @media only screen and (min-width: 769px) and (max-width:785px) {
+        .traineeship-box { 
+            height: 390px !important;
+    }}
+
+    @media only screen and (min-width: 786px) and (max-width:953px) {
+        .traineeship-box { 
+            height: 330px !important;
+    }}
+    
     @media only screen and (min-width: 769px) {
         .govuk-grid-row {
             padding: 0;
@@ -578,7 +588,7 @@
 
         .image-apprent {
             bottom: -30px;
-            right: 25px;
+            right: 18px;
         }
 
         .image-kickstart {
@@ -603,7 +613,7 @@
 
         .image-intern {
             bottom: -30px;
-            right: 25px;
+            right: 18px;
         }
 
         .govuk-grid-column-full {
