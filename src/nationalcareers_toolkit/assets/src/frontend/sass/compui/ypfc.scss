@@ -534,6 +534,12 @@
         }
     }
 
+    @media only screen and (min-width: 641px) and (max-width: 768px) {
+        .govuk-grid-column-one-third, .govuk-grid-column-two-thirds {
+            float: unset !important;
+        }
+    }
+
     @media only screen and (min-width: 769px) {
         .govuk-grid-row {
             padding: 0;
@@ -633,6 +639,7 @@
             padding: 20px 15px 15px 15px;
             height: auto;
             position: relative;
+            width: auto;
         }
 
         .ypfc-box:hover {
