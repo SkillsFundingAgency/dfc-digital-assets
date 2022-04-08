@@ -113,11 +113,11 @@
 
         .header-image {
             position: absolute;
-            width: 400px;
-            right: -250px;
-            height: 250px;
-            top: -40px;
-            clip: rect(0,250px,250px,0);
+            width: 400px !important;
+            right: -80px !important;
+            height: 250px !important;
+            top: -40px !important;
+            clip: unset !important;
         }
 
         .main-header {
@@ -134,13 +134,6 @@
         .strapline {
             font-size: 1.1rem !important;
             text-align: left;
-        }
-
-        .header-image {
-            width: 290px !important;
-            right: -30px !important;
-            clip: unset !important;
-            height: 250px !important;
         }
     }
 
@@ -168,7 +161,6 @@
     @media only screen and (device-width: 768px) and (device-height: 1024px), (device-width: 740px) and (device-height: 360px), (device-width: 736px) and (device-height: 414px) {
         .header-image {
             top: -60px !important;
-            right: 0 !important;
         }
 
         .header-image-sub {
