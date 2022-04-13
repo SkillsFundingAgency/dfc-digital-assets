@@ -230,7 +230,7 @@
 
     .image-tlevel {
         max-height: 270px;
-        max-width: 250px;
+        max-width: 225px;
         display: flex;
         bottom: 0;
         right: 10px;
@@ -334,6 +334,9 @@
         font-size: 19px;
     }
 
+    .custom-mobile-width-two-thirds{
+        padding: 0;
+    }
 
 
     
@@ -344,25 +347,30 @@
         }
     }
 
-    @media only screen and (min-width: 769px) and (max-width:798px) {
+    @media only screen and (min-width: 769px) and (max-width:880px) {
         .ypfc-box { 
-            height: 390px !important;
+            height: 430px !important;
     }}
 
-    @media only screen and (min-width: 799px) and (max-width:953px) {
+    @media only screen and (min-width: 881px) and (max-width:989px) {
         .ypfc-box { 
             height: 330px !important;
-    }}
+        }
+
+        .ypfc-box-text{
+            width: 90%;
+        }
+
+}
     @media only screen and (min-width: 375px) and (max-width:409px) {
         .ypfc-box-text { 
-            width: 90%;
-    }}
-    @media only screen and (min-width: 769px) and (max-width:989px) {
-        .ypfc-box-text{
             width: 80%;
+    }}
+    @media only screen and (min-width: 769px) and (max-width:880px) {
+        .ypfc-box-text{
+            width: 70%;
         }
-        
-}
+    }
 @media only screen and (min-width: 953px) {
     .ypfc-box-text-intern{
         width: 85%;
@@ -411,7 +419,6 @@
 
         .image-apprent {
             bottom: -30px;
-            right: 18px;
         }
 
         .image-kickstart {
