@@ -203,6 +203,85 @@
   }
 }
 
+.job-profile-hero-additional {
+  @extend .secondary-hero;
+  .column-60 {
+    padding-left: 0px;
+    @media (max-width: 749px) {      
+        padding-top: 0px;    
+    }    
+  }
+}
+
+.job-profile-heroblock-additional {
+  @extend .secondary-hero-block;
+
+  .job-profile-heroblock-content {
+  @extend .secondary-hero-block-content;
+  @media (max-width: 749px) {
+        p {
+          text-align: left;
+        }
+      }
+    
+  }   
+  
+
+  .job-profile-salary {
+    @extend .pound-block
+  }
+
+  .job-profile-hours {
+    @extend .clock-block
+  }
+
+  .job-profile-pattern {
+    @extend .calendar-block;
+  }
+
+  .job-profile-group {
+    @extend .chart-line-block;
+    display: block;
+    min-height: 100px;
+
+     &:before {
+    			width: 50px;
+          display: block;
+          min-height: 100px;
+        }
+  }
+
+  @media (max-width: 749px) {
+    &:nth-child(odd) {
+      background-color: govuk-colour('light-grey');
+    }
+
+    .job-profile-group {  
+       &:before {
+            display: none;
+          }
+    }
+
+    h2 {
+      width: 50%;
+      float: left;
+      border: none;
+      min-width: 150px;
+
+      span {
+        width: 100%;
+        margin: 0;
+      }
+    }
+
+    .job-profile-heroblock-content {
+      float: right;
+      width: auto;
+      padding: 0;
+    }
+  }
+}
+
 
 .jump-links {
   border-bottom: none;
