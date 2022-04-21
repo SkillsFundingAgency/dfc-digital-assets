@@ -45,4 +45,11 @@ $(document).ready(function () {
             $('.validation-summary-errors').focus();
         }
     });
+
+    $('#showMoreCategories a').on("click", function (e) {
+        $('#app-results-list > li').show();
+        $('#showMoreCategories').hide();
+
+        return false;
+    });
 });
