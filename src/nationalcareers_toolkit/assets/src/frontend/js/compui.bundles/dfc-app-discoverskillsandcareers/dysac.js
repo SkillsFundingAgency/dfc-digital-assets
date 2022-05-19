@@ -22,10 +22,10 @@ $(document).ready(function () {
 
     $('.print-button-container').prepend(printHtml);
 
-    var printBodyHtml = 'or <a href="#" onclick="window.print(); return false;" class="govuk-link govuk-link--no-visited-state">print</a>';
+    var printBodyHtml = 'or <a id="dysac-print-button-body" href="#" onclick="window.print(); return false;" class="govuk-link govuk-link--no-visited-state">print</a>';
     $('#printBody').html(printBodyHtml);
     
-    $('#dysac-print-button').on('click', function () {
+    $('#dysac-print-button, #dysac-print-button-body').on('click', function () {
         window.print();
         return false;
     });
