@@ -22,6 +22,9 @@ $(document).ready(function () {
 
     $('.print-button-container').prepend(printHtml);
 
+    var printBodyHtml = 'or <a href="#" onclick="window.print(); return false;" class="govuk-link govuk-link--no-visited-state">print</a>';
+    $('#printBody').html(printBodyHtml);
+    
     $('#dysac-print-button').on('click', function () {
         window.print();
         return false;
