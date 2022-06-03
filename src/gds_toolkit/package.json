@@ -10,7 +10,7 @@
     "html5shiv": "^3.7.3",
     "jquery": "^3.5.0",
     "jquery-migrate": "1.4.1",
-    "jquery-validation": "^1.17.0",
+    "jquery-validation": "^1.19.4",
     "jquery-validation-unobtrusive": "^3.2.6",
     "tableexport": "5.0.3",
     "xlsx": "0.14.0"
