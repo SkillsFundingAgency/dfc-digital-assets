@@ -17,9 +17,7 @@ if (dysacHelpers.isPage('app-page--results-long')) {
 $(document).ready(function () {
     compUiShell.validation.ShowErrorInPageTitle('dysac-validation-summary');
     
-    var printHtml = '<li><a href="#" id="dysac-print-button">Print' +
-        '<span class="govuk-visually-hidden"> your results</span></a></li>';
-
+    var printHtml = '<li><a href="#" id="dysac-print-button">Print your results</a></li>';
     $('.print-button-container').prepend(printHtml);
 
     var printBodyHtml = 'or <a id="dysac-print-button-body" href="#" onclick="window.print(); return false;" class="govuk-link govuk-link--no-visited-state">print</a>';
