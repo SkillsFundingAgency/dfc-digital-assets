@@ -66,6 +66,12 @@ nav {
   }
 }
 
+#whatYouToldUs {
+  color: #0b0c0c;
+  font-size: 2.25rem;
+  font-weight: 700;
+}
+
 // Change to desktop header to fix margin/padding
 .govuk-header__link--service-name {
   @include govuk-media-query(desktop) {
