@@ -1,11 +1,9 @@
-.popupsurveyclean {
-    text-align:center;
-}
+
 
 .rating {
-    width: 230px;
+    width: 200px;
     margin: 0 auto 1em;
-    font-size: 45px;
+    font-size: 2.5rem !important;
     overflow:hidden;
 }
 .rating input {
@@ -16,7 +14,7 @@ position: absolute;
 .rating a,
 .rating label {
     float:right;
-    color: rgb(5, 4, 4);
+    color: rgb(122, 122, 122);
     text-decoration: none;
     -webkit-transition: color .4s;
     -moz-transition: color .4s;
