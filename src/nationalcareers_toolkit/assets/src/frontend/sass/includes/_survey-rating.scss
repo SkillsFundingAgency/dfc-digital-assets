@@ -28,7 +28,8 @@ position: absolute;
 .rating a:hover ~ a,
 .rating a:focus,
 .rating a:focus ~ a		{
-    color: rgb(52, 197, 33);
+    color: #E3048A;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
     cursor: pointer;
 }
 .rating2 {
