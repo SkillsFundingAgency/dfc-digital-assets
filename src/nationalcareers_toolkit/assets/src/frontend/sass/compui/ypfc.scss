@@ -94,6 +94,31 @@
         background: transparent !important;
     }
 
+    // custom grid layout for the jump page hero banner title 
+    .custom-grid-jump-page-title-two-thirds {
+        box-sizing: border-box;
+        width: 50%;
+        padding: 0 15px;
+        padding-top: 0px;
+        padding-right: 15px;
+        padding-bottom: 0px;
+        padding-left: 15px;
+        float: left;
+    }
+
+    // custom grid layout for the jump page hero banner image (get the jump)
+    .custom-grid-jump-page-title-image-one-third {
+        box-sizing: border-box;
+        width: 50%;
+        padding: 0 15px;
+        padding-top: 0px;
+        padding-right: 15px;
+        padding-bottom: 0px;
+        padding-left: 15px;
+        float: right;
+        align-content: center;
+    }
+}
 
     @media only screen and (device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait) {
         .header-image-sub {
