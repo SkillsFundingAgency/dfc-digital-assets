@@ -16,13 +16,14 @@ if (dysacHelpers.isPage('app-page--results-long')) {
 
 $(document).ready(function () {
     compUiShell.validation.ShowErrorInPageTitle('dysac-validation-summary');
-    var printHtml = '<div><div class="app-related-items app-print-panel"><h3 class="govuk-heading-m">Print your results</h3>' +
-        '<p class="govuk-body"></p> <a href="#" id="dysac-print-button">Print' +
-        '<span class="govuk-visually-hidden"> your results</span></a><p></p></div></div>';
+    
+    var printHtml = '<li><a href="#" id="dysac-print-button">Print your results</a></li>';
+    $('.print-button-container').prepend(printHtml);
 
-    $('#print-button-container').html(printHtml);
-
-    $('#dysac-print-button').on('click', function () {
+    var printBodyHtml = 'or <a id="dysac-print-button-body" href="#" onclick="window.print(); return false;" class="govuk-link govuk-link--no-visited-state">print</a>';
+    $('#printBody').html(printBodyHtml);
+    
+    $('#dysac-print-button, #dysac-print-button-body').on('click', function () {
         window.print();
         return false;
     });
@@ -44,5 +45,12 @@ $(document).ready(function () {
             compUiShell.validation.ShowErrorInPageTitle('dysac-validation-summary');
             $('.validation-summary-errors').focus();
         }
+    });
+
+    $('#showMoreCategories a').on("click", function (e) {
+        $('#app-results-list > li').show();
+        $('#showMoreCategories').hide();
+
+        return false;
     });
 });
