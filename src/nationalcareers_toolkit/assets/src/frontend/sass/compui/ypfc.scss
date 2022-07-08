@@ -286,7 +286,7 @@
     margin-top: -50px;
 
     .govuk-body-m {
-        font-size: 1rem !important;
+        font-size: 1.1875rem !important;
     }
 
     .ypfc-box-heading {
@@ -329,11 +329,7 @@
         padding-top: 30px;
     }
 
-    .govuk-body-m {
-        font-size: 1.1rem;
-    }
-
-    .bold {
+   .bold {
         font-weight: bold;
     }
 
@@ -425,10 +421,6 @@
 
     .footer-wrapper {
         padding: 0 20px 0 20px;
-    }
-
-    .footer-wrapper {
-        font-size: 19px !important;
     }
 
     .footer-wrapper * {
@@ -607,6 +599,10 @@
             background: white;
         }
 
+        .ypfc-main-body .footer-wrapper p {
+            font-size: 1.1875rem !important;
+        }
+
         main {
             padding-bottom: 120px !important;
         }
@@ -675,6 +671,10 @@
             text-align: left;
         }
 
+        .ypfc-main-body .footer-wrapper p {
+            font-size: 1.1875rem !important;
+         }
+        
         .ec-hero-black {
             background: #000;
             margin: 1em calc(50% - 50vw);
