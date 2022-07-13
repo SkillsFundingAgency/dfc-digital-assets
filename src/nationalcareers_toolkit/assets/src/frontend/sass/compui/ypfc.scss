@@ -2,7 +2,7 @@
     #main-content {
         padding-top: 50px !important;
     }
-
+    
     .ypfc-hero {
         background: black;
         padding: 30px 0 30px 0;
@@ -75,6 +75,7 @@
         font-size: 24px;
     }
 
+
     .header-image-sub {
         width: 140px;
         position: relative;
@@ -94,193 +95,218 @@
         background: transparent !important;
     }
 
-
-    @media only screen and (device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait) {
-        .header-image-sub {
-            width: 130px;
-            position: absolute;
-            right: 20px !important;
-            bottom: 20px !important;
-            left: unset !important;
-        }
-
-
-        .header-image {
-            top: -80px !important;
-            right: -190px !important;
-            clip: rect(0,310px,250px,0) !important;
-        }
+    .ypfc-custom-hero-image {
+        width: 100%;
+        height: auto;
+        min-width: 100px;
+        max-width: 180px;
+        padding-top: .5em;
     }
 
-    @media only screen and (device-width: 360px) and (device-height: 740px) {
-        .header-image-sub {
-            left: 220px;
-        }
+    .ypfc-custom-grid-parent {
+        display: flex;
     }
 
-    @media only screen and (device-width: 740px) and (device-height: 360px) {
-        .header-image-sub {
-            right: 20px !important;
-            left: unset !important;
-        }
-
-        .header-image {
-            width: 400px !important;
-            clip: rect(0,360px,250px,0);
-            top: unset;
-            right: unset;
-        }
+    .ypfc-custom-grid-child {
+        padding: .5em;
     }
-
-    @media only screen and (device-width: 820px) and (device-height: 1180px) {
-        .header-image {
-            width: 400px !important;
-            clip: rect(0,360px,250px,0);
-        }
-    }
-
-    @media only screen and (device-width: 540px) and (device-height: 720px) {
-        .header-image-sub {
-            left: unset;
-            right: 20px;
-        }
-
-        .header-image {
-            clip: rect(0,350px,250px,0) !important;
-            right: -130px !important;
-            width: 400px !important;
-            top: -80px !important;
-        }
-    }
-
-    @media only screen and (device-width: 667px) and (device-height: 375px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape) {
-        .header-image-sub {
-            position: relative !important;
-            left: 160px !important;
-            bottom: -150px !important;
-        }
-
-        .header-image {
-            top: -80px !important;
-        }
-    }
-
-    @media only screen and (max-width: 768px) {
-        .ypfc-hero .govuk-grid-column-one-half {
-            width: 50%;
-        }
-
-        .header-image-sub {
-            width: 130px;
-            position: absolute;
-            left: 240px;
-            bottom: 20px !important;
-        }
-
-        .header-image {
-            position: absolute;
-            width: 400px;
-            right: -250px;
-            height: 250px;
-            top: -40px;
-            clip: rect(0,250px,250px,0);
-        }
-
-        .main-header {
-            font-size: 1.3rem !important;
-        }
-
-        .govuk-body-lead {
-            color: #fff;
-            font-size: 0.9rem !important;
-            text-align: left;
-        }
-
-
-        .strapline {
-            font-size: 1.1rem !important;
-            text-align: left;
-        }
-
-        .header-image {
-            width: 290px !important;
-            top: 10px !important;
-            right: -30px !important;
-            clip: unset !important;
-            height: 250px !important;
-        }
-
-        .header-image-sub {
-            left: 220px !important;
-        }
-    }
-
-    @media only screen and (device-width: 414px) and (device-height: 896px), (device-width: 390px) and (device-height: 844px), (device-width: 393px) and (device-height: 851px), (device-width: 412px) and (device-height: 915px), (device-width: 414px) and (device-height: 736px) {
-        .header-image-sub {
-            left: 250px !important;
-        }
-
-        .header-image {
-            top: -20px !important;
-        }
-    }
-
-    @media only screen and (device-width: 667px) and (device-height: 375px) {
-        .header-image-sub {
-            bottom: -150px !important;
-            left: 150px !important;
-        }
-
-        .header-image {
-            top: -60px !important;
-        }
-    }
-
-    @media only screen and (device-width: 768px) and (device-height: 1024px), (device-width: 740px) and (device-height: 360px), (device-width: 736px) and (device-height: 414px) {
-        .header-image {
-            top: -60px !important;
-            right: 0 !important;
-        }
-
-        .header-image-sub {
-            left: unset !important;
-        }
-    }
-
-    @media only screen and (device-width: 740px) and (device-height: 360px) {
-        .header-image {
-            right: 20px !important;
-        }
-
-        .header-image-sub {
-            right: 60px !important;
-        }
-    }
-
-    @media only screen and (device-width: 812px) and (device-height: 375px) {
-        .header-image {
-            width: 420px !important;
-        }
+    .ypfc-custom-grid-child-image-div {
+        margin-left: 16px; margin-right: 20px;
     }
 
 
-    @media only screen and (device-width: 736px) and (device-height: 414px) {
-        .header-image-sub {
-            right: 30px !important;
-        }
+}
+
+@media only screen and (device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait) {
+    .header-image-sub {
+        width: 130px;
+        position: absolute;
+        right: 20px !important;
+        bottom: 20px !important;
+        left: unset !important;
     }
 
-    @media only screen and (device-width: 428px) and (device-height: 926px) {
-        .header-image {
-            top: -40px !important;
-        }
-
-        .header-image-sub {
-            right: 10px !important;
-            left: 270px !important;
-        }
+    .header-image {
+        top: -80px !important;
+        right: -190px !important;
+        clip: rect(0, 310px, 250px, 0) !important;
     }
 }
+
+@media only screen and (device-width: 360px) and (device-height: 740px) {
+    .header-image-sub {
+        left: 220px;
+    }
+}
+
+@media only screen and (device-width: 740px) and (device-height: 360px) {
+    .header-image-sub {
+        right: 20px !important;
+        left: unset !important;
+    }
+
+    .header-image {
+        width: 400px !important;
+        clip: rect(0, 360px, 250px, 0);
+        top: unset;
+        right: unset;
+    }
+}
+
+@media only screen and (device-width: 820px) and (device-height: 1180px) {
+    .header-image {
+        width: 400px !important;
+        clip: rect(0, 360px, 250px, 0);
+    }
+}
+
+@media only screen and (device-width: 540px) and (device-height: 720px) {
+    .header-image-sub {
+        left: unset;
+        right: 20px;
+    }
+
+    .header-image {
+        clip: rect(0, 350px, 250px, 0) !important;
+        right: -130px !important;
+        width: 400px !important;
+        top: -80px !important;
+    }
+}
+
+@media only screen and (device-width: 667px) and (device-height: 375px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape) {
+    .header-image-sub {
+        position: relative !important;
+        left: 160px !important;
+        bottom: -150px !important;
+    }
+
+    .header-image {
+        top: -80px !important;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .ypfc-hero .govuk-grid-column-one-half {
+        width: 50%;
+    }
+
+    .header-image-sub {
+        width: 130px;
+        position: absolute;
+        left: 240px;
+        bottom: 20px !important;
+    }
+
+    .header-image {
+        position: absolute;
+        width: 400px;
+        right: -250px;
+        height: 250px;
+        top: -40px;
+        clip: rect(0, 250px, 250px, 0);
+    }
+
+    .main-header {
+        font-size: 1.3rem !important;
+    }
+
+    .govuk-body-lead {
+        color: #fff;
+        font-size: 0.9rem !important;
+        text-align: left;
+    }
+
+    .strapline {
+        font-size: 1.1rem !important;
+        text-align: left;
+    }
+
+    .header-image {
+        width: 290px !important;
+        top: 10px !important;
+        right: -30px !important;
+        clip: unset !important;
+        height: 250px !important;
+    }
+
+    .header-image-sub {
+        left: 220px !important;
+    }
+}
+
+@media only screen and (device-width: 414px) and (device-height: 896px),
+(device-width: 390px) and (device-height: 844px),
+(device-width: 393px) and (device-height: 851px),
+(device-width: 412px) and (device-height: 915px),
+(device-width: 414px) and (device-height: 736px) {
+    .header-image-sub {
+        left: 250px !important;
+    }
+
+    .header-image {
+        top: -20px !important;
+    }
+}
+
+@media only screen and (device-width: 667px) and (device-height: 375px) {
+    .header-image-sub {
+        bottom: -150px !important;
+        left: 150px !important;
+    }
+
+    .header-image {
+        top: -60px !important;
+    }
+}
+
+@media only screen and (device-width: 768px) and (device-height: 1024px),
+(device-width: 740px) and (device-height: 360px),
+(device-width: 736px) and (device-height: 414px) {
+    .header-image {
+        top: -60px !important;
+        right: 0 !important;
+    }
+
+    .header-image-sub {
+        left: unset !important;
+    }
+}
+
+@media only screen and (device-width: 740px) and (device-height: 360px) {
+    .header-image {
+        right: 20px !important;
+    }
+
+    .header-image-sub {
+        right: 60px !important;
+    }
+}
+
+@media only screen and (device-width: 812px) and (device-height: 375px) {
+    .header-image {
+        width: 420px !important;
+    }
+}
+
+
+@media only screen and (device-width: 736px) and (device-height: 414px) {
+    .header-image-sub {
+        right: 30px !important;
+    }
+}
+
+@media only screen and (device-width: 428px) and (device-height: 926px) {
+    .header-image {
+        top: -40px !important;
+    }
+
+    .header-image-sub {
+        right: 10px !important;
+        left: 270px !important;
+    }
+}
+
 ///////////////////////////////////////////////////
 #ypfc-main-body {
     margin-top: -50px;
@@ -446,7 +472,8 @@
         color: white;
     }
 
-    .footer-wrapper a, .footer-wrapper strong {
+    .footer-wrapper a,
+    .footer-wrapper strong {
         color: #1d70b8 !important;
     }
 
@@ -554,7 +581,7 @@
         #ypfc-hero .header-image {
             top: -80px !important;
             right: -190px !important;
-            clip: rect(0,310px,250px,0) !important;
+            clip: rect(0, 310px, 250px, 0) !important;
         }
 
         .ypfc-box {
@@ -708,7 +735,8 @@
             outline: 2px solid black;
         }
 
-        .ypfc-box .govuk-grid-column-two-thirds, .ypfc-box .govuk-grid-column-one-third {
+        .ypfc-box .govuk-grid-column-two-thirds,
+        .ypfc-box .govuk-grid-column-one-third {
             padding: 0;
         }
 
@@ -812,7 +840,10 @@
         }
     }
 
-    @media only screen and (device-width: 851px) and (device-height: 393px), (device-width: 915px) and (device-height: 412px), (device-width: 820px) and (device-height: 1180px), (device-width: 912px) and (device-height: 1368px) {
+    @media only screen and (device-width: 851px) and (device-height: 393px),
+    (device-width: 915px) and (device-height: 412px),
+    (device-width: 820px) and (device-height: 1180px),
+    (device-width: 912px) and (device-height: 1368px) {
         .ypfc-box {
             height: 280px !important;
         }
@@ -866,7 +897,8 @@
         }
     }
 
-    @media only screen and (device-width: 926px) and (device-height: 428px), (device-width: 896px) and (device-height: 414px) {
+    @media only screen and (device-width: 926px) and (device-height: 428px),
+    (device-width: 896px) and (device-height: 414px) {
 
         .ypfc-box {
             height: 290px !important;
@@ -885,3 +917,5 @@
         }
     }
 }
+
+
