@@ -1,4 +1,4 @@
-if(localStorage.getItem('Survey' && document.getElementById('popupsurvey')!= null)){
+if((localStorage.getItem('Survey') && document.getElementById('popupsurvey')!= null)){
     document.getElementById('popupsurvey').style.display = 'none'}
     else if (document.getElementById('popupsurvey')!= null){document.getElementById('popupsurvey').style.display = 'block'};
     document.querySelectorAll("#exitbtn").forEach(item => item.addEventListener('click', function(){
