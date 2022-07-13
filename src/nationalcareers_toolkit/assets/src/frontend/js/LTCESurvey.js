@@ -1,6 +1,6 @@
 //This JavaScript is the functionality for the next page and exit page buttons on the LTCE popup surveys
 var Surveyexist = document.getElementById('popupsurvey');
-if(typeof(Surveyexist) != 'undefined' && element != null){
+if(typeof(Surveyexist) != 'undefined' && Surveyexist != null){
 if(localStorage.getItem('Survey')){
 document.getElementById('popupsurvey').style.display = 'none'}
 else{document.getElementById('popupsurvey').style.display = 'block'}};
