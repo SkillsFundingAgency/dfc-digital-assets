@@ -350,7 +350,6 @@
 
     .ypfc-box {
         background: #F5F5F5;
-        height: 240px;
         padding-top: 20px;
         position: relative;
     }
@@ -643,7 +642,7 @@
             padding-top: 20px;
             padding: 15px;
             box-shadow: 1px 1px 10px 1px #cccccc;
-            height: 100%;
+            height: auto;
             text-align: left;
         }
 
@@ -845,7 +844,7 @@
     (device-width: 820px) and (device-height: 1180px),
     (device-width: 912px) and (device-height: 1368px) {
         .ypfc-box {
-            height: 280px !important;
+            height: 0px !important;
         }
 
         .traineeship-box {
@@ -901,7 +900,7 @@
     (device-width: 896px) and (device-height: 414px) {
 
         .ypfc-box {
-            height: 290px !important;
+            height: 0px !important;
         }
 
         .traineeship-box {
