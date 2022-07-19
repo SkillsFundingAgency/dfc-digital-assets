@@ -3,6 +3,7 @@
     "node_modules/govuk-frontend/govuk/all.js",
     "assets/src/frontend/js/cookie-banner.js",
     "assets/src/frontend/js/jp-feedback.js",
+    "assets/src/frontend/js/LTCESurvey.js",
     "node_modules/accessible-autocomplete/dist/accessible-autocomplete.min.js",
     "assets/src/frontend/js/dfcdigital.js",
     "assets/src/frontend/js/custom-validation.js",

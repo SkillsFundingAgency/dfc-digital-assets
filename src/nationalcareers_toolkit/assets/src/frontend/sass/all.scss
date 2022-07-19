@@ -4,7 +4,8 @@ $govuk-assets-path: "/nationalcareers_toolkit/" !default;
 
 /* Import all custom and default patterns */
 @import "components/colors";
-
+/*Survey CSS for LTCE data collection */
+@import "includes/survey-rating";
 /* Includes below to be deprecated soon */
 @import "includes/hero-banner";
 @import "includes/homepage";
