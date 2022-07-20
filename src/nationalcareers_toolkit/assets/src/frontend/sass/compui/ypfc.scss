@@ -2,7 +2,7 @@
     #main-content {
         padding-top: 50px !important;
     }
-    
+
     .ypfc-hero {
         background: black;
         padding: 30px 0 30px 0;
@@ -110,11 +110,32 @@
     .ypfc-custom-grid-child {
         padding: .5em;
     }
+
     .ypfc-custom-grid-child-image-div {
-        margin-left: 16px; margin-right: 20px;
+        align-self: center;
+
+        .get-the-jump-img {
+            width: 100px;
+        }
     }
+}
+
+.govuk-grid-row {
+    .get-the-jump-banner-flex {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        margin: 0;
+
+    }
+}
 
 
+//galaxy fold front screen portrait mode screen size 
+@media only screen and (max-width: 280px) {
+    .get-the-jump-img {
+        width: 50px !important;
+    }
 }
 
 @media only screen and (device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait) {
