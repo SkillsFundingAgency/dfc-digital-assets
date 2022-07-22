@@ -149,32 +149,38 @@ body.hasHover {
 		min-height: 170px;
 		background: #f3f2f1;
 		padding: 10px;
-		margin-bottom:15px;
+		margin-bottom: 15px;
 
 		@media (max-width: 1019px) {
-		    min-height: 190px;
+			min-height: 190px;
 		}
+
 		@media (max-width: 893px) {
-		    min-height: 215px;
+			min-height: 215px;
 		}
+
 		@media (max-width: 784px) {
-		    min-height: 240px;
+			min-height: 240px;
 		}
+
 		@media (max-width: 751px) {
-		    min-height: 265px;
+			min-height: 265px;
 		}
+
 		@media (max-width: 713px) {
-		    min-height: 290px;
+			min-height: 290px;
 		}
 
 		@media (max-width: 648px) {
-		    min-height: 315px;
+			min-height: 315px;
 		}
+
 		@media (max-width: 640px) {
-		    min-height: auto;
+			min-height: auto;
 		}
+
 		a {
-		    text-decoration: none;
+			text-decoration: none;
 		}
 
 		&:hover {
@@ -182,7 +188,7 @@ body.hasHover {
 			cursor: pointer;
 
 			h3, p {
-				color:#fff;
+				color: #fff;
 			}
 
 			h3 {
@@ -193,6 +199,10 @@ body.hasHover {
 		a {
 			text-decoration: none;
 		}
+	}
+
+	.card-140px-height {
+		min-height: 140px !important;
 	}
 }
 

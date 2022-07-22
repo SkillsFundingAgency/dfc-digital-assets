@@ -10,6 +10,7 @@
         margin: 1em calc(50% - 50vw);
     }
 
+
     .header-image-sub-extended {
         width: 223px;
     }
@@ -112,6 +113,7 @@
     }
 
     .ypfc-custom-grid-child-image-div {
+
         align-self: center;
 
         .get-the-jump-img {
@@ -136,7 +138,6 @@
     .get-the-jump-img {
         width: 50px !important;
     }
-}
 
 @media only screen and (device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait) {
     .header-image-sub {
@@ -210,6 +211,12 @@
 @media only screen and (max-width: 768px) {
     .ypfc-hero .govuk-grid-column-one-half {
         width: 50%;
+    }
+
+    .ypfc-responsive-img {
+        height: 120px !important;
+        margin-bottom: 10px !important;
+        object-fit: cover !important;
     }
 
     .header-image-sub {
@@ -336,6 +343,11 @@
         font-size: 1.1875rem !important;
     }
 
+    #ypfc-responsive-title {
+        padding-top: 10px !important;
+        margin-bottom: 0px !important;
+    }
+
     .ypfc-box-heading {
         color: #1d70b8 !important;
         text-decoration: underline;
@@ -379,7 +391,7 @@
         padding-top: 30px;
     }
 
-   .bold {
+    .bold {
         font-weight: bold;
     }
 
@@ -642,7 +654,7 @@
     @media only screen and (min-width: 769px) {
         .govuk-grid-row {
             padding: 0;
-            margin-top: 50px;
+            margin-top: 20px;
         }
 
         .ypfc-box {
@@ -712,10 +724,10 @@
     }
 
     @media only screen and (max-width: 768px) {
-        .dfc-app-pages-alignment-left p img {
-            height: 120px;
-            margin-bottom: 10px;
-            object-fit: cover;
+        .ypfc-responsive-img {
+            height: 120px !important;
+            margin-bottom: 10px !important;
+            object-fit: cover !important;
         }
 
         .govuk-heading-m {
@@ -730,8 +742,8 @@
 
         .ypfc-main-body .footer-wrapper p {
             font-size: 1.1875rem !important;
-         }
-        
+        }
+
         .ec-hero-black {
             background: #000;
             margin: 1em calc(50% - 50vw);
@@ -860,10 +872,7 @@
         }
     }
 
-    @media only screen and (device-width: 851px) and (device-height: 393px),
-    (device-width: 915px) and (device-height: 412px),
-    (device-width: 820px) and (device-height: 1180px),
-    (device-width: 912px) and (device-height: 1368px) {
+    @media only screen and (device-width: 851px) and (device-height: 393px), (device-width: 915px) and (device-height: 412px), (device-width: 820px) and (device-height: 1180px), (device-width: 912px) and (device-height: 1368px) {
         .ypfc-box {
             height: 0px !important;
         }
@@ -917,8 +926,7 @@
         }
     }
 
-    @media only screen and (device-width: 926px) and (device-height: 428px),
-    (device-width: 896px) and (device-height: 414px) {
+    @media only screen and (device-width: 926px) and (device-height: 428px), (device-width: 896px) and (device-height: 414px) {
 
         .ypfc-box {
             height: 0px !important;
