@@ -18,7 +18,7 @@ if((localStorage.getItem('Survey') && document.getElementById('popupsurvey')!= n
             else if (document.getElementById('extendedsurvey')!= null){document.getElementById('extendedsurvey').style.display = 'block'};
         
             document.querySelectorAll("#extendedexitbtn").forEach(item => item.addEventListener('click', function(){
-                    document.getElementById('popupsurvey').style.display = 'none'
+                    document.getElementById('extendedsurvey').style.display = 'none'
                     localStorage.setItem('extendedSurvey',true);
                 }));
             document.querySelectorAll("#extendedbtn").forEach(item => item.addEventListener('click', function(){
