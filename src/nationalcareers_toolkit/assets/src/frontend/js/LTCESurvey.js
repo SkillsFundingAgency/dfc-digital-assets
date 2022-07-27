@@ -2,6 +2,10 @@ if((localStorage.getItem('Survey') && document.getElementById('popupsurvey')!= n
     document.getElementById('popupsurvey').style.display = 'none'}
     else if (document.getElementById('popupsurvey')!= null){document.getElementById('popupsurvey').style.display = 'block'};
 
+if((localStorage.getItem('Survey') && document.getElementsByClassName('job-profile-feedback')!= null)){
+    document.getElementsByClassName('job-profile-feedback').style.display = 'block'
+};
+
     document.querySelectorAll("#exitbtn").forEach(item => item.addEventListener('click', function(){
             document.getElementById('popupsurvey').style.display = 'none'
             localStorage.setItem('Survey',true);
