@@ -114,9 +114,8 @@
 
     .ypfc-custom-grid-child-image-div {
         align-self: center;
-
         .get-the-jump-img {
-            width: 100px;
+            width: 125px;
         }
     }
 }
@@ -130,12 +129,14 @@
     }
 }
 
-
-//galaxy fold front screen portrait mode screen size
-@media only screen and (max-width: 280px) {
-    .get-the-jump-img {
-        width: 50px !important;
+@media only screen and (max-width: 320px) {
+    .govuk-grid-row .get-the-jump-banner-flex {
+        flex-direction: column;
     }
+    .ypfc-custom-grid-child-image-div {
+        align-self: start !important;
+    }
+}
 
     @media only screen and (device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait) {
         .header-image-sub {
@@ -936,4 +937,3 @@
             }
         }
     }
-}
