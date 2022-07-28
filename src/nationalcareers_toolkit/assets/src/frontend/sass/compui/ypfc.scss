@@ -129,12 +129,42 @@
     }
 }
 
+.govuk-grid-row.exam-results-banner {
+    display: flex;
+    flex-direction: row;
+    .exam-results-div {
+        width: 60%;
+    }
+
+    .exam-results-img-div {
+        width: 40%;
+        align-self: center;
+        .exam-results-img{
+            width: 100%;
+        }
+    }
+}
+
 @media only screen and (max-width: 320px) {
     .govuk-grid-row .get-the-jump-banner-flex {
         flex-direction: column;
     }
     .ypfc-custom-grid-child-image-div {
         align-self: start !important;
+    }
+}
+
+@media only screen and (max-width: 640px){
+    .govuk-grid-row.exam-results-banner {
+        flex-direction: column;
+
+        .exam-results-div {
+            width: 100%;
+        }
+
+        .exam-results-img-div {
+            width: 100%;
+        }
     }
 }
 
