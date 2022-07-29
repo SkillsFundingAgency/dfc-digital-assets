@@ -898,7 +898,10 @@
         }
     }
 
-    @media only screen and (device-width: 851px) and (device-height: 393px), (device-width: 915px) and (device-height: 412px), (device-width: 820px) and (device-height: 1180px), (device-width: 912px) and (device-height: 1368px) {
+    @media only screen and (device-width: 851px) and (device-height: 393px),
+    (device-width: 915px) and (device-height: 412px),
+    (device-width: 820px) and (device-height: 1180px),
+    (device-width: 912px) and (device-height: 1368px) {
         .ypfc-box {
             height: 0px !important;
         }
