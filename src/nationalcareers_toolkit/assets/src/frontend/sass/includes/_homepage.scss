@@ -202,7 +202,13 @@ body.hasHover {
 	}
 
 	.card-140px-height {
-		min-height: 140px !important;
+		min-height: 140px;
+	}
+}
+
+@media only screen and (max-width: 640px){
+	.card-140px-height{
+		min-height: 100px !important;
 	}
 }
 
