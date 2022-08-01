@@ -14,7 +14,7 @@ body {max-width:100% !important;
         margin: 1em calc(50% - 50vw);
     }
 
-
+   
     .header-image-sub-extended {
         width: 223px;
     }
@@ -280,6 +280,14 @@ body {max-width:100% !important;
             margin-top: -50px !important;
             width: 97% !important;
         }
+        .workstudy-wrapper {
+            margin-top:-100px;
+        }
+        ypfc-custom-grid-child-image-div {
+            margin-left: 16px;
+            margin-right: 20px;
+        }
+        
     }
 
     @media only screen and (device-width: 414px) and (device-height: 896px), (device-width: 390px) and (device-height: 844px), (device-width: 393px) and (device-height: 851px), (device-width: 412px) and (device-height: 915px), (device-width: 414px) and (device-height: 736px) {
@@ -423,7 +431,7 @@ body {max-width:100% !important;
         position: absolute;
     }
 
-    .ypfc-box .ncs-home-grid-wrapper:hover {
+    .ypfc-box .Fome-grid-wrapper:hover {
         outline: 2px solid black;
         border-radius: 2px;
     }
@@ -981,6 +989,31 @@ body {max-width:100% !important;
             height: 200px !important;
             margin-bottom: 10px !important;
             object-fit: cover !important;
+        }
+
+        #test-id2 {
+            height: 200px !important;
+            margin-bottom: 10px !important;
+            object-fit: cover !important;
+        }
+
+        #test-id3 {
+            height: 200px !important;
+            margin-bottom: 10px !important;
+            object-fit: cover !important;
+        }
+
+        ypfc-custom-grid-child-image-div {
+            margin-left: 16px;
+            margin-right: 20px;
+
+            #exam {
+                width: 100%;
+            }
+            .get-the-jump-banner-flex {
+                display:block; 
+                float:left; 
+            }
         }
     }
 }
