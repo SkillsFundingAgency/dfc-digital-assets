@@ -305,6 +305,55 @@
         top: -20px !important;
     }
 }
+// edited 
+@media only screen and (max-width: 912px) and (min-width: 769px) {
+    .ypfc-responsive-img {
+        height: 200px !important;
+        margin-bottom: 10px !important;
+        object-fit: cover !important;
+    }
+
+    .ypfc-responsive-text {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .govuk-grid-row.workandstudy {
+        display: inline-block;
+        height: 330px;
+        margin-left: 15px !important;
+        margin-right: 15px !important;
+        margin-top: -30px !important;
+        width: 97% !important;
+    }
+    .wrapper-top {
+        margin-top:-20px;
+    }
+    .wrapper-top-vt {
+        margin-top: -40px;
+    }
+
+    .mobile-work {
+        margin-top:-80px;
+    }
+
+    .mobile-study {
+        margin-top: -110px;
+    }
+    .wrapper-study-title {
+        margin-bottom:-50px;
+    }
+    .wrapper-work-title {
+        margin-bottom: -30px;
+    }
+    .wrapper-get-help-deciding-next-step-title {
+        margin-top:-140px;
+    }
+    
+}
+   
+
+
 
 @media only screen and (device-width: 667px) and (device-height: 375px) {
     .header-image-sub {
