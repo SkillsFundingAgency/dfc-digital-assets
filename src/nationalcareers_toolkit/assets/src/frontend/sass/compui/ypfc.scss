@@ -305,7 +305,7 @@
         top: -20px !important;
     }
 }
-
+// edited 
 @media only screen and (max-width: 912px) and (min-width: 769px) {
     .ypfc-responsive-img {
         height: 200px !important;
@@ -332,6 +332,24 @@
     .wrapper-top-vt {
         margin-top: -40px;
     }
+
+    .mobile-work {
+        margin-top:-80px;
+    }
+
+    .mobile-study {
+        margin-top: -110px;
+    }
+    .wrapper-study-title {
+        margin-bottom:-50px;
+    }
+    .wrapper-work-title {
+        margin-bottom: -30px;
+    }
+    .wrapper-get-help-deciding-next-step-title {
+        margin-top:-140px;
+    }
+    
 }
 
 @media only screen and (device-width: 667px) and (device-height: 375px) {
