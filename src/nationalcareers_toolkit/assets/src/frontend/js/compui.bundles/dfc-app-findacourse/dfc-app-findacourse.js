@@ -26,26 +26,11 @@ $(document).ready(function () {
         return false;
     });
 
-
     $(document).ready(function () {
-        $('.find-a-course-page #location-input').on('blur keyup', function (e) {
-            if (e.type === 'blur' || e.keyCode === 13) {
-                $('#location-input').autocomplete('close');
-                makeAjaxCall(getParams());
-            }
-            e.preventDefault();
-            return false;
-        });
-
-        $('.find-a-course-page #search-input').on('blur keyup', function (e) {
-            if (e.type === 'blur' || e.keyCode === 13) {
-                makeAjaxCall(getParams());
-            }
-            e.preventDefault();
-            return false;
+        $('.find-a-course-page #search-button').on('click', function (e) {
+            makeAjaxCall(getParams());
         });
     });
-
 
     $('.find-a-course-page #courseType input[type=checkbox]').change(function (e) {
         $('.find-a-course-page #suggest-location').hide();
@@ -150,10 +135,21 @@ function anyFiltersSelected(paramValues) {
     return false;
 }
 
+function showHideSearchResult(paramValues) {
+    if ((paramValues.SearchTerm !== '' || paramValues.Town !== '') ||
+        (paramValues.SearchTerm === '' && paramValues.Town === '')) {
+        $('.find-a-course-page #search-result-block').show();
+        $('.find-a-course-page #home-block').hide()
+    }
+    else {
+        $('.find-a-course-page #search-result-block').hide();
+        $('.find-a-course-page #home-block').show();
+    }
+}
+
 function makeAjaxCall(paramValues) {
 
     console.info("making ajax request");
-
     var stringifield = JSON.stringify(paramValues, paramReplacer);
     var apiCall = {
         url: '/api/Ajax/Action',
@@ -183,6 +179,7 @@ function makeAjaxCall(paramValues) {
             $('.fac-result-count').html("");
             $('.fac-result-count').html(addCommas(resultCount));
             (resultCount > 0) ? $('.no-count-block').show() : $('.no-count-block').hide();
+            showHideSearchResult(paramValues);
             showHideClearFilters(anyFiltersSelected(paramValues), paramValues.SearchTerm);
             paramValues.D = showDistanceSelector === true ? 1 : 0;
             showHideDistanceInput(showDistanceSelector);
@@ -258,18 +255,18 @@ function getParams() {
 
     var paramValues = {
         SearchTerm: trimmedSearchTerm,
-        Distance: distance,
+        Distance: (distance.trim().length === 0) ? '' : distance,
         Town: town,
-        OrderByValue: orderByValue,
-        StartDate: startDate,
+        OrderByValue: (orderByValue.trim().length === 0) ? '' : orderByValue,
+        StartDate: (startDate.trim().length === 0) ? '' : startDate,
         CourseType: courseType.toString(),
         CourseHours: courseHours.toString(),
         CourseStudyTime: courseStudyTime.toString(),
         FilterA: true,
-        Page: parseInt(page),
+        Page: Number.isNaN(parseInt(page)) ? 1 : parseInt(page),
         D: 0,
         Coordinates: coordinates,
-        CampaignCode: campaignCode,
+        CampaignCode: (campaignCode.trim().length === 0) ? '' : campaignCode,
         QualificationLevels: qualificationLevels.toString()
     };
 
