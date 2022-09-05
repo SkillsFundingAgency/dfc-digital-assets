@@ -255,10 +255,10 @@ function getParams() {
 
     var paramValues = {
         SearchTerm: trimmedSearchTerm,
-        Distance: distance ?? '',
+        Distance: (distance.trim().length === 0) ? '' : distance,
         Town: town,
-        OrderByValue: orderByValue ?? '',
-        StartDate: startDate ?? '',
+        OrderByValue: (orderByValue.trim().length === 0) ? '' : orderByValue,
+        StartDate: (startDate.trim().length === 0) ? '' : startDate,
         CourseType: courseType.toString(),
         CourseHours: courseHours.toString(),
         CourseStudyTime: courseStudyTime.toString(),
@@ -266,7 +266,7 @@ function getParams() {
         Page: Number.isNaN(parseInt(page)) ? 1 : parseInt(page),
         D: 0,
         Coordinates: coordinates,
-        CampaignCode: campaignCode ?? '',
+        CampaignCode: (campaignCode.trim().length === 0) ? '' : campaignCode,
         QualificationLevels: qualificationLevels.toString()
     };
 
