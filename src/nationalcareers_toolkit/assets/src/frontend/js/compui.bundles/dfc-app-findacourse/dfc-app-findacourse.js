@@ -26,10 +26,8 @@ $(document).ready(function () {
         return false;
     });
 
-    $(document).ready(function () {
-        $('.find-a-course-page #search-button').on('click', function (e) {
-            makeAjaxCall(getParams());
-        });
+    $('.find-a-course-page #search-button').on('click', function (e) {
+        makeAjaxCall(getParams());
     });
 
     $('.find-a-course-page #courseType input[type=checkbox]').change(function (e) {
@@ -252,13 +250,12 @@ function getParams() {
 
     //Strip the special characters
     var trimmedSearchTerm = searchTerm.replace(/[^A-Z0-9 ]+/ig, "");
-
     var paramValues = {
         SearchTerm: trimmedSearchTerm,
-        Distance: (distance.trim().length === 0) ? '' : distance,
+        Distance: (typeof distance == 'undefined' && distance) ? '' : distance,
         Town: town,
-        OrderByValue: (orderByValue.trim().length === 0) ? '' : orderByValue,
-        StartDate: (startDate.trim().length === 0) ? '' : startDate,
+        OrderByValue: (typeof orderByValue == 'undefined' && orderByValue) ? '' : orderByValue,
+        StartDate: (typeof startDate == 'undefined' && startDate) ? '' : startDate,
         CourseType: courseType.toString(),
         CourseHours: courseHours.toString(),
         CourseStudyTime: courseStudyTime.toString(),
@@ -266,7 +263,7 @@ function getParams() {
         Page: Number.isNaN(parseInt(page)) ? 1 : parseInt(page),
         D: 0,
         Coordinates: coordinates,
-        CampaignCode: (campaignCode.trim().length === 0) ? '' : campaignCode,
+        CampaignCode: (typeof campaignCode == 'undefined' && campaignCode) ? '' : campaignCode,
         QualificationLevels: qualificationLevels.toString()
     };
 

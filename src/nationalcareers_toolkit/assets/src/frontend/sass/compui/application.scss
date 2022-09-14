@@ -1,0 +1,326 @@
+// global styles for <a> and <p> tags
+$govuk-global-styles: true;
+$govuk-new-link-styles: true;
+
+// We can't mount GOV.UK Frontend's assets at root as it's done automatically by the extensions framework.
+$govuk-assets-path: '/govuk/assets/';
+@import url(https://dev-cdn.nationalcareersservice.org.uk/nationalcareers_toolkit/css/all.min.css);
+
+// Import GOV.UK Frontend and any extension styles if extensions have been configured
+//@import "lib/extensions/extensions";
+
+// Patterns that aren't in Frontend
+//@import "patterns/step-by-step-header";
+//@import "patterns/step-by-step-nav";
+//@import "patterns/step-by-step-related";
+//@import "patterns/task-list";
+//@import "patterns/related-items";
+
+// Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
+
+.govuk-header__logo {
+    display: none;
+}
+
+.govuk-header__content {
+    width: 100%;
+}
+
+.govuk-phase-banner__content__tag__prototype {
+    background-color: #DD1688;
+}
+
+.course-details {
+    font-size: 16px;
+}
+
+.primary-hero {
+    padding: 15;
+}
+
+.primary-hero .govuk-width-container {
+    padding: 0 20px 0;
+    box-sizing: border-box;
+}
+
+.primary-hero .govuk-heading-l {
+    color: white;
+}
+
+.primary-hero .input-wrapper {
+    width: 100%;
+}
+
+.fac-search-hero .govuk-width-container {
+    padding: 0;
+}
+
+.fac-search-results-list {
+    clear: both;
+}
+
+.fac-search-sort {
+    display: block;
+    float: right;
+}
+
+.fac-search-sort label.govuk-label {
+    display: inline-block;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.fac-show-courses-count {
+    display: block;
+    float: left;
+    padding-top: 0.5rem;
+}
+
+.fac-search-label {
+    color: white !important;
+    text-indent: 0;
+    position: relative;
+}
+
+.fac-endscreen {
+    position: relative;
+    display: block;
+}
+
+.fac-proto-img__endscreen {
+    width: 100%;
+}
+
+.fac-endscreen-backlink {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: relative;
+}
+
+.fac-proto-watermark {
+    width: 100%;
+    height: 50%;
+    display: block;
+    position: absolute;
+    color: #dddddd;
+    opacity: 60%;
+    font-size: 7em;
+    transform: rotate(-45deg);
+    top: 10%;
+    left: 5%;
+    overflow: hidden;
+}
+
+.fac-proto-success-banner {
+    width: 90%;
+    position: absolute;
+    color: white;
+    opacity: 80%;
+    font-size: 3em;
+    top: 20%;
+    left: 0;
+    overflow: hidden;
+    background: green;
+    text-align: center;
+    vertical-align: middle;
+    padding: 5%;
+    transform: rotate(-30deg);
+}
+
+.fac-proto-goback-banner {
+    width: 90%;
+    position: absolute;
+    color: white;
+    opacity: 80%;
+    font-size: 3em;
+    top: 20%;
+    left: 0;
+    overflow: hidden;
+    background: grey;
+    text-align: center;
+    vertical-align: middle;
+    padding: 5%;
+    transform: rotate(-30deg);
+}
+
+.fac-feature-box {
+    padding: 30px 30px 10px 30px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.fac-feature-box {
+    background-color: #f3f2f1;
+}
+
+.fac-feature-box__image {
+    background-color: white;
+}
+
+.fac-feature-box__card {
+    background-color: #f3f2f1;
+    padding: 20px;
+}
+
+.fac-feature-box__content > img {
+    width: 100%;
+}
+
+.fac-feature-box .govuk-button {
+    width: 100%;
+    float: none;
+}
+
+span.govuk-details__summary-text.govuk-heading-s {
+    margin-bottom: 0;
+}
+
+dt.govuk-summary-list__key {
+    width: 40%;
+}
+
+.fac-pagination__list-items {
+    padding-inline-start: 0px;
+    display: block;
+    float: left;
+    margin: 0;
+}
+
+.fac-pagination__summary {
+    font-family: inherit;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
+    font-size: 14px;
+    font-size: .875rem;
+    line-height: 1.1428571429;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    float: right
+}
+
+.fac-pagination__summary {
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 1.25
+}
+
+.fac-pagination__summary {
+    padding-bottom: 10px
+}
+
+.fac-pagination__summary {
+    padding-top: 5px
+}
+
+.fac-pagination__item {
+    display: inline-block
+}
+
+.fac-pagination__link {
+    font-family: inherit;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
+    font-size: 14px;
+    font-size: .875rem;
+    line-height: 1.1428571429;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-decoration: none
+}
+
+.fac-pagination__link {
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 1.25;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    padding-left: 10px;
+    padding-right: 10px
+}
+
+.fac-pagination__link:hover,
+.fac-pagination__link:focus {
+    font-family: inherit;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
+    font-size: 14px;
+    font-size: .875rem;
+    line-height: 1.1428571429;
+    outline: 3px solid #fd0
+}
+
+.fac-pagination__link:hover,
+.fac-pagination__link:focus {
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 1.25
+}
+
+.fac-pagination__link--current {
+    font-family: inherit;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
+    font-size: 14px;
+    font-size: .875rem;
+    line-height: 1.1428571429;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-weight: bold;
+    border: none;
+    pointer-events: none;
+    cursor: default
+}
+
+.fac-pagination__link--current:link,
+.fac-pagination__link--current:visited {
+    color: #000
+}
+
+
+
+@media (min-width: 40.0625em) {
+
+    .hide-button {
+        display: none;
+    }
+}
+
+@media (max-width: 40.0625em) {
+    .fac-toggle-filters[open="true"] .govuk-details__text {
+        display: none;
+    }
+
+    .showContent {
+        display: none;
+    }
+
+    .fac-proto-watermark {
+        font-size: 4em;
+    }
+
+    .fac-search-sort {
+        display: block;
+        float: left;
+    }
+}
+
+@media (max-width: 900px) {
+    .fac-pagination__summary, .fac-pagination__list-items {
+        float: none;
+        text-align: center;
+    }
+
+    .primary-hero .govuk-width-container {
+        padding: 0 30px 0;
+        box-sizing: border-box;
+    }
+}
