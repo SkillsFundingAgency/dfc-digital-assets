@@ -61,6 +61,13 @@ $(document).ready(function () {
     });
 
     $("#applyfilters-button").hide();
+
+    $('.find-a-course-page').on('click', 'a#clear-filters', function (e) {
+        var paramValues = clearFilters(getParams());
+        makeAjaxCall(paramValues);
+        e.preventDefault();
+        return false;
+    });
 });
 
 function addCommas(nStr) {
@@ -73,6 +80,31 @@ function addCommas(nStr) {
         x1 = x1.replace(rgx, '$1' + ',' + '$2');
     }
     return x1 + x2;
+}
+
+function clearFilters(paramValues) {
+    paramValues.CourseType = '';
+    paramValues.CourseHours = '';
+    paramValues.CourseStudyTime = '';
+    paramValues.QualificationLevels = '';
+
+    $('.find-a-course-page #courseType input[type=checkbox]').each(function () {
+        $(this).prop('checked', false)
+    });
+
+    $('.find-a-course-page #courseHours input[type=checkbox]').each(function () {
+        $(this).prop('checked', false)
+    });
+
+    $('.find-a-course-page #courseStudyTime input[type=checkbox]').each(function () {
+        $(this).prop('checked', false)
+    });
+
+    $('.find-a-course-page #qualificationLevels input[type=checkbox]').each(function () {
+        $(this).prop('checked', false)
+    });
+
+    return paramValues;
 }
 
 function CheckLocationAndSearchIfValid(e) {
@@ -108,10 +140,10 @@ function showHideDistanceInput(show) {
 function showHideClearFilters(show, searchTerm) {
     if (show === true) {
         if (typeof ($('#facFreeCourseSearch:input')[0]) != "undefined" && $('#facFreeCourseSearch:input')[0].value === 'True') {
-            $(".fac-filters-block").html("<p id='fac-clear-filters'><a href='/find-a-course/searchFreeCourse?searchTerm=" + searchTerm + "' aria-label='ClearFilters'>Clear filters</a></p>");
+            $(".fac-filters-block").html("<p id='fac-clear-filters'><a id='clear-filters' href='/find-a-course/searchFreeCourse?searchTerm=" + searchTerm + "' aria-label='ClearFilters'>Clear filters</a></p>");
         }
         else {
-            $(".fac-filters-block").html("<p id='fac-clear-filters'><a href='/find-a-course/searchcourse?searchTerm=" + searchTerm + "' aria-label='ClearFilters'>Clear filters</a></p>");
+            $(".fac-filters-block").html("<p id='fac-clear-filters'><a id='clear-filters' href='/find-a-course/searchcourse?searchTerm=" + searchTerm + "' aria-label='ClearFilters'>Clear filters</a></p>");
         }
         $(".fac-filters-block").show();
     }
