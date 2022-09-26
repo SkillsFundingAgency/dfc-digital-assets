@@ -26,26 +26,9 @@ $(document).ready(function () {
         return false;
     });
 
-
-    $(document).ready(function () {
-        $('.find-a-course-page #location-input').on('blur keyup', function (e) {
-            if (e.type === 'blur' || e.keyCode === 13) {
-                $('#location-input').autocomplete('close');
-                makeAjaxCall(getParams());
-            }
-            e.preventDefault();
-            return false;
-        });
-
-        $('.find-a-course-page #search-input').on('blur keyup', function (e) {
-            if (e.type === 'blur' || e.keyCode === 13) {
-                makeAjaxCall(getParams());
-            }
-            e.preventDefault();
-            return false;
-        });
+    $('.find-a-course-page #search-button').on('click', function (e) {
+        makeAjaxCall(getParams());
     });
-
 
     $('.find-a-course-page #courseType input[type=checkbox]').change(function (e) {
         $('.find-a-course-page #suggest-location').hide();
@@ -78,6 +61,13 @@ $(document).ready(function () {
     });
 
     $("#applyfilters-button").hide();
+
+    $('.find-a-course-page').on('click', 'a#clear-filters', function (e) {
+        var paramValues = clearFilters(getParams());
+        makeAjaxCall(paramValues);
+        e.preventDefault();
+        return false;
+    });
 });
 
 function addCommas(nStr) {
@@ -90,6 +80,31 @@ function addCommas(nStr) {
         x1 = x1.replace(rgx, '$1' + ',' + '$2');
     }
     return x1 + x2;
+}
+
+function clearFilters(paramValues) {
+    paramValues.CourseType = '';
+    paramValues.CourseHours = '';
+    paramValues.CourseStudyTime = '';
+    paramValues.QualificationLevels = '';
+
+    $('.find-a-course-page #courseType input[type=checkbox]').each(function () {
+        $(this).prop('checked', false)
+    });
+
+    $('.find-a-course-page #courseHours input[type=checkbox]').each(function () {
+        $(this).prop('checked', false)
+    });
+
+    $('.find-a-course-page #courseStudyTime input[type=checkbox]').each(function () {
+        $(this).prop('checked', false)
+    });
+
+    $('.find-a-course-page #qualificationLevels input[type=checkbox]').each(function () {
+        $(this).prop('checked', false)
+    });
+
+    return paramValues;
 }
 
 function CheckLocationAndSearchIfValid(e) {
@@ -125,10 +140,10 @@ function showHideDistanceInput(show) {
 function showHideClearFilters(show, searchTerm) {
     if (show === true) {
         if (typeof ($('#facFreeCourseSearch:input')[0]) != "undefined" && $('#facFreeCourseSearch:input')[0].value === 'True') {
-            $(".fac-filters-block").html("<p id='fac-clear-filters'><a href='/find-a-course/searchFreeCourse?searchTerm=" + searchTerm + "' aria-label='ClearFilters'>Clear filters</a></p>");
+            $(".fac-filters-block").html("<p id='fac-clear-filters'><a id='clear-filters' href='/find-a-course/searchFreeCourse?searchTerm=" + searchTerm + "' aria-label='ClearFilters'>Clear filters</a></p>");
         }
         else {
-            $(".fac-filters-block").html("<p id='fac-clear-filters'><a href='/find-a-course/searchcourse?searchTerm=" + searchTerm + "' aria-label='ClearFilters'>Clear filters</a></p>");
+            $(".fac-filters-block").html("<p id='fac-clear-filters'><a id='clear-filters' href='/find-a-course/searchcourse?searchTerm=" + searchTerm + "' aria-label='ClearFilters'>Clear filters</a></p>");
         }
         $(".fac-filters-block").show();
     }
@@ -150,10 +165,21 @@ function anyFiltersSelected(paramValues) {
     return false;
 }
 
+function showHideSearchResult(paramValues) {
+    if ((paramValues.SearchTerm !== '' || paramValues.Town !== '') ||
+        (paramValues.SearchTerm === '' && paramValues.Town === '')) {
+        $('.find-a-course-page #search-result-block').show();
+        $('.find-a-course-page #home-block').hide()
+    }
+    else {
+        $('.find-a-course-page #search-result-block').hide();
+        $('.find-a-course-page #home-block').show();
+    }
+}
+
 function makeAjaxCall(paramValues) {
 
     console.info("making ajax request");
-
     var stringifield = JSON.stringify(paramValues, paramReplacer);
     var apiCall = {
         url: '/api/Ajax/Action',
@@ -183,6 +209,7 @@ function makeAjaxCall(paramValues) {
             $('.fac-result-count').html("");
             $('.fac-result-count').html(addCommas(resultCount));
             (resultCount > 0) ? $('.no-count-block').show() : $('.no-count-block').hide();
+            showHideSearchResult(paramValues);
             showHideClearFilters(anyFiltersSelected(paramValues), paramValues.SearchTerm);
             paramValues.D = showDistanceSelector === true ? 1 : 0;
             showHideDistanceInput(showDistanceSelector);
@@ -255,21 +282,20 @@ function getParams() {
 
     //Strip the special characters
     var trimmedSearchTerm = searchTerm.replace(/[^A-Z0-9 ]+/ig, "");
-
     var paramValues = {
         SearchTerm: trimmedSearchTerm,
-        Distance: distance,
+        Distance: (typeof distance == 'undefined' && distance) ? '' : distance,
         Town: town,
-        OrderByValue: orderByValue,
-        StartDate: startDate,
+        OrderByValue: (typeof orderByValue == 'undefined' && orderByValue) ? '' : orderByValue,
+        StartDate: (typeof startDate == 'undefined' && startDate) ? '' : startDate,
         CourseType: courseType.toString(),
         CourseHours: courseHours.toString(),
         CourseStudyTime: courseStudyTime.toString(),
         FilterA: true,
-        Page: parseInt(page),
+        Page: Number.isNaN(parseInt(page)) ? 1 : parseInt(page),
         D: 0,
         Coordinates: coordinates,
-        CampaignCode: campaignCode,
+        CampaignCode: (typeof campaignCode == 'undefined' && campaignCode) ? '' : campaignCode,
         QualificationLevels: qualificationLevels.toString()
     };
 

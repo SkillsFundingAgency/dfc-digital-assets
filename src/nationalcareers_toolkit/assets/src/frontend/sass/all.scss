@@ -46,6 +46,9 @@ $app-text-light: #646C70;
 @import "compui/dfc-app-fac.scss";
 @import "compui/erh.scss";
 @import "compui/ypfc.scss";
+@import "compui/application.scss";
+@import "compui/_typography.scss";
+@import "compui/_width-container.scss";
 
 /* Import all custom and default patterns */
 @import "patterns/all";
