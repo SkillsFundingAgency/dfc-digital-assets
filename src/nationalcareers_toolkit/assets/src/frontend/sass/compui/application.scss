@@ -313,3 +313,7 @@ dt.govuk-summary-list__key {
         box-sizing: border-box;
     }
 }
+
+.govuk-width-container.margin-fix {
+    margin: 0 auto !important;
+}
