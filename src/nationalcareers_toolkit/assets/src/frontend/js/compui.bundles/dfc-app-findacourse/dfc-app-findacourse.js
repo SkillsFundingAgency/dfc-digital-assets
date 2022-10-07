@@ -167,7 +167,7 @@ function anyFiltersSelected(paramValues) {
 
 function showHideSearchResult(paramValues) {
     if ((paramValues.SearchTerm !== '' || paramValues.Town !== '') ||
-        (paramValues.SearchTerm === '' && paramValues.Town === '')) {
+        (paramValues.SearchTerm === '' && paramValues.Town === '' && paramValues.CampaignCode !== '')) {
         $('.find-a-course-page #search-result-block').show();
         $('.find-a-course-page #home-block').hide()
     }
