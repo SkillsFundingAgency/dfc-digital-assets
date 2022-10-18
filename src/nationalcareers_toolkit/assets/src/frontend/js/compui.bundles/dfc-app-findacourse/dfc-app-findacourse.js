@@ -317,7 +317,7 @@ if (window.location.href.indexOf("find-a-course") > -1) {
                     inLocationMode = false;
                 }
             },
-            minLength: 3,
+            minLength: 2,
             position: {
                 my: "left top",
                 at: "left bottom"
@@ -381,9 +381,8 @@ function updateLocationSuggestions(dataModel) {
     if (dataModel.usingAutoSuggestedLocation) {
         $('.find-a-course-page #location-input').val(dataModel.autoSuggestedTown)
         $('.find-a-course-page #coordinates').val(dataModel.autoSuggestedCoordinates)
-
         if (dataModel.didYouMeanLocations.length > 0) {
-            $('.find-a-course-page #suggest-location').show();
+            //$('.find-a-course-page #suggest-location').show();
             var didYouMeanList = $('.find-a-course-page #suggested-locations')
             didYouMeanList.empty();
             for (ii = 0; ii < dataModel.didYouMeanLocations.length; ii++) {
