@@ -19,7 +19,6 @@ $(document).ready(function () {
     });
 
     $('.find-a-course-page #orderBy-Input').on('change', function (e) {
-        console.info("params: ", getParams);
         makeAjaxCall(getParams());
         e.preventDefault();
         return false;
@@ -112,9 +111,11 @@ function CheckLocationAndSearchIfValid(e) {
 
 function generateClearLink(d) {
     $('#fac-result-list a').each(function (index, element) {
-        var isExternalLink = element.getAttribute('href').indexOf('http') === 0;
-        if (!isExternalLink) {
-            element.href = element.href.replace('&D=0', '').replace('&D=1', '') + '&D=' + d;
+        if (element.getAttribute('href')) {
+            var isExternalLink = element.getAttribute('href').indexOf('http') === 0;
+            if (!isExternalLink) {
+                element.href = element.href.replace('&D=0', '').replace('&D=1', '') + '&D=' + d;
+            }
         }
     });
 }
