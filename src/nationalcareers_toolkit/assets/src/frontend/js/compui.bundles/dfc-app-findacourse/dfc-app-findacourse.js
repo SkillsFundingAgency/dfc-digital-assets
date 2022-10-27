@@ -6,22 +6,20 @@ $(document).ready(function () {
         if (searchTerm == null) {
             searchTerm = urlParams.get('SearchTerm');
         }
-        showHideDistanceInput(distance != null && distance === "1");
+        showHideDistanceInput(distance != null && distance === "1", null);
         generateClearLink(distance != null && distance === "1" ? 1 : 0);
         showHideClearFilters(anyFiltersSelected(getParams()), searchTerm);
     });
 
 
     $('.find-a-course-page #distance-select, .find-a-course-page #startdate-select').on('change', function (e) {
-        $('.find-a-course-page #suggest-location').hide();
-        makeAjaxCall(getParams());
+        makeAjaxCall(getParams(true));
         e.preventDefault();
         return false;
     });
 
     $('.find-a-course-page #orderBy-Input').on('change', function (e) {
-        $('.find-a-course-page #suggest-location').hide();
-        makeAjaxCall(getParams());
+        makeAjaxCall(getParams(true));
         e.preventDefault();
         return false;
     });
@@ -31,27 +29,23 @@ $(document).ready(function () {
     });
 
     $('.find-a-course-page #courseType input[type=checkbox]').change(function (e) {
-        $('.find-a-course-page #suggest-location').hide();
-        makeAjaxCall(getParams());
+        makeAjaxCall(getParams(true));
         e.preventDefault();
         return false;
     });
     $('#courseHours input[type=checkbox]').change(function (e) {
-        $('.find-a-course-page #suggest-location').hide();
-        makeAjaxCall(getParams());
+        makeAjaxCall(getParams(true));
         e.preventDefault();
         return false;
     });
     $('.find-a-course-page #courseStudyTime input[type=checkbox]').change(function (e) {
-        $('.find-a-course-page #suggest-location').hide();
-        makeAjaxCall(getParams());
+        makeAjaxCall(getParams(true));
         e.preventDefault();
         return false;
     });
 
     $('.find-a-course-page #qualificationLevels input[type=checkbox]').change(function (e) {
-        $('.find-a-course-page #suggest-location').hide();
-        makeAjaxCall(getParams());
+        makeAjaxCall(getParams(true));
         e.preventDefault();
         return false;
     });
@@ -117,14 +111,16 @@ function CheckLocationAndSearchIfValid(e) {
 
 function generateClearLink(d) {
     $('#fac-result-list a').each(function (index, element) {
-        var isExternalLink = element.getAttribute('href').indexOf('http') === 0;
-        if (!isExternalLink) {
-            element.href = element.href.replace('&D=0', '').replace('&D=1', '') + '&D=' + d;
+        if (element.getAttribute('href')) {
+            var isExternalLink = element.getAttribute('href').indexOf('http') === 0;
+            if (!isExternalLink) {
+                element.href = element.href.replace('&D=0', '').replace('&D=1', '') + '&D=' + d;
+            }
         }
     });
 }
 
-function showHideDistanceInput(show) {
+function showHideDistanceInput(show, orderBy) {
     if (show === true) {
         $('.find-a-course-page #distance-block').show();
         if ($(".find-a-course-page #orderBy-Input option[value='Distance']").length < 1) {
@@ -167,7 +163,7 @@ function anyFiltersSelected(paramValues) {
 
 function showHideSearchResult(paramValues) {
     if ((paramValues.SearchTerm !== '' || paramValues.Town !== '') ||
-        (paramValues.SearchTerm === '' && paramValues.Town === '')) {
+        (paramValues.SearchTerm === '' && paramValues.Town === '' && paramValues.CampaignCode !== '')) {
         $('.find-a-course-page #search-result-block').show();
         $('.find-a-course-page #home-block').hide()
     }
@@ -178,7 +174,6 @@ function showHideSearchResult(paramValues) {
 }
 
 function makeAjaxCall(paramValues) {
-
     console.info("making ajax request");
     var stringifield = JSON.stringify(paramValues, paramReplacer);
     var apiCall = {
@@ -212,9 +207,10 @@ function makeAjaxCall(paramValues) {
             showHideSearchResult(paramValues);
             showHideClearFilters(anyFiltersSelected(paramValues), paramValues.SearchTerm);
             paramValues.D = showDistanceSelector === true ? 1 : 0;
-            showHideDistanceInput(showDistanceSelector);
+            showHideDistanceInput(showDistanceSelector, paramValues.OrderByValue);
             generateClearLink(paramValues.D);
             updateLocationSuggestions(parsedData);
+            $('#orderBy-Input option').removeAttr('selected').filter(`[value='${paramValues.OrderByValue}']`).attr('selected', true);
             var updatedUrl = getUpdatedUrl(paramValues);
             window.history.pushState({ path: updatedUrl }, '', updatedUrl);
         },
@@ -253,12 +249,21 @@ function getUpdatedUrl(paramValues) {
     return "/find-a-course/page?" + query;
 }
 
-function getParams() {
+function getParams(sortByLocation=false) {
     $('.find-a-course-page #RequestPage').val(1);
-    var orderByValue = $('.find-a-course-page #orderBy-Input').val();
+    
     var searchTerm = $('.find-a-course-page #search-input').val();
     var distance = $('.find-a-course-page #distance-select').val();
     var town = $('.find-a-course-page #location-input').val();
+    var orderByValue = $('.find-a-course-page #orderBy-Input').val();
+    if (!sortByLocation) {
+        if (town) {
+            orderByValue = "Distance";
+        }
+        else {
+            orderByValue = "Relevance";
+        }
+    }
     var page = $('.find-a-course-page #RequestPage').val();
     var startDate = $('.find-a-course-page #startdate-select').val();
     var courseType = [];
@@ -310,14 +315,13 @@ if (window.location.href.indexOf("find-a-course") > -1) {
                 $('#coordinates').val('')
                 //Do not make call to location search, if this may be a postcode
                 if (!isEnteringPostCode(request.term)) {
-                    $('.find-a-course-page #suggest-location').hide();
                     getLocations(request, response)
                 }
                 else {
                     inLocationMode = false;
                 }
             },
-            minLength: 3,
+            minLength: 2,
             position: {
                 my: "left top",
                 at: "left bottom"
@@ -381,9 +385,7 @@ function updateLocationSuggestions(dataModel) {
     if (dataModel.usingAutoSuggestedLocation) {
         $('.find-a-course-page #location-input').val(dataModel.autoSuggestedTown)
         $('.find-a-course-page #coordinates').val(dataModel.autoSuggestedCoordinates)
-
         if (dataModel.didYouMeanLocations.length > 0) {
-            $('.find-a-course-page #suggest-location').show();
             var didYouMeanList = $('.find-a-course-page #suggested-locations')
             didYouMeanList.empty();
             for (ii = 0; ii < dataModel.didYouMeanLocations.length; ii++) {
@@ -397,5 +399,4 @@ function updateLocationSuggestions(dataModel) {
 $('.find-a-course-page #suggested-locations').on("click", 'li', function (event) {
     $('#coordinates').val($(this).attr("data-coordinates")); // save selected id to hidden input
     $('#location-input').val($(this).text()).blur(); // display the selected text and force refresh
-    $('.find-a-course-page #suggest-location').hide();
 });
