@@ -227,6 +227,10 @@ div.dfc-app-pages-alignment-justify {
     }
 }
 
+input[type="search"]::-webkit-search-cancel-button {
+    -webkit-appearance: searchfield-cancel-button;
+}
+
 .govuk-pagination {
     margin-bottom: 10px;
     display: -ms-flexbox;
