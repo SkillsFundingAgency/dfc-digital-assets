@@ -11,6 +11,12 @@ $(document).ready(function () {
         showHideClearFilters(anyFiltersSelected(getParams()), searchTerm);
     });
 
+    $(window).on('popstate', function (e) {
+        if ($(location).attr("href").split('/').pop() === "find-a-course") {
+            location.reload(true);
+            e.preventDefault();
+        }
+    });
 
     $('.find-a-course-page #distance-select, .find-a-course-page #startdate-select').on('change', function (e) {
         makeAjaxCall(getParams(true));
