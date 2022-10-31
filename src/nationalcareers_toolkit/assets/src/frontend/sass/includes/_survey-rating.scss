@@ -1,19 +1,66 @@
+#popupsurvey {
+    position: sticky;
+    margin: auto;
+    width: 100%;
+    height: auto;
+    background-color: #fff;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
+#popupsurvey p {
+    margin-bottom: 0;
+}
+
+#popupsurvey label {
+    font-size: 40px;
+}
+
+#popupsurvey .govuk-heading-m {
+    color: #e3048a;
+    align-self: flex-start;
+    line-height: auto;
+}
+
+#popupsurvey .survey-container {
+    width: 50%;
+    border-top: 5px solid;
+    text-align: center;
+    flex: 0 0 auto;
+    padding: 0 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#popupsurvey .flex-row {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+#popupsurvey .rating {
+    margin-bottom: 0;
+}
 
 .rating {
     width: 200px;
     margin: 0 auto 1em;
     font-size: 2.5rem !important;
-    overflow:hidden;
+    overflow: hidden;
 }
+
 .rating input {
-float: right;
-opacity: 0;
-position: absolute;
+    float: right;
+    opacity: 0;
+    position: absolute;
 }
+
 .rating a,
 .rating label {
-    float:right;
+    float: right;
     color: rgb(122, 122, 122);
     text-decoration: none;
     -webkit-transition: color .4s;
@@ -21,20 +68,23 @@ position: absolute;
     -o-transition: color .4s;
     transition: color .4s;
 }
+
 .rating label:hover ~ label,
 .rating input:focus ~ label,
 .rating label:hover,
 .rating a:hover,
 .rating a:hover ~ a,
 .rating a:focus,
-.rating a:focus ~ a		{
+.rating a:focus ~ a {
     color: #E3048A;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
     cursor: pointer;
 }
+
 .rating2 {
     direction: rtl;
 }
+
 .rating2 a {
-    float:none
+    float: none
 }
