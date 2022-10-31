@@ -11,7 +11,7 @@ document.querySelectorAll("#popupsurvey #exitbtn").forEach(item => item.addEvent
     document.getElementById('popupsurvey').style.display = 'none'
     localStorage.setItem('Survey', true);
 }));
-document.querySelectorAll("popupsurvey #btn").forEach(item => item.addEventListener('click', function () {
+document.querySelectorAll("#popupsurvey #btn").forEach(item => item.addEventListener('click', function () {
     this.parentElement.style.display = 'none';
     var nextpage = "survey" + this.getAttribute('name');
     document.getElementById(nextpage).style.display = 'inline';
