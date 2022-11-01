@@ -3,8 +3,8 @@ if ((localStorage.getItem('Survey') && document.getElementById('popupsurvey') !=
 };
 //else if (document.getElementById('popupsurvey') != null) { document.getElementById('popupsurvey').style.display = 'flex' };
 
-if ((localStorage.getItem('Survey') && document.getElementsByClassName('job-profile-feedback') != null)) {
-    document.getElementsByClassName('job-profile-feedback').style.display = 'block'
+if ((localStorage.getItem('Survey') && document.getElementsByClassName('job-profile-feedback').length > 0)) {
+    document.getElementsByClassName('job-profile-feedback').forEach(item => item.style.display = 'block')
 };
 
 document.querySelectorAll("#popupsurvey #exitbtn").forEach(item => item.addEventListener('click', function () {
