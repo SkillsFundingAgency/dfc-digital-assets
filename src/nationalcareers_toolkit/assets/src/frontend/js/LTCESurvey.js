@@ -1,6 +1,6 @@
 if ((localStorage.getItem('Survey') && document.getElementById('popupsurvey') != null)) {
     document.getElementById('popupsurvey').style.display = 'none'
-}
+};
 //else if (document.getElementById('popupsurvey') != null) { document.getElementById('popupsurvey').style.display = 'flex' };
 
 if ((localStorage.getItem('Survey') && document.getElementsByClassName('job-profile-feedback') != null)) {
