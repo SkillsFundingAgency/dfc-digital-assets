@@ -3,16 +3,24 @@ $(document).ready(function () {
         var urlParams = new URLSearchParams(window.location.search);
         var distance = urlParams.get('D');
         var searchTerm = urlParams.get('searchTerm');
+        var town = urlParams.get('town');
         if (searchTerm == null) {
             searchTerm = urlParams.get('SearchTerm');
         }
+        if (searchTerm && !$('.find-a-course-page #search-input').val()) {
+            $('.find-a-course-page #search-input').val(searchTerm);
+        }
+        if (town && !$('.find-a-course-page #location-input').val()) {
+            $('.find-a-course-page #location-input').val(town);
+        }
+
         showHideDistanceInput(distance != null && distance === "1", null);
         generateClearLink(distance != null && distance === "1" ? 1 : 0);
         showHideClearFilters(anyFiltersSelected(getParams()), searchTerm);
     });
 
     $(window).on('popstate', function (e) {
-        if ($(location).attr("href").split('/').pop() === "find-a-course") {
+        if ($(location).attr("href").split('/').pop().toLowerCase() === "find-a-course") {
             location.reload(true);
             e.preventDefault();
         }
