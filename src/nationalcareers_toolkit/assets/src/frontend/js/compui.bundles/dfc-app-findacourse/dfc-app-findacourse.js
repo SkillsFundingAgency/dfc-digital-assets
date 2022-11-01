@@ -3,15 +3,8 @@ $(document).ready(function () {
         var urlParams = new URLSearchParams(window.location.search);
         var distance = urlParams.get('D');
         var searchTerm = urlParams.get('searchTerm');
-        var town = urlParams.get('town');
         if (searchTerm == null) {
             searchTerm = urlParams.get('SearchTerm');
-        }
-        if (searchTerm && !$('.find-a-course-page #search-input').val()) {
-            $('.find-a-course-page #search-input').val(searchTerm);
-        }
-        if (town && !$('.find-a-course-page #location-input').val()) {
-            $('.find-a-course-page #location-input').val(town);
         }
 
         showHideDistanceInput(distance != null && distance === "1", null);
