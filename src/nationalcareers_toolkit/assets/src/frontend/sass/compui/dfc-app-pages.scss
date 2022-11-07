@@ -181,7 +181,6 @@ div.dfc-app-pages-alignment-justify {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-weight: 400;
-    font-size: 16px;
     font-size: 1rem;
     line-height: 1.25;
     color: inherit;
@@ -189,20 +188,6 @@ div.dfc-app-pages-alignment-justify {
     margin-bottom: 15px;
     padding-left: 0;
     list-style-type: none;
-}
-
-.hods-pagination__navigation__item {
-    display: inline-block;
-}
-
-.govuk-list--bullet > li, ul > li, .govuk-list--number > li, ol > li {
-    margin-bottom: 5px;
-}
-
-.govuk-list, ul.plain, ol, ul {
-    font-size: 19px;
-    font-size: 1.1875rem;
-    line-height: 1.3157894737;
 
     @media(max-width: 641px) {
         font-size: 0.875rem;
@@ -210,14 +195,25 @@ div.dfc-app-pages-alignment-justify {
     }
 }
 
+.hods-pagination__navigation__item {
+    display: inline-block;
+}
+
+.govuk-list--bullet{
+    padding-inline-start: 40px;
+}
+.govuk-list--bullet > li, ul > li, .govuk-list--number > li, ol > li {
+    margin-bottom: 5px;
+}
+
 .hods-pagination__navigation__link {
-    padding: 5px 10px 5px 10px;
+    padding: 5px 7px;
 }
 
 .hods-pagination__navigation__summary {
     padding-top: 5px;
     padding-bottom: 10px;
-    font-size: 1rem;
+    font-size: .9rem;
     line-height: 1.25;
     font-weight: 400;
     float: right !important;

@@ -6,7 +6,12 @@ $(document).ready(function () {
         if (searchTerm == null) {
             searchTerm = urlParams.get('SearchTerm');
         }
-        console.log("ready: searchTerm", searchTerm);
+
+        if (performance.navigation.type == 2) {
+            console.log("nav type 2");
+            location.reload(true);
+        }
+
         showHideDistanceInput(distance != null && distance === "1", null);
         generateClearLink(distance != null && distance === "1" ? 1 : 0);
         showHideClearFilters(anyFiltersSelected(getParams()), searchTerm);
@@ -14,7 +19,6 @@ $(document).ready(function () {
 
     $(window).on('popstate', function (e) {
         if ($(location).attr("href").split('/').pop().toLowerCase() === "find-a-course") {
-            console.log("popstate: before reload");
             location.reload(true);
             e.preventDefault();
         }
@@ -142,7 +146,6 @@ function showHideDistanceInput(show, orderBy) {
 }
 
 function showHideClearFilters(show, searchTerm) {
-    console.log("showHideClearFilters: searchTerm: ", searchTerm);
     if (show === true) {
         if (typeof ($('#facFreeCourseSearch:input')[0]) != "undefined" && $('#facFreeCourseSearch:input')[0].value === 'True') {
             $(".fac-filters-block").html("<p id='fac-clear-filters'><a id='clear-filters' href='/find-a-course/searchFreeCourse?searchTerm=" + searchTerm + "' aria-label='ClearFilters'>Clear filters</a></p>");
@@ -312,7 +315,6 @@ function getParams(sortByLocation=false) {
         CampaignCode: (typeof campaignCode == 'undefined' && campaignCode) ? '' : campaignCode,
         QualificationLevels: qualificationLevels.toString()
     };
-    console.log("getParams: searchTerm: ", searchTerm, "location: ", town);
     return paramValues;
 }
 
