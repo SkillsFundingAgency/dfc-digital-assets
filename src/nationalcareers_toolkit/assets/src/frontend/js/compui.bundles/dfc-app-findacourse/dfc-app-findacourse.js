@@ -7,11 +7,6 @@ $(document).ready(function () {
             searchTerm = urlParams.get('SearchTerm');
         }
 
-        if (performance.navigation.type == 2) {
-            console.log("nav type 2");
-            location.reload(true);
-        }
-
         showHideDistanceInput(distance != null && distance === "1", null);
         generateClearLink(distance != null && distance === "1" ? 1 : 0);
         showHideClearFilters(anyFiltersSelected(getParams()), searchTerm);
@@ -411,3 +406,8 @@ $('.find-a-course-page #suggested-locations').on("click", 'li', function (event)
     $('#coordinates').val($(this).attr("data-coordinates")); // save selected id to hidden input
     $('#location-input').val($(this).text()).blur(); // display the selected text and force refresh
 });
+
+window.onbeforeunload = function () {
+    console.log("unload");
+    window.location.reload(true);
+}
