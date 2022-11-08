@@ -6,7 +6,11 @@ $(document).ready(function () {
         if (searchTerm == null) {
             searchTerm = urlParams.get('SearchTerm');
         }
+        var town = urlParams.get('town');
+        var campaignCode = urlParams.get("campaignCode");
+        var view = urlParams.get("view");
 
+        showHideSearchResult(searchTerm, town, campaignCode, view)
         showHideDistanceInput(distance != null && distance === "1", null);
         generateClearLink(distance != null && distance === "1" ? 1 : 0);
         showHideClearFilters(anyFiltersSelected(getParams()), searchTerm);
@@ -130,7 +134,7 @@ function generateClearLink(d) {
 function showHideDistanceInput(show, orderBy) {
     if (show === true) {
         $('.find-a-course-page #distance-block').show();
-        if ($(".find-a-course-page #orderBy-Input option[value='Distance']").length < 1) {
+        if ($("#orderBy-Input").length && $(".find-a-course-page #orderBy-Input option[value='Distance']").length < 1) {
             $("#orderBy-Input")[0].options.add(new Option("Distance", "Distance"));
         }
     }
@@ -168,11 +172,11 @@ function anyFiltersSelected(paramValues) {
     return false;
 }
 
-function showHideSearchResult(paramValues) {
-    if ((paramValues.SearchTerm !== '' || paramValues.Town !== '') ||
-        (paramValues.SearchTerm === '' && paramValues.Town === '' && paramValues.CampaignCode !== '')) {
+function showHideSearchResult(searchTerm, town, campaignCode, view) {
+    if (!view && (searchTerm || town) ||
+        (!searchTerm && !town && campaignCode)) {
         $('.find-a-course-page #search-result-block').show();
-        $('.find-a-course-page #home-block').hide()
+        $('.find-a-course-page #home-block').hide();
     }
     else {
         $('.find-a-course-page #search-result-block').hide();
@@ -211,7 +215,7 @@ function makeAjaxCall(paramValues) {
             $('.fac-result-count').html("");
             $('.fac-result-count').html(addCommas(resultCount));
             (resultCount > 0) ? $('.no-count-block').show() : $('.no-count-block').hide();
-            showHideSearchResult(paramValues);
+            
             showHideClearFilters(anyFiltersSelected(paramValues), paramValues.SearchTerm);
             paramValues.D = showDistanceSelector === true ? 1 : 0;
             showHideDistanceInput(showDistanceSelector, paramValues.OrderByValue);
@@ -220,6 +224,7 @@ function makeAjaxCall(paramValues) {
             $('#orderBy-Input option').removeAttr('selected').filter(`[value='${paramValues.OrderByValue}']`).attr('selected', true);
             var updatedUrl = getUpdatedUrl(paramValues);
             window.history.pushState({ path: updatedUrl }, '', updatedUrl);
+            window.location.reload();
         },
         failure: function () {
             console.log('Failure, in ajax call');
@@ -406,8 +411,3 @@ $('.find-a-course-page #suggested-locations').on("click", 'li', function (event)
     $('#coordinates').val($(this).attr("data-coordinates")); // save selected id to hidden input
     $('#location-input').val($(this).text()).blur(); // display the selected text and force refresh
 });
-
-window.onbeforeunload = function () {
-    console.log("unload");
-    window.location.reload(true);
-}
