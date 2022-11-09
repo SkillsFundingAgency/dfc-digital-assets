@@ -185,6 +185,11 @@ function showHideSearchResult(searchTerm, town, campaignCode, view) {
 }
 
 function makeAjaxCall(paramValues) {
+    if (!paramValues.SearchTerm && !paramValues.Town) {
+        window.history.pushState({ path: '/find-a-course' }, '', 'find-a-course');
+        showHideSearchResult(paramValues.SearchTerm, paramValues.Town, paramValues.CampaignCode, '')
+        return false;
+    }
     console.info("making ajax request");
     var stringifield = JSON.stringify(paramValues, paramReplacer);
     var apiCall = {
