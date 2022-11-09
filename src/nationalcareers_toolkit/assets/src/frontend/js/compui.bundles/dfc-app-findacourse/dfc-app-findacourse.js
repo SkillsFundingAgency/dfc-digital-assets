@@ -186,7 +186,9 @@ function showHideSearchResult(searchTerm, town, campaignCode, view) {
 
 function makeAjaxCall(paramValues) {
     if (!paramValues.SearchTerm && !paramValues.Town) {
-        window.history.pushState({ path: '/find-a-course' }, '', 'find-a-course');
+        if (window.location.pathname.split("/").pop() !== 'find-a-course') {
+            window.location = '/find-a-course';
+        }
         showHideSearchResult(paramValues.SearchTerm, paramValues.Town, paramValues.CampaignCode, '')
         return false;
     }
