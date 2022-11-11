@@ -20,8 +20,9 @@ $(document).ready(function () {
         var loc = $(location).attr("href");
         if (loc.split('/').pop().toLowerCase() === "find-a-course" ||
             loc.split('/').pop().toLowerCase() === "searchfreecourse" ||
-            loc.split('?')[0].split('/').pop().toLowerCase() === "page"
-            ) {
+            loc.split('?')[0].split('/').pop().toLowerCase() === "page" ||
+            loc.split('?')[0].split('/').pop().toLowerCase() === "search"
+        ) {
             location.reload(true);
             e.preventDefault();
         }
@@ -189,10 +190,7 @@ function showHideSearchResult(searchTerm, town, campaignCode, view) {
 }
 
 function makeAjaxCall(paramValues) {
-    if (!paramValues.SearchTerm && !paramValues.Town) {
-        if (window.location.pathname.split("/").pop() !== 'find-a-course') {
-            window.location = '/find-a-course';
-        }
+    if (!paramValues.SearchTerm && !paramValues.Town && !paramValues.CampaignCode) {
         showHideSearchResult(paramValues.SearchTerm, paramValues.Town, paramValues.CampaignCode, '')
         return false;
     }
