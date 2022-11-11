@@ -17,7 +17,11 @@ $(document).ready(function () {
     });
 
     $(window).on('popstate', function (e) {
-        if ($(location).attr("href").split('/').pop().toLowerCase() === "find-a-course") {
+        var loc = $(location).attr("href");
+        if (loc.split('/').pop().toLowerCase() === "find-a-course" ||
+            loc.split('/').pop().toLowerCase() === "searchfreecourse" ||
+            loc.split('?')[0].split('/').pop().toLowerCase() === "page"
+            ) {
             location.reload(true);
             e.preventDefault();
         }
