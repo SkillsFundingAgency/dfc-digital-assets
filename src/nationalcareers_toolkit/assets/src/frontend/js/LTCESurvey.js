@@ -1,6 +1,6 @@
 function setSurveyCookie(isTrue = true) {
     var date = new Date();
-    //date.setTime(date.getTime() + (28 * 24 * 60 * 60 * 1000)); // This ia for the actual expiry outside for PROD (28 days)
+    //date.setTime(date.getTime() + (28 * 24 * 60 * 60 * 1000)); // This is for the actual expiry outside for PROD (28 days)
     date.setTime(date.getTime() + (5 * 60 * 1000)); // This is for testing purposes (5mins)
     console.log(date.toUTCString());
     document.cookie = 'Survey=' + true + '; expires=' + date.toUTCString() + ';path=/'
