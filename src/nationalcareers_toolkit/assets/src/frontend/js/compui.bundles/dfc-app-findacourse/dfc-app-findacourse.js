@@ -6,7 +6,11 @@ $(document).ready(function () {
         if (searchTerm == null) {
             searchTerm = urlParams.get('SearchTerm');
         }
-        
+        var town = urlParams.get('town');
+        var campaignCode = urlParams.get("campaignCode");
+        var view = urlParams.get("view");
+
+        showHideSearchResult(searchTerm, town, campaignCode, view)
         showHideDistanceInput(distance != null && distance === "1", null);
         generateClearLink(distance != null && distance === "1" ? 1 : 0);
         showHideClearFilters(anyFiltersSelected(getParams()), searchTerm);
@@ -173,8 +177,21 @@ function anyFiltersSelected(paramValues) {
     return false;
 }
 
+function showHideSearchResult(searchTerm, town, campaignCode, view) {
+    if (!view && (searchTerm || town) ||
+        (!searchTerm && !town && campaignCode)) {
+        $('.find-a-course-page #search-result-block').show();
+        $('.find-a-course-page #home-block').hide();
+    }
+    else {
+        $('.find-a-course-page #search-result-block').hide();
+        $('.find-a-course-page #home-block').show();
+    }
+}
+
 function makeAjaxCall(paramValues) {
     if (!paramValues.SearchTerm && !paramValues.Town && !paramValues.CampaignCode) {
+        showHideSearchResult(paramValues.SearchTerm, paramValues.Town, paramValues.CampaignCode, '')
         return false;
     }
     console.info("making ajax request");
@@ -207,7 +224,7 @@ function makeAjaxCall(paramValues) {
             $('.fac-result-count').html("");
             $('.fac-result-count').html(addCommas(resultCount));
             (resultCount > 0) ? $('.no-count-block').show() : $('.no-count-block').hide();
-            
+
             showHideClearFilters(anyFiltersSelected(paramValues), paramValues.SearchTerm);
             paramValues.D = showDistanceSelector === true ? 1 : 0;
             showHideDistanceInput(showDistanceSelector, paramValues.OrderByValue);
@@ -253,9 +270,9 @@ function getUpdatedUrl(paramValues) {
     return "/find-a-course/page?" + query;
 }
 
-function getParams(sortByLocation=false) {
+function getParams(sortByLocation = false) {
     $('.find-a-course-page #RequestPage').val(1);
-    
+
     var searchTerm = $('.find-a-course-page #search-input').val();
     var distance = $('.find-a-course-page #distance-select').val();
     var town = $('.find-a-course-page #location-input').val();
@@ -294,8 +311,8 @@ function getParams(sortByLocation=false) {
     var paramValues = {
         SearchTerm: trimmedSearchTerm,
         Distance: (distance == null) ? '10 miles' : distance,
-       Town: town,
-        OrderByValue: (orderByValue == null ) ? 'Relevance' : orderByValue,
+        Town: town,
+        OrderByValue: (orderByValue == null) ? 'Relevance' : orderByValue,
         StartDate: (startDate == null) ? 'Anytime' : startDate,
         CourseType: courseType.toString(),
         CourseHours: courseHours.toString(),
