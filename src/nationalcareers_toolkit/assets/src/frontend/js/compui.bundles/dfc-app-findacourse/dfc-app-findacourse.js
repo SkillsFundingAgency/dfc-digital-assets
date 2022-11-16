@@ -6,11 +6,7 @@ $(document).ready(function () {
         if (searchTerm == null) {
             searchTerm = urlParams.get('SearchTerm');
         }
-        var town = urlParams.get('town');
-        var campaignCode = urlParams.get("campaignCode");
-        var view = urlParams.get("view");
 
-        showHideSearchResult(searchTerm, town, campaignCode, view)
         showHideDistanceInput(distance != null && distance === "1", null);
         generateClearLink(distance != null && distance === "1" ? 1 : 0);
         showHideClearFilters(anyFiltersSelected(getParams()), searchTerm);
@@ -177,21 +173,8 @@ function anyFiltersSelected(paramValues) {
     return false;
 }
 
-function showHideSearchResult(searchTerm, town, campaignCode, view) {
-    if (!view && (searchTerm || town) ||
-        (!searchTerm && !town && campaignCode)) {
-        $('.find-a-course-page #search-result-block').show();
-        $('.find-a-course-page #home-block').hide();
-    }
-    else {
-        $('.find-a-course-page #search-result-block').hide();
-        $('.find-a-course-page #home-block').show();
-    }
-}
-
 function makeAjaxCall(paramValues) {
     if (!paramValues.SearchTerm && !paramValues.Town && !paramValues.CampaignCode) {
-        showHideSearchResult(paramValues.SearchTerm, paramValues.Town, paramValues.CampaignCode, '')
         return false;
     }
     console.info("making ajax request");
