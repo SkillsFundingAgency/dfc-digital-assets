@@ -6,11 +6,7 @@ $(document).ready(function () {
         if (searchTerm == null) {
             searchTerm = urlParams.get('SearchTerm');
         }
-        var town = urlParams.get('town');
-        var campaignCode = urlParams.get("campaignCode");
-        var view = urlParams.get("view");
-
-        showHideSearchResult(searchTerm, town, campaignCode, view)
+        
         showHideDistanceInput(distance != null && distance === "1", null);
         generateClearLink(distance != null && distance === "1" ? 1 : 0);
         showHideClearFilters(anyFiltersSelected(getParams()), searchTerm);
@@ -177,21 +173,8 @@ function anyFiltersSelected(paramValues) {
     return false;
 }
 
-function showHideSearchResult(searchTerm, town, campaignCode, view) {
-    if (!view && (searchTerm || town) ||
-        (!searchTerm && !town && campaignCode)) {
-        $('.find-a-course-page #search-result-block').show();
-        $('.find-a-course-page #home-block').hide();
-    }
-    else {
-        $('.find-a-course-page #search-result-block').hide();
-        $('.find-a-course-page #home-block').show();
-    }
-}
-
 function makeAjaxCall(paramValues) {
     if (!paramValues.SearchTerm && !paramValues.Town && !paramValues.CampaignCode) {
-        showHideSearchResult(paramValues.SearchTerm, paramValues.Town, paramValues.CampaignCode, '')
         return false;
     }
     console.info("making ajax request");
@@ -310,10 +293,10 @@ function getParams(sortByLocation=false) {
     var trimmedSearchTerm = searchTerm.replace(/[^A-Z0-9 ]+/ig, "");
     var paramValues = {
         SearchTerm: trimmedSearchTerm,
-        Distance: (typeof distance == 'undefined' && distance) ? '' : distance,
-        Town: town,
-        OrderByValue: (typeof orderByValue == 'undefined' && orderByValue) ? '' : orderByValue,
-        StartDate: (typeof startDate == 'undefined' && startDate) ? '' : startDate,
+        Distance: (distance == null) ? '10 miles' : distance,
+       Town: town,
+        OrderByValue: (orderByValue == null ) ? 'Relevance' : orderByValue,
+        StartDate: (startDate == null) ? 'Anytime' : startDate,
         CourseType: courseType.toString(),
         CourseHours: courseHours.toString(),
         CourseStudyTime: courseStudyTime.toString(),
@@ -321,7 +304,7 @@ function getParams(sortByLocation=false) {
         Page: Number.isNaN(parseInt(page)) ? 1 : parseInt(page),
         D: 0,
         Coordinates: coordinates,
-        CampaignCode: (typeof campaignCode == 'undefined' && campaignCode) ? '' : campaignCode,
+        CampaignCode: (campaignCode == null) ? '' : campaignCode,
         QualificationLevels: qualificationLevels.toString()
     };
     return paramValues;
