@@ -6,8 +6,6 @@ function setSurveyCookie(isTrue = true) {
     document.cookie = 'Survey=' + true + '; expires=' + date.toUTCString() + ';path=/'
 }
 
-console.log(CookieBanner.getCookie('Survey'));
-
 if ((CookieBanner.getCookie('Survey') && document.getElementById('popupsurvey') != null)) {
     document.getElementById('popupsurvey').style.display = 'none'
 };
@@ -25,7 +23,6 @@ document.querySelectorAll("#popupsurvey #btn").forEach(item => item.addEventList
     var nextpage = "survey" + this.getAttribute('name');
     document.getElementById(nextpage).style.display = 'inline';
     setSurveyCookie();
-    //sessionStorage.setItem('Survey', true);
 }));
 
 if ((sessionStorage.getItem('extendedSurvey') && document.getElementById('extendedsurvey') != null)) {
