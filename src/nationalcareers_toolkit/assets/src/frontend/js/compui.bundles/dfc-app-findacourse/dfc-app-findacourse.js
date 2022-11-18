@@ -216,8 +216,8 @@ function makeAjaxCall(paramValues) {
             updateLocationSuggestions(parsedData);
             $('#orderBy-Input option').removeAttr('selected').filter(`[value='${paramValues.OrderByValue}']`).attr('selected', true);
             var updatedUrl = getUpdatedUrl(paramValues);
-            window.history.pushState({ path: updatedUrl }, '', updatedUrl);
-            window.location.reload();
+            //window.history.pushState({ path: updatedUrl }, '', updatedUrl);
+            window.location.href = updatedUrl;
         },
         failure: function () {
             console.log('Failure, in ajax call');
