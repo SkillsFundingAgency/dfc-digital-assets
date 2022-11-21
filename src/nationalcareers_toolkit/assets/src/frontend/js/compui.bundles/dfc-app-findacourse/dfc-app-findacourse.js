@@ -37,7 +37,7 @@ $(document).ready(function () {
     });
 
     $('.find-a-course-page #search-button').on('click', function (e) {
-        makeAjaxCall(getParams());
+        searchFAC(getParams());
     });
 
     $('.find-a-course-page #courseType input[type=checkbox]').change(function (e) {
@@ -216,8 +216,7 @@ function makeAjaxCall(paramValues) {
             updateLocationSuggestions(parsedData);
             $('#orderBy-Input option').removeAttr('selected').filter(`[value='${paramValues.OrderByValue}']`).attr('selected', true);
             var updatedUrl = getUpdatedUrl(paramValues);
-            //window.history.pushState({ path: updatedUrl }, '', updatedUrl);
-            window.location.href = updatedUrl;
+            window.history.pushState({ path: updatedUrl }, '', updatedUrl);
         },
         failure: function () {
             console.log('Failure, in ajax call');
@@ -226,6 +225,16 @@ function makeAjaxCall(paramValues) {
             console.log('Error, calling ajax call');
         }
     });
+}
+
+function searchFAC(paramValues) {
+    if (!paramValues.SearchTerm && !paramValues.Town && !paramValues.CampaignCode) {
+        window.location = '/find-a-course/'
+        return false;
+    }
+
+    var updatedUrl = getUpdatedUrl(paramValues);
+    window.location.href = updatedUrl;
 }
 
 function paramReplacer(key, value) {
