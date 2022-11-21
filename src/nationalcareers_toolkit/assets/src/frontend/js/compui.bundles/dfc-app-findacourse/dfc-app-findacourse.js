@@ -233,6 +233,9 @@ function searchFAC(paramValues) {
         return false;
     }
 
+    var showDistanceSelector = false;
+    showDistanceSelector = (paramValues.Town != null);
+    paramValues.D = showDistanceSelector === true ? 1 : 0;
     var updatedUrl = getUpdatedUrl(paramValues);
     window.location.href = updatedUrl;
 }
