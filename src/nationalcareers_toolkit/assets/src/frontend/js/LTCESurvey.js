@@ -18,6 +18,9 @@ document.querySelectorAll("#popupsurvey #exitbtn").forEach(item => item.addEvent
     document.getElementById('popupsurvey').style.display = 'none';
     setSurveyCookie();
 }));
+document.querySelectorAll("#popupsurvey #exitbtn").forEach(item => item.addEventListener('keyup', function (e) {
+    if (e.which == 13) this.click();
+}));
 document.querySelectorAll("#popupsurvey #btn").forEach(item => item.addEventListener('click', function () {
     this.parentElement.style.display = 'none';
     var nextpage = "survey" + this.getAttribute('name');
