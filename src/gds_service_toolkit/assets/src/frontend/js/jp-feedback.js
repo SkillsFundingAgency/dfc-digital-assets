@@ -86,7 +86,7 @@
 
 $(document).ready(function () {
     //JP Thumbs Up / Down
-    if (GOVUK.cookie('JPsurvey') != "dismissed" && CookieBanner.getCookie('Survey')) {
+    if (GOVUK.cookie('JPsurvey') != "dismissed") {
         $(".job-profile-feedback").addClass("js-visible");
     };
 
