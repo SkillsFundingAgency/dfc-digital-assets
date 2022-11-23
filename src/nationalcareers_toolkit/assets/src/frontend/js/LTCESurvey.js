@@ -14,13 +14,15 @@ if ((CookieBanner.getCookie('Survey') && document.getElementsByClassName('job-pr
     document.getElementsByClassName('job-profile-feedback').forEach(item => item.style.display = 'block')
 };
 
-document.querySelectorAll("#popupsurvey #exitbtn").forEach(item => item.addEventListener('click', function () {
-    document.getElementById('popupsurvey').style.display = 'none';
-    setSurveyCookie();
-}));
-document.querySelectorAll("#popupsurvey #exitbtn").forEach(item => item.addEventListener('keyup', function (e) {
-    if (e.which == 13) this.click();
-}));
+document.querySelectorAll("#popupsurvey #exitbtn, #popupsurvey #exitBtn5Stars, #popupsurvey #exitBtn4Stars, #popupsurvey #exitBtn3Stars, #popupsurvey #exitBtn2Stars, #popupsurvey #exitBtn1Stars")
+    .forEach(item => item.addEventListener('click', function () {
+        document.getElementById('popupsurvey').style.display = 'none';
+        setSurveyCookie();
+    }));
+document.querySelectorAll("#popupsurvey #exitbtn, #popupsurvey #exitBtn5Stars, #popupsurvey #exitBtn4Stars, #popupsurvey #exitBtn3Stars, #popupsurvey #exitBtn2Stars, #popupsurvey #exitBtn1Stars")
+    .forEach(item => item.addEventListener('keyup', function (e) {
+        if (e.which == 13) this.click();
+    }));
 document.querySelectorAll("#popupsurvey #btn").forEach(item => item.addEventListener('click', function () {
     this.parentElement.style.display = 'none';
     var nextpage = "survey" + this.getAttribute('name');

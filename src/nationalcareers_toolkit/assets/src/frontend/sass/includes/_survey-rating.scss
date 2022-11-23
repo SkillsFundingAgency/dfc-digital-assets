@@ -20,6 +20,10 @@
     font-size: 40px;
 }
 
+#popupsurvey .govuk-heading-s {
+    margin-bottom: 0;
+}
+
 #popupsurvey .govuk-heading-m {
     color: #e3048a;
     align-self: flex-start;
@@ -64,7 +68,7 @@
 .rating a,
 .rating label {
     float: right;
-    color: rgb(122, 122, 122);
+    color: #595959;
     text-decoration: none;
     -webkit-transition: color .4s;
     -moz-transition: color .4s;
