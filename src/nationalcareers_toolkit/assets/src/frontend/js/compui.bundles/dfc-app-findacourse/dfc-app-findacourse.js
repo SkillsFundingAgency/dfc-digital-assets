@@ -62,7 +62,7 @@ $(document).ready(function () {
         return false;
     });
 
-    $("#fac-search-course-form, #fac-filter-form").submit(function (e) {
+    $("#fac-search-course-form").submit(function (e) {
         return false;
     });
 
