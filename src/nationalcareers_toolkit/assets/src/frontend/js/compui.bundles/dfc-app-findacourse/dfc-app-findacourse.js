@@ -12,6 +12,10 @@ $(document).ready(function () {
         showHideClearFilters(anyFiltersSelected(getParams()), searchTerm);
     });
 
+    $('#search-button').on('click', function (e) {
+        searchFAC(getParams());
+    });
+
     $(window).on('popstate', function (e) {
         var loc = $(location).attr("href");
         if (loc.split('/').pop().toLowerCase() === "find-a-course" ||
@@ -36,9 +40,7 @@ $(document).ready(function () {
         return false;
     });
 
-    $('.find-a-course-page #search-button').on('click', function (e) {
-        searchFAC(getParams());
-    });
+    
 
     $('.find-a-course-page #courseType input[type=checkbox]').change(function (e) {
         makeAjaxCall(getParams(true));
@@ -229,7 +231,9 @@ function makeAjaxCall(paramValues) {
 
 function searchFAC(paramValues) {
     if (!paramValues.SearchTerm && !paramValues.Town && !paramValues.CampaignCode) {
-        window.location = '/find-a-course/'
+        if (document.location.search.length) {
+            window.location = '/find-a-course/'
+        }
         return false;
     }
 
