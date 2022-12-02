@@ -10,7 +10,7 @@ if ((CookieBanner.getCookie('Survey') && document.getElementById('popupsurvey') 
 };
 
 if ((CookieBanner.getCookie('Survey') && document.getElementsByClassName('job-profile-feedback').length > 0)) {
-    document.getElementsByClassName('job-profile-feedback').forEach(item => item.style.display = 'block')
+    document.querySelectorAll('.job-profile-feedback').forEach(item => item.style.display = 'block')
 };
 
 document.querySelectorAll("#popupsurvey #exitbtn, #popupsurvey #exitBtn5Stars, #popupsurvey #exitBtn4Stars, #popupsurvey #exitBtn3Stars, #popupsurvey #exitBtn2Stars, #popupsurvey #exitBtn1Stars")
