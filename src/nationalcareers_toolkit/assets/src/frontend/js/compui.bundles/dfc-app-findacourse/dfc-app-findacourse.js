@@ -330,6 +330,9 @@ function getParams(sortByLocation = false) {
 //Location suggest code
 if (window.location.href.indexOf("find-a-course") > -1) {
     $(document).ready(function () {
+        $("#location-input").on("input", function () {
+            resetLocationDataUnderAutocompleteMinLength();
+        });
         $("#location-input").autocomplete({
             source: function (request, response) {
                 $('#coordinates').val('')
@@ -338,7 +341,10 @@ if (window.location.href.indexOf("find-a-course") > -1) {
                     getLocations(request, response)
                 }
                 else {
-                    inLocationMode = false;
+                //This prevents an existing autocomplete dropdown from malfuctioning in case numbers are added, thus making the latest input as a post code
+                    if (locationData === undefined) {
+                        inLocationMode = false;
+                    }
                 }
             },
             minLength: 2,
@@ -367,6 +373,14 @@ if (window.location.href.indexOf("find-a-course") > -1) {
 function isEnteringPostCode(term) {
     var regex = /\d/g;
     return regex.test(term);
+}
+ 
+function resetLocationDataUnderAutocompleteMinLength() {
+    var locationInputLength = $("#location-input").val().length;
+    if (locationInputLength < 2) {
+        locationData = undefined;
+        inLocationMode = false;
+    }
 }
 
 var locationData;
