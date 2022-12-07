@@ -445,5 +445,4 @@ function updateLocationSuggestions(dataModel) {
 
 $('.find-a-course-page #suggested-locations').on("click", 'li', function (event) {
     $('#coordinates').val($(this).attr("data-coordinates")); // save selected id to hidden input
-    $('#location-input').val($(this).text()).blur(); // display the selected text and force refresh
 });
