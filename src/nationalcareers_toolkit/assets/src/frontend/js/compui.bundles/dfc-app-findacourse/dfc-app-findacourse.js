@@ -16,6 +16,10 @@ $(document).ready(function () {
         searchFAC(getParams());
     });
 
+    $(window).resize(function() {
+        $("#location-input").autocomplete("search");
+    });
+
     $(window).on('popstate', function (e) {
         var loc = $(location).attr("href");
         if (loc.split('/').pop().toLowerCase() === "find-a-course" ||
