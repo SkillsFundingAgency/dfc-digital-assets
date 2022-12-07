@@ -364,6 +364,7 @@ if (window.location.href.indexOf("find-a-course") > -1) {
                 event.preventDefault(); // or return false;
             },
             open: function (event, ui) {
+                $("ul.ui-menu").width($(this).innerWidth());
                 $('ul.ui-autocomplete').scrollTop(0);
             }
         });
