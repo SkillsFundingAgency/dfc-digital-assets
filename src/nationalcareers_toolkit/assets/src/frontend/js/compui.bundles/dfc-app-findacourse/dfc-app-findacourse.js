@@ -16,9 +16,12 @@ $(document).ready(function () {
         searchFAC(getParams());
     });
 
+    //Small timeout to ensure we don't poll on every single pixel change
     $(window).resize(function() {
-        $("#location-input").autocomplete("search");
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(redrawAutocompleteDropdown, 100);
     });
+
 
     $(window).on('popstate', function (e) {
         var loc = $(location).attr("href");
@@ -387,6 +390,11 @@ function resetLocationDataUnderAutocompleteMinLength() {
     }
 }
 
+function redrawAutocompleteDropdown() {
+    $("#location-input").autocomplete("search");
+}
+
+var resizeTimer;
 var locationData;
 var inLocationMode = false;
 function getLocations(request, response) {
