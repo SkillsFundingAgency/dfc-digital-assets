@@ -68,3 +68,4 @@ dist/
 # ignore csslint report
 csslint.xml
 /.vs
+/package-lock.json
