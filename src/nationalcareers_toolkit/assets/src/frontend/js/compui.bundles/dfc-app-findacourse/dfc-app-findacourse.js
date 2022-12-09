@@ -3,13 +3,15 @@ $(document).ready(function () {
         var urlParams = new URLSearchParams(window.location.search);
         var distance = urlParams.get('D');
         var searchTerm = urlParams.get('searchTerm');
+        var town = urlParams.get('town');
+        var coordinates = urlParams.get('coordinates');
         if (searchTerm == null) {
             searchTerm = urlParams.get('SearchTerm');
         }
-
+        
         showHideDistanceInput(distance != null && distance === "1", null);
         generateClearLink(distance != null && distance === "1" ? 1 : 0);
-        showHideClearFilters(anyFiltersSelected(getParams()), searchTerm);
+        showHideClearFilters(anyFiltersSelected(getParams()), searchTerm, town, coordinates);
     });
 
     $('#search-button').on('click', function (e) {
@@ -76,13 +78,6 @@ $(document).ready(function () {
     });
 
     $("#applyfilters-button").hide();
-
-    $('.find-a-course-page').on('click', 'a#clear-filters', function (e) {
-        var paramValues = clearFilters(getParams());
-        makeAjaxCall(paramValues);
-        e.preventDefault();
-        return false;
-    });
 });
 
 function addCommas(nStr) {
@@ -154,13 +149,18 @@ function showHideDistanceInput(show, orderBy) {
     }
 }
 
-function showHideClearFilters(show, searchTerm) {
+function showHideClearFilters(show, searchTerm, town, coordinates) {
     if (show === true) {
+        var D = 0;
+        if (typeof town !== 'undefined' && town) {
+            D = 1;
+        }
+
         if (typeof ($('#facFreeCourseSearch:input')[0]) != "undefined" && $('#facFreeCourseSearch:input')[0].value === 'True') {
-            $(".fac-filters-block").html("<p id='fac-clear-filters'><a id='clear-filters' href='/find-a-course/searchFreeCourse?searchTerm=" + searchTerm + "' aria-label='ClearFilters'>Clear filters</a></p>");
+            $(".fac-filters-block").html("<p id='fac-clear-filters'><a id='clear-filters' href='/find-a-course/searchFreeCourse?searchTerm=" + searchTerm + "&townOrPostcode=" + town + "&sideBarCoordinates=" + coordinates +"&sideBarSuggestedLocation="+ town +"&D="+ D +"' aria-label='ClearFilters'>Clear filters</a></p>");
         }
         else {
-            $(".fac-filters-block").html("<p id='fac-clear-filters'><a id='clear-filters' href='/find-a-course/searchcourse?searchTerm=" + searchTerm + "' aria-label='ClearFilters'>Clear filters</a></p>");
+            $(".fac-filters-block").html("<p id='fac-clear-filters'><a id='clear-filters' href='/find-a-course/searchcourse?searchTerm=" + searchTerm + "&townOrPostcode=" + town + "&sideBarCoordinates=" + coordinates + "&sideBarSuggestedLocation=" + town + "&D=" + D +"' aria-label='ClearFilters'>Clear filters</a></p>");
         }
         $(".fac-filters-block").show();
     }
@@ -218,7 +218,7 @@ function makeAjaxCall(paramValues) {
             $('.fac-result-count').html(addCommas(resultCount));
             (resultCount > 0) ? $('.no-count-block').show() : $('.no-count-block').hide();
 
-            showHideClearFilters(anyFiltersSelected(paramValues), paramValues.SearchTerm);
+            showHideClearFilters(anyFiltersSelected(paramValues), paramValues.SearchTerm, paramValues.Town, paramValues.Coordinates);
             paramValues.D = showDistanceSelector === true ? 1 : 0;
             showHideDistanceInput(showDistanceSelector, paramValues.OrderByValue);
             generateClearLink(paramValues.D);
