@@ -348,7 +348,6 @@ if (window.location.href.indexOf("find-a-course") > -1) {
         });
         $("#location-input").autocomplete({
             source: function (request, response) {
-                //$('#coordinates').val('');
                 //Do not make call to location search, if this may be a postcode
                 if (!isEnteringPostCode(request.term)) {
                     getLocations(request, response)
