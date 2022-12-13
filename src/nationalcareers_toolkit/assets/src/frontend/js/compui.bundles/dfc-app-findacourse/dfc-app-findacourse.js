@@ -8,6 +8,12 @@ $(document).ready(function () {
         if (searchTerm == null) {
             searchTerm = urlParams.get('SearchTerm');
         }
+        if (town == null) {
+            town = urlParams.get('townOrPostcode');
+        }
+        if (coordinates == null) {
+            coordinates = urlParams.get('sideBarCoordinates');
+        }
         
         showHideDistanceInput(distance != null && distance === "1", null);
         generateClearLink(distance != null && distance === "1" ? 1 : 0);
@@ -342,7 +348,6 @@ if (window.location.href.indexOf("find-a-course") > -1) {
         });
         $("#location-input").autocomplete({
             source: function (request, response) {
-                $('#coordinates').val('')
                 //Do not make call to location search, if this may be a postcode
                 if (!isEnteringPostCode(request.term)) {
                     getLocations(request, response)
