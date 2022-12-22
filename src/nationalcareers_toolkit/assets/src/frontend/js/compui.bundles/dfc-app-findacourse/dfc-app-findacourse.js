@@ -163,10 +163,10 @@ function showHideClearFilters(show, searchTerm, town, coordinates) {
         }
 
         if (typeof ($('#facFreeCourseSearch:input')[0]) != "undefined" && $('#facFreeCourseSearch:input')[0].value === 'True') {
-            $(".fac-filters-block").html("<p id='fac-clear-filters'><a id='clear-filters' href='/find-a-course/searchFreeCourse?searchTerm=" + searchTerm + "&townOrPostcode=" + town + "&sideBarCoordinates=" + coordinates +"&sideBarSuggestedLocation="+ town +"&D="+ D +"' aria-label='ClearFilters'>Clear filters</a></p>");
+            $(".fac-filters-block").html("<div id='fac-clear-filters'><a id='clear-filters' class='govuk-button' href='/find-a-course/searchFreeCourse?searchTerm=" + searchTerm + "&townOrPostcode=" + town + "&sideBarCoordinates=" + coordinates +"&sideBarSuggestedLocation="+ town +"&D="+ D +"' aria-label='ClearFilters'>Clear filters</a></div>");
         }
         else {
-            $(".fac-filters-block").html("<p id='fac-clear-filters'><a id='clear-filters' href='/find-a-course/searchcourse?searchTerm=" + searchTerm + "&townOrPostcode=" + town + "&sideBarCoordinates=" + coordinates + "&sideBarSuggestedLocation=" + town + "&D=" + D +"' aria-label='ClearFilters'>Clear filters</a></p>");
+            $(".fac-filters-block").html("<div id='fac-clear-filters'><a id='clear-filters' class='govuk-button' href='/find-a-course/searchcourse?searchTerm=" + searchTerm + "&townOrPostcode=" + town + "&sideBarCoordinates=" + coordinates + "&sideBarSuggestedLocation=" + town + "&D=" + D +"' aria-label='ClearFilters'>Clear filters</a></div>");
         }
         $(".fac-filters-block").show();
     }
