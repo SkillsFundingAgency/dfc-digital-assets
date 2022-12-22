@@ -134,8 +134,9 @@ function CheckLocationAndSearchIfValid(e) {
 function generateClearLink(d) {
     $('#fac-result-list a').each(function (index, element) {
         if (element.getAttribute('href')) {
+            var contactus = element.getAttribute('href').indexOf('contact-us') === -1;
             var isExternalLink = element.getAttribute('href').indexOf('http') === 0;
-            if (!isExternalLink) {
+            if (!isExternalLink && contactus) {
                 element.href = element.href.replace('&D=0', '').replace('&D=1', '') + '&D=' + d;
             }
         }
