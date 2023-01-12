@@ -27,15 +27,6 @@ $govuk-assets-path: '/govuk/assets/';
     padding: 15;
 }
 
-.primary-hero .govuk-width-container {
-    padding: 0 20px 0;
-    box-sizing: border-box;
-}
-
-.primary-hero .govuk-heading-l {
-    color: white;
-}
-
 .primary-hero .input-wrapper {
     width: 100%;
 }
@@ -317,11 +308,6 @@ dt.govuk-summary-list__key {
     .fac-pagination__summary, .fac-pagination__list-items {
         float: none;
         text-align: center;
-    }
-
-    .primary-hero .govuk-width-container {
-        padding: 0 30px 0;
-        box-sizing: border-box;
     }
 }
 
