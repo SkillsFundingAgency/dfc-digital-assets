@@ -136,12 +136,14 @@ function generateClearLink(d) {
         if (element.getAttribute('href')) {
             var contactus = element.getAttribute('href').indexOf('contact-us') === -1;
             var isExternalLink = element.getAttribute('href').indexOf('http') === 0;
-            if (!isExternalLink && contactus) {
+            var isBackToFacLandingPage = $(element).is('#back-to-fac-landing-page');
+            if ((!isExternalLink && contactus) || isBackToFacLandingPage) {
                 element.href = element.href.replace('&D=0', '').replace('&D=1', '') + '&D=' + d;
             }
         }
     });
 }
+
 
 function showHideDistanceInput(show, orderBy) {
     if (show === true) {
