@@ -136,8 +136,13 @@ function generateClearLink(d) {
         if (element.getAttribute('href')) {
             var contactus = element.getAttribute('href').indexOf('contact-us') === -1;
             var isExternalLink = element.getAttribute('href').indexOf('http') === 0;
+            var isBackToFacLandingPage = element.id === 'back-to-fac-landing-page';
             if (!isExternalLink && contactus) {
                 element.href = element.href.replace('&D=0', '').replace('&D=1', '') + '&D=' + d;
+            }
+            // Sanitize link back to homepage of distance parameter if true
+            if (isBackToFacLandingPage) {
+                element.href = element.href.replace('&D=0', '').replace('&D=1', '');
             }
         }
     });
