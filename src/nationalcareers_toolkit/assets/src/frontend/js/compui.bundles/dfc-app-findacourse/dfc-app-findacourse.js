@@ -5,6 +5,7 @@ $(document).ready(function () {
         var searchTerm = urlParams.get('searchTerm');
         var town = urlParams.get('town');
         var coordinates = urlParams.get('coordinates');
+        var didYouMeanLocationParam = urlParams.get('location');
         if (searchTerm == null) {
             searchTerm = urlParams.get('SearchTerm');
         }
@@ -13,6 +14,10 @@ $(document).ready(function () {
         }
         if (coordinates == null) {
             coordinates = urlParams.get('sideBarCoordinates');
+        }
+        if (didYouMeanLocationParam != null && town == null) {
+            [town, ...coordinates] = didYouMeanLocationParam.split("|");
+            coordinates = coordinates.join('|')
         }
         
         showHideDistanceInput(distance != null && distance === "1", null);
