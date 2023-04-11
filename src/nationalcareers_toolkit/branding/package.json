@@ -3,7 +3,7 @@
     "build": "grunt"
   },
   "dependencies": {
-    "@nccsdesignlibrary/frontend": "^0.14.0",
+    "@nccsdesignlibrary/frontend": "^0.21.1",
     "grunt": "^1.6.1",
     "grunt-contrib-concat": "^2.1.0",
     "grunt-contrib-copy": "^1.0.0",
