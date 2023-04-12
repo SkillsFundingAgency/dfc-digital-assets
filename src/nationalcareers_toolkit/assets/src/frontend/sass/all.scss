@@ -62,15 +62,5 @@ $app-text-light: #646C70;
 
 
 //import branding styles
-@import "branding/variables.scss";
-@import "branding/side-navigation.scss";
-@import "branding/back-to-top.scss";
-@import "branding/button.scss";
-@import "branding/header.scss";
-@import "branding/highlightbox.scss";
-
-@import "branding/progress-bar.scss";
-@import "branding/error-summary.scss";
-@import "branding/panel.scss";
-@import "branding/search.scss";
+@import "branding/all";
 
