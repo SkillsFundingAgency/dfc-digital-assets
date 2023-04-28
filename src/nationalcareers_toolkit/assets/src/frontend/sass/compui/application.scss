@@ -4,17 +4,6 @@ $govuk-new-link-styles: true;
 
 // We can't mount GOV.UK Frontend's assets at root as it's done automatically by the extensions framework.
 $govuk-assets-path: '/govuk/assets/';
-@import url(https://dev-cdn.nationalcareersservice.org.uk/nationalcareers_toolkit/css/all.min.css);
-
-// Import GOV.UK Frontend and any extension styles if extensions have been configured
-//@import "lib/extensions/extensions";
-
-// Patterns that aren't in Frontend
-//@import "patterns/step-by-step-header";
-//@import "patterns/step-by-step-nav";
-//@import "patterns/step-by-step-related";
-//@import "patterns/task-list";
-//@import "patterns/related-items";
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 
@@ -36,15 +25,6 @@ $govuk-assets-path: '/govuk/assets/';
 
 .primary-hero {
     padding: 15;
-}
-
-.primary-hero .govuk-width-container {
-    padding: 0 20px 0;
-    box-sizing: border-box;
-}
-
-.primary-hero .govuk-heading-l {
-    color: white;
 }
 
 .primary-hero .input-wrapper {
@@ -285,7 +265,18 @@ dt.govuk-summary-list__key {
     color: #000
 }
 
-
+.fac-visually-hidden {
+    position: absolute;
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0,0,0,0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
 
 @media (min-width: 40.0625em) {
 
@@ -318,9 +309,8 @@ dt.govuk-summary-list__key {
         float: none;
         text-align: center;
     }
+}
 
-    .primary-hero .govuk-width-container {
-        padding: 0 30px 0;
-        box-sizing: border-box;
-    }
+.govuk-width-container.margin-fix {
+    margin: 0 auto !important;
 }
