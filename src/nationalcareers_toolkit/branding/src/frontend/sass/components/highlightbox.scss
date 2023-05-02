@@ -1,7 +1,7 @@
 .ncs-highlight-box {
     .ncs-highlight-box__card {
         min-height: 170px;
-        background: $light_blue;
+        background: $light_blue_25;
         padding: 10px;
         margin-bottom: 15px;
 
@@ -10,6 +10,7 @@
             color: $primary_black;
         }
     }
+
     .ncs-highlight-box__link {
         text-decoration: none;
     }
