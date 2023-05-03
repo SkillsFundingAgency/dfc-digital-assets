@@ -1,6 +1,6 @@
 .ncs-panel--confirmation {
     color: $primary_black;
-    background: $light_blue_25;
+    background-colour: $light_blue_25 !important;
 
     .ncs-progress--complete {
         .ncs-progress__count {
@@ -14,6 +14,6 @@
     }
 
     .ncs-panel__title {
-        color: $primary_black;
+        color: $primary_black !important;
     }
 }
