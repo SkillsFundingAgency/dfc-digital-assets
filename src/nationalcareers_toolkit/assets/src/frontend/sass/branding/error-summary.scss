@@ -23,6 +23,7 @@
         & a:link,
         & a:visited {
             color: $text_white;
+            text-decoration-thickness: 3px;
         }
 
         & a:hover {
