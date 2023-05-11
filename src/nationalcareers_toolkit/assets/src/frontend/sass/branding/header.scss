@@ -15,7 +15,7 @@
 .ncs-hero {
     width: 100%;
     min-width: 960px;
-    background-color: $primary_pink;
+    background-color: $primary_pink !important;
     color: $text_white;
     box-sizing: border-box;
     padding: 0;
@@ -45,7 +45,7 @@
         z-index: 99;
 
         .block {
-            color: $primary_black;
+            color: $primary_black !important;
             display: inline-block;
 
             span {
@@ -60,7 +60,7 @@
                     height: 100%;
                     z-index: -1;
                     margin-left: -5px;
-                    background-color: $background_white;
+                    background-color: $background_white !important;
                 }
             }
 
@@ -75,7 +75,7 @@
             }
 
             &.ncs {
-                color: $primary_pink;
+                color: $primary_pink !important;
             }
         }
 
