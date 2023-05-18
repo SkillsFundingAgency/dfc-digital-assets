@@ -1,5 +1,8 @@
 .homepage-header__body,
 .page-header__body{
+    * {
+        box-sizing: border-box;
+    }
     &.app-example-page {
         padding: 0;
     }
@@ -98,7 +101,6 @@
                 margin-bottom: 0;
 
                 span {
-                    margin: 0 2px;
                     padding: 2px 0;
                 }
             }
@@ -112,7 +114,9 @@
         .content {
             padding-top: 74px;
             h1 {
-                margin-bottom: 16px;
+                margin-bottom: 20px;
+                font-size: 48px;
+                line-height: 50px;
             }
         }
         .ncs-logo{
@@ -177,8 +181,10 @@
             .content {
                 padding-top: 22px;
                 h1 {
-                    margin-bottom: 41px;
+                    margin-bottom: 47px;
                     max-width: 260px;
+                    font-size: 32px;
+                    line-height: 35px;
                 }
             }
             .ncs-logo{
@@ -199,4 +205,8 @@
             }
         }
     }
+}
+
+.app-example-wrapper .ncs-hero .content .sub-heading .block span {
+    margin: 0 2px;
 }
