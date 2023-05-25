@@ -13,13 +13,13 @@
     border-bottom: 10px;
     border-bottom-width: 10px;
     border-bottom-style: solid;
-    border-bottom-color: $primary_pink !important;
+    border-bottom-color: $primary_pink;
 }
 
 .ncs-hero {
     width: 100%;
     min-width: 960px;
-    background-color: $background_white !important;
+    background-color: $background_white;
     color: $text_white;
     box-sizing: border-box;
     padding: 0;
@@ -59,7 +59,7 @@
             display: inline-block;
 
             span {
-                color: $primary_black !important;
+                color: $primary_black;
                 position: relative;
 
                 &::after {
@@ -71,7 +71,7 @@
                     height: 100%;
                     z-index: -1;
                     margin-left: -5px;
-                    background-color: $background_white !important;
+                    background-color: $background_white;
                 }
             }
 
@@ -86,7 +86,7 @@
             }
 
             &.ncs span {
-                color: $primary_pink !important;
+                color: $primary_pink;
             }
         }
 
@@ -145,10 +145,6 @@
 
             h1 {
                 margin-bottom: 6px;
-            }
-
-            .sub-heading {
-                max-width: 520px;
             }
         }
     }

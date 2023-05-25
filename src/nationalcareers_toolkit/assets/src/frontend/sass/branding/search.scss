@@ -1,9 +1,5 @@
 .ncs-search {
-
-    .search-wrapper {
-        background: $light_blue_25;
-        color: $primary_black;
-    }
+    background-color: $background_white;
 
     &.ncs-search__bar {
         .search-wrapper {
@@ -16,6 +12,8 @@
         .search-wrapper {
             padding-top: 30px;
             padding-bottom: 30px;
+            padding-left: 0;
+            padding-right: 0;
         }
     }
 
@@ -41,6 +39,7 @@
         padding-left: 10px;
         padding-right: 10px;
         display: block;
+        background: $light_blue_25;
 
         &::after {
             clear: both;
@@ -55,19 +54,24 @@
         .ncs-label {
             font-size: 16px;
             text-align: left;
+            color: $primary_black;
         }
     }
 
 
     .input-wrapper {
         position: relative;
+        background: none;
+        display: block;
+        width: auto;
+        margin: 0;
 
         input[type="search"] {
             background-color: $background_white;
             border-radius: 30px;
             padding-left: 20px;
             color: $dark_grey;
-            border: 1px solid $primary_black;
+            border: 1px solid $primary_black !important;
             font-size: 16px;
 
             &:focus {
@@ -85,6 +89,7 @@
             position: absolute;
             top: 0;
             right: 0;
+            width: auto;
 
             .input-search-submit {
                 border: 0;
