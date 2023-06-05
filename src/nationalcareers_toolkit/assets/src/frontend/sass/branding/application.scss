@@ -29,8 +29,13 @@ iframe {
 
 .govuk-main-wrapper {
     position: relative;
+    padding-top: 40px;
 }
-
+@media (min-width: 40.0625em){
+    .govuk-main-wrapper, main {
+        padding-top: 60px;
+    }
+}
 .app-copy-button {
     font-family: "GDS Transport",arial,sans-serif;
     -webkit-font-smoothing: antialiased;
