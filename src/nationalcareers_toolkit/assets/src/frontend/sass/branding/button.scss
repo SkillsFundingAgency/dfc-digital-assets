@@ -1,6 +1,4 @@
 .ncs-button {
-    width: auto;
-    height: auto;
     border-radius: 44px;
     font-family: $gds_font;
     font-style: normal;
@@ -24,6 +22,13 @@
 
     .govuk-button__start-icon {
         display: none;
+    }
+
+    @media(min-width: 40.0625em) {
+        .ncs-button {
+            width: auto;
+            height: auto;
+        }
     }
 }
 
