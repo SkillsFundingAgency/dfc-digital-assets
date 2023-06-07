@@ -5,59 +5,66 @@
 
 // Primary hero banner - this hero banner uses the NCS primary colour #207E77
 .primary-hero, .ncs-hero {
-  background-color: #207e77;
-  color: #ffffff;
-  padding: 10px 0 10px;
-
-  * {
+    background-color: #5694ca25;
     color: #ffffff;
-  }
+    padding: 10px 0 10px;
 
-  .ui-autocomplete {
-    .ui-menu-item {
-      .ui-menu-item-wrapper {
+    * {
         color: #0b0c0c;
-      }
-    }
-  }
-
-  input, select {
-    border: none !important;
-    color: #000;
-  }
-
-  option {
-    color: #000;
-  }
-
-  button {
-    background-color: #000;
-
-    &:focus {
-      outline: $govuk-focus-width solid $govuk-focus-colour;
-      z-index: 10;
     }
 
-    &:hover {
-      background-color: #000;
-      text-decoration: underline;
+    .ui-autocomplete {
+        .ui-menu-item {
+            .ui-menu-item-wrapper {
+                color: #0b0c0c;
+            }
+        }
     }
-  }
-  .govuk-heading-xl {
-    margin: 0 0 30px 0;
-    color: #FFFFFF;
-  }
-  p {
-    color: #FFFFFF;
-    a {
-      font-weight: 700;
-      color: #FFFFFF;
+
+    input, select {
+        border: none !important;
+        color: #000;
     }
-  }
-  .govuk-link--light:link{
-    color:  #FFFFFF; }
-  .govuk-link--light:hover{
-    color: #DDDCDB; }
+
+    option {
+        color: #000;
+    }
+
+    button {
+        background-color: #000;
+
+        &:focus {
+            outline: $govuk-focus-width solid $govuk-focus-colour;
+            z-index: 10;
+        }
+
+        &:hover {
+            background-color: #000;
+            text-decoration: underline;
+        }
+    }
+
+    .govuk-heading-xl {
+        margin: 0 0 30px 0;
+        color: #d53880;
+    }
+
+    p {
+        color: #FFFFFF;
+
+        a {
+            font-weight: 700;
+            color: #FFFFFF;
+        }
+    }
+
+    .govuk-link--light:link {
+        color: #FFFFFF;
+    }
+
+    .govuk-link--light:hover {
+        color: #DDDCDB;
+    }
 }
 @media (max-width: 768px) {
     .primary-hero, .ncs-hero {
