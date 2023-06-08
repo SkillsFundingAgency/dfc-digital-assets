@@ -7,6 +7,7 @@ $app-purple-hover: #A73C7B;
 $app-turquoise: #207E77;
 $app-turquoise-hover: #48948E;
 $app-text-light: #646C70;
+$primary_pink: #d53880;
 
 @import 'dysac/progress';
 @import 'dysac/masthead';
@@ -20,6 +21,9 @@ $app-text-light: #646C70;
 @import 'dysac/payscale';
 @import 'dysac/results';
 @import 'dysac/footer';
+
+//import branding styles
+@import "branding/all";
 
 
 %clearfix {
@@ -60,10 +64,10 @@ nav {
 
 // Change to header to change colour of blue border underneath header to green.
 .govuk-header__container {
-  border-bottom: 10px solid $app-turquoise;
-  @include govuk-media-query(desktop) {
-    padding-top: 7px;
-  }
+    border-bottom: 10px solid $app-turquoise;
+    @include govuk-media-query(desktop) {
+        padding-top: 7px;
+    }
 }
 
 // Change to desktop header to fix margin/padding
