@@ -289,10 +289,7 @@ body.hasHover {
 
 .brand--ncs {
 	.brand__color {
-		&:link, &:visited, &:active {
-			color: #207e77;
-		}
-		&:hover,&:focus {
+		&:link, &:visited, &:active, &:hover, &:focus {
 			color: #0b0c0c;
 		}
 	}
