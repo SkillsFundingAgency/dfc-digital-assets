@@ -31,6 +31,14 @@ $govuk-assets-path: '/govuk/assets/';
     width: 100%;
 }
 
+.fac-main-wrapper {
+    padding-top: 40px;
+}
+@media (min-width: 40.0625em){
+    .fac-main-wrapper {
+        padding-top: 60px;
+    }
+}
 .fac-search-hero .govuk-width-container {
     padding: 0;
 }
