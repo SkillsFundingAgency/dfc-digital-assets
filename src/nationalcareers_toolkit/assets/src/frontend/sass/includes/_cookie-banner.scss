@@ -78,12 +78,6 @@
     padding: 0;
 }
 
-@media (min-width: 48.0625em) {
-    .gem-c-cookie-banner__button .govuk-button, .gem-c-cookie-banner__button .gem-c-govspeak .gem-c-button, .gem-c-govspeak .gem-c-cookie-banner__button .gem-c-button {
-        width: 90% !important;
-    }
-}
-
 @media (max-width: 48.0525em) {
     .gem-c-cookie-banner__button .govuk-button, .gem-c-cookie-banner__button .gem-c-govspeak .gem-c-button, .gem-c-govspeak .gem-c-cookie-banner__button .gem-c-button {
         margin-bottom: 20px;
@@ -361,31 +355,6 @@
     margin-bottom: 15px
 }
 
-.gem-c-cookie-banner .govuk-button {
-    font-family: "GDS Transport", Arial,sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 1.1875;
-    box-sizing: border-box;
-    display: inline-block;
-    position: relative;
-    width: 100%;
-    margin-top: 0;
-    margin-bottom: 5px;
-    padding: 7px 10px;
-    border: 2px solid transparent;
-    border-radius: 0;
-    color: #fff;
-    background-color: #00823b;
-    box-shadow: 0 2px 0 #003618;
-    text-align: center;
-    vertical-align: top;
-    cursor: pointer;
-    -webkit-appearance: none;
-}
-
 .gem-c-cookie-banner .govuk-grid-column-full {
     width: 100%;
 }
@@ -602,10 +571,6 @@
     }
 }
 
-.gem-c-cookie-banner .govuk-button, .govuk-button--start {
-    padding-top: 9px;
-    padding-bottom: 6px
-}
 
 @media (min-width: 40.0625em) {
     .gem-c-cookie-banner .govuk-body, .govuk-body-m {
@@ -649,13 +614,6 @@
         font-size: 19px;
     }
 }
-
-@media (min-width: 48.0625em) {
-    .gem-c-cookie-banner .gem-c-cookie-banner__button .govuk-button {
-        width: 90% !important
-    }
-}
-
 @media (max-width: 48.0525em) {
     .gem-c-cookie-banner .gem-c-cookie-banner__button .govuk-button {
         margin-bottom: 20px
