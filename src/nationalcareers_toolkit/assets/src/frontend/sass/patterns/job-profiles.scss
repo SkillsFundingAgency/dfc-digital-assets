@@ -85,11 +85,11 @@
   }
 
   .job-profile-hours {
-    @extend .clock-block
+    @extend .calendar-block;
   }
 
   .job-profile-pattern {
-    @extend .calendar-block;
+    @extend .clock-block
   }
 
   .job-profile-group {
@@ -153,11 +153,11 @@
   }
 
   .job-profile-hours {
-    @extend .clock-block
+    @extend .calendar-block;
   }
 
   .job-profile-pattern {
-    @extend .calendar-block;
+    @extend .clock-block
   }
 
   .job-profile-group {
@@ -232,11 +232,11 @@
   }
 
   .job-profile-hours {
-    @extend .clock-block
+    @extend .calendar-block;
   }
 
   .job-profile-pattern {
-    @extend .calendar-block;
+    @extend .clock-block
   }
 
   .job-profile-group {
