@@ -307,7 +307,7 @@
 
   .job-profile-hours {
     &:before {
-      background: govuk-image-url("clock.svg") no-repeat center;
+      background: govuk-image-url("calendar-alt.svg") no-repeat center;
     }
 
     p {
@@ -317,7 +317,7 @@
 
   .job-profile-pattern {
     &:before {
-      background: govuk-image-url("calendar-alt.svg") no-repeat center;
+      background: govuk-image-url("clock.svg") no-repeat center;
     }
 
     p {
