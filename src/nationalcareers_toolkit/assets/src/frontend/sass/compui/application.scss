@@ -151,6 +151,8 @@ $govuk-assets-path: '/govuk/assets/';
     height: 213.5px;
     border-top-right-radius: 30px;
     border-bottom-left-radius: 30px;
+    object-fit: cover;
+    object-position: top;
 }
 .fac-feature-box__content h2{
     margin-top: 20px;
