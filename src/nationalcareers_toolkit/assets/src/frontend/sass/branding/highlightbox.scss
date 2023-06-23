@@ -6,13 +6,21 @@
         margin-bottom: 15px;
     }
 
-
-    .ncs-highlight-box__link {
+    .ncs-highlight-box__link {  
         text-decoration: none;
-        &:hover h3,
-        &:focus h3 {
-            text-decoration: underline;
-            color: $primary_black;
+
+        &:hover, &:focus {
+            .ncs-highlight-box__card {
+                h3 {
+                    text-decoration: underline;
+                    color: $primary_black;
+                }
+            }
+        }
+        &:focus {            
+            .ncs-highlight-box__card {
+               border: solid 2px $primary_black;
+            }
         }
     }
 }
