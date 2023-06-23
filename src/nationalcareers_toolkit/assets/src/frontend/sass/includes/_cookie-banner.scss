@@ -369,7 +369,7 @@
 
 .gem-c-cookie-banner .govuk-button:focus, .gem-c-cookie-banner .gem-c-govspeak .gem-c-button:focus {
     border-color: #ffdd00;
-    outline: 3px solid transparent;
+    outline: 3px solid transparent !important;
     box-shadow: inset 0 0 0 1px #ffdd00
 }
 
@@ -401,14 +401,6 @@
 .gem-c-cookie-banner .govuk-button:link:focus, .gem-c-cookie-banner .gem-c-govspeak .gem-c-button:link:focus {
     color: #ffffff
 }
-
-.gem-c-cookie-banner .govuk-button:focus:not(:active):not(:hover), .gem-c-cookie-banner .gem-c-govspeak .gem-c-button:focus:not(:active):not(:hover) {
-    border-color: #ffdd00;
-    color: #0b0c0c;
-    background-color: #ffdd00;
-    box-shadow: 0 2px 0 #0b0c0c
-}
-
 
 .gem-c-cookie-banner .govuk-button:active::before, .gem-c-cookie-banner .gem-c-govspeak .gem-c-button:active::before {
     top: -4px
