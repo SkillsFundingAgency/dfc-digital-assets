@@ -9,7 +9,7 @@ $app-turquoise-hover: #48948E;
 $app-text-light: #646C70;
 $primary_pink: #d53880;
 
-//@import 'dysac/progress';
+@import 'dysac/progress';
 @import 'dysac/masthead';
 @import 'dysac/sidebar';
 @import 'dysac/yourreference';
@@ -64,7 +64,7 @@ nav {
 
 // Change to header to change colour of blue border underneath header to green.
 .govuk-header__container {
-    border-bottom: 10px solid $primary_pink;
+    border-bottom: 10px solid $app-turquoise;
     @include govuk-media-query(desktop) {
         padding-top: 7px;
     }

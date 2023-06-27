@@ -134,16 +134,21 @@ $govuk-assets-path: '/govuk/assets/';
 
 .fac-feature-box {
     padding: 30px 30px 10px 30px;
-    margin-top: 0;
-    margin-bottom: 60px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.fac-feature-box {
     background-color: #f3f2f1;
 }
+
 .fac-feature-box__image {
     background-color: white;
 }
 
 .fac-feature-box__card {
-    padding: 0;
+    background-color: #f3f2f1;
+    padding: 20px;
 }
 
 .fac-feature-box__content > img {
@@ -184,6 +189,7 @@ $govuk-assets-path: '/govuk/assets/';
 }
 
 .fac-feature-box .govuk-button {
+    width: 100%;
     float: none;
 }
 
