@@ -74,54 +74,54 @@
 }
 
 .job-profile-heroblock {
-  @extend .secondary-hero-block;
-
-  .job-profile-heroblock-content {
-  @extend .secondary-hero-block-content
-  }
-
-  .job-profile-salary {
-    @extend .pound-block
-  }
-
-  .job-profile-hours {
-    @extend .clock-block
-  }
-
-  .job-profile-pattern {
-    @extend .calendar-block;
-  }
-
-  .job-profile-group {
-    @extend .chart-line-block;
-    display: block;
-    min-height: 100px;
-    width: 50px;
-  }
-
-  @media (max-width: 749px) {
-    &:nth-child(odd) {
-      background-color: darken(govuk-colour('light-grey'), 5%);
-    }
-
-    h2 {
-      width: 50%;
-      float: left;
-      border: none;
-      min-width: 150px;
-
-      span {
-        width: 100%;
-        margin: 0;
-      }
-    }
+    @extend .secondary-hero-block;
 
     .job-profile-heroblock-content {
-      float: right;
-      width: auto;
-      padding: 0;
+        @extend .secondary-hero-block-content
     }
-  }
+
+    .job-profile-salary {
+        @extend .pound-block
+    }
+
+    .job-profile-hours {
+        @extend .calendar-block
+    }
+
+    .job-profile-pattern {
+        @extend .clock-block;
+    }
+
+    .job-profile-group {
+        @extend .chart-line-block;
+        display: block;
+        min-height: 100px;
+        width: 50px;
+    }
+
+    @media (max-width: 749px) {
+        &:nth-child(odd) {
+            background-color: darken(govuk-colour('light-grey'), 5%);
+        }
+
+        h2 {
+            width: 50%;
+            float: left;
+            border: none;
+            min-width: 150px;
+
+            span {
+                width: 100%;
+                margin: 0;
+            }
+        }
+
+        .job-profile-heroblock-content {
+            float: right;
+            width: auto;
+            padding: 0;
+        }
+    }
 }
 
 .job-profile-hero-additional {
@@ -135,72 +135,72 @@
 }
 
 .job-profile-heroblock-additional {
-  @extend .secondary-hero-block;
-
-  .job-profile-heroblock-content {
-  @extend .secondary-hero-block-content;
-  @media (max-width: 749px) {
-        p {
-          text-align: left;
-        }
-      }
-    
-  }   
-  
-
-  .job-profile-salary {
-    @extend .pound-block
-  }
-
-  .job-profile-hours {
-    @extend .clock-block
-  }
-
-  .job-profile-pattern {
-    @extend .calendar-block;
-  }
-
-  .job-profile-group {
-    @extend .chart-line-block;
-    display: block;
-    min-height: 100px;
-
-     &:before {
-    			width: 50px;
-          display: block;
-          min-height: 100px;
-        }
-  }
-
-  @media (max-width: 749px) {
-    &:nth-child(odd) {
-      background-color: govuk-colour('light-grey');
-    }
-
-    .job-profile-group {  
-       &:before {
-            display: none;
-          }
-    }
-
-    h2 {
-      width: 50%;
-      float: left;
-      border: none;
-      min-width: 150px;
-
-      span {
-        width: 100%;
-        margin: 0;
-      }
-    }
+    @extend .secondary-hero-block;
 
     .job-profile-heroblock-content {
-      float: right;
-      width: auto;
-      padding: 0;
+        @extend .secondary-hero-block-content;
+
+        @media (max-width: 749px) {
+            p {
+                text-align: left;
+            }
+        }
     }
-  }
+
+
+    .job-profile-salary {
+        @extend .pound-block
+    }
+
+    .job-profile-hours {
+        @extend .calendar-block
+    }
+
+    .job-profile-pattern {
+        @extend .clock-block;
+    }
+
+    .job-profile-group {
+        @extend .chart-line-block;
+        display: block;
+        min-height: 100px;
+
+        &:before {
+            width: 50px;
+            display: block;
+            min-height: 100px;
+        }
+    }
+
+    @media (max-width: 749px) {
+        &:nth-child(odd) {
+            background-color: govuk-colour('light-grey');
+        }
+
+        .job-profile-group {
+            &:before {
+                display: none;
+            }
+        }
+
+        h2 {
+            width: 50%;
+            float: left;
+            border: none;
+            min-width: 150px;
+
+            span {
+                width: 100%;
+                margin: 0;
+            }
+        }
+
+        .job-profile-heroblock-content {
+            float: right;
+            width: auto;
+            padding: 0;
+        }
+    }
 }
 
 .job-profile-hero-additional {
@@ -214,72 +214,72 @@
 }
 
 .job-profile-heroblock-additional {
-  @extend .secondary-hero-block;
-
-  .job-profile-heroblock-content {
-  @extend .secondary-hero-block-content;
-  @media (max-width: 749px) {
-        p {
-          text-align: left;
-        }
-      }
-    
-  }   
-  
-
-  .job-profile-salary {
-    @extend .pound-block
-  }
-
-  .job-profile-hours {
-    @extend .clock-block
-  }
-
-  .job-profile-pattern {
-    @extend .calendar-block;
-  }
-
-  .job-profile-group {
-    @extend .chart-line-block;
-    display: block;
-    min-height: 100px;
-
-     &:before {
-    			width: 50px;
-          display: block;
-          min-height: 100px;
-        }
-  }
-
-  @media (max-width: 749px) {
-    &:nth-child(odd) {
-      background-color: govuk-colour('light-grey');
-    }
-
-    .job-profile-group {  
-       &:before {
-            display: none;
-          }
-    }
-
-    h2 {
-      width: 50%;
-      float: left;
-      border: none;
-      min-width: 150px;
-
-      span {
-        width: 100%;
-        margin: 0;
-      }
-    }
+    @extend .secondary-hero-block;
 
     .job-profile-heroblock-content {
-      float: right;
-      width: auto;
-      padding: 0;
+        @extend .secondary-hero-block-content;
+
+        @media (max-width: 749px) {
+            p {
+                text-align: left;
+            }
+        }
     }
-  }
+
+
+    .job-profile-salary {
+        @extend .pound-block
+    }
+
+    .job-profile-hours {
+        @extend .calendar-block;
+    }
+
+    .job-profile-pattern {
+        @extend .clock-block;
+    }
+
+    .job-profile-group {
+        @extend .chart-line-block;
+        display: block;
+        min-height: 100px;
+
+        &:before {
+            width: 50px;
+            display: block;
+            min-height: 100px;
+        }
+    }
+
+    @media (max-width: 749px) {
+        &:nth-child(odd) {
+            background-color: govuk-colour('light-grey');
+        }
+
+        .job-profile-group {
+            &:before {
+                display: none;
+            }
+        }
+
+        h2 {
+            width: 50%;
+            float: left;
+            border: none;
+            min-width: 150px;
+
+            span {
+                width: 100%;
+                margin: 0;
+            }
+        }
+
+        .job-profile-heroblock-content {
+            float: right;
+            width: auto;
+            padding: 0;
+        }
+    }
 }
 
 
@@ -306,7 +306,7 @@
         text-decoration: none;
         float: left;
         box-sizing: border-box;
-        background-color: $grey-3;
+        88background-color: $grey-3;
         border-radius: 3px;
 
         &:hover {
