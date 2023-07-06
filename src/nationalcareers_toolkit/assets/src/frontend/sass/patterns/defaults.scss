@@ -81,4 +81,7 @@ h4 {
 
 .ncs-branding-margin-left-15 {
   margin-left: 15px;
+  @media (max-width: 640px){
+    margin-left: 0px;
+  }
 }
