@@ -17,23 +17,20 @@ div.dfc-app-pages-alignment-justify {
 
 .brand--ncs {
     .brand__color {
-        &:link, &:visited, &:active {
-            color: #207e77;
-        }
-
-        &:hover, &:focus {
+        &:link, &:visited, &:active, &:hover, &:focus {
             color: #0b0c0c;
         }
     }
 
     &.brand__border-color {
-        border-color: #207e77;
+        border-color: #0b0c0c;
     }
 
     .brand__border-color {
-        border-color: #207e77;
+        border-color: #0b0c0c;
     }
 }
+
 
 .organisation__brand-border-top {
     border-top-width: 5px;
@@ -119,7 +116,7 @@ div.dfc-app-pages-alignment-justify {
 .brand--ncs {
     .brand__color {
         &:link, &:visited, &:active {
-            color: #207e77;
+            color: #0b0c0c;
         }
 
         &:hover, &:focus {
