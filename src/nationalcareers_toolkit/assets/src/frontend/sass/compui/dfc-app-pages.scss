@@ -31,7 +31,6 @@ div.dfc-app-pages-alignment-justify {
     }
 }
 
-
 .organisation__brand-border-top {
     border-top-width: 5px;
     border-top-style: solid;
@@ -115,11 +114,7 @@ div.dfc-app-pages-alignment-justify {
 
 .brand--ncs {
     .brand__color {
-        &:link, &:visited, &:active {
-            color: #0b0c0c;
-        }
-
-        &:hover, &:focus {
+        &:link, &:visited, &:active, &:hover, &:focus {
             color: #0b0c0c;
         }
     }
