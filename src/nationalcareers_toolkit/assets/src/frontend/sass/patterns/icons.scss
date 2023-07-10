@@ -2,100 +2,100 @@
 
 .pound-block {
 
-    &:before {
-        background: govuk-image-url("pound-sign.svg") no-repeat center;
+  &:before {
+    background: govuk-image-url("pound-sign.svg") no-repeat center;
+  }
+
+  &:after {
+    content: "";
+    display: block;
+    right: 0;
+    position: absolute;
+    width: calc(100% - 60px);
+    border-bottom: 4px solid #0b0c0c;
+    top: 45px;
+  }
+
+  p {
+
+    span {
+      margin-top: 20px;
+      position: relative;
     }
 
+    &:nth-child(1) {
+      float: left;
+
+      span {
+        &:before {
+          content: "|";
+          font-size: 20px;
+          position: absolute;
+          font-weight: bold;
+          top: -21px;
+          left: -2px;
+        }
+      }
+    }
+
+    &:nth-child(3) {
+      float: right;
+      text-align: right;
+
+
+      span {
+        text-align: right;
+
+        &:after {
+          content: "|";
+          font-size: 20px;
+          position: absolute;
+          font-weight: bold;
+          top: -21px;
+          right: -2px;
+        }
+      }
+    }
+  }
+
+
+  @media (max-width: 749px) {
+
     &:after {
-        content: "";
-        display: block;
-        right: 0;
-        position: absolute;
-        width: calc(100% - 60px);
-        border-bottom: 4px solid #0b0c0c;
-        top: 45px;
+      display: none;
+    }
+
+    &:before {
+      display: none;
+    }
+
+    i {
+      margin: 0 5px;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 20px;
     }
 
     p {
+      margin: 0;
+      float: left;
+      text-align: left;
 
-        span {
-            margin-top: 20px;
-            position: relative;
+
+
+      &:nth-child(even) {
+        float: left;
+      }
+
+      span {
+        margin-top: 0;
+
+        &:after, &:before {
+          display: none;
         }
-
-        &:nth-child(1) {
-            float: left;
-
-            span {
-                &:before {
-                    content: "|";
-                    font-size: 20px;
-                    position: absolute;
-                    font-weight: bold;
-                    top: -21px;
-                    left: -2px;
-                }
-            }
-        }
-
-        &:nth-child(3) {
-            float: right;
-            text-align: right;
-
-
-            span {
-                text-align: right;
-
-                &:after {
-                    content: "|";
-                    font-size: 20px;
-                    position: absolute;
-                    font-weight: bold;
-                    top: -21px;
-                    right: -2px;
-                }
-            }
-        }
+      }
     }
-
-
-    @media (max-width: 749px) {
-
-        &:after {
-            display: none;
-        }
-
-        &:before {
-            display: none;
-        }
-
-        i {
-            margin: 0 5px;
-            font-style: normal;
-            font-weight: 400;
-            font-size: 20px;
-        }
-
-        p {
-            margin: 0;
-            float: left;
-            text-align: left;
-
-
-
-            &:nth-child(even) {
-                float: left;
-            }
-
-            span {
-                margin-top: 0;
-
-                &:after, &:before {
-                    display: none;
-                }
-            }
-        }
-    }
+  }
 }
 
 .clock-block {
