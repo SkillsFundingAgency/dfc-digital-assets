@@ -31,7 +31,7 @@
     }
 
     button {
-        background-color: #000;
+        background-color: #d53880;
 
         &:focus {
             outline: $govuk-focus-width solid $govuk-focus-colour;
@@ -39,7 +39,7 @@
         }
 
         &:hover {
-            background-color: #000;
+            background-color: #912b88;
             text-decoration: underline;
         }
     }
