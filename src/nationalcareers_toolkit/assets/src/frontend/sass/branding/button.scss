@@ -15,9 +15,10 @@
     &:focus,
     &:focus:not(:active):not(:hover) {
         color: $text_white;
-        outline: 2px solid $focus_yellow;
+        outline: 2px solid $focus_yellow !important;
         border-color: $focus_yellow;
         box-shadow: none;
+        outline-offset: 0px !important;
     }
 
     .govuk-button__start-icon {
