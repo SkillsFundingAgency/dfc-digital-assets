@@ -44,6 +44,7 @@
   &:focus:not(:active):not(:hover) {
     color: $text_white;
     background-color: $primary_pink;
+    outline-offset: 0px !important;
   }
 }
 
