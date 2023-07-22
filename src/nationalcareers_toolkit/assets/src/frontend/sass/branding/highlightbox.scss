@@ -19,9 +19,11 @@
         }
 
         &:focus {
-           outline: #fd0 solid 3px;
-           outline-offset: 0;
-           box-shadow: inset 0 0 0 3px $primary_black !important;
+            .ncs-highlight-box__card {
+                outline: #fd0 solid 3px;
+                outline-offset: 0;
+                box-shadow: inset 0 0 0 3px $primary_black !important;
+            }
         }
     }
 }
