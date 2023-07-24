@@ -50,7 +50,7 @@
     }
 
     p {
-        color: #FFFFFF;
+        color: #0b0c0c;
 
         a {
             font-weight: 700;
@@ -91,7 +91,7 @@
 
     h2 {
         @include govuk-font(24);
-        color: $grey-1;
+        color: #505a5f;
     }
 
     p {
