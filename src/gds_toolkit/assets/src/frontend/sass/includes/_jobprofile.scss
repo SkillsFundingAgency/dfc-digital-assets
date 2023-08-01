@@ -539,12 +539,7 @@
 }
 
 .job-profile-sidebar {
-    border-top: 3px solid$careers-turquoise;
     margin-bottom: 2em;
-
-    @include media(tablet) {
-        border-top: 6px solid$careers-turquoise;
-    }
 
     li {
         margin-bottom: 10px;

@@ -7,8 +7,9 @@ $app-purple-hover: #A73C7B;
 $app-turquoise: #207E77;
 $app-turquoise-hover: #48948E;
 $app-text-light: #646C70;
+$primary_pink: #d53880;
 
-@import 'dysac/progress';
+//@import 'dysac/progress';
 @import 'dysac/masthead';
 @import 'dysac/sidebar';
 @import 'dysac/yourreference';
@@ -21,113 +22,118 @@ $app-text-light: #646C70;
 @import 'dysac/results';
 @import 'dysac/footer';
 
+//import branding styles
+@import "branding/all";
+
 
 %clearfix {
-  &:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
 }
 
 // sass-lint:disable-all
 %visually-hidden { /* https://snook.ca/archives/html_and_css/hiding-content-for-accessibility */
-  position: absolute !important;
-  height: 1px; width: 1px;
-  overflow: hidden;
-  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
-  clip: rect(1px, 1px, 1px, 1px);
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+    clip: rect(1px, 1px, 1px, 1px);
 }
 // sass-lint:enable-all
 
 .visually-hidden {
-  @extend %visually-hidden;
+    @extend %visually-hidden;
 }
 
 .govuk-header__container {
-  border-bottom: transparent;
+    border-bottom: transparent;
 }
 
 nav {
-  .govuk-tag {
-    margin: 0 0 0 4px;
-    top: -6px;
-    font-size: 10px;
-    position: relative;
-    padding: 2px 5px;
-  }
+    .govuk-tag {
+        margin: 0 0 0 4px;
+        top: -6px;
+        font-size: 10px;
+        position: relative;
+        padding: 2px 5px;
+    }
 }
 
 // Change to header to change colour of blue border underneath header to green.
 .govuk-header__container {
-  border-bottom: 10px solid $app-turquoise;
-  @include govuk-media-query(desktop) {
-    padding-top: 7px;
-  }
+    border-bottom: 10px solid $primary_pink;
+
+    @include govuk-media-query(desktop) {
+        padding-top: 7px;
+    }
 }
 
 // Change to desktop header to fix margin/padding
 .govuk-header__link--service-name {
-  @include govuk-media-query(desktop) {
-    margin-bottom: -1px;
-  }
+    @include govuk-media-query(desktop) {
+        margin-bottom: -1px;
+    }
 }
 
 .govuk-header__navigation {
-  
-  @include govuk-media-query(desktop) {
-    margin: 0 0 4px;
-  }
+
+    @include govuk-media-query(desktop) {
+        margin: 0 0 4px;
+    }
 }
 
-.govuk-phase-bannertag {  // legacy version support
-  margin-right: 10px;
+.govuk-phase-bannertag { // legacy version support
+    margin-right: 10px;
 }
 
-.govuk-phase-bannertag,  // legacy version support
+.govuk-phase-bannertag, // legacy version support
 .govuk-phase-banner__content__tag {
-  background-color: $govuk-brand-colour;
-  color: govuk-colour('white');
+    background-color: $govuk-brand-colour;
+    color: govuk-colour('white');
 }
 
 .app-back-to-top__icon {
-  display: inline-block;
-  width: .8em;
-  height: 1em;
-  margin-top: -5px;
-  margin-right: 10px;
-  vertical-align: middle;
+    display: inline-block;
+    width: .8em;
+    height: 1em;
+    margin-top: -5px;
+    margin-right: 10px;
+    vertical-align: middle;
 }
 
 .app-grey {
-  &,
-  .app-sidebar {
-    background: govuk-colour('light-grey');
-  }
+    &,
+    .app-sidebar {
+        background: govuk-colour('light-grey');
+    }
 
-  .text-light {
-    color: $govuk-text-colour;
-  }
+    .text-light {
+        color: $govuk-text-colour;
+    }
 }
 
 .text-light {
-  color: $govuk-secondary-text-colour;
+    color: $govuk-secondary-text-colour;
 }
 
 .app-advisor-panel {
-  margin-top: 5px;
+    margin-top: 5px;
 }
 
 .app-advisor-hours {
-  margin: 19px 0;
+    margin: 19px 0;
 }
 
 .govuk-button--start {
-  background-image: url('/gds_service_toolkit/images/icon-pointer.png');
+    background-image: url('/gds_service_toolkit/images/icon-pointer.png');
 }
 
 .govuk-footer__copyright-logo {
-  background-image: url("/gds_service_toolkit/images/govuk-crest.png");
+    background-image: url("/gds_service_toolkit/images/govuk-crest.png");
 }
 
 .validation-summary-valid {
@@ -135,11 +141,11 @@ nav {
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  .govuk-button--start {
-    background-image: url("/gds_service_toolkit/images/icon-pointer-2x.png");
-  }
+    .govuk-button--start {
+        background-image: url("/gds_service_toolkit/images/icon-pointer-2x.png");
+    }
 
-  .govuk-footer__copyright-logo {
-    background-image: url("/gds_service_toolkit/images/govuk-crest-2x.png");
-  }
+    .govuk-footer__copyright-logo {
+        background-image: url("/gds_service_toolkit/images/govuk-crest-2x.png");
+    }
 }
