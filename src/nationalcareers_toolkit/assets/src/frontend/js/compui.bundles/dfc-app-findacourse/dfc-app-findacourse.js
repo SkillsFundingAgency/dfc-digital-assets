@@ -355,15 +355,16 @@ if (window.location.href.indexOf("find-a-course") > -1) {
         $("#location-input").autocomplete({
             source: function (request, response) {
                 //Do not make call to location search, if this may be a postcode
-                if (!isEnteringPostCode(request.term)) {
-                    getLocations(request, response)
-                }
-                else {
+                //if (!isEnteringPostCode(request.term)) {
+                //    getLocations(request, response)
+                //}
+                //else {
                 //This prevents an existing autocomplete dropdown from malfuctioning in case numbers are added, thus making the latest input as a post code
-                    if (locationData === undefined) {
-                        inLocationMode = false;
-                    }
-                }
+                //    if (locationData === undefined) {
+                //        inLocationMode = false;
+                //    }
+                //}
+                getLocations(request, response)
             },
             minLength: 2,
             position: {
