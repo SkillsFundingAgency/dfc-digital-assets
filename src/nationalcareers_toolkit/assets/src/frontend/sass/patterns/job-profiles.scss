@@ -81,7 +81,12 @@
   }
 
   .job-profile-salary {
-    @extend .pound-block
+    @extend .pound-block;
+
+    .dfc-code-jpshidden {
+      font-size: 16px;
+      @include govuk-font(19);
+    }
   }
 
   .job-profile-hours {
