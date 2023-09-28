@@ -13,7 +13,7 @@ $(document).ready(function () {
         formCookiesInitalise();
 
         $('#form-cookie-settings').submit(cookieSubmit(t));
-        $('#form-cookie-settings').on("click", cookieSubmit(t));
+        $('#form-cookie-settings').click(cookieSubmit(t));
 
         $("#cookie-settings-backto-previous").click(function () {
             window.history.back();
