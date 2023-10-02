@@ -12,8 +12,8 @@ $(document).ready(function () {
 
         formCookiesInitalise();
 
-        $('#form-cookie-settings').submit(cookieSubmit($(this)));
-        $('#form-cookie-settings').click(cookieSubmit($(this)));
+        $('#form-cookie-settings').submit(function(t) {cookieSubmit(t)});
+        $('#form-cookie-settings').click(function(t) {cookieSubmit(t)});
 
         $("#cookie-settings-backto-previous").click(function () {
             window.history.back();
