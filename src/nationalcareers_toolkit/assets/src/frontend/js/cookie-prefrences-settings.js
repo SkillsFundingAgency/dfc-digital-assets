@@ -31,7 +31,7 @@ function formCookiesInitalise() {
 }
 
 function cookieSubmit(t, firstSwitch) {
-    for (var e = t.target.getElementsByTagName('input'), n = {}, o = 0; o < e.length; o++) {
+    for (var e = document.getElementsByTagName('input'), n = {}, o = 0; o < e.length; o++) {
         var i = e[o];
         if (i.checked) {
             var r = i.name.replace('cookies-', ''),
