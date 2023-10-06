@@ -12,8 +12,8 @@ $(document).ready(function () {
 
         formCookiesInitalise();
 
-        $('#form-cookie-settings').submit(function(t) {cookieSubmit(t)});
-        $('#form-cookie-settings').click(function(t) {cookieSubmit(t)});
+        $('#form-cookie-settings').submit(function(t) {firstSwitch = cookieSubmit(t, firstSwitch)});
+        $('#form-cookie-settings').click(function(t) {firstSwitch = cookieSubmit(t, firstSwitch)});
 
         $("#cookie-settings-backto-previous").click(function () {
             window.history.back();
@@ -30,7 +30,7 @@ function formCookiesInitalise() {
     }
 }
 
-function cookieSubmit(t) {
+function cookieSubmit(t, firstSwitch) {
     for (var e = t.target.getElementsByTagName('input'), n = {}, o = 0; o < e.length; o++) {
         var i = e[o];
         if (i.checked) {
@@ -52,5 +52,5 @@ function cookieSubmit(t) {
    
     $('#cookie-settings-confirmation').show();
     window.scrollTo(0, 0);
-    return false;
+    return firstSwitch;
 }
