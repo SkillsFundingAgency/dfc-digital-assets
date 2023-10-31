@@ -5,7 +5,37 @@
 	border: 0!important;
 }
 
+
 .job-profile-real-story-image {
 	display: block;
     max-width: 100%;
+}
+
+
+.job-profile-video__thumbnail {
+	position: relative;
+	max-width: 600px;
+}
+
+.job-profile-video__thumbnail-image {
+	display: block;
+	max-width: 600px;
+}
+
+.job-profile-video__bitesize-badge {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 63px;
+	height: 63px;
+	background-color: #963CE1;
+	background-image: url(/nationalcareers_toolkit/images/bbc-bitesize-logo.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: contain;
+
+    @include govuk-media-query($from: tablet) {
+		width: 42px;
+		height: 42px;
+    }
 }
