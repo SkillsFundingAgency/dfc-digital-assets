@@ -1,6 +1,6 @@
 /*** Menu custom styles **/
 body {
-	@media (max-width: 40.0525rem) {
+	@media (max-width: 20.0525rem) {
 		.govuk-header__navigation {
 		    display: block;
 		    margin: 0;
@@ -43,7 +43,7 @@ body {
 
 .js-enabled {
 
-@media (max-width: 40.0525rem) {
+@media (max-width: 20.0525rem) {
 		.govuk-header__navigation {
 		    display: none
 		}
