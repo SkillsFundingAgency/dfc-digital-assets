@@ -1,0 +1,25 @@
+.ncs-highlight-box {
+    .ncs-highlight-box__card {
+        min-height: 170px;
+        background-color: $light_blue_25;
+        padding: 10px;
+        margin-bottom: 15px;
+    }
+
+    .ncs-highlight-box__link {
+        text-decoration: none;
+
+        &:hover h3,
+        &:focus h3 {
+            text-decoration: underline;
+            color: $primary_black;
+        }
+    }
+}
+
+
+@media (max-width: 640px){
+    .ncs-highlight-box__card {
+        min-height: auto;
+    }
+}

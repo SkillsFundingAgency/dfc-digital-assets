@@ -307,7 +307,7 @@
 
   .job-profile-hours {
     &:before {
-      background: govuk-image-url("clock.svg") no-repeat center;
+      background: govuk-image-url("calendar-alt.svg") no-repeat center;
     }
 
     p {
@@ -317,7 +317,7 @@
 
   .job-profile-pattern {
     &:before {
-      background: govuk-image-url("calendar-alt.svg") no-repeat center;
+      background: govuk-image-url("clock.svg") no-repeat center;
     }
 
     p {
@@ -570,12 +570,7 @@
 }
 
 .job-profile-sidebar {
-  border-top: 3px solid#207e77;
   margin-bottom: 2em;
-
-  @include media(tablet) {
-    border-top: 6px solid#207e77;
-  }
 
   li {
     margin-bottom: 10px;

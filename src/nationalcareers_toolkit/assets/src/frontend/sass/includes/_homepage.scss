@@ -124,7 +124,6 @@ body.hasHover {
   &:before, &:after {
 	  content: '';
 	  flex: 1;
-	  border-bottom: 6px solid #207e77;
   }
   &:before {
 	  margin-right: 1em;
@@ -289,10 +288,7 @@ body.hasHover {
 
 .brand--ncs {
 	.brand__color {
-		&:link, &:visited, &:active {
-			color: #207e77;
-		}
-		&:hover,&:focus {
+		&:link, &:visited, &:active, &:hover, &:focus {
 			color: #0b0c0c;
 		}
 	}
