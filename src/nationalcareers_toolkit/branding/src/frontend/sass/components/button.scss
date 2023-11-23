@@ -46,12 +46,6 @@
     background-color: $primary_pink;
     outline-offset: 0px !important;
   }
-
-  @media(max-width: 10.0625em) {
-    .ncs-button__primary {
-        padding: 13px 5px;
-    }
-  }
 }
 
 .ncs-button__secondary {
