@@ -10,7 +10,7 @@
   align-items: center;
   text-align: center;
   vertical-align: baseline;
-  padding: 13px 0.176%;
+  padding: 13px 2.25rem;
   
   &:focus,
   &:focus:not(:active):not(:hover) {
@@ -30,6 +30,12 @@
       height: auto;
     }
   }
+
+  @media(max-width: 5.0625em) {
+    .ncs-button {
+        padding: 13px 0px;
+    }
+}
 }
 
 .ncs-button__primary {
