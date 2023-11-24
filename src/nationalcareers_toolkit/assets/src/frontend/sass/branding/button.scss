@@ -10,7 +10,7 @@
     align-items: center;
     text-align: center;
     vertical-align: baseline;
-    padding: 13px 44px;
+    padding: 13px 0.176%;
 
     &:focus,
     &:focus:not(:active):not(:hover) {
@@ -29,11 +29,6 @@
         .ncs-button {
             width: auto;
             height: auto;
-        }
-    }
-    @media(max-width: 10.0625em) {
-        .ncs-button {
-            padding: 13px 5px;
         }
     }
 }
