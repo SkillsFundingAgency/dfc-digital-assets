@@ -111,6 +111,12 @@ $(document).ready(function () {
             optionSelect.change(function () {
                 updateData(true);
             });
+            
+            optionSelect.on('keydown',function(event){
+                if (event.key === 'ArrowUp' || event.key === 'ArrowDwon') {
+                    event.preventDefault();
+                }
+            });
 
             pocSelect.change(function () {
                 updateData(true);
