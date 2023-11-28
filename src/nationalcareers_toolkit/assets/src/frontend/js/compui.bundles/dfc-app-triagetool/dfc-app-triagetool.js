@@ -113,8 +113,10 @@ $(document).ready(function () {
             });
             
             optionSelect.on('keydown',function(event){
-                if (event.key === 'ArrowUp' || event.key === 'ArrowDown' || event.key ==='ArrowLeft'|| event.key ==='ArrowRight' ) {
-                    event.preventDefault();
+                if (event.target.id === 'triageSelect'){
+                    if (event.key === 'ArrowUp' || event.key === 'ArrowDown' || event.key ==='ArrowLeft'|| event.key ==='ArrowRight' ) {
+                        event.preventDefault();
+                    }
                 }
             });
 
