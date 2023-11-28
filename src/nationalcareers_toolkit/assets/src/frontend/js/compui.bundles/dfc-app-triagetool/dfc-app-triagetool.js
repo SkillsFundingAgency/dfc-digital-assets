@@ -113,7 +113,7 @@ $(document).ready(function () {
             });
             
             optionSelect.on('keydown',function(event){
-                if (event.key === 'ArrowUp' || event.key === 'ArrowDwon') {
+                if (event.key === 'ArrowUp' || event.key === 'ArrowDown' || event.key ==='ArrowLeft'|| event.key ==='ArrowRight' ) {
                     event.preventDefault();
                 }
             });
