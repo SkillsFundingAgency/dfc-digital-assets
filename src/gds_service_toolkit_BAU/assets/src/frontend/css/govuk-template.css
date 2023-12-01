@@ -105,9 +105,7 @@ html {
   /* 1 */
   -ms-text-size-adjust: 100%;
   /* 1 */
-  background-color: #dee0e2;
-    max-width: 100% !important; 
-    overflow-x: hidden !important; }
+  background-color: #dee0e2; }
 
 /*
   Force the scrollbar to always display in IE10/11
