@@ -112,8 +112,7 @@ html {
  */
 html {
   -ms-overflow-style: scrollbar;
-  max-width: 100%; 
-  overflow-x: hidden; }
+  }
 
 body {
   background: white;
