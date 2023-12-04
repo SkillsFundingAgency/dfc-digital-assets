@@ -11,9 +11,7 @@
 
 html {
   font-size: 62.5%;
-  max-width: 100%; 
-  overflow-x: hidden;
-   }
+  }
 
 /* Global print stylesheet */
 /* reset everything */
