@@ -572,6 +572,7 @@
 
     .ec-hero-black {
         background: black;
+        margin: 1em calc(50% - 50vw);
         padding: 30px;
         color: white;
     }
@@ -818,6 +819,7 @@
 
         .ec-hero-black {
             background: #000;
+            margin: 1em calc(50% - 50vw);
             padding: 30px;
             color: #fff;
             text-align: left;
