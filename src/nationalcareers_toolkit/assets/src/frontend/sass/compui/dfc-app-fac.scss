@@ -23,6 +23,13 @@
 .location-suggest {
 	display: none;
 }
+
+.suggested-locations {
+	list-style-type: none !important;
+	padding: 0px !important; 
+	margin: 0px !important;
+}
+
 .location-suggest, .location-suggest-show {
 	margin-top: 20px;
 
@@ -78,10 +85,16 @@
 			}
 
 				ul#suggested-locations {
-                padding: 0px !important;
-				margin: 0px !important;
+                padding: .78947em;
+				background-color: #fff;
+                margin-top: 0px;
+					padding-bottom: 0;
+					margin-bottom: 0;
+
 					li {
-						list-style: none !important;
+						list-style: none;
+						text-decoration: underline;
+                    margin-bottom: 5px;
 					}
 				}
 		}
