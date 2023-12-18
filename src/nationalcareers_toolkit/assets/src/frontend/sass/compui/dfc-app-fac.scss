@@ -24,11 +24,6 @@
 	display: none;
 }
 
-.suggested-locations {
-	padding-left: 0 !important;
-	list-style: none !important;
-}
-
 .location-suggest, .location-suggest-show {
 	margin-top: 20px;
 
@@ -83,7 +78,7 @@
                 max-height: 31em;
 			}
 
-				ul#suggested-locations {
+				.suggested-locations {
                 padding: .78947em;
 				background-color: #fff;
                 margin-top: 0px;
