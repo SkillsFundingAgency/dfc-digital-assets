@@ -14,6 +14,7 @@ $(document).ready(function () {
 
             $('#accept-all-cookies').click(function () {
                 cookiePrefrences.approveAll();
+                window.clarity('consent');
                 $('#cookie-message').hide();
                 $('#confirmatiom-message').show();
             })

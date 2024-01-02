@@ -22,6 +22,11 @@ $(document).ready(function () {
                 }
             }
 
+            //Allow collection of cookies by MS Clarity if consent option chosen.
+            if (a === true) {
+                window.clarity('consent');
+            }
+
             //Save the current consent for GA tracking
             var previousConsentState = window.GOVUK.checkConsentCookie('_gid', true)
             cookiePrefrences.updateConsentCookies(n)
