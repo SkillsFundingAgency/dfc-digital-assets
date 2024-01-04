@@ -12,6 +12,9 @@ $(document).ready(function () {
 
         formCookiesInitalise();
 
+        $('#form-cookie-settings').submit(function(t) {firstSwitch = cookieSubmit(t, firstSwitch)});
+        $('#form-cookie-settings').click(function(t) {firstSwitch = cookieSubmit(t, firstSwitch)});
+
         $('#form-cookie-settings').submit(function (t) {
             for (var e = t.target.getElementsByTagName('input'), n = {}, o = 0; o < e.length; o++) {
                 var i = e[o];
