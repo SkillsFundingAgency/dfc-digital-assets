@@ -1,0 +1,12 @@
+{
+  "scripts": {
+    "build": "grunt"
+  },
+  "dependencies": {
+    "@nccsdesignlibrary/frontend": "^0.31.0",
+    "grunt": "^1.6.1",
+    "grunt-contrib-concat": "^2.1.0",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-sass": "^3.1.0"
+  }
+}

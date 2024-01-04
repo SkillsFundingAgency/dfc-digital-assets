@@ -5,152 +5,162 @@
 
 // Primary hero banner - this hero banner uses the NCS primary colour #207E77
 .primary-hero, .ncs-hero {
-  background-color: #207e77;
-  color: #ffffff;
-  padding: 10px 0 10px;
-
-  * {
+    background-color: #5694ca25;
     color: #ffffff;
-  }
+    padding: 10px 0 10px;
 
-  .ui-autocomplete {
-    .ui-menu-item {
-      .ui-menu-item-wrapper {
+    * {
         color: #0b0c0c;
-      }
-    }
-  }
-
-  input, select {
-    border: none !important;
-    color: #000;
-  }
-
-  option {
-    color: #000;
-  }
-
-  button {
-    background-color: #000;
-
-    &:focus {
-      outline: $govuk-focus-width solid $govuk-focus-colour;
-      z-index: 10;
     }
 
-    &:hover {
-      background-color: #000;
-      text-decoration: underline;
+    .ui-autocomplete {
+        .ui-menu-item {
+            .ui-menu-item-wrapper {
+                color: #0b0c0c;
+            }
+        }
     }
-  }
-  .govuk-heading-xl {
-    margin: 0 0 30px 0;
-    color: #FFFFFF;
-  }
-  p {
-    color: #FFFFFF;
-    a {
-      font-weight: 700;
-      color: #FFFFFF;
+
+    input, select {
+        border: none !important;
+        color: #000;
     }
-  }
-  .govuk-link--light:link{
-    color:  #FFFFFF; }
-  .govuk-link--light:hover{
-    color: #DDDCDB; }
+
+    option {
+        color: #000;
+    }
+
+    button {
+        background-color: #d53880;
+
+        &:focus {
+            outline: $govuk-focus-width solid $govuk-focus-colour;
+            z-index: 10;
+        }
+
+        &:hover {
+            background-color: #912b88;
+            text-decoration: underline;
+        }
+    }
+
+    .govuk-heading-xl {
+        margin: 0 0 30px 0;
+        color: #d53880;
+    }
+
+    p {
+        color: #0b0c0c;
+
+        a {
+            font-weight: 700;
+            color: #FFFFFF;
+        }
+    }
+
+    .govuk-link--light:link {
+        color: #FFFFFF;
+    }
+
+    .govuk-link--light:hover {
+        color: #DDDCDB;
+    }
 }
+
 @media (max-width: 768px) {
     .primary-hero, .ncs-hero {
-    		.govuk-grid-column-full-width {
-    			margin:0 20px
-    		}
-	   }
+        .govuk-grid-column-full-width {
+            margin: 0 20px
+        }
+    }
 }
 
 // Secondary hero banner
 .secondary-hero {
-  background-color: govuk-colour('light-grey');
-  width: 100%;
-  padding: 1px 0 0 0;
-  @extend %contain-floats;
-  margin-bottom: 20px;
-
-  h1 {
-    font-size: 38px !important;
-    margin: 1em 0 0 0;
-    padding: 0;
-  }
-
-  h2 {
-    @include govuk-font(24);
-    color: $grey-1;
-  }
-
-  p {
-    @include govuk-font(19);
-    margin: 10px 0 30px 0;
-  }
-
-  .column {
+    background-color: govuk-colour('light-grey');
     width: 100%;
-    padding: 15px;
-    box-sizing: border-box;
-    float: left;
+    padding: 1px 0 0 0;
+    @extend %contain-floats;
+    margin-bottom: 20px;
 
-    @include media(tablet) {
-      width: 100%;
+    h1 {
+        font-size: 38px !important;
+        margin: 1em 0 0 0;
+        padding: 0;
     }
-  }
-  .column-60 {
-          @extend .column;
 
-          @media (min-width: 750px) {
-            width:66.66%;
-          }
+    h2 {
+        @include govuk-font(24);
+        color: #505a5f;
+    }
 
-          @media (max-width: 749px) {
-              background-color: govuk-colour('light-grey');
+    p {
+        @include govuk-font(19);
+        margin: 10px 0 30px 0;
+    }
 
-              h2 {
+    .column {
+        width: 100%;
+        padding: 15px;
+        box-sizing: border-box;
+        float: left;
+
+        @include media(tablet) {
+            width: 100%;
+        }
+    }
+
+    .column-60 {
+        @extend .column;
+
+        @media (min-width: 750px) {
+            width: 66.66%;
+        }
+
+        @media (max-width: 749px) {
+            background-color: govuk-colour('light-grey');
+
+            h2 {
                 width: 100%;
-              }
-          }
-  }
-
-  .column-40 {
-    @extend .column;
-
-    @media (min-width: 750px) {
-      width: 40%;
+            }
+        }
     }
-  }
 
-  .column-30 {
-    @extend .column;
+    .column-40 {
+        @extend .column;
 
-    @media (min-width: 750px) {
-      width: 30%;
+        @media (min-width: 750px) {
+            width: 40%;
+        }
     }
-  }
 
-  @media (max-width: 640px) {
-        padding:10px 0
-  }
+    .column-30 {
+        @extend .column;
 
+        @media (min-width: 750px) {
+            width: 30%;
+        }
+    }
+
+    @media (max-width: 640px) {
+        padding: 10px 0
+    }
 }
+
 .secondary-hero.advanced-search-filters {
-  h2 {
+    h2 {
         font-size: 24px;
         font-weight: 700;
         color: #0b0c0c;
         line-height: 1.0416666667;
     }
+
     .govuk-button {
-		    margin-bottom: 0;
-	  }
+        margin-bottom: 0;
+    }
 
     @media (min-width: 641px) {
-      h2 {
+        h2 {
             font-size: 36px;
             line-height: 1.1111111111;
             margin: 20px 0 30px;
@@ -159,172 +169,171 @@
 }
 
 .secondary-hero-block {
-  h2 {
-    width: 100%;
-    border-bottom: 1px solid $grey-3;
-    color: #207e77;
-    @include govuk-font(19);
-    line-height: 22px;
-    margin-bottom: 10px;
-    @extend %contain-floats;
-
-
-    @media (max-width: 749px) {
-      font-weight: bold;
-    }
-
-    @include media(desktop) {
-      padding: 5px 0;
-    }
-
-    span {
-      @include govuk-font(14);
-      margin-left: 5px;
-      display: inline-block;
-    }
-
-    a {
-      font-size: 12px;
-      color: #207e77;
-      float: right;
-      top: 5px;
-      position: relative;
-      margin-bottom: 5px;
-
-      @media (max-width: 749px) {
-        float: left !important;
-        font-weight: normal !important;
-      }
-    }
-  }
-
-
-  .secondary-hero-block-content {
-    padding: 10px 0;
-    float: right;
-    width: 100%;
-    position: relative;
-
-    &:before {
-      content: "";
-      float: left;
-      width: 40px;
-      height: 40px;
-      position: relative;
-      margin-right: 20px;
-    }
-
-    h5 {
-      @extend .govuk-body-m
-    }
-
-    p {
-      font-size: 20px;
-      line-height: 1.25;
-      letter-spacing: -0.25px;
-      margin: 0;
-
-      span {
-        @include govuk-font(14);
-        color: #207e77;
-        width: 100%;
-        display: block;
-      }
-    }
-
-    @media (max-width: 749px) {
-
-      &:after {
-        display: none;
-      }
-
-      &:before {
-        display: none;
-      }
-
-      p {
-        text-align: right;
-      }
-    }
-  }
-
-  @media (max-width: 749px) {
-    &:nth-child(odd) {
-      background-color: darken(govuk-colour('light-grey'), 5%);
-    }
-
     h2 {
-      width: 50%;
-      float: left;
-      border: none;
-      min-width: 150px;
-
-      span {
         width: 100%;
-        margin: 0;
-      }
+        border-bottom: 1px solid $grey-3;
+        color: #0b0c0c;
+        @include govuk-font(19);
+        line-height: 22px;
+        margin-bottom: 10px;
+        @extend %contain-floats;
+
+
+        @media (max-width: 749px) {
+            font-weight: bold;
+        }
+
+        @include media(desktop) {
+            padding: 5px 0;
+        }
+
+        span {
+            @include govuk-font(14);
+            margin-left: 5px;
+            display: inline-block;
+        }
+
+        a {
+            font-size: 12px;
+            color: #207e77;
+            float: right;
+            top: 5px;
+            position: relative;
+            margin-bottom: 5px;
+
+            @media (max-width: 749px) {
+                float: left !important;
+                font-weight: normal !important;
+            }
+        }
     }
 
-    .job-profile-heroblock-content {
-      float: right;
-      width: auto;
-      padding: 0;
 
-      p {
-        font-size: 16px;
-      }
+    .secondary-hero-block-content {
+        padding: 10px 0;
+        float: right;
+        width: 100%;
+        position: relative;
+
+        &:before {
+            content: "";
+            float: left;
+            width: 40px;
+            height: 40px;
+            position: relative;
+            margin-right: 20px;
+        }
+
+        h5 {
+            @extend .govuk-body-m
+        }
+
+        p {
+            font-size: 20px;
+            line-height: 1.25;
+            letter-spacing: -0.25px;
+            margin: 0;
+
+            span {
+                @include govuk-font(14);
+                color: #0b0c0c;
+                width: 100%;
+                display: block;
+            }
+        }
+
+        @media (max-width: 749px) {
+
+            &:after {
+                display: none;
+            }
+
+            &:before {
+                display: none;
+            }
+
+            p {
+                text-align: right;
+            }
+        }
     }
-  }
+
+    @media (max-width: 749px) {
+        &:nth-child(odd) {
+            background-color: darken(govuk-colour('light-grey'), 5%);
+        }
+
+        h2 {
+            width: 50%;
+            float: left;
+            border: none;
+            min-width: 150px;
+
+            span {
+                width: 100%;
+                margin: 0;
+            }
+        }
+
+        .job-profile-heroblock-content {
+            float: right;
+            width: auto;
+            padding: 0;
+
+            p {
+                font-size: 16px;
+            }
+        }
+    }
 }
 
 
 /* NCS HERO SECONDARY */
 
 .ncs-hero-secondary {
-  @extend .secondary-hero
+    @extend .secondary-hero
 }
 
 .ncs-hero-secondary-block {
-  @extend .secondary-hero-block;
-
-  .ncs-hero-secondary-block-content {
-  @extend .secondary-hero-block-content
-
-  }
-
-  .ncs-salary {
-    @extend .pound-block
-  }
-
-  .ncs-hours {
-    @extend .clock-block
-  }
-
-  .ncs-pattern {
-    @extend .calendar-block
-  }
-
-  @media (max-width: 749px) {
-    &:nth-child(odd) {
-      background-color: darken(govuk-colour('light-grey'), 5%);
-    }
-
-    h2 {
-      width: 50%;
-      float: left;
-      border: none;
-      min-width: 150px;
-
-      span {
-        width: 100%;
-        margin: 0;
-      }
-    }
+    @extend .secondary-hero-block;
 
     .ncs-hero-secondary-block-content {
-      float: right;
-      width: auto;
-      padding: 0;
+        @extend .secondary-hero-block-content
     }
-  }
+
+    .ncs-salary {
+        @extend .pound-block
+    }
+
+    .ncs-hours {
+        @extend .clock-block
+    }
+
+    .ncs-pattern {
+        @extend .calendar-block
+    }
+
+    @media (max-width: 749px) {
+        &:nth-child(odd) {
+            background-color: darken(govuk-colour('light-grey'), 5%);
+        }
+
+        h2 {
+            width: 50%;
+            float: left;
+            border: none;
+            min-width: 150px;
+
+            span {
+                width: 100%;
+                margin: 0;
+            }
+        }
+
+        .ncs-hero-secondary-block-content {
+            float: right;
+            width: auto;
+            padding: 0;
+        }
+    }
 }

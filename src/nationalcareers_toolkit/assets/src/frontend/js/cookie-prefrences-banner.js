@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    var printHtml = '<button id="accept-all-cookies" class="govuk-button" type="button" data-module="track-click" data-accept-cookies="true" data-track-category="cookieBanner" data-track-action="Cookie banner accepted">Accept all cookies</button>';
+    var printHtml = '<button id="accept-all-cookies" class="govuk-button ncs-button__primary" type="button" data-module="track-click" data-accept-cookies="true" data-track-category="cookieBanner" data-track-action="Cookie banner accepted">Accept all cookies</button>';
     $('#accept-cookies-div').html(printHtml);
 
     if (!cookiePrefrences.isCookiePrefrenceSet()) {
