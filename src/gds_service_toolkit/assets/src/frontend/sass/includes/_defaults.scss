@@ -55,7 +55,7 @@ nav {
 body {
   @extend .govuk-template__body;
   @extend .app-body-class !optional;
-  @extend .js-enabled
+  @extend .js-enabled;
 }
 
 main {

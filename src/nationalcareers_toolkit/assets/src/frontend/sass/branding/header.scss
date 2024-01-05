@@ -17,7 +17,6 @@
 }
 
 .ncs-hero {
-    min-width: 960px;
     background-color: $light_blue_25;
     color: $text_white;
     box-sizing: border-box;
@@ -90,7 +89,7 @@
         }
 
         h1 {
-            max-height: 113px;
+            max-height: 145px;
             overflow: hidden;
             padding: 5px;
         }
