@@ -14,6 +14,7 @@ $(document).ready(function () {
                 cookiePrefrences.approveAll()
                 $('#cookie-message').hide()
                 $('#confirmatiom-message').show()
+                windows.location.reload()
             })
 
             $('#hide-cookies-message').click(function () {

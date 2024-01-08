@@ -12,9 +12,9 @@ $(document).ready(function () {
 
             $('#accept-all-cookies').click(function () {
                 cookiePrefrences.approveAll()
-                window.clarity('consent');
                 $('#cookie-message').hide()
                 $('#confirmatiom-message').show()
+                windows.location.reload()
             })
 
             $('#hide-cookies-message').click(function () {
