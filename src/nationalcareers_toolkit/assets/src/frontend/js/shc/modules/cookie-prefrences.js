@@ -255,7 +255,7 @@
         window['ga-disable-UA-75241446-19'] = consentState
 
         if (window.clarity && typeof window.clarity === 'function') {
-            window.clarity(consentState ? 'consent' : 'stop');
+            window.clarity(consentState ? 'stop' : 'consent');
         } else {
             console.error('Clarity is not defined or is not a function.');
         }
