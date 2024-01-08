@@ -11,6 +11,8 @@
         'cookies_policy': 'essential',
         'cookies_preferences_set': 'essential',
         'ncs_hide_custom_banner': 'essential',
+
+        // Google Analytics
         '_ga': 'usage',
         '_gid': 'usage',
         '_gat': 'usage',
@@ -25,8 +27,19 @@
         '_gat_UA-75241446-10': 'usage',
         '_gat_UA-75241446-13': 'usage',
         '_gat_UA-75241446-19': 'usage',
+
+        // Application Insights
         'ai_user': 'usage',
         'ai_session': 'usage',
+
+        // Microsoft Clarity
+        '_clck' : 'usage',
+        '_clsk' : 'usage',
+        'CLID' : 'usage',
+        'ANONCHK' : 'usage',
+        'MR' : 'usage',
+        'MUID' : 'usage',
+        'SM' : 'usage'
     }
 
     /*
@@ -241,6 +254,11 @@
         window['ga-disable-UA-75241446-13'] = consentState
         window['ga-disable-UA-75241446-19'] = consentState
 
+        if (window.clarity && typeof window.clarity === 'function') {
+            window.clarity(consent ? 'consent' : 'stop');
+        } else {
+            console.error('Clarity is not defined or is not a function.');
+        }
 
         if (window.appInsights && window.appInsights.config) {
             if (typeof window.appInsights.config.isCookieUseDisabled !== 'undefined') {
