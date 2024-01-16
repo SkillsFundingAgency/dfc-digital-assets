@@ -615,6 +615,10 @@ $mobile: 768px;
     border-left: 0px;
 }
 
+.ncs-button__primary {
+  margin-right: 30px;
+}
+
 .overlay {
   position: fixed;
   top: 0;
@@ -623,10 +627,7 @@ $mobile: 768px;
   right: 0;
   background: rgba(0, 0, 0, 0.7);
   transition: opacity 500ms;
-}
-.overlay:target {
-  visibility: visible;
-  opacity: 1;
+  animation: ease-in 80s;
 }
 
 .popup {
@@ -637,12 +638,6 @@ $mobile: 768px;
   width: 30%;
   position: relative;
   transition: all 5s ease-in-out;
-}
-
-.popup h2 {
-  margin-top: 0;
-  color: #333;
-  font-family: Tahoma, Arial, sans-serif;
 }
 .popup .close {
   position: absolute;
