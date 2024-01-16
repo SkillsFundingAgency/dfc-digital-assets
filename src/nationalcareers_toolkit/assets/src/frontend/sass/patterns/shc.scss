@@ -626,6 +626,8 @@ $mobile: 768px;
 
 .session-timeout {
    animation: popup .10s 10s ease forwards;
+   transition: opacity 10s;
+   opacity: 0;
 }
 
 @keyframes popup {
