@@ -631,25 +631,22 @@ $mobile: 768px;
   left: 0;
   right: 0;
   background: rgba(0, 0, 0, 0.7);
-  transition: opacity 500ms;
+  transition: opacity 500ms; 
+  opacity: 0; 
+  animation: popup .80s 80s ease forwards;
+ 
 }
+
+@keyframes popup {
+  from {opacity: 0; }
+  to{opacity: 1; }
+ }
 
 .popup {
   margin: 70px auto;
   padding: 20px;
   background: #fff;
   border-radius: 5px;
-  width: 30%;
-  position: relative;
-  animation: ease-in 80s;
-}
-.popup .close {
-  position: absolute;
-  top: 20px;
-  right: 30px;
-  transition: all 200ms;
-  font-size: 30px;
-  font-weight: bold;
-  text-decoration: none;
-  color: #333;
+  width: 40%;
+  position: relative; 
 }
