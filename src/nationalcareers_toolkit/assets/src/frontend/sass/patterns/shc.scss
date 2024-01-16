@@ -624,6 +624,15 @@ $mobile: 768px;
   padding: 20px;
 }
 
+.session-timeout {
+   animation: popup .10s 10s ease forwards;
+}
+
+@keyframes popup {
+  from {opacity: 0; }
+  to{opacity: 1; }
+ }
+
 .overlay {
   position: fixed;
   top: 0;
@@ -631,17 +640,17 @@ $mobile: 768px;
   left: 0;
   right: 0;
   background: rgba(0, 0, 0, 0.7);
+ 
 }
 .popup {
 position: absolute;
 top: 50%;
 left: 50%;
-transform: translate(-50%, -50%);
 width: 200px;
 height: 200px;
 background: white;
 opacity: 0;
-animation: popup .5s 5s ease forwards;
+
 }
 // .popup {
 //   margin: 70px auto;
@@ -655,7 +664,3 @@ animation: popup .5s 5s ease forwards;
 //   transition: opacity 500s; 
 // }
 
-@keyframes popup {
-  from {opacity: 0; }
-  to{opacity: 1; }
- }
