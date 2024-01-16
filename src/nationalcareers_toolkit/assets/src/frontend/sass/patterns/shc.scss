@@ -644,23 +644,11 @@ $mobile: 768px;
 }
 .popup {
 position: absolute;
-top: 50%;
-left: 50%;
-width: 200px;
-height: 200px;
-background: white;
-opacity: 0;
-
+margin: 70px auto;
+padding: 20px;
+background: #fff;
+border-radius: 5px;
+width: 40%;
+position: relative;
 }
-// .popup {
-//   margin: 70px auto;
-//   padding: 20px;
-//   background: #fff;
-//   border-radius: 5px;
-//   width: 40%;
-//   position: relative; 
-//   transform: translate(-50%, -50%);
-//   animation: popup .80s 80s ease forwards;  
-//   transition: opacity 500s; 
-// }
 
