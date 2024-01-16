@@ -631,21 +631,31 @@ $mobile: 768px;
   left: 0;
   right: 0;
   background: rgba(0, 0, 0, 0.7);
-  transition: opacity 500s; 
-  animation: popup .80s 80s ease forwards;
- 
 }
+.popup {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+width: 200px;
+height: 200px;
+background: white;
+opacity: 0;
+animation: popup .5s 5s ease forwards;
+}
+// .popup {
+//   margin: 70px auto;
+//   padding: 20px;
+//   background: #fff;
+//   border-radius: 5px;
+//   width: 40%;
+//   position: relative; 
+//   transform: translate(-50%, -50%);
+//   animation: popup .80s 80s ease forwards;  
+//   transition: opacity 500s; 
+// }
 
 @keyframes popup {
   from {opacity: 0; }
   to{opacity: 1; }
  }
-
-.popup {
-  margin: 70px auto;
-  padding: 20px;
-  background: #fff;
-  border-radius: 5px;
-  width: 40%;
-  position: relative; 
-}
