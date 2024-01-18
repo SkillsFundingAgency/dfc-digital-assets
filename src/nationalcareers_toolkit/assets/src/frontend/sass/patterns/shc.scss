@@ -625,7 +625,7 @@ $mobile: 768px;
 }
 
 .session-timeout {
-   animation: popup .10s 10s ease forwards;
+   animation: popup .30 30 ease forwards;
    transition: opacity 10s;
    opacity: 0;
 }
@@ -651,6 +651,5 @@ padding: 20px;
 background: #fff;
 border-radius: 5px;
 width: 40%;
-position: relative;
 }
 
