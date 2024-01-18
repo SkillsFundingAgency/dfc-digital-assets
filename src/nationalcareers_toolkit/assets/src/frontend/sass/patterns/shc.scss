@@ -631,12 +631,17 @@ $mobile: 768px;
 }
 
 @keyframes popup {
- from {opacity: 0; }
- to{opacity: 1; }
+ from {
+  opacity: 0;
+  visibility: hidden; 
+}
+ to{opacity: 1;
+  visibility: visible;
+}
 }
 
 .overlay {
- position: sticky;
+ position: fixed;
  top: 0;
  bottom: 0;
  left: 0;
@@ -645,7 +650,6 @@ $mobile: 768px;
 
 }
 .popup {
-position: absolute;
 margin: 70px auto;
 padding: 20px;
 background: #fff;
