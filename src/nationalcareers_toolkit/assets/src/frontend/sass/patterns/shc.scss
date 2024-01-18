@@ -625,23 +625,24 @@ $mobile: 768px;
 }
 
 .session-timeout {
-   animation: popup .30s 30s ease forwards;
-   transition: opacity 10s;
-   opacity: 0;
+  animation: popup .10s 10s ease forwards;
+  transition: opacity 10s;
+  opacity: 0;
 }
 
 @keyframes popup {
-  from {opacity: 0; }
-  to{opacity: 1; }
- }
+ from {opacity: 0; }
+ to{opacity: 1; }
+}
 
 .overlay {
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(0, 0, 0, 0.7);
- 
+ position: sticky;
+ top: 0;
+ bottom: 0;
+ left: 0;
+ right: 0;
+ background: rgba(0, 0, 0, 0.7);
+
 }
 .popup {
 position: absolute;
@@ -651,4 +652,3 @@ background: #fff;
 border-radius: 5px;
 width: 40%;
 }
-
