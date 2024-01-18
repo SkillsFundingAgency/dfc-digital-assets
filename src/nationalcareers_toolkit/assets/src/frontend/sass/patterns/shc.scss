@@ -625,15 +625,15 @@ $mobile: 768px;
 }
 
 .session-timeout {
-  animation: popup .10s 10s ease forwards;
+  animation: popup 0.1s 20s ease forwards;
   transition: opacity 10s;
   opacity: 0;
+  visibility: hidden; 
 }
 
 @keyframes popup {
  from {
   opacity: 0;
-  visibility: hidden; 
 }
  to{opacity: 1;
   visibility: visible;
