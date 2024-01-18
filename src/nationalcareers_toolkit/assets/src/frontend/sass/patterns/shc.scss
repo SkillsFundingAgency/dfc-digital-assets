@@ -625,7 +625,7 @@ $mobile: 768px;
 }
 
 .session-timeout {
-   animation: popup .30 30 ease forwards;
+   animation: popup .30s 30s ease forwards;
    transition: opacity 10s;
    opacity: 0;
 }
@@ -636,7 +636,6 @@ $mobile: 768px;
  }
 
 .overlay {
-  position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
