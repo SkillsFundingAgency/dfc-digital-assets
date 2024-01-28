@@ -658,15 +658,10 @@ width: 40%;
 }
 
 .formRefresh{
-  display: contents;
+  display: contents !important;
 }
 
-.popup-button {
-  margin-left: 1em;
-  margin-right: 1em;
-}
-
-  @media (min-width: 641px) {
+  @media (min-width: 800px) {
     .popup-link {
         margin-left: 2.5em;
     }
