@@ -656,3 +656,23 @@ background: #fff;
 border-radius: 5px;
 width: 40%;
 }
+
+.formRefresh{
+  display: contents;
+}
+
+.popup-button {
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+  @media (min-width: 641px) {
+    .popup-link {
+        margin-left: 2.5em;
+    }
+
+    .popup-button {
+      margin-left: 0px;
+      margin-right: 0px;
+    }
+}
