@@ -165,6 +165,8 @@
             }
             document.cookie = cookieString
         }
+
+        window.location.reload()
     }
 
     window.GOVUK.getCookie = function (name) {
