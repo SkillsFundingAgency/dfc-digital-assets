@@ -2,9 +2,6 @@
 
 (function () {
     'use strict';
-    document.addEventListener("DOMContentLoaded", function () {
-        watchVisibility('.session-timeout');
-    });
 
     //Script to set focus on accordion section links    
     $('.in-progress li a').on('click', function (e) {
@@ -78,48 +75,4 @@ function AddErrorOnField(id, errorText, event) {
     $(id).addClass("field-validation-error").removeClass("field-validation-valid");
     $(".field-validation-error").closest(".form-group").addClass("govuk-form-group--error");
     event.preventDefault();
-}
-
-function watchVisibility(elementName) {
-    const element = document.querySelector(elementName);
-
-    // Function to handle visibility change
-    const handleVisibilityChange = () => {
-        if (element.style.visibility === 'visible') {
-            createFocusTrap(element);
-        }
-    };
-
-    // Observer for visibility changes
-    const observer = new MutationObserver(handleVisibilityChange);
-
-    // Observe changes in style attribute of element
-    observer.observe(element, { attributes: true, attributeFilter: ['style'] });
-};
-
-function createFocusTrap(element) {
-    // If element does not exist or is not visible, exit
-    if (!element || getComputedStyle(element).visibility !== 'visible') {
-        return;
-    }
-
-    const focusableElements = element.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
-    const firstFocusableElement = focusableElements[0];
-    const lastFocusableElement = focusableElements[focusableElements.length - 1];
-
-    element.addEventListener('keydown', function (e) {
-        if (e.key === 'Tab' || e.keyCode === 9) {
-            if (e.shiftKey) {
-                if (document.activeElement === firstFocusableElement) {
-                    e.preventDefault();
-                    lastFocusableElement.focus();
-                }
-            } else {
-                if (document.activeElement === lastFocusableElement) {
-                    e.preventDefault();
-                    firstFocusableElement.focus();
-                }
-            }
-        }
-    });
 }
