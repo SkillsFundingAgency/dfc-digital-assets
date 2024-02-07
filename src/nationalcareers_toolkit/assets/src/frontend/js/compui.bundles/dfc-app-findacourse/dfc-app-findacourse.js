@@ -149,10 +149,10 @@ function generateClearLink(d) {
 }
 
 function showHideDistanceInput(show, orderBy) {
-    
         $('.find-a-course-page #distance-block').show();
-        $("#orderBy-Input")[0].options.add(new Option("Distance", "Distance"));
-        
+        if ($("#orderBy-Input").length && $(".find-a-course-page #orderBy-Input option[value='Distance']").length < 1) {
+            $("#orderBy-Input")[0].options.add(new Option("Distance", "Distance"));
+        }
 }
 
 function showHideClearFilters(show, searchTerm, town, coordinates) {
