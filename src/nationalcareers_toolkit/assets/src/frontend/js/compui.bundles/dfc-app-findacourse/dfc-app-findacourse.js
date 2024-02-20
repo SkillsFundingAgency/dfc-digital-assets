@@ -195,7 +195,7 @@ function anyFiltersSelected(paramValues) {
 }
 
 function makeAjaxCall(paramValues) {
-    if (!paramValues.SearchTerm && !paramValues.Town && !paramValues.CampaignCode) {
+    if (!paramValues.CampaignCode) {
         window.location = '/find-a-course/'
         return false;
     }
