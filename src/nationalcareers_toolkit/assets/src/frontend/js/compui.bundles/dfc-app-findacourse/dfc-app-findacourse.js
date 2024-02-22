@@ -245,13 +245,6 @@ function makeAjaxCall(paramValues) {
 }
 
 function searchFAC(paramValues) {
-    if (!paramValues.SearchTerm && !paramValues.Town && !paramValues.CampaignCode) {
-        if (document.location.search.length) {
-            window.location = '/find-a-course/'
-        }
-        return false;
-    }
-
     var showDistanceSelector = false;
     showDistanceSelector = (paramValues.Town != '');
     paramValues.D = showDistanceSelector === true ? 1 : 0;
