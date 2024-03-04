@@ -66,6 +66,12 @@ $(document).ready(function () {
         return false;
     });
 
+    $('.find-a-course-page #sectors input[type=checkbox]').change(function (e) {
+        makeAjaxCall(getParams(true));
+        e.preventDefault();
+        return false;
+    });
+
     $('.find-a-course-page #learningMethod input[type=checkbox]').change(function (e) {
         makeAjaxCall(getParams(true));
         e.preventDefault();
@@ -110,12 +116,17 @@ function addCommas(nStr) {
 
 function clearFilters(paramValues) {
     paramValues.CourseType = '';
+    paramValues.Sectors = '';
     paramValues.LearningMethod = '';
     paramValues.CourseHours = '';
     paramValues.CourseStudyTime = '';
     paramValues.QualificationLevels = '';
 
     $('.find-a-course-page #courseType input[type=checkbox]').each(function () {
+        $(this).prop('checked', false)
+    });
+
+    $('.find-a-course-page #sectors input[type=checkbox]').each(function () {
         $(this).prop('checked', false)
     });
 
@@ -195,6 +206,7 @@ function anyFiltersSelected(paramValues) {
     if (paramValues.Town != '' ||
         paramValues.StartDate != 'Anytime' ||
         paramValues.CourseType.length > 1 ||
+        paramValues.Sectors.length > 1 ||
         paramValues.LearningMethod.length > 1 ||
         paramValues.CourseHours.length > 1 ||
         paramValues.CourseStudyTime.length > 1 ||
@@ -277,6 +289,7 @@ function getUpdatedUrl(paramValues) {
         "orderByValue=" + paramValues.OrderByValue + "&" +
         "startDate=" + paramValues.StartDate + "&" +
         "courseType=" + paramValues.CourseType + "&" +
+        "sectors=" + paramValues.Sectors + "&" +
         "learningMethod=" + paramValues.LearningMethod + "&" +
         "courseHours=" + paramValues.CourseHours + "&" +
         "courseStudyTime=" + paramValues.CourseStudyTime + "&" +
@@ -308,14 +321,15 @@ function getParams(sortByLocation = false) {
     var page = $('.find-a-course-page #RequestPage').val();
     var startDate = $('.find-a-course-page #startdate-select').val();
     var courseType = [];
+    var sectors = [];
     var learningMethod = [];
     var courseHours = [];
     var courseStudyTime = [];
     var qualificationLevels = [];
     var coordinates = $('.find-a-course-page #coordinates').val();
 
-    $('.find-a-course-page #courseType input[type=checkbox]:checked').each(function () {
-        courseType.push(this.value);
+    $('.find-a-course-page #sectors input[type=checkbox]:checked').each(function () {
+        sectors.push(this.value);
     });
 
     $('.find-a-course-page #learningMethod input[type=checkbox]:checked').each(function () {
@@ -341,6 +355,7 @@ function getParams(sortByLocation = false) {
         OrderByValue: (orderByValue == null) ? 'Relevance' : orderByValue,
         StartDate: (startDate == null) ? 'Anytime' : startDate,
         CourseType: courseType.toString(),
+        Sectors: sectors.toString(),
         LearningMethod: learningMethod.toString(),
         CourseHours: courseHours.toString(),
         CourseStudyTime: courseStudyTime.toString(),
