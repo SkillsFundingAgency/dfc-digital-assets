@@ -328,6 +328,10 @@ function getParams(sortByLocation = false) {
     var qualificationLevels = [];
     var coordinates = $('.find-a-course-page #coordinates').val();
 
+    $('.find-a-course-page #courseType input[type=checkbox]:checked').each(function () {
+        courseType.push(this.value);
+    });
+
     $('.find-a-course-page #sectors input[type=checkbox]:checked').each(function () {
         sectors.push(this.value);
     });
