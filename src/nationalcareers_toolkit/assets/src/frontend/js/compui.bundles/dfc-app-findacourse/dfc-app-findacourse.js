@@ -66,11 +66,11 @@ $(document).ready(function () {
         return false;
     });    
 
-    $('.find-a-course-page #sectors input[type=checkbox]').on('change', function (e) {
+    $(document).on("click", ".find-a-course-page #sectors input[type=checkbox]", function (e) {
         makeAjaxCall(getParams(true));
         e.preventDefault();
         return false;
-    });
+    });    
 
     $('.find-a-course-page #learningMethod input[type=checkbox]').change(function (e) {
         makeAjaxCall(getParams(true));
