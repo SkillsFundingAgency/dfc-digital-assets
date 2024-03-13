@@ -64,9 +64,9 @@ $(document).ready(function () {
         makeAjaxCall(getParams(true));
         e.preventDefault();
         return false;
-    });
+    });    
 
-    $('.find-a-course-page #sectors input[type=checkbox]').change(function (e) {
+    $('.find-a-course-page #sectors input[type=checkbox]').on('change', function (e) {
         makeAjaxCall(getParams(true));
         e.preventDefault();
         return false;
