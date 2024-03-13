@@ -236,9 +236,11 @@ function makeAjaxCall(paramValues) {
             var replacementMarkup = data.offlineHtml;
             var resultCount = "no ";
             var showDistanceSelector = false;
+            var sectorsFilterHtml = "";
             if (data.isHealthy === true && data.payload != null) {
                 var parsedData = JSON.parse(data.payload);
                 replacementMarkup = parsedData.html;
+                sectorsFilterHtml = parsedData.sectorsSideBarHTML
                 resultCount = parsedData.count;
                 showDistanceSelector = parsedData.isPostcode || parsedData.showDistanceSelector;
                 /* Once this code and the FAC app with location is fully deployed the  parsedData.isPostcode can be removed */
@@ -248,6 +250,9 @@ function makeAjaxCall(paramValues) {
             $('.fac-result-count').html("");
             $('.fac-result-count').html(addCommas(resultCount));
             (resultCount > 0) ? $('.no-count-block').show() : $('.no-count-block').hide();
+
+            $('#sectors-block').html("");
+            $('#sectors-block').html(sectorsFilterHtml);
 
             showHideClearFilters(anyFiltersSelected(paramValues), paramValues.SearchTerm, paramValues.Town, paramValues.Coordinates);
             paramValues.D = showDistanceSelector === true ? 1 : 0;
