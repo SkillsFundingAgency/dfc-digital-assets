@@ -64,14 +64,14 @@ $(document).ready(function () {
         makeAjaxCall(getParams(true));
         e.preventDefault();
         return false;
-    });    
+    });
 
-    $(document).on("click", ".find-a-course-page #sectors input[type=checkbox]", function (e) {
+    $('.find-a-course-page #sectors input[type=checkbox]').change(function (e) {
         makeAjaxCall(getParams(true));
         e.preventDefault();
         return false;
-    });    
-
+    });
+    
     $('.find-a-course-page #learningMethod input[type=checkbox]').change(function (e) {
         makeAjaxCall(getParams(true));
         e.preventDefault();
@@ -236,11 +236,9 @@ function makeAjaxCall(paramValues) {
             var replacementMarkup = data.offlineHtml;
             var resultCount = "no ";
             var showDistanceSelector = false;
-            var sectorsFilterHtml = "";
             if (data.isHealthy === true && data.payload != null) {
                 var parsedData = JSON.parse(data.payload);
                 replacementMarkup = parsedData.html;
-                sectorsFilterHtml = parsedData.sectorsSideBarHTML
                 resultCount = parsedData.count;
                 showDistanceSelector = parsedData.isPostcode || parsedData.showDistanceSelector;
                 /* Once this code and the FAC app with location is fully deployed the  parsedData.isPostcode can be removed */
@@ -249,10 +247,7 @@ function makeAjaxCall(paramValues) {
             $('#fac-result-list').html(replacementMarkup);
             $('.fac-result-count').html("");
             $('.fac-result-count').html(addCommas(resultCount));
-            (resultCount > 0) ? $('.no-count-block').show() : $('.no-count-block').hide();
-
-            $('#sectors-block').html("");
-            $('#sectors-block').html(sectorsFilterHtml);
+            (resultCount > 0) ? $('.no-count-block').show() : $('.no-count-block').hide();            
 
             showHideClearFilters(anyFiltersSelected(paramValues), paramValues.SearchTerm, paramValues.Town, paramValues.Coordinates);
             paramValues.D = showDistanceSelector === true ? 1 : 0;
