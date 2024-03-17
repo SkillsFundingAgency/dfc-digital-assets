@@ -75,6 +75,9 @@
   "compuiDfcFindACourseJsFiles": [
     "assets/src/frontend/js/compui.bundles/dfc-app-findacourse/**/*.js"
   ],
+  "compuiDfcJobProfileJsFiles": [
+    "assets/src/frontend/js/compui.bundles/dfc-app-jobprofile/**/*.js"
+  ],
   "compuiDfcTriageToolJsFiles": [
     "assets/src/frontend/js/compui.bundles/dfc-app-triagetool/**/*.js"
   ],
