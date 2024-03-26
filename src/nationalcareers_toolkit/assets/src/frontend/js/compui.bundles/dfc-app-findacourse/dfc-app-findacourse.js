@@ -194,6 +194,10 @@ function showHideSectorsFilter() {
     }
     else {
         $("#sectors-block").hide();
+
+        $('.find-a-course-page #sectors input[type=checkbox]').each(function () {
+            $(this).prop('checked', false)
+        });
     }
 }
 
