@@ -187,7 +187,7 @@ function showHideDistanceInput(show, orderBy) {
 }
 
 function showHideSectorsFilter() {
-    var isChecked = $("#SideBar.CourseType.SelectedIds[5]").is(":checked");
+    var isChecked = $(document.getElementById("SideBar.CourseType.SelectedIds[5]")).is(":checked");
 
     if (isChecked === true) {
         $("#sectors-block").show();
