@@ -1,4 +1,7 @@
 $(document).ready(function () {
+
+    showHideSectorsFilter();
+
     $(".find-a-course-page:first").each(function () {
         var urlParams = new URLSearchParams(window.location.search);
         var distance = urlParams.get('D');
@@ -61,6 +64,7 @@ $(document).ready(function () {
     });
 
     $('.find-a-course-page #courseType input[type=checkbox]').change(function (e) {
+        showHideSectorsFilter();
         makeAjaxCall(getParams(true));
         e.preventDefault();
         return false;
@@ -179,6 +183,17 @@ function showHideDistanceInput(show, orderBy) {
     else {
         $('.find-a-course-page #distance-block').hide();
         $(".find-a-course-page #orderBy-Input option[value='Distance']").remove();
+    }
+}
+
+function showHideSectorsFilter() {
+    var isChecked = $("#SideBar.CourseType.SelectedIds[5]").is(":checked");
+
+    if (isChecked === true) {
+        $("#sectors-block").show();
+    }
+    else {
+        $("#sectors-block").hide();
     }
 }
 
