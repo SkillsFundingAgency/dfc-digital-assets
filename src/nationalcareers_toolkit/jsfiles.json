@@ -1,6 +1,6 @@
 {
   "concatCustomJsFiles": [
-    "node_modules/govuk-frontend/govuk/all.js",
+    "node_modules/govuk-frontend/dist/govuk/all.js",
     "assets/src/frontend/js/cookie-banner.js",
     "assets/src/frontend/js/jp-feedback.js",
     "assets/src/frontend/js/LTCESurvey.js",
