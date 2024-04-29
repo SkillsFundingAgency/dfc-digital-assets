@@ -108,6 +108,12 @@ var results = (function () {
           saveState(true)
           return false
         })
+
+        window.addEventListener('popstate', function (event) {
+            if (event.state && event.state.page === 'back') {
+                callUpdateJobCategoryCounts();
+            }
+        });
       }
     },
     long: function () {
@@ -215,6 +221,12 @@ var results = (function () {
             updateCardHeight()
             return false
           })
+
+          window.addEventListener('popstate', function (event) {
+              if (event.state && event.state.page === 'back') {
+                  callUpdateJobCategoryCounts();
+              }
+          });
         }
 
         updateButtons()
@@ -222,5 +234,23 @@ var results = (function () {
     }
   }
 })()
+
+function callUpdateJobCategoryCounts() {
+    console.info("making ajax request ad-149585");
+
+    //$.ajax({
+    //    type: "POST",
+    //    url: "/ResultsService/UpdateJobCategoryCounts",
+    //    contentType: "application/json",
+    //    dataType: "json",
+    //    data: {  },
+    //    success: function (data) {
+
+    //    },
+    //    error: function (xhr, status, error) {
+
+    //    }
+    //});
+}
 
 module.exports = results
