@@ -109,11 +109,7 @@ var results = (function () {
           return false
         })
 
-        window.addEventListener('popstate', function (event) {
-            if (event.state && event.state.page === 'back') {
-                callUpdateJobCategoryCounts();
-            }
-        });
+        callUpdateJobCategoryCounts();
       }
     },
     long: function () {
@@ -222,13 +218,7 @@ var results = (function () {
             return false
           })
 
-          window.addEventListener('popstate', function (event) {
-              if (event.state && event.state.page === 'back') {
-                  callUpdateJobCategoryCounts();
-              }
-          });
-        }
-
+        callUpdateJobCategoryCounts();
         updateButtons()
       })
     }
@@ -236,21 +226,33 @@ var results = (function () {
 })()
 
 function callUpdateJobCategoryCounts() {
-    console.info("making ajax request ad-149585");
+    console.info("making ajax request");
 
-    //$.ajax({
-    //    type: "POST",
-    //    url: "/ResultsService/UpdateJobCategoryCounts",
-    //    contentType: "application/json",
-    //    dataType: "json",
-    //    data: {  },
-    //    success: function (data) {
+    var apiCall = {
+        url: '/api/Ajax/Action',
+        path: 'discover-your-skills-and-careers',
+        method: 'Ajax'
+    };
 
-    //    },
-    //    error: function (xhr, status, error) {
-
-    //    }
-    //});
+    $.ajax({
+        type: "GET",
+        url: apiCall.Url,
+        contentType: "application/json",
+        dataType: "json",
+        data: { path: apiCall.path, method: apiCall.method },
+        success: function (data) {
+            if (data.isHealthy === true && data.payload != null) {
+                locationData = JSON.parse(data.payload)
+                response(locationData)
+            }
+        },
+        failure: function () {
+            console.log('Failured to update results page');
+        },
+        error: function () {
+            console.log('Errors in updating results page');
+        }
+    });
 }
 
 module.exports = results
