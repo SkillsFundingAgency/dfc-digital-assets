@@ -109,7 +109,7 @@ var results = (function () {
           return false
         })
 
-        callUpdateJobCategoryCounts();
+        callUpdateJobCategoryCounts()
       }
     },
     long: function () {
@@ -218,7 +218,7 @@ var results = (function () {
             return false
           })
 
-        callUpdateJobCategoryCounts();
+        callUpdateJobCategoryCounts()
         updateButtons()
       })
     }
