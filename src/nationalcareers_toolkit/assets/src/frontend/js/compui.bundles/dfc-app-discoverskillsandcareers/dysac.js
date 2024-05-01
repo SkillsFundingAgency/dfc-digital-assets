@@ -11,7 +11,7 @@ if (dysacHelpers.isPage('app-page--results-long')) {
     }
     dysacResults.long();
 }
-if window.addEventListener('popstate', function () {
+if (window.addEventListener('popstate', function () {
     if (dysacHelpers.isPage('app-page--results')) {
         dysacResults.callUpdateJobCategoryCounts();
     }
@@ -19,7 +19,7 @@ if window.addEventListener('popstate', function () {
     if (dysacHelpers.isPage('app-page--results-long')) {
         dysacResults.callUpdateJobCategoryCounts();
     }
-});
+}));
 
 
 
