@@ -223,34 +223,34 @@ var dysacResults = (function () {
             callUpdateJobCategoryCounts();
         }
     };
-})();
 
-function callUpdateJobCategoryCounts() {
-    console.info("making ajax request");
+    function callUpdateJobCategoryCounts() {
+        console.info("making ajax request");
 
-    var apiCall = {
-        url: '/api/Ajax/Action',
-        path: 'discover-your-skills-and-careers',
-        method: 'Ajax'
-    };
+        var apiCall = {
+            url: '/api/Ajax/Action',
+            path: 'discover-your-skills-and-careers',
+            method: 'Ajax'
+        };
 
-    $.ajax({
-        type: "GET",
-        url: apiCall.Url,
-        contentType: "application/json",
-        dataType: "json",
-        data: { path: apiCall.path, method: apiCall.method },
-        success: function (data) {
-            if (data.isHealthy === true && data.payload != null) {
-                locationData = JSON.parse(data.payload)
-                response(locationData)
+        $.ajax({
+            type: "GET",
+            url: apiCall.Url,
+            contentType: "application/json",
+            dataType: "json",
+            data: { path: apiCall.path, method: apiCall.method },
+            success: function (data) {
+                if (data.isHealthy === true && data.payload != null) {
+                    locationData = JSON.parse(data.payload)
+                    response(locationData)
+                }
+            },
+            failure: function () {
+                console.log('Failured to update results page');
+            },
+            error: function () {
+                console.log('Errors in updating results page');
             }
-        },
-        failure: function () {
-            console.log('Failured to update results page');
-        },
-        error: function () {
-            console.log('Errors in updating results page');
-        }
-    });
-}
+        });
+    }
+})();
