@@ -240,16 +240,13 @@ var dysacResults = (function () {
             dataType: "json",
             data: { path: apiCall.path, method: apiCall.method },
             success: function (data) {
-                if (data.isHealthy === true && data.payload != null) {
-                    locationData = JSON.parse(data.payload)
-                    response(locationData)
-                }
+                console.log('Ajax function called successfully');
             },
             failure: function () {
                 console.log('Failured to update results page');
             },
-            error: function () {
-                console.log('Errors in updating results page');
+            error: function (xhr, status, error) {
+                console.log('Errors in updating results page:', error);
             }
         });
     }
