@@ -238,6 +238,7 @@ var dysacResults = (function () {
             url: apiCall.url,
             contentType: "json",
             dataType: "html",
+            data: { },
             success: function () {
                 console.log('Ajax function called successfully.');
             },
