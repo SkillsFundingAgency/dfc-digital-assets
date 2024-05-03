@@ -235,7 +235,7 @@ var dysacResults = (function () {
 
         $.ajax({
             type: "GET",
-            url: "/api/get/results/ajax",
+            url: "https://dfc-dev-app-dysac-as.azurewebsites.net/api/get/results/ajax",
             contentType: "json",
             dataType: "html",
             success: function () {
