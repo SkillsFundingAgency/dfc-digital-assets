@@ -240,7 +240,7 @@ var dysacResults = (function () {
             dataType: "html",
             data: { path: apiCall.path, method: apiCall.method },
             success: function (data) {
-                console.log('Ajax function called successfully');
+                console.log('Ajax function called successfully. Data returned:', data);
             },
             failure: function () {
                 console.log('Failured to update results page');
