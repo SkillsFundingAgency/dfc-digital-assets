@@ -235,15 +235,14 @@ var dysacResults = (function () {
 
         $.ajax({
             type: "GET",
-            url: apiCall.Url,
-            contentType: "application/json",
+            url: "/api/get/results/ajax",
+            contentType: "json",
             dataType: "html",
-            data: { path: apiCall.path, method: apiCall.method },
-            success: function (data) {
-                console.log('Ajax function called successfully. Data returned:', data);
+            success: function () {
+                console.log('Ajax function called successfully.');
             },
             failure: function () {
-                console.log('Failured to update results page');
+                console.log('Failured to update results page.');
             },
             error: function (xhr, status, error) {
                 console.log('Errors in updating results page:', error);
