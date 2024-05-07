@@ -54,6 +54,7 @@ var dysacResults = (function () {
             });
         },
         short: function () {
+            callUpdateJobCategoryCounts();
             const resultsList = document.getElementById('app-results-list');
             const resultsItems = Array.prototype.slice.call(resultsList.children);
             const other = resultsItems.filter(result => resultsItems.indexOf(result) >= 3);
@@ -109,9 +110,9 @@ var dysacResults = (function () {
                     return false;
                 });
             }
-            callUpdateJobCategoryCounts();
         },
         long: function () {
+            callUpdateJobCategoryCounts();
             const resultsLists = Array.prototype.slice.call(document.getElementsByClassName('app-long-results'));
 
             resultsLists.map(resultsList => {
@@ -217,10 +218,8 @@ var dysacResults = (function () {
                         return false;
                     });
                 }
-
                 updateButtons();
             });
-            callUpdateJobCategoryCounts();
         }
     };
 
@@ -238,8 +237,9 @@ var dysacResults = (function () {
             url: apiCall.url,
             contentType: "json",
             dataType: "html",
-            data: { },
+            data: { path: apiCall.path, method: apiCall.method },
             success: function () {
+
                 console.log('Ajax function called successfully.');
             },
             failure: function () {
