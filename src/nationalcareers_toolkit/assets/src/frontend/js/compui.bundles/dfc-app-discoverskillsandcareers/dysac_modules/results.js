@@ -1,4 +1,5 @@
 var dysacResults = (function () {
+    callUpdateJobCategoryCounts();
     const cookieName = '.dysac-result';
     const cookieData = getCookie(cookieName);
     const data = cookieData ? JSON.parse(cookieData) : null;
@@ -54,7 +55,6 @@ var dysacResults = (function () {
             });
         },
         short: function () {
-            callUpdateJobCategoryCounts();
             const resultsList = document.getElementById('app-results-list');
             const resultsItems = Array.prototype.slice.call(resultsList.children);
             const other = resultsItems.filter(result => resultsItems.indexOf(result) >= 3);
@@ -112,7 +112,6 @@ var dysacResults = (function () {
             }
         },
         long: function () {
-            callUpdateJobCategoryCounts();
             const resultsLists = Array.prototype.slice.call(document.getElementsByClassName('app-long-results'));
 
             resultsLists.map(resultsList => {
@@ -235,10 +234,14 @@ var dysacResults = (function () {
         $.ajax({
             type: "GET",
             url: apiCall.url,
-            contentType: "json",
+            contentType: "application/json",
             dataType: "html",
             data: { path: apiCall.path, method: apiCall.method },
-            success: function () {
+            success: function (data) {
+                if (data.isHealthy === true && data.payload != null) {
+                    options = JSON.parse(data.payload);
+                    promise.resolve(options);
+                }
 
                 console.log('Ajax function called successfully.');
             },
