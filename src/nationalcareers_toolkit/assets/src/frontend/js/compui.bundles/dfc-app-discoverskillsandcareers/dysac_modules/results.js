@@ -1,5 +1,5 @@
 var dysacResults = (function () {
-    callUpdateJobCategoryCounts();
+    location.refresh();
     const cookieName = '.dysac-result';
     const cookieData = getCookie(cookieName);
     const data = cookieData ? JSON.parse(cookieData) : null;
@@ -221,36 +221,4 @@ var dysacResults = (function () {
             });
         }
     };
-
-    function callUpdateJobCategoryCounts() {
-        console.info("making ajax request");
-
-        var apiCall = {
-            url: '/api/Ajax/Action',
-            path: 'discover-your-skills-and-careers',
-            method: 'Ajax'
-        };
-
-        $.ajax({
-            type: "GET",
-            url: apiCall.url,
-            contentType: "application/json",
-            dataType: "html",
-            data: { path: apiCall.path, method: apiCall.method },
-            success: function (data) {
-                if (data.isHealthy === true && data.payload != null) {
-                    options = JSON.parse(data.payload);
-                    promise.resolve(options);
-                }
-
-                console.log('Ajax function called successfully.');
-            },
-            failure: function () {
-                console.log('Failured to update results page.');
-            },
-            error: function (xhr, status, error) {
-                console.log('Errors in updating results page:', error);
-            }
-        });
-    }
 })();
