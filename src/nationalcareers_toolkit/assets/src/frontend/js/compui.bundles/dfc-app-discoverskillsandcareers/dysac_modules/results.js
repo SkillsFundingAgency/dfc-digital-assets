@@ -1,8 +1,12 @@
 var dysacResults = (function () {
-    location.refresh();
     const cookieName = '.dysac-result';
     const cookieData = getCookie(cookieName);
     const data = cookieData ? JSON.parse(cookieData) : null;
+
+    if (window.location.href.includes("results")) {
+        location.reload();
+    }
+
     function breakArrayIntoGroups(data, maxPerGroup) {
         var groups = [];
         for (var index = 0; index < data.length; index += maxPerGroup) {
