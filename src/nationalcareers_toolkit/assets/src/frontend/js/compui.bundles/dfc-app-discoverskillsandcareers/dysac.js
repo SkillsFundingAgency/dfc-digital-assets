@@ -1,3 +1,10 @@
+var initialUrl = window.location.href;
+
+window.onpopstate = function (event) { 
+    if (window.location.href.includes("results") && window.location.href !== initialUrl) {
+        location.reload();
+    }
+}
 dysacAnalytics.init();
 dysacBreadcrumbs.init();
 

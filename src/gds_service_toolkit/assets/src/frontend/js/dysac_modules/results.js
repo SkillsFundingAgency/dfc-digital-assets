@@ -109,7 +109,6 @@ var results = (function () {
                     return false
                 })
             }
-            callUpdateJobCategoryCounts()
         },
         long: function () {
             const resultsLists = Array.prototype.slice.call(document.getElementsByClassName('app-long-results'))
@@ -220,39 +219,8 @@ var results = (function () {
 
                 updateButtons()
             })
-            callUpdateJobCategoryCounts()
         }
     }
 })()
-
-function callUpdateJobCategoryCounts() {
-    console.info("making ajax request");
-
-    var apiCall = {
-        url: '/api/Ajax/Action',
-        path: 'discover-your-skills-and-careers',
-        method: 'Ajax'
-    };
-
-    $.ajax({
-        type: "GET",
-        url: apiCall.Url,
-        contentType: "application/json",
-        dataType: "json",
-        data: { path: apiCall.path, method: apiCall.method },
-        success: function (data) {
-            if (data.isHealthy === true && data.payload != null) {
-                locationData = JSON.parse(data.payload)
-                response(locationData)
-            }
-        },
-        failure: function () {
-            console.log('Failured to update results page');
-        },
-        error: function () {
-            console.log('Errors in updating results page');
-        }
-    });
-}
 
 module.exports = results
