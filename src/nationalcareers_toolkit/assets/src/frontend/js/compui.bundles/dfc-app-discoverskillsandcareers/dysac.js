@@ -1,10 +1,3 @@
-var initialUrl = window.location.href;
-
-window.onpopstate = function (event) { 
-    if (window.location.href.includes("results") && window.location.href !== initialUrl) {
-        location.reload();
-    }
-}
 dysacAnalytics.init();
 dysacBreadcrumbs.init();
 
@@ -18,6 +11,18 @@ if (dysacHelpers.isPage('app-page--results-long')) {
     }
     dysacResults.long();
 }
+
+var previousUrl = document.referrer;
+
+window.addEventListener('beforeunload', () => {
+    console.log('User clicked back button');
+    console.log('Current URL:', window.location.href);
+    console.log('Previous URL:', previousUrl);
+    if (window.location.href.includes("filterquestions") && window.location.href.includes("/1")) {
+        console.log('If statement triggered');
+        window.location.reload(true);
+    }
+});
 
 $(document).ready(function () {
     compUiShell.validation.ShowErrorInPageTitle('dysac-validation-summary');
