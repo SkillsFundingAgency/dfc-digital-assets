@@ -3,6 +3,19 @@ var dysacResults = (function () {
     const cookieData = getCookie(cookieName);
     const data = cookieData ? JSON.parse(cookieData) : null;
 
+    var perfEntries = performance.getEntriesByType("navigation");
+    if (perfEntries[0].type === "back_forward") {
+        console.log('User clicked back button');
+
+        var previousUrl = window.location.href;
+        var currentUrl = document.referrer;
+
+        if (previousUrl.includes("results") && currentUrl.includes("filterquestions")) {
+            console.log('Forcing refresh')
+            location.reload();
+        }
+    }
+
     function breakArrayIntoGroups(data, maxPerGroup) {
         var groups = [];
         for (var index = 0; index < data.length; index += maxPerGroup) {
