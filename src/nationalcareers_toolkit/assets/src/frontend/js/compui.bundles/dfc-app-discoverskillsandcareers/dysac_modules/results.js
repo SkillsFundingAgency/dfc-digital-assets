@@ -7,12 +7,19 @@ var dysacResults = (function () {
     if (perfEntries[0].type === "back_forward") {
         console.log('User clicked back button');
 
-        var previousUrl = window.location.href;
-        var currentUrl = document.referrer;
+        var currentUrl = window.location.href;
+        var previousUrl = document.referrer;
 
-        if (previousUrl.includes("results") && currentUrl.includes("filterquestions")) {
+        let hasReloaded = localStorage.getItem('hasReloaded')
+
+        if (hasReloaded !== true && currentUrl.includes('results')) {
             console.log('Forcing refresh')
+            localStorage.setItem('hasReloaded', true)
             location.reload();
+        }
+        else { 
+            console.log('hasReloaded in localStorage set as false')
+            localStorage.setItem('hasReloaded', false)
         }
     }
 
