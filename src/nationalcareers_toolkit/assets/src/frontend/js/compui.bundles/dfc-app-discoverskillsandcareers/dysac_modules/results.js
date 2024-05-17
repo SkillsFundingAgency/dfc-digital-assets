@@ -8,7 +8,6 @@ var dysacResults = (function () {
         console.log('User clicked back button');
 
         var currentUrl = window.location.href;
-        var previousUrl = document.referrer;
 
         let hasReloaded = localStorage.getItem('hasReloaded')
 
