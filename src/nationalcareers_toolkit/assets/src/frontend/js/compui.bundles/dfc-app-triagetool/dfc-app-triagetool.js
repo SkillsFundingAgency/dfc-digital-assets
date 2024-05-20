@@ -111,6 +111,14 @@ $(document).ready(function () {
             optionSelect.change(function () {
                 updateData(true);
             });
+            
+            optionSelect.on('keydown',function(event){
+                if (event.target.id === 'triageSelect'){
+                    if (event.key === 'ArrowUp' || event.key === 'ArrowDown' || event.key ==='ArrowLeft'|| event.key ==='ArrowRight' ) {
+                        event.preventDefault();
+                    }
+                }
+            });
 
             pocSelect.change(function () {
                 updateData(true);

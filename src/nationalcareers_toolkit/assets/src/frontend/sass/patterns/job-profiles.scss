@@ -81,15 +81,20 @@
   }
 
   .job-profile-salary {
-    @extend .pound-block
+    @extend .pound-block;
+
+    .dfc-code-jpshidden {
+      font-size: 16px;
+      @include govuk-font(19);
+    }
   }
 
   .job-profile-hours {
-    @extend .clock-block
+    @extend .calendar-block;
   }
 
   .job-profile-pattern {
-    @extend .calendar-block;
+    @extend .clock-block
   }
 
   .job-profile-group {
@@ -153,11 +158,11 @@
   }
 
   .job-profile-hours {
-    @extend .clock-block
+    @extend .calendar-block;
   }
 
   .job-profile-pattern {
-    @extend .calendar-block;
+    @extend .clock-block
   }
 
   .job-profile-group {
@@ -232,11 +237,11 @@
   }
 
   .job-profile-hours {
-    @extend .clock-block
+    @extend .calendar-block;
   }
 
   .job-profile-pattern {
-    @extend .calendar-block;
+    @extend .clock-block
   }
 
   .job-profile-group {
@@ -362,7 +367,7 @@
 
 .opportunity-item {
   @extend .govuk-inset-text;
-  border-color: #207e77;
+  border-color: #000;
   padding: .7894736842em;
   margin-top: 0;
   margin-bottom: .7894736842em;
@@ -492,12 +497,7 @@
 }
 
 .job-profile-sidebar {
-  border-top: 3px solid#207e77;
   margin-bottom: 2em;
-
-  @include media(tablet) {
-    border-top: 6px solid#207e77;
-  }
 
   li {
     margin-bottom: 10px;

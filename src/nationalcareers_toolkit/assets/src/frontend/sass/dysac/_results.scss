@@ -166,13 +166,13 @@
       clear: both;
       margin-bottom: govuk-px-to-rem(8);
       width: calc(100% - 8px);
-      border-left: 4px solid $app-turquoise;
-      border-right: 4px solid $app-turquoise;
+      border-left: 4px solid #0b0c0c;
+      border-right: 4px solid #0b0c0c;
       padding-top: govuk-px-to-rem(4);
       padding-bottom: govuk-px-to-rem(4);
 
       hr {
-        border: 2px solid $app-turquoise;
+        border: 2px solid #0b0c0c;
       }
 
       &--variable {
@@ -188,7 +188,7 @@
       float: left;
 
       svg {
-        color: $app-turquoise;
+        color: #0b0c0c;
       }
     }
 

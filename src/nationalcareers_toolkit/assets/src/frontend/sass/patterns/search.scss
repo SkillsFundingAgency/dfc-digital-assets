@@ -85,72 +85,74 @@
 }
 
 #results {
-  width: 66.66667%;
+    width: 66.66667%;
 
-  @include media(mobile) {
-    width: 100%;
-  }
-
-  .results-block {
-    .result-count {
-      padding: 0;
+    @include media(mobile) {
+        width: 100%;
     }
 
-    .results-list {
-      list-style: none;
-      margin: 0;
-      padding: 30px 0;
+    .results-block {
+        margin-top: 20px;
 
-      li {
-        max-width: 100%;
-        margin: 0;
-        padding: 0 0 15px;
-
-        @include media(tablet) {
-          padding: 0 0 40px;
-        }
-      }
-
-      h3 {
-        @include core-24;
-        margin: 0 0 0.25em 0;
-
-        a {
-          text-decoration: none;
-          font-weight: bold;
-        }
-      }
-
-      .result-description {
-        margin: 0 0 0.5em 0;
-        @include core-19;
-      }
-
-      .meta {
-        color: $grey-1;
-        @include core-16;
-      }
-
-      .results-salary {
-        @extend .govuk-\!-font-size-16;
-        @extend .govuk-\!-font-weight-bold;
-        margin-bottom: 0.75em;
-      }
-
-      .results-categories {
-        @extend .govuk-\!-font-size-19;
-        color: $grey-1;
-
-        a:after {
-          content: ",";
+        .result-count {
+            padding: 0;
         }
 
-        a:last-child:after {
-          display: none;
+        .results-list {
+            list-style: none;
+            margin: 0;
+            padding: 30px 0;
+
+            li {
+                max-width: 100%;
+                margin: 0;
+                padding: 0 0 15px;
+
+                @include media(tablet) {
+                    padding: 0 0 40px;
+                }
+            }
+
+            h3 {
+                @include core-24;
+                margin: 0 0 0.25em 0;
+
+                a {
+                    text-decoration: none;
+                    font-weight: bold;
+                }
+            }
+
+            .result-description {
+                margin: 0 0 0.5em 0;
+                @include core-19;
+            }
+
+            .meta {
+                color: $grey-1;
+                @include core-16;
+            }
+
+            .results-salary {
+                @extend .govuk-\!-font-size-16;
+                @extend .govuk-\!-font-weight-bold;
+                margin-bottom: 0.75em;
+            }
+
+            .results-categories {
+                @extend .govuk-\!-font-size-19;
+                color: $grey-1;
+
+                a:after {
+                    content: ",";
+                }
+
+                a:last-child:after {
+                    display: none;
+                }
+            }
         }
-      }
     }
-  }
 }
 
 .ui-autocomplete {
