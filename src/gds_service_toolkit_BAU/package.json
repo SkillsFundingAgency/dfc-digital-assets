@@ -3,7 +3,7 @@
   "name": "asp.net",
   "private": true,
   "dependencies": {
-    "govuk-frontend": "^2.5.1",
+    "govuk-frontend": "^5.2.0",
     "html5shiv": "^3.7.3",
     "jquery": "^3.5.0",
     "jquery-migrate": "1.4.1",
