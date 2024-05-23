@@ -1,6 +1,6 @@
 $govuk-assets-path: "/nationalcareers_toolkit/" !default;
 
-@import "govuk-frontend/govuk/all";
+@import "node_modules/govuk-frontend/dist/govuk/all";
 
 /* Import all custom and default patterns */
 @import "components/colors";
