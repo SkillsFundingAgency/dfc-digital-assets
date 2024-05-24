@@ -58,8 +58,7 @@ module.exports = function (grunt) {
                     src: [
                         '<%= dist.path %>/**/*.css',
                         '<%= dist.path %>/**/*.js',
-                        '<%= dist.path %>/**/*.{png,jpg,gif,jpeg}',
-                        'csslint_report'
+                        '<%= dist.path %>/**/*.{png,jpg,gif,jpeg}'
                     ]
                 }]
             },
@@ -103,30 +102,6 @@ module.exports = function (grunt) {
                         ext: '.css'
                     }]
 
-            }
-        },
-
-        // unfortunately there is no point to run csslint on compressed css so
-        // csslint runs once, when you use `grunt` and it lints on documentation's css
-        // csslint runs on every save when you use `grunt dev` and it lints the original file you are working on -> `style.css`
-        csslint: {
-            options: {
-                csslintrc: 'csslint.json',
-                quiet: true,
-                formatters: [{
-                    id: 'csslint-xml',
-                    dest: 'csslint_report/csslint.xml'
-                }],
-            },
-            dev: {
-                expand: true,
-                cwd: '<%= dist.path %>/css/',
-                src: [
-                    '*.css',
-                    '!*.min.css',
-                    '!fonts.css',
-                    '!govuk-template*.css'
-                ],
             }
         },
 
@@ -211,7 +186,7 @@ module.exports = function (grunt) {
             },
             styles: {
                 files: ['<%= src.path %>/**/*.{scss,css}'],
-                tasks: ['sass', 'csslint:dev', 'cssmin']
+                tasks: ['sass', 'cssmin']
             },
             images: {
                 files: ['<%= src.path %>/**/*.{png,jpg,gif,jpeg}'],
@@ -240,7 +215,6 @@ module.exports = function (grunt) {
         grunt.task.run('uglify');
         grunt.task.run('sass');
         grunt.task.run('concat_css');
-        grunt.task.run('csslint:dev');
         grunt.task.run('cssmin');
         grunt.task.run('newer:imagemin');
         //grunt.task.run('concurrent'); we dont want to block the release pipeline
