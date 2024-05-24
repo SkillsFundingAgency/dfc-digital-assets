@@ -48,8 +48,7 @@ module.exports = function (grunt) {
                     src: [
                         '<%= dist.path %>/**/*.css',
                         '<%= dist.path %>/**/*.js',
-                        '<%= dist.path %>/**/*.{png,jpg,gif,jpeg}',
-                        'csslint_report'
+                        '<%= dist.path %>/**/*.{png,jpg,gif,jpeg}'
                     ]
                 }]
             },
@@ -173,7 +172,7 @@ module.exports = function (grunt) {
             },
             styles: {
                 files: ['<%= src.path %>/**/*.{scss,sass}'],
-                tasks: ['sass', 'csslint:dev', 'cssmin']
+                tasks: ['sass', 'cssmin']
             },
             images: {
                 files: ['<%= src.path %>/**/*.{png,jpg,gif,jpeg}'],
@@ -201,7 +200,6 @@ module.exports = function (grunt) {
         grunt.task.run('copy');
         grunt.task.run('uglify');
         grunt.task.run('sass');
-        grunt.task.run('csslint:dev');
         grunt.task.run('cssmin');
         grunt.task.run('newer:imagemin');
         //grunt.task.run('concurrent'); we dont want to block the release pipeline
