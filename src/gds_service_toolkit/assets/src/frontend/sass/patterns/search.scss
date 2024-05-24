@@ -129,7 +129,7 @@
       }
 
       .meta {
-        color: $grey-1;
+        color: #6f777b;
         @include core-16;
       }
 
@@ -141,7 +141,7 @@
 
       .results-categories {
         @extend .govuk-\!-font-size-19;
-        color: $grey-1;
+        color: #6f777b;
 
         a:after {
           content: ",";
@@ -158,7 +158,7 @@
 .ui-autocomplete {
   background-color: $white;
   color: $black;
-  border: 1px solid $grey-2;
+  border: 1px solid #bfc1c3;
   list-style: none;
   padding: 0;
   margin: 0;
@@ -175,16 +175,16 @@
 
     div {
       padding: 5px 10px;
-      border-bottom: 1px solid $grey-3;
+      border-bottom: 1px solid #dee0e2;
 
       &:hover {
-        background-color: $grey-3;
+        background-color: #dee0e2;
         cursor: pointer;
       }
     }
 
     .ui-state-active {
-      background-color: $grey-3;
+      background-color: #dee0e2;
     }
 
     &:last-child {

@@ -11,11 +11,11 @@
         @include govuk-font($size: 19, $weight: bold);
         box-shadow: none;
         padding: 5px 10px;
-        background: govuk-colour("grey-3");
+        background: #dee0e2;
     }
 
     .filter-box {
-        border: 5px solid govuk-colour("grey-3");
+        border: 5px solid #dee0e2;
         position: relative;
         padding: 12.5px;
         background-color: #fff;

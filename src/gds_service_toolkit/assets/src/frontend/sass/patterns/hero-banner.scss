@@ -58,7 +58,7 @@
 
   h2 {
     @include core-24;
-    color: $grey-1;
+    color: #6f777b;
   }
 
   p {
@@ -97,7 +97,7 @@
 .secondary-hero-block {
   h2 {
     width: 100%;
-    border-bottom: 1px solid $grey-3;
+    border-bottom: 1px solid #dee0e2;
     color: #207e77;
     @include core-19;
     line-height: 22px;

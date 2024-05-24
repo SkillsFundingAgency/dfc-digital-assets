@@ -1,6 +1,6 @@
 .app-sendresults {
-  background: govuk-colour('grey-3');
-  border-bottom: 3px solid govuk-colour('grey-1');
+  background: #dee0e2;
+  border-bottom: 3px solid #6f777b;
   @include govuk-responsive-margin(9, 'bottom');
   padding: govuk-spacing(3);
   @include govuk-media-query($from: desktop) {
