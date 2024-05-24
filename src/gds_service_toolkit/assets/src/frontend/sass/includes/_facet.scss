@@ -47,7 +47,7 @@
   padding: 5px;
 
   &:nth-child(odd) {
-    background-color: govuk-colour("grey-4");
+    background-color: #f8f8f8;
   }
 }
 
@@ -86,7 +86,7 @@
   padding: 5px;
   border: 1px solid govuk-colour("grey-1");
   border-radius: 5px;
-  background-color: govuk-colour("grey-4");
+  background-color: 	#f8f8f8;
 
 
   @include govuk-media-query(tablet) {
