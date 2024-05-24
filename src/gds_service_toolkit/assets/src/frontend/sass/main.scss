@@ -3,7 +3,7 @@ $govuk-compatibility-govukfrontendtoolkit: true;
 $govuk-compatibility-govuktemplate: true;
 $govuk-compatibility-govukelements: true;
 
-@import "../../../../node_modules/govuk-frontend/all";
+@import "../../../../node_modules/govuk-frontend/dist/govuk/all";
 
 .govuk-header__container {
     border-bottom: transparent;

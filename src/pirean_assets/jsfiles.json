@@ -1,5 +1,5 @@
 {
   "concatGovUkJsFiles": [
-    "node_modules/govuk-frontend/all.js"
+    "node_modules/govuk-frontend/dist/govuk/all.js"
   ]
 }

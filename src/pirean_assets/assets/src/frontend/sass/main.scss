@@ -2,7 +2,7 @@ $govuk-compatibility-govukfrontendtoolkit: true;
 $govuk-compatibility-govuktemplate: true;
 $govuk-compatibility-govukelements: true;
 
-@import "../../../../node_modules/govuk-frontend/all";
+@import "../../../../node_modules/govuk-frontend/dist/govuk/all";
 
 /* Importing overridden old styles with new */
 @import "includes/overrides";
