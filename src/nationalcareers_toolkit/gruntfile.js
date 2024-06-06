@@ -139,7 +139,7 @@ module.exports = function (grunt) {
             dist: {
                 files: [
                     { expand: true, cwd: 'node_modules/govuk-frontend/govuk/assets/fonts', src: '**', dest: '<%= dist.path %>/fonts/' },
-                    { expand: true, cwd: 'node_modules/govuk-frontend/govuk/assets/images', src: ['**/*.{png,jpg,gif,jpeg}', '!fonts/*', '!sprite/*.*'], dest: '<%= dist.path %>/images' },
+                    { expand: true, cwd: 'node_modules/govuk-frontend/govuk/assets/images', src: ['**/*.{png,jpg,gif,jpeg,svg,ico}', '!fonts/*', '!sprite/*.*'], dest: '<%= dist.path %>/images' },
                     { expand: true, cwd: 'node_modules/jquery/dist', src: 'jquery.min.js', dest: '<%= dist.path %>/js' },
                     { expand: true, cwd: '<%= src.path %>/' + backendAssetsFolder + '/css/', src: '**/*.*', dest: '<%= dist.path %>/css/' },
                     { expand: true, cwd: '../../Content/', src: '**/*.*', dest: '<%= dist.path %>/css/' }
@@ -202,7 +202,7 @@ module.exports = function (grunt) {
                 },
                 files: [
                     { expand: true, cwd: '<%= src.path %>/sitefinity/images', src: ['**/*.{png,jpg,gif,jpeg,svg}', '!fonts/*', '!sprite/*.*'], dest: 'assets/dist/images' },
-                    { expand: true, cwd: '<%= src.path %>/' + projectAssetsFolder + '/images', src: ['**/*.{png,jpg,gif,jpeg,svg}', '!fonts/*', '!sprite/*.*'], dest: 'assets/dist/images' }
+                    { expand: true, cwd: '<%= src.path %>/' + projectAssetsFolder + '/images', src: ['**/*.{png,jpg,gif,jpeg,svg,ico}', '!fonts/*', '!sprite/*.*'], dest: 'assets/dist/images' }
                 ]
             }
         },
