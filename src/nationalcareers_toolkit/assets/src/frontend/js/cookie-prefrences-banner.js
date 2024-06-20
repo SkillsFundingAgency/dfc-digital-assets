@@ -26,6 +26,7 @@ $(document).ready(function () {
                 $('#cookie-message').hide();
                 $('#confirmatiom-message').show();
                 $("#cookie-settings-confirmation").show();
+                windows.location.reload();
             })
 
             $('#hide-cookies-message').click(function () {
