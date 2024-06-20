@@ -370,7 +370,7 @@ function getParams(sortByLocation = false) {
     var campaignCode = $("#facCampaignCode").val();
 
     //Strip the special characters
-    var trimmedSearchTerm = searchTerm.replace(/[^A-Z0-9 ]+/ig, "");
+    var trimmedSearchTerm = searchTerm.replace(/[^A-Z0-9' ]+/ig, "");
     var paramValues = {
         SearchTerm: trimmedSearchTerm,
         Distance: (distance == null) ? '10 miles' : distance,
