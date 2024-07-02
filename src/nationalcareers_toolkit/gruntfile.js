@@ -32,6 +32,7 @@ module.exports = function (grunt) {
     var backendAssetsFolder = "backend";
 
     // Load all grunt tasks
+    const sass = require('node-sass');
     require('load-grunt-tasks')(grunt);
     // Show elapsed time at the end
     require('time-grunt')(grunt);
@@ -80,8 +81,9 @@ module.exports = function (grunt) {
 
         sass: {
             options: {
-                outputStyle: 'nested',
-                includePaths: ['node_modules']
+                implementation: sass,
+                outputStyle: 'nested', // Determines the output format of the final CSS style (values; nested, expanded, compact, compressed)
+                includePaths: ['node_modules'] // An array of paths that LibSass can look in to attempt to resolve your @import declarations
             },
             dist: {
                 files: [{
