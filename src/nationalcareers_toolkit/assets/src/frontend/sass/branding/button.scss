@@ -35,7 +35,7 @@
 
 .ncs-button__primary {
     @extend .ncs-button;
-    background-color: #009ee2;
+    background-color: $primary_pink;
 
     &:hover {
         background-color: $bright_purple;
@@ -44,7 +44,7 @@
     &:focus,
     &:focus:not(:active):not(:hover) {
         color: $text_white;
-        background-color: #009ee2;
+        background-color: $primary_pink;
         outline-offset: 0px !important;
     }
 }
