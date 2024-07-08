@@ -63,7 +63,7 @@ jobs:
         Write-Host "##vso[task.prependpath]$newPath"
   
   # build and publish gds_toolkit
-  - template: templates/dfc-grunt-build.yml
+  - template: AzureDevOpsTemplates/Build/StepTemplates/dfc-grunt-build.yml@dfc-devops
     parameters:
       displayPrefix: 'gds_toolkit:'
       npmfolder: '$(npmroot)/gds_toolkit'
