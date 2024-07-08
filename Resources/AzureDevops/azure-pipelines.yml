@@ -53,22 +53,14 @@ jobs:
       pathtoPublish: 'Resources/PSScripts'
       artifactName: resources
 
-  - task: UseNode@1
+  - task: PowerShell@2
+    displayName: "Override Node, NPM and Python versions"
     inputs:
-      version: 20.15.0
-
-  - task: UsePythonVersion@0
-    inputs:
-      versionSpec: 3.12.4
-
-  # - task: PowerShell@2
-  #   displayName: "Override Node, NPM and Python versions"
-  #   inputs:
-  #     targetType: inline
-  #     script:  $env:PATH="C:\hostedtoolcache\windows\node\20.15.0\x64\;C:\hostedtoolcache\windows\Python\3.12.4\x64\;$env:PATH"
+      targetType: inline
+      script:  $env:PATH="C:\hostedtoolcache\windows\node\20.15.0\x64\;C:\hostedtoolcache\windows\Python\3.12.4\x64\;$env:PATH"
   
   # build and publish gds_toolkit
-  - template: AzureDevOpsTemplates/Build/StepTemplates/dfc-grunt-build.yml@dfc-devops
+  - template: templates/dfc-grunt-build.yml
     parameters:
       displayPrefix: 'gds_toolkit:'
       npmfolder: '$(npmroot)/gds_toolkit'
