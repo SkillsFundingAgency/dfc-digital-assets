@@ -56,7 +56,7 @@ jobs:
   - task: PowerShell@2
     displayName: "Override Node, NPM and Python versions"
     inputs:
-      filePath: inline
+      targetType: inline
       script:  $env:PATH="C:\hostedtoolcache\windows\node\20.15.0\x64\;C:\hostedtoolcache\windows\Python\3.12.4\x64\;$env:PATH"
   
   # build and publish gds_toolkit
