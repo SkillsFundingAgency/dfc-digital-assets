@@ -3,15 +3,15 @@
   "name": "asp.net",
   "private": true,
   "dependencies": {
-    "govuk-frontend": "^2.5.1",
+    "govuk-frontend": "^2.13.0",
     "html5shiv": "^3.7.3",
-    "jquery": "^3.5.0",
+    "jquery": "^3.7.1",
     "jquery-migrate": "1.4.1",
     "jquery-validation": "^1.20.1",
-    "jquery-validation-unobtrusive": "^3.2.11"
+    "jquery-validation-unobtrusive": "^3.2.12"
   },
   "devDependencies": {
-    "clean-css": "^4.1.9",
+    "clean-css": "^4.2.4",
     "grunt": "^1.6.1",
     "grunt-concat-css": "^0.3.2",
     "grunt-concurrent": "^2.3.1",
