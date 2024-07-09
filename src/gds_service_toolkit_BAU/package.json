@@ -7,12 +7,12 @@
     "html5shiv": "^3.7.3",
     "jquery": "^3.5.0",
     "jquery-migrate": "1.4.1",
-    "jquery-validation": "^1.19.0",
+    "jquery-validation": "^1.20.1",
     "jquery-validation-unobtrusive": "^3.2.11"
   },
   "devDependencies": {
     "clean-css": "^4.1.9",
-    "grunt": "^1.1.0",
+    "grunt": "^1.6.1",
     "grunt-concat-css": "^0.3.2",
     "grunt-concurrent": "^2.3.1",
     "grunt-contrib-clean": "^1.1.0",
