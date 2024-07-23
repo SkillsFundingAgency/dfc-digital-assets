@@ -204,7 +204,7 @@ module.exports = function (grunt) {
                 },
                 files: [
                     { expand: true, cwd: '<%= src.path %>/sitefinity/images', src: ['**/*.{png,jpg,gif,jpeg,svg}', '!fonts/*', '!sprite/*.*'], dest: 'assets/dist/images' },
-                    { expand: true, cwd: '<%= src.path %>/' + projectAssetsFolder + '/images', src: ['**/*.{png,jpg,gif,jpeg,svg}', '!fonts/*', '!sprite/*.*'], dest: 'assets/dist/images' }
+                    { expand: true, cwd: '<%= src.path %>/' + projectAssetsFolder + '/images', src: ['**/*.{png,jpg,gif,jpeg,svg,ico}', '!fonts/*', '!sprite/*.*'], dest: 'assets/dist/images' }
                 ]
             }
         },
