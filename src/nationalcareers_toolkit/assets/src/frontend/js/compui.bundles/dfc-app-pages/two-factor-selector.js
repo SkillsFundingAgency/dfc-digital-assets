@@ -13,15 +13,7 @@ $(document).ready(function () {
             };
 
             if (levelTwoItems.length) {
-                var optionHtml = generateOptionHtml("select your situation", "select your situation");
-
-                $.each(levelTwoItems,
-                    function (index, levelTwo) {
-                        if (selectedLevelOne === levelTwo.levelOneTitle) {
-
-                            optionHtml = optionHtml + generateOptionHtml(levelTwo.title, levelTwo.title);
-                        }
-                    });
+                var optionHtml = updateOptionList(levelTwoItems, selectedLevelOne);
                 levelTwo.html(optionHtml);
             } else {
                 $.ajax({
@@ -33,13 +25,7 @@ $(document).ready(function () {
                         if (data && data.triageLevelTwo) {
                             levelTwoItems = data.triageLevelTwo
                         }
-                        var optionHtml = generateOptionHtml("select your situation", "select your situation");
-                        $.each(levelTwoItems,
-                            function (index, levelTwo) {
-                                if (selectedLevelOne === levelTwo.levelOneTitle) {
-                                    optionHtml = optionHtml + generateOptionHtml(levelTwo.title, levelTwo.title);
-                                }
-                            });
+                        var optionHtml = updateOptionList(levelTwoItems, selectedLevelOne);
                         levelTwo.html(optionHtml);
 
                     },
@@ -52,27 +38,29 @@ $(document).ready(function () {
                 });
             }
         } else {
-            var optionHtml = generateOptionHtml("select your situation", "select your situation");
-
-            $.each(levelTwoItems,
-                function (index, levelTwo) {
-                    if (selectedLevelOne === levelTwo.levelOneTitle) {
-
-                        optionHtml = optionHtml + generateOptionHtml(levelTwo.title, levelTwo.title);
-                    }
-                });
+            var optionHtml = updateOptionList(levelTwoItems, selectedLevelOne);
             levelTwo.html(optionHtml);
             levelTwo.attr('disabled', 'disabled');
 
         }
     });
-    
-    
 
-        
-        function generateOptionHtml(value, item) {
+    function updateOptionList(levelTwoItems, selectedLevelOne) {
+        var optionHtml = '';
+
+        $.each(levelTwoItems,
+            function (index, levelTwo) {
+                if (levelTwo && levelTwo.levelOne && selectedLevelOne === levelTwo.levelOne.title) {
+
+                    optionHtml = optionHtml + generateOptionHtml(levelTwo.title, levelTwo.title);
+                }
+            });
+        return optionHtml;
+    }
+    function generateOptionHtml(value, item)
+    {
             return '<option value="' + value + '">' + item + '</option>';
-        }
+    }
        
 
       

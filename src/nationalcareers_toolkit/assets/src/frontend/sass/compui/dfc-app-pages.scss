@@ -1,113 +1,4 @@
 
-div.dfc-app-pages-triage-panel {
-    width: 360px;
-    height: 400px;
-    background-color: #f3f2f1;
-    border-bottom: solid 3px;
-    border-color: #B1B4B6;
-
-    .dfc-app-pages-triage-header {
-        width: 313px;
-        height: 25px;
-        margin-top: 30px;
-        margin-bottom: 15px;
-        font-family: Arial;
-        font-size: 24px;
-        font-weight: 700;
-        line-height: 25px;
-        text-align: left;
-    }
-
-    .dfc-app-pages-triage-sub-header {
-        //styleName: Paragraph/Body;
-        //styleName: Mobile/Paragraph/Body;
-        font-family: Arial;
-        font-size: 16px;
-        font-weight: 400;
-        line-height: 20px;
-        text-align: left;
-        width: 331px;
-        height: 60px;
-        margin-bottom: 15px;
-    }
-
-    .dfc-app-pages-triage-select {
-        width: 340px;
-        height: 40px;
-        border: 2px solid;
-        border-color: #000000;
-        margin-bottom: 10px;
-    }
-
-    .dfc-app-pages-button {
-        margin-top: 25px;
-    }
-
-    .dfc-app-pages-triage-label {
-        font-family: GDS Transport Website;
-        font-size: 19px;
-        font-weight: 700;
-        line-height: 24px;
-        text-align: left;
-        color: #0B0C0C
-    }
-}
- 
-
-   /* @media(min-width: 641px) {
-        div.dfc-app-pages-triage-panel {
-            // width: 960px;
-            height: 323px;
-            padding: 15px;
-            border-bottom: solid 4px;
-            background-color: #f3f2f1;
-            border-color: #b1b4b6;
-
-            .dfc-app-pages-triage-header {
-                width: 469px;
-                height: 40px;
-                margin-top: 40px;
-                margin-bottom: 20px;
-                font-family: Arial;
-                font-size: 36px;
-                font-weight: 700;
-                line-height: 40px;
-                text-align: left;
-            }
-
-            .dfc-app-pages-triage-select {
-                width: 340px;
-                height: 40px;
-                border: 2px solid;
-                border-color: #000000;
-                margin-bottom: 30px;
-            }
-
-            .dfc-app-pages-triage-label {
-                font-family: GDS Transport Website;
-                font-size: 19px;
-                font-weight: 700;
-                line-height: 24px;
-                text-align: left;
-                color: #0B0C0C
-            }
-
-            .dfc-app-pages-triage-sub-header {
-                //styleName: Paragraph/Body;
-                font-family: GDS Transport Website;
-                font-size: 19px;
-                font-weight: 300;
-                line-height: 24px;
-                text-align: left;
-                width: 613px;
-                height: 48px;
-                margin-bottom: 10px;
-            }
-        }
-    }*/
-
-
-
 
     div.dfc-app-pages-alignment-left {
         text-align: left;
@@ -125,6 +16,58 @@ div.dfc-app-pages-triage-panel {
         text-align: justify;
         text-justify: inter-word;
     }
+
+
+div.dfc-app-pages-triage-panel {
+    // width: 960px;
+    height: 323px;
+    border-bottom: solid 4px;
+    background-color: #f3f2f1;
+    border-color: #b1b4b6;
+    padding-left: 20px;
+
+    .dfc-app-pages-triage-header {
+        width: 469px;
+        height: 40px;
+        margin-top: 40px;
+        margin-bottom: 20px;
+        font-family: Arial;
+        font-size: 36px;
+        font-weight: 700;
+        line-height: 40px;
+        text-align: left;
+    }
+
+    .dfc-app-pages-triage-select {
+        width: 340px;
+        height: 40px;
+        border: 2px solid;
+        border-color: #000000;
+        margin-bottom: 30px;
+    }
+
+    .dfc-app-pages-triage-label {
+        font-family: GDS Transport Website;
+        font-size: 19px;
+        font-weight: 700;
+        line-height: 24px;
+        text-align: left;
+        color: #0B0C0C
+    }
+
+    .dfc-app-pages-triage-sub-header {
+        //styleName: Paragraph/Body;
+        font-family: GDS Transport Website;
+        font-size: 19px;
+        font-weight: 300;
+        line-height: 24px;
+        text-align: left;
+        width: 613px;
+        height: 48px;
+        margin-bottom: 10px;
+    }
+}
+
 
     .brand--ncs {
         .brand__color {
