@@ -17,6 +17,7 @@ module.exports = function (grunt) {
     var projectAssetsFolder = "frontend";
 
     // Load all grunt tasks
+    const sass = require('node-sass');
     require('load-grunt-tasks')(grunt);
     // Show elapsed time at the end
     require('time-grunt')(grunt);
@@ -68,10 +69,9 @@ module.exports = function (grunt) {
 
         sass: {
             options: {
+                implementation: sass,
                 outputStyle: 'nested',
-                includePaths: [
-
-                ]
+                includePaths: []
             },
             dist: {
                 files: [{
