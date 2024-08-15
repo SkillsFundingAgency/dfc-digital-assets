@@ -16,7 +16,6 @@ $(document).ready(function () {
         $('#triage-tool-validation-summary').removeClass('validation-summary-valid')
         $('#level-one-error').removeClass('hidden-triage-form-error');
         levelOne.addClass('govuk-select--error');
-
     }
     function hideTriageFormErrorMessage() {
         $('#triage-tool-validation-summary').addClass('validation-summary-valid')
@@ -62,7 +61,6 @@ $(document).ready(function () {
             var optionHtml = updateOptionList(levelTwoItems, selectedLevelOne);
             levelTwo.html(optionHtml);
             levelTwo.attr('disabled', 'disabled');
-
         }
     });
     function updateOptionList(levelTwoItems, selectedLevelOne) {
