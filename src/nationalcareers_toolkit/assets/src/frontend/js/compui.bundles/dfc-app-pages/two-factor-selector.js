@@ -31,7 +31,6 @@ $(document).ready(function () {
             var apiCall = {
                 url: '/api/triageleveltwo',
             };
-
             if (levelTwoItems.length) {
                 var optionHtml = updateOptionList(levelTwoItems, selectedLevelOne);
                 levelTwo.html(optionHtml);
