@@ -1,6 +1,7 @@
 $(document).ready(function () {
     var levelOne = $('#triageLevelOne');
     var levelTwo = $('#triageLevelTwo');
+    var levelOneItems = [];
     var levelTwoItems = [];
     hideTriageFormErrorMessage();
     $('#triage-tool-submit-button').on("click", function (e) {
@@ -29,9 +30,16 @@ $(document).ready(function () {
             hideTriageFormErrorMessage();
             levelTwo.removeAttr('disabled');
             var apiCall = {
-                url: '/api/triageleveltwo',
+                url: '/api/Ajax/Action',
+                path: 'pages',
+                method: 'Ajax'
             };
-            if (levelTwoItems.length) {
+
+            if (levelOneItems.length) {
+                var l1 = levelOneItems.find(x => x.value === selectedLevelOne)
+                if (l1 && l1.levelTwo) {
+                    levelTwoItems = l1.levelTwo.contentItems;
+                }
                 var optionHtml = updateOptionList(levelTwoItems, selectedLevelOne);
                 levelTwo.html(optionHtml);
             } else {
@@ -40,12 +48,23 @@ $(document).ready(function () {
                     url: apiCall.url,
                     contentType: "application/json",
                     dataType: "json",
+                    data: { path: apiCall.path, method: apiCall.method },
                     success: function (data) {
-                        if (data && data.triageLevelTwo) {
-                            levelTwoItems = data.triageLevelTwo
+                        if (data.isHealthy === true && data.payload != null) {
+                            options = JSON.parse(data.payload);
+                            if (options && options.triageLevelOne) {
+                                levelOneItems = options.triageLevelOne;
+                                if (levelOneItems) {
+                                    var l1 = levelOneItems.find(x => x.value === selectedLevelOne)
+                                    if (l1 && l1.levelTwo) {
+                                        levelTwoItems = l1.levelTwo.contentItems;
+                                    }
+                                }
+                            }
+                            var optionHtml = updateOptionList(levelTwoItems, selectedLevelOne);
+                            levelTwo.html(optionHtml);
                         }
-                        var optionHtml = updateOptionList(levelTwoItems, selectedLevelOne);
-                        levelTwo.html(optionHtml);
+                        
                     },
                     failure: function () {
                         console.log('Failure, Retrieving Triage level two options');
@@ -66,9 +85,7 @@ $(document).ready(function () {
         var optionHtml = '';
         $.each(levelTwoItems,
             function (index, levelTwo) {
-                if (levelTwo && levelTwo.levelOne && selectedLevelOne === levelTwo.levelOne.title) {
                     optionHtml += generateOptionHtml(levelTwo.title, levelTwo.title);
-                }
             });
         return optionHtml;
     }
