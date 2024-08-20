@@ -1,28 +1,29 @@
-div.dfc-app-triage-panel-banner {
+/*div.dfc-app-triage-panel-banner {
     .triage-panel-search-form {
-      section.triage-search-banner.primary-hero {
-        .triage-search-item-wrapper {
-          display: table;
-          width: 90%;
-          margin-bottom: 20px;
+        section.triage-search-banner.primary-hero {
+            .triage-search-item-wrapper {
+                display: table;
+                width: 90%;
+                margin-bottom: 20px;
 
-          .triage-select-label {
-            display: block;
-          }
+                .triage-select-label {
+                    display: block;
+                }
 
-          select.triage-select {
-            display: inline-block;
-            width: 60%;
-            height: 46px;
-            margin: 0 10px;
-          }
+                select.triage-select {
+                    display: inline-block;
+                    width: 60%;
+                    height: 46px;
+                    margin: 0 10px;
+                }
 
-          button.triage-start-btn {
-
-          }
+                button.triage-start-btn {
+                }
+            }
         }
-      }
     }
+
+    background-color: #5694CA25;
 }
 div.dfc-app-triage-panel-banner {
     .triage-panel-search-form {
@@ -34,7 +35,109 @@ div.dfc-app-triage-panel-banner {
            }
         }
     }
-  }
+  }*/
+
+.dfc-app-triage-panel-banner {
+    background-color: #5694CA25;
+    width: 100%;
+    height: 110Px;
+    padding-top:40px;
+    padding-bottom:40px;
+
+}
+.dfc-app-triage-header {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 50px;
+    text-align: left;
+    width:690px;
+    height:100px;
+    margin:0px;
+
+}
+.dfc-app-triage-search-header-panel {
+    width: 920px;
+    padding-left: 20px;
+    padding-top: 14px;
+    padding-right:20px;
+    padding-bottom: 14px;
+    background-color: #F3F2F1;
+
+    .dfc-app-triage-search-header {
+        font-size: 19px;
+        font-weight: 300;
+        line-height: 24px;
+        text-align: left;
+        width: 353px;
+        height: 24px;
+        margin-right:30px;
+    }
+}
+.dfc-app-triage-search-panel {
+    width: 918px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-bottom: solid 1px #B1B4B6;
+    border-right: solid 1px #B1B4B6;
+    border-left: solid 1px #B1B4B6;
+}
+.dfc-app-triage-select {
+    width: 340px;
+    height: 40px;
+}
+
+.dfc-app-triage-filter-item {
+    width: 293px;
+    height: 48px;
+    margin-bottom: 10px;
+}
+
+.dfc-app-triage-label {
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 24px;
+    width: auto;
+    text-align: left;
+    color: #0B0C0C
+}
+.dfc-app-triage-filter-header {
+    width: 370px;
+    height: 24px;
+    margin-top: 25px;
+
+    span {
+        font-size: 19px;
+        font-weight: 700;
+        line-height: 24px;
+        text-align: left;
+    }
+}
+.dfc-app-triage-filter-sub-header {
+    width: 152px;
+    height: 18px;
+    margin-top:10px;
+
+    span {
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 18px;
+        text-align: left;
+    }
+}
+.dfc-app-triage-filter-advice-group-container {
+    width: 915px;
+   
+}
+
+.dfc-app-triage-btn {
+    height: 50px;
+    padding: 13px 44px 13px 44px;
+    border-radius: 44px 0px 0px 0px;
+    margin-bottom: 0px;
+    margin-top:20px;
+}
 
 .triage-tool-sidebar {
 }
