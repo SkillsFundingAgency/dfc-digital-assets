@@ -1,0 +1,181 @@
+.dfe-grid-container-expolore-career {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    /* Space between items */
+}
+
+.dfe-card-expolore-career {
+    flex: 1 1 calc(33.333% - 15px);
+    /* Three items per row with space */
+    box-sizing: border-box;
+    padding: 15px;
+    /* Optional padding */
+    background: #f0f0f0;
+    /* Gray background color */
+    color: #ffffff;
+    /* Optional: Set text color to white for better contrast */
+    border-bottom: 5px solid #5694ca;
+
+    h3 {
+        font-family: 'Transport', sans-serif;
+        font-weight: 300;
+        font-size: 19px;
+        color: #1D70B8;
+        /* Header color */
+        margin: 0 0 10px 0;
+    }
+}
+
+.dfe-card-description-expolore-career {
+    font-family: 'Transport', sans-serif;
+    font-weight: 300;
+    font-size: 19px;
+    color: #000;
+    /* Set color if needed */
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    /* Remove underline from card titles */
+    color: #1D70B8;
+    /* Link color */
+    font-weight: bold;
+    /* Make link text bold */
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.dfe-card-placeholder {
+    background: none;
+    /* Gray background color for placeholder */
+    border: none;
+    /* No border */
+    padding: 15px;
+    /* Padding to match other cards */
+    height: 150px;
+    /* Example height, adjust as needed */
+}
+
+#speaktoanadvisor {
+    background-color: #5694ca25 !important;
+    margin: 5em 0 !important;
+    /* Adjust margin values for top/bottom and remove left/right margin */
+
+    p {
+        font-family: 'Transport', sans-serif;
+        font-weight: 300;
+        font-size: 19px;
+    }
+}
+
+#speaktoanadvisorheader {
+    margin-top: 2em;
+    color: #1D70B8;
+}
+
+#phonenumberspan {
+    color: #1D70B8;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.ncs-search-form__container {
+    border-bottom: 10px solid #5694ca;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .dfe-card-expolore-career {
+        flex: 1 1 100%;
+        /* Full width on small screens */
+    }
+}
+
+// .dfe-grid-container {
+//     display: flex;
+//     flex-wrap: wrap;
+//     gap: 15px; /* Space between items */
+// }
+
+// .dfe-card {
+//     flex: 1 1 calc(33.333% - 15px); /* Three items per row with space */
+//     box-sizing: border-box;
+//     padding: 15px; /* Optional padding */
+//     background: #f0f0f0; /* Gray background color */
+//     color: #ffffff; /* Optional: Set text color to white for better contrast */
+//     border-bottom: 5px solid #5694ca;
+
+//     h3 {
+//         font-family: 'Transport', sans-serif;
+//         font-weight: 300;
+//         font-size: 19px;
+//         color: #1D70B8; /* Header color */
+//         margin: 0 0 10px 0;
+//     }
+
+//     .dfe-card-description {
+//         font-family: 'Transport', sans-serif;
+//         font-weight: 300;
+//         font-size: 19px;
+//         color: #000; /* Set color if needed */
+//         margin: 0;
+//     }
+
+//     a {
+//         text-decoration: none; /* Remove underline from card titles */
+//         color: #1D70B8; /* Link color */
+//         font-weight: bold; /* Make link text bold */
+//     }
+
+//     img {
+//         max-width: 100%;
+//         height: auto;
+//         margin-bottom: 15px;
+//     }
+// }
+
+// .dfe-card-placeholder {
+//     background: none; /* Gray background color for placeholder */
+//     border: none; /* No border */
+//     padding: 15px; /* Padding to match other cards */
+//     height: 150px; /* Example height, adjust as needed */
+// }
+
+// #speaktoanadvisor {
+//     background-color: #5694ca25 !important;
+//     margin: 5em 0 !important; /* Adjust margin values for top/bottom and remove left/right margin */
+
+//     p {
+//         font-family: 'Transport', sans-serif;
+//         font-weight: 300;
+//         font-size: 19px;
+//     }
+// }
+
+// #speaktoanadvisorheader {
+//     margin-top: 2em;
+//     color: #1D70B8;
+// }
+
+// #phonenumberspan {
+//     color: #1D70B8;
+//     font-weight: bold;
+//     text-decoration: underline;
+// }
+
+// .ncs-search-form__container {
+//     border-bottom: 10px solid #5694ca;
+// }
+
+// /* Responsive adjustments */
+// @media (max-width: 768px) {
+//     .dfe-card {
+//         flex: 1 1 100%; /* Full width on small screens */
+//     }
+// }
