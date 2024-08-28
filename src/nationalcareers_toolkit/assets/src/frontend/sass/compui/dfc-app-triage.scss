@@ -1,28 +1,29 @@
 div.dfc-app-triage-panel-banner {
     .triage-panel-search-form {
-      section.triage-search-banner.primary-hero {
-        .triage-search-item-wrapper {
-          display: table;
-          width: 90%;
-          margin-bottom: 20px;
+        section.triage-search-banner.primary-hero {
+            .triage-search-item-wrapper {
+                display: table;
+                width: 90%;
+                margin-bottom: 20px;
 
-          .triage-select-label {
-            display: block;
-          }
+                .triage-select-label {
+                    display: block;
+                }
 
-          select.triage-select {
-            display: inline-block;
-            width: 60%;
-            height: 46px;
-            margin: 0 10px;
-          }
+                select.triage-select {
+                    display: inline-block;
+                    width: 60%;
+                    height: 46px;
+                    margin: 0 10px;
+                }
 
-          button.triage-start-btn {
-
-          }
+                button.triage-start-btn {
+                }
+            }
         }
-      }
     }
+
+    background-color: #5694CA25;
 }
 div.dfc-app-triage-panel-banner {
     .triage-panel-search-form {
@@ -36,79 +37,229 @@ div.dfc-app-triage-panel-banner {
     }
   }
 
-.triage-tool-sidebar {
+.dfc-app-triage-search-panel {
+    width: 360px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-bottom: solid 1px #B1B4B6;
+    border-right: solid 1px #B1B4B6;
+    border-left: solid 1px #B1B4B6;
+}
+.dfc-app-triage-search-header-panel {
+    width: 360px;
+    padding-left: 15px;
+    padding-top: 14px;
+    padding-right: 15px;
+    padding-bottom: 14px;
+    background-color: #F3F2F1;
+    border-top: solid 1px #B1B4B6;
+    border-right: solid 1px #B1B4B6;
+    border-left: solid 1px #B1B4B6;
+
+    .dfc-app-triage-search-header {
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 20px;
+        text-align: left;
+        width: 353px;
+        height: 20px;
+        margin-right: 30px;
+    }
 }
 
+@media (min-width: 40.0625em) {
+    .dfc-app-triage-panel-banner {
+        background-color: #5694CA25;
+        width: 100%;
+        height: 110Px;
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+    .dfc-app-triage-search-header-panel {
+        width: 920px;
+        padding-left: 20px;
+        padding-top: 14px;
+        padding-right: 20px;
+        padding-bottom: 14px;
+        background-color: #F3F2F1;
+        border:0px;
 
-
-ol.triage-result-list {
-  list-style : none;
-  padding-left:  0;
-
-  li.triage-search-result-item {
-      padding: 0 ;
-      background-color: #fff;
-      margin-bottom: 20px;
-      border-bottom: 1px solid #ccc;
-
-      &:last-child {
-        border-bottom:0px solid #ccc;
-      }
-
-      h3 {
-        margin-bottom: 5px;
-
-        a {
-          text-decoration: none;
+        .dfc-app-triage-search-header {
+            font-size: 19px;
+            font-weight: 300;
+            line-height: 24px;
+            text-align: left;
+            width: 353px;
+            height: 24px;
+            margin-right: 30px;
         }
-      }
+    }
+    .dfc-app-triage-header {
+        font-size: 48px;
+        font-weight: 700;
+        line-height: 50px;
+        text-align: left;
+        width: 690px;
+        height: 100px;
+        margin: 0px;
+    }
+    .dfc-app-triage-search-panel {
+        width: 918px;
+        padding-top: 25px;
+        padding-bottom: 25px;
+        padding-left: 20px;
+        padding-right: 20px;
+        border-bottom: solid 1px #B1B4B6;
+        border-right: solid 1px #B1B4B6;
+        border-left: solid 1px #B1B4B6;
     }
 }
 
-.js-enabled {
-  section.dfc-app-triage-panel-banner {
-    .primary-hero {
+   
 
-      .triage-select-label {
-        display: inline-block;
-        margin-right:10px;
-      }
-      .triage-start-btn {
+   
+
+   
+
+    .dfc-app-triage-select {
+        width: 340px;
+        height: 40px;
+    }
+
+    .dfc-app-triage-filter-item {
+        width: 293px;
+        height: 48px;
+        margin-bottom: 10px;
+    }
+
+    .dfc-app-triage-label {
+        font-size: 19px;
+        font-weight: 700;
+        line-height: 24px;
+        width: auto;
+        text-align: left;
+        color: #0B0C0C
+    }
+
+    .dfc-app-triage-filter-header {
+        width: 370px;
+        height: 24px;
+        margin-top: 25px;
+
+        span {
+            font-size: 19px;
+            font-weight: 700;
+            line-height: 24px;
+            text-align: left;
+        }
+    }
+
+    .dfc-app-triage-filter-sub-header {
+        width: 152px;
+        height: 18px;
+        margin-top: 10px;
+
+        span {
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 18px;
+            text-align: left;
+        }
+    }
+
+    .dfc-app-triage-filter-advice-group-container {
+        width: 915px;
+    }
+
+    .dfc-app-triage-btn {
+        height: 50px;
+        padding: 13px 44px 13px 44px;
+        border-radius: 44px 0px 0px 0px;
+        margin-bottom: 0px;
+        margin-top: 20px;
+    }
+
+    .triage-tool-sidebar {
+    }
+
+
+
+    ol.triage-result-list {
+        list-style: none;
+        padding-left: 0;
+
+        li.triage-search-result-item {
+            padding: 0;
+            background-color: #fff;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ccc;
+
+            &:last-child {
+                border-bottom: 0px solid #ccc;
+            }
+
+            h3 {
+                margin-bottom: 5px;
+
+                a {
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+
+    .js-enabled {
+        section.dfc-app-triage-panel-banner {
+            .primary-hero {
+
+                .triage-select-label {
+                    display: inline-block;
+                    margin-right: 10px;
+                }
+
+                .triage-start-btn {
+                    display: none;
+                    line-height: 1.1;
+                }
+            }
+        }
+
+        .filters {
+            display: block;
+
+            .filters-count, .clear-filters {
+                display: block;
+            }
+        }
+    }
+
+    .filters-button, .js-enabled .filters-button, body .filters-button {
+        display: none
+    }
+
+    /* show /hide */
+    .triage-tool-results {
         display: none;
-        line-height: 1.1;
-      }
+
+        @media (max-width: 43.75em) {
+            display: block;
+        }
     }
-  }
-  .filters {
-    display: block;
-    .filters-count, .clear-filters {
-       display:block;
-     }
-   }
-}
 
-.filters-button, .js-enabled .filters-button, body .filters-button {
-    display: none
-}
+    .triage-tool-sidebar {
+        display: block;
 
-/* show /hide */
-.triage-tool-results {
-  display:none;
+        @media (max-width: 43.75em) {
+            display: none;
+        }
+    }
 
-  @media (max-width: 43.75em) {
-       display:block;
-   }
-}
-.triage-tool-sidebar {
-  display:block;
+    .triage-hide, .triage-filter-hide {
+        display: none;
+    }
 
-  @media (max-width: 43.75em) {
-      display:none;
-  }
-}
-.triage-hide, .triage-filter-hide {
-  display:none;
-}
-.triage-show, .triage-filter-show {
-  display:block;
-}
+    .triage-show, .triage-filter-show {
+        display: block;
+    }
