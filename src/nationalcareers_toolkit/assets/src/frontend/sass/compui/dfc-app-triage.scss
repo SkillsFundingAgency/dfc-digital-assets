@@ -1,4 +1,4 @@
-div.dfc-app-triage-panel-banner {
+/*div.dfc-app-triage-panel-banner {
     .triage-panel-search-form {
         section.triage-search-banner.primary-hero {
             .triage-search-item-wrapper {
@@ -35,7 +35,7 @@ div.dfc-app-triage-panel-banner {
            }
         }
     }
-  }
+  }*/
 
 .dfc-app-triage-search-panel {
     width: 360px;
@@ -68,14 +68,35 @@ div.dfc-app-triage-panel-banner {
         margin-right: 30px;
     }
 }
-
+.triage-body {
+    font-family: "GDS Transport",Arial,sans-serif;
+}
 @media (min-width: 40.0625em) {
+
     .dfc-app-triage-panel-banner {
-        background-color: #5694CA25;
         width: 100%;
-        height: 110Px;
-        padding-top: 40px;
-        padding-bottom: 40px;
+        height: 180px;
+        background-color: #5694CA25;
+        padding-top: 90px;
+        padding-bottom: 20px;
+
+        .heading {
+            font-size: 36px;
+            font-weight: 700;
+            line-height: 40px;
+            text-align: left;
+            width: 670px;
+            height: 60px;
+        }
+
+        .sub-heading {
+            width: 670px;
+            height: 40px;
+            font-size: 24px;
+            font-weight: 300;
+            line-height: 30px;
+            text-align: left;
+        }
     }
     .dfc-app-triage-search-header-panel {
         width: 920px;
@@ -105,6 +126,16 @@ div.dfc-app-triage-panel-banner {
         height: 100px;
         margin: 0px;
     }
+    .dfc-app-triage-page-number-panel {
+        width: 960px;
+        height: 41px;
+        padding-top: 16px;
+        font-size: 19px;
+        font-weight: 700;
+        line-height: 25px;
+        text-align: left;
+        border-bottom: solid 1px #B1B4B6;
+    }
     .dfc-app-triage-search-panel {
         width: 918px;
         padding-top: 25px;
@@ -114,6 +145,112 @@ div.dfc-app-triage-panel-banner {
         border-bottom: solid 1px #B1B4B6;
         border-right: solid 1px #B1B4B6;
         border-left: solid 1px #B1B4B6;
+    }
+    .dfc-app-filter-advice-group-result-container {
+        margin-top: 40px;
+        border-bottom: solid 1px #B1B4B6;
+        padding-bottom: 30px;
+        width: 960px;
+
+        .heading {
+            width: 960px;
+            height: 30px;
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 30px;
+            text-align: left;
+            display: block
+        }
+
+        .product-tile-container {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            
+        }
+    }
+    .article-tile {
+        width: 260px;
+        height: 130px;
+        background-color: #F3F2F1;
+        padding: 30px 20px 30px 20px;
+        border-bottom: solid 4px #B1B4B6;
+        margin-right: 15px;
+        margin-top: 30px;
+
+        .tile-header {
+            border-bottom: solid 1px #3670B3;
+            color: #3670B3;
+            width: 255px;
+            height: 25px;
+            font-size: 19px;
+            font-weight: 700;
+            line-height: 25px;
+            text-align: left;
+        }
+
+        .tile-decription {
+            width: 249px;
+            height: 75px;
+            margin-top: 10px;
+            font-size: 19px;
+            font-weight: 300;
+            line-height: 25px;
+            text-align: left;
+        }
+    }
+    .app-view-tile {
+        width: 300px;
+        height: 160px;
+        background-color: #F3F2F1;
+        padding: 0px 0px 30px 0px;
+        border-bottom: solid 4px #B1B4B6;
+        margin-right: 15px;
+        margin-top: 30px;
+
+        .tile-header {
+            background-color: #5694CA;
+            width: 100%;
+            height: 70px;
+            position: relative;
+
+            .header-text {
+                color: #FFFFFF;
+                width: 260px;
+                height: 70px;
+                font-size: 19px;
+                position: absolute;
+                top: 30px;
+                left: 20px;
+                text-decoration: underline;
+                font-weight: 700;
+                line-height: 25px;
+                text-align: left;
+            }
+
+            .header-link {
+                text-decoration: none;
+            }
+
+            .header-image {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                height: 48px
+            }
+        }
+
+        .tile-description {
+            width: 249px;
+            height: 75px;
+            margin-top: 10px;
+            font-size: 19px;
+            padding-left: 20px;
+            padding-right: 20px;
+            font-weight: 300;
+            line-height: 25px;
+            text-align: left;
+        }
     }
 }
 
@@ -129,9 +266,8 @@ div.dfc-app-triage-panel-banner {
     }
 
     .dfc-app-triage-filter-item {
-        width: 293px;
+        width: 50%;
         height: 48px;
-        margin-bottom: 10px;
     }
 
     .dfc-app-triage-label {
@@ -146,8 +282,6 @@ div.dfc-app-triage-panel-banner {
     .dfc-app-triage-filter-header {
         width: 370px;
         height: 24px;
-        margin-top: 25px;
-
         span {
             font-size: 19px;
             font-weight: 700;
@@ -156,18 +290,18 @@ div.dfc-app-triage-panel-banner {
         }
     }
 
-    .dfc-app-triage-filter-sub-header {
-        width: 152px;
-        height: 18px;
-        margin-top: 10px;
+.dfc-app-triage-filter-sub-header {
+    width: 152px;
+    height: 28px;
 
-        span {
-            font-size: 14px;
-            font-weight: 300;
-            line-height: 18px;
-            text-align: left;
-        }
+    span {
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 18px;
+        text-align: left;
+        padding-left: 5px;
     }
+}
 
     .dfc-app-triage-filter-advice-group-container {
         width: 915px;
