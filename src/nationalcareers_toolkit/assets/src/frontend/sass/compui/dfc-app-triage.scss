@@ -76,7 +76,7 @@ div.dfc-app-triage-panel-banner {
     .dfc-app-triage-panel-banner {
         width: 100%;
         height: 180px;
-        background-color: #5694CA25;
+        background-color: rgba(86, 148, 202, .25);
         padding-top: 90px;
         padding-bottom: 20px;
 
@@ -169,19 +169,22 @@ div.dfc-app-triage-panel-banner {
             
         }
     }
+    .article-tile:nth-child(3n) {
+        margin-right: 0px;
+    }
     .article-tile {
-        width: 260px;
-        height: 130px;
+        width: 280px;
+        height: 136px;
         background-color: #F3F2F1;
-        padding: 30px 20px 30px 20px;
+        padding: 30px 10px 30px 10px;
         border-bottom: solid 4px #B1B4B6;
-        margin-right: 15px;
+        margin-right: 30px;
         margin-top: 30px;
 
         .tile-header {
-            border-bottom: solid 1px #3670B3;
+            text-decoration:underline;
             color: #3670B3;
-            width: 255px;
+            width: 280px;
             height: 25px;
             font-size: 19px;
             font-weight: 700;
@@ -189,8 +192,8 @@ div.dfc-app-triage-panel-banner {
             text-align: left;
         }
 
-        .tile-decription {
-            width: 249px;
+        .tile-description {
+            width: 280px;
             height: 75px;
             margin-top: 10px;
             font-size: 19px;
@@ -199,21 +202,45 @@ div.dfc-app-triage-panel-banner {
             text-align: left;
         }
     }
+
+    .app-view-tile:nth-child(3n) {
+        margin-right: 0px;
+    }
+
+    .app-view-tile__explore-careers {
+        border-bottom: solid 4px #5694CA;
+    }
+
+    .app-view-tile__explore-careers-header {
+        background-color: #5694CA;
+    }
+    .app-view-tile__find-a-course {
+        border-bottom: solid 4px #28A197;
+    }
+
+    .app-view-tile__find-a-course-header {
+        background-color: #28A197;
+    }
+    .app-view-tile__skills-assessment {
+        border-bottom: solid 4px #912B88;
+    }
+
+    .app-view-tile__skills-assessment-header {
+        background-color: #912B88;
+    }
+
     .app-view-tile {
         width: 300px;
-        height: 160px;
+        height: 166px;
         background-color: #F3F2F1;
         padding: 0px 0px 30px 0px;
-        border-bottom: solid 4px #B1B4B6;
-        margin-right: 15px;
+        margin-right: 30px;
         margin-top: 30px;
 
         .tile-header {
-            background-color: #5694CA;
             width: 100%;
             height: 70px;
             position: relative;
-
             .header-text {
                 color: #FFFFFF;
                 width: 260px;
@@ -221,7 +248,7 @@ div.dfc-app-triage-panel-banner {
                 font-size: 19px;
                 position: absolute;
                 top: 30px;
-                left: 20px;
+                left: 10px;
                 text-decoration: underline;
                 font-weight: 700;
                 line-height: 25px;
@@ -241,12 +268,12 @@ div.dfc-app-triage-panel-banner {
         }
 
         .tile-description {
-            width: 249px;
+            width: 270px;
             height: 75px;
             margin-top: 10px;
             font-size: 19px;
-            padding-left: 20px;
-            padding-right: 20px;
+            padding-left: 10px;
+            padding-right: 10px;
             font-weight: 300;
             line-height: 25px;
             text-align: left;
