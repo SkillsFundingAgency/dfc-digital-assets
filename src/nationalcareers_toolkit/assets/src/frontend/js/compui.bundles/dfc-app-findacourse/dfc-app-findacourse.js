@@ -1,4 +1,7 @@
 $(document).ready(function () {
+
+    showHideSectorsFilter();
+
     $(".find-a-course-page:first").each(function () {
         var urlParams = new URLSearchParams(window.location.search);
         var distance = urlParams.get('D');
@@ -60,13 +63,25 @@ $(document).ready(function () {
         return false;
     });
 
-    
-
     $('.find-a-course-page #courseType input[type=checkbox]').change(function (e) {
+        showHideSectorsFilter();
         makeAjaxCall(getParams(true));
         e.preventDefault();
         return false;
     });
+
+    $('.find-a-course-page #sectors input[type=checkbox]').change(function (e) {
+        makeAjaxCall(getParams(true));
+        e.preventDefault();
+        return false;
+    });
+    
+    $('.find-a-course-page #learningMethod input[type=checkbox]').change(function (e) {
+        makeAjaxCall(getParams(true));
+        e.preventDefault();
+        return false;
+    });
+
     $('#courseHours input[type=checkbox]').change(function (e) {
         makeAjaxCall(getParams(true));
         e.preventDefault();
@@ -105,11 +120,21 @@ function addCommas(nStr) {
 
 function clearFilters(paramValues) {
     paramValues.CourseType = '';
+    paramValues.Sectors = '';
+    paramValues.LearningMethod = '';
     paramValues.CourseHours = '';
     paramValues.CourseStudyTime = '';
     paramValues.QualificationLevels = '';
 
     $('.find-a-course-page #courseType input[type=checkbox]').each(function () {
+        $(this).prop('checked', false)
+    });
+
+    $('.find-a-course-page #sectors input[type=checkbox]').each(function () {
+        $(this).prop('checked', false)
+    });
+
+    $('.find-a-course-page #learningMethod input[type=checkbox]').each(function () {
         $(this).prop('checked', false)
     });
 
@@ -161,6 +186,21 @@ function showHideDistanceInput(show, orderBy) {
     }
 }
 
+function showHideSectorsFilter() {
+    var isChecked = $(document.getElementById("SideBar.CourseType.SelectedIds[5]")).is(":checked");
+
+    if (isChecked === true) {
+        $("#sectors-block").show();
+    }
+    else {
+        $("#sectors-block").hide();
+
+        $('.find-a-course-page #sectors input[type=checkbox]').each(function () {
+            $(this).prop('checked', false)
+        });
+    }
+}
+
 function showHideClearFilters(show, searchTerm, town, coordinates) {
     if (show === true) {
         var D = 0;
@@ -185,6 +225,8 @@ function anyFiltersSelected(paramValues) {
     if (paramValues.Town != '' ||
         paramValues.StartDate != 'Anytime' ||
         paramValues.CourseType.length > 1 ||
+        paramValues.Sectors.length > 1 ||
+        paramValues.LearningMethod.length > 1 ||
         paramValues.CourseHours.length > 1 ||
         paramValues.CourseStudyTime.length > 1 ||
         paramValues.QualificationLevels.length > 0) {
@@ -195,10 +237,6 @@ function anyFiltersSelected(paramValues) {
 }
 
 function makeAjaxCall(paramValues) {
-    if (!paramValues.SearchTerm && !paramValues.Town && !paramValues.CampaignCode) {
-        window.location = '/find-a-course/'
-        return false;
-    }
     console.info("making ajax request");
     var stringifield = JSON.stringify(paramValues, paramReplacer);
     var apiCall = {
@@ -228,7 +266,7 @@ function makeAjaxCall(paramValues) {
             $('#fac-result-list').html(replacementMarkup);
             $('.fac-result-count').html("");
             $('.fac-result-count').html(addCommas(resultCount));
-            (resultCount > 0) ? $('.no-count-block').show() : $('.no-count-block').hide();
+            (resultCount > 0) ? $('.no-count-block').show() : $('.no-count-block').hide();            
 
             showHideClearFilters(anyFiltersSelected(paramValues), paramValues.SearchTerm, paramValues.Town, paramValues.Coordinates);
             paramValues.D = showDistanceSelector === true ? 1 : 0;
@@ -249,13 +287,6 @@ function makeAjaxCall(paramValues) {
 }
 
 function searchFAC(paramValues) {
-    if (!paramValues.SearchTerm && !paramValues.Town && !paramValues.CampaignCode) {
-        if (document.location.search.length) {
-            window.location = '/find-a-course/'
-        }
-        return false;
-    }
-
     var showDistanceSelector = false;
     showDistanceSelector = (paramValues.Town != '');
     paramValues.D = showDistanceSelector === true ? 1 : 0;
@@ -277,6 +308,8 @@ function getUpdatedUrl(paramValues) {
         "orderByValue=" + paramValues.OrderByValue + "&" +
         "startDate=" + paramValues.StartDate + "&" +
         "courseType=" + paramValues.CourseType + "&" +
+        "sectors=" + paramValues.Sectors + "&" +
+        "learningMethod=" + paramValues.LearningMethod + "&" +
         "courseHours=" + paramValues.CourseHours + "&" +
         "courseStudyTime=" + paramValues.CourseStudyTime + "&" +
         "filterA=" + paramValues.FilterA + "&" +
@@ -307,12 +340,23 @@ function getParams(sortByLocation = false) {
     var page = $('.find-a-course-page #RequestPage').val();
     var startDate = $('.find-a-course-page #startdate-select').val();
     var courseType = [];
+    var sectors = [];
+    var learningMethod = [];
     var courseHours = [];
     var courseStudyTime = [];
     var qualificationLevels = [];
     var coordinates = $('.find-a-course-page #coordinates').val();
+
     $('.find-a-course-page #courseType input[type=checkbox]:checked').each(function () {
         courseType.push(this.value);
+    });
+
+    $('.find-a-course-page #sectors input[type=checkbox]:checked').each(function () {
+        sectors.push(this.value);
+    });
+
+    $('.find-a-course-page #learningMethod input[type=checkbox]:checked').each(function () {
+        learningMethod.push(this.value);
     });
     $('.find-a-course-page #courseHours input[type=checkbox]:checked').each(function () {
         courseHours.push(this.value);
@@ -334,6 +378,8 @@ function getParams(sortByLocation = false) {
         OrderByValue: (orderByValue == null) ? 'Relevance' : orderByValue,
         StartDate: (startDate == null) ? 'Anytime' : startDate,
         CourseType: courseType.toString(),
+        Sectors: sectors.toString(),
+        LearningMethod: learningMethod.toString(),
         CourseHours: courseHours.toString(),
         CourseStudyTime: courseStudyTime.toString(),
         FilterA: true,

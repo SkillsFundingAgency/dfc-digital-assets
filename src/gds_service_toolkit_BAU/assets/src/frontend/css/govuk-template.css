@@ -111,7 +111,8 @@ html {
   Force the scrollbar to always display in IE10/11
  */
 html {
-  -ms-overflow-style: scrollbar; }
+  -ms-overflow-style: scrollbar;
+  }
 
 body {
   background: white;

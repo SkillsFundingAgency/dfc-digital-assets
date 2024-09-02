@@ -16,6 +16,7 @@ module.exports = function (grunt) {
     var compuiDfcContactUsJsFiles = grunt.file.readJSON('jsfiles.json').compuiDfcContactUsJsFiles;
     var compuiDfcAppDiscoverSkillsAndCareersJsFiles = grunt.file.readJSON('jsfiles.json').compuiDfcAppDiscoverSkillsAndCareersJsFiles;
     var compuiDfcFindACourseJsFiles = grunt.file.readJSON('jsfiles.json').compuiDfcFindACourseJsFiles;
+    var compuiDfcJobProfileJsFiles = grunt.file.readJSON('jsfiles.json').compuiDfcJobProfileJsFiles;
     var compuiDfcTriageToolJsFiles = grunt.file.readJSON('jsfiles.json').compuiDfcTriageToolJsFiles;
     var compuiDfcShcJsFiles = grunt.file.readJSON('jsfiles.json').compuiSHCJsFilesBundle;
     var jqueryBundle = grunt.file.readJSON('jsfiles.json').jqueryBundle;
@@ -31,6 +32,7 @@ module.exports = function (grunt) {
     var backendAssetsFolder = "backend";
 
     // Load all grunt tasks
+    const sass = require('node-sass');
     require('load-grunt-tasks')(grunt);
     // Show elapsed time at the end
     require('time-grunt')(grunt);
@@ -79,8 +81,9 @@ module.exports = function (grunt) {
 
         sass: {
             options: {
-                outputStyle: 'nested',
-                includePaths: ['node_modules']
+                implementation: sass,
+                outputStyle: 'nested', // Determines the output format of the final CSS style (values; nested, expanded, compact, compressed)
+                includePaths: ['node_modules'] // An array of paths that LibSass can look in to attempt to resolve your @import declarations
             },
             dist: {
                 files: [{
@@ -167,6 +170,7 @@ module.exports = function (grunt) {
                     { '<%= dist.path %>/js/dfc-app-contactus.min.js': compuiDfcContactUsJsFiles },
                     { '<%= dist.path %>/js/dfc-app-discoverskillsandcareers.min.js': compuiDfcAppDiscoverSkillsAndCareersJsFiles },
                     { '<%= dist.path %>/js/dfc-app-findacourse.min.js': compuiDfcFindACourseJsFiles },
+                    { '<%= dist.path %>/js/dfc-app-jobprofile.min.js': compuiDfcJobProfileJsFiles },
                     { '<%= dist.path %>/js/dfc-app-triagetool.min.js': compuiDfcTriageToolJsFiles },
                     { '<%= dist.path %>/js/dfc-app-skillshealthcheck.min.js': compuiDfcShcJsFiles },
                     { '<%= dist.path %>/js/jquerybundle.min.js': jqueryBundle },
@@ -200,7 +204,7 @@ module.exports = function (grunt) {
                 },
                 files: [
                     { expand: true, cwd: '<%= src.path %>/sitefinity/images', src: ['**/*.{png,jpg,gif,jpeg,svg}', '!fonts/*', '!sprite/*.*'], dest: 'assets/dist/images' },
-                    { expand: true, cwd: '<%= src.path %>/' + projectAssetsFolder + '/images', src: ['**/*.{png,jpg,gif,jpeg,svg}', '!fonts/*', '!sprite/*.*'], dest: 'assets/dist/images' }
+                    { expand: true, cwd: '<%= src.path %>/' + projectAssetsFolder + '/images', src: ['**/*.{png,jpg,gif,jpeg,svg,ico}', '!fonts/*', '!sprite/*.*'], dest: 'assets/dist/images' }
                 ]
             }
         },
