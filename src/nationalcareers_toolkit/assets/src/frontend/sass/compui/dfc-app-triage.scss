@@ -36,9 +36,33 @@ div.dfc-app-triage-panel-banner {
         }
     }
   }*/
+.dfc-app-triage-panel-banner {
+    width: 100%;
+    height: 182px;
+    background-color: rgba(86, 148, 202, .25);
+    padding-top: 30px;
+    padding-bottom: 10px;
+
+    .heading {
+        font-size: 32px;
+        font-weight: 700;
+        line-height: 38px;
+        text-align: left;
+        height: 114px;
+        margin-bottom: 5px;
+    }
+
+    .sub-heading {
+        height: 48px;
+        font-size: 19px;
+        font-weight: 300;
+        line-height: 24px;
+        text-align: left;
+        margin-bottom: 0px;
+    }
+}
 
 .dfc-app-triage-search-panel {
-    width: 360px;
     padding-top: 25px;
     padding-bottom: 25px;
     padding-left: 15px;
@@ -48,7 +72,6 @@ div.dfc-app-triage-panel-banner {
     border-left: solid 1px #B1B4B6;
 }
 .dfc-app-triage-search-header-panel {
-    width: 360px;
     padding-left: 15px;
     padding-top: 14px;
     padding-right: 15px;
@@ -63,9 +86,137 @@ div.dfc-app-triage-panel-banner {
         font-weight: 300;
         line-height: 20px;
         text-align: left;
-        width: 353px;
         height: 20px;
         margin-right: 30px;
+    }
+}
+.dfc-app-triage-page-number-panel {
+    height: 36px;
+    padding-top: 16px;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 25px;
+    text-align: left;
+    color: #0B0C0C;
+    border-bottom: solid 1px #B1B4B6;
+}
+
+.dfc-app-filter-advice-group-result-container {
+    margin-top: 30px;
+    border-bottom: solid 1px #B1B4B6;
+    padding-bottom: 30px;
+
+    .heading {
+        height: 25px;
+        font-size: 19px;
+        font-weight: 700;
+        line-height: 24px;
+        text-align: left;
+        display: block
+    }
+
+    .product-tile-container {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+}
+.article-tile {
+    height: 80px;
+    background-color: #F3F2F1;
+    padding: 20px 15px 30px 15px;
+    border-bottom: solid 3px #B1B4B6;
+    margin-top: 10px;
+  
+    .tile-header {
+        text-decoration: underline;
+        color: #3670B3;
+        font-size: 19px;
+        font-weight: 700;
+        line-height: 25px;
+        text-align: left;
+    }
+
+    .tile-description {
+        height: 40px;
+        margin-top: 10px;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 20px;
+        text-align: left;
+    }
+}
+.dfc-app-triage-filter-item {
+    height: 24px;
+}
+.app-view-tile__explore-careers {
+    border-bottom: solid 4px #5694CA;
+}
+
+.app-view-tile__explore-careers-header {
+    background-color: #5694CA;
+}
+
+.app-view-tile__find-a-course {
+    border-bottom: solid 4px #28A197;
+}
+
+.app-view-tile__find-a-course-header {
+    background-color: #28A197;
+}
+
+.app-view-tile__skills-assessment {
+    border-bottom: solid 4px #912B88;
+}
+
+.app-view-tile__skills-assessment-header {
+    background-color: #912B88;
+}
+
+.app-view-tile {
+    height: 123px;
+    background-color: #F3F2F1;
+    padding: 0px 0px 30px 0px;
+    margin-top: 30px;
+
+    .tile-header {
+        width: 100%;
+        height: 70px;
+        position: relative;
+
+        .app-view-tile-header-text {
+            color: #FFFFFF;
+            font-size: 19px;
+            position: absolute;
+            top: 30px;
+            left: 10px;
+            text-decoration: underline;
+            font-weight: 700;
+            line-height: 25px;
+            text-align: left;
+        }
+
+        .header-link {
+            text-decoration: none;
+        }
+
+        .app-view-tile-header-image {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            height: 48px
+        }
+    }
+
+    .tile-description {
+        height: 75px;
+        margin-top: 10px;
+        font-size: 16px;
+        padding-left: 10px;
+        padding-right: 10px;
+        font-weight: 300;
+        line-height: 20px;
+        text-align: left;
     }
 }
 .triage-body {
@@ -86,7 +237,7 @@ div.dfc-app-triage-panel-banner {
             line-height: 40px;
             text-align: left;
             width: 690px;
-            height: 60px;
+            height: 90px;
         }
 
         .sub-heading {
@@ -98,6 +249,17 @@ div.dfc-app-triage-panel-banner {
             text-align: left;
         }
     }
+    .dfc-app-triage-search-panel {
+        width: 918px;
+        padding-top: 25px;
+        padding-bottom: 25px;
+        padding-left: 20px;
+        padding-right: 20px;
+        border-bottom: solid 1px #B1B4B6;
+        border-right: solid 1px #B1B4B6;
+        border-left: solid 1px #B1B4B6;
+    }
+
     .dfc-app-triage-search-header-panel {
         width: 920px;
         padding-left: 20px;
@@ -136,16 +298,7 @@ div.dfc-app-triage-panel-banner {
         text-align: left;
         border-bottom: solid 1px #B1B4B6;
     }
-    .dfc-app-triage-search-panel {
-        width: 918px;
-        padding-top: 25px;
-        padding-bottom: 25px;
-        padding-left: 20px;
-        padding-right: 20px;
-        border-bottom: solid 1px #B1B4B6;
-        border-right: solid 1px #B1B4B6;
-        border-left: solid 1px #B1B4B6;
-    }
+
     .dfc-app-filter-advice-group-result-container {
         margin-top: 40px;
         border-bottom: solid 1px #B1B4B6;
@@ -166,7 +319,6 @@ div.dfc-app-triage-panel-banner {
             display: flex;
             flex-wrap: wrap;
             width: 100%;
-            
         }
     }
     .article-tile:nth-child(3n) {
@@ -185,7 +337,6 @@ div.dfc-app-triage-panel-banner {
             text-decoration:underline;
             color: #3670B3;
             width: 280px;
-            height: 25px;
             font-size: 19px;
             font-weight: 700;
             line-height: 25px;
@@ -241,10 +392,10 @@ div.dfc-app-triage-panel-banner {
             width: 100%;
             height: 70px;
             position: relative;
-            .header-text {
+
+            .app-view-tile-header-text {
                 color: #FFFFFF;
                 width: 260px;
-                height: 70px;
                 font-size: 19px;
                 position: absolute;
                 top: 30px;
@@ -259,7 +410,7 @@ div.dfc-app-triage-panel-banner {
                 text-decoration: none;
             }
 
-            .header-image {
+            .app-view-tile-header-image {
                 position: absolute;
                 top: 10px;
                 right: 10px;
