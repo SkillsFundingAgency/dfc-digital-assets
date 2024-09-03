@@ -16,9 +16,7 @@ div.dfc-app-pages-alignment-justify {
 }
 
 .dfc-app-pages-triage-panel {
-    min-height: 400px;
-    max-height: 620px;
-    width: 360px;
+    width: auto;
     border-bottom: solid 4px;
     background-color: #f3f2f1;
     border-color: #b1b4b6;
@@ -27,8 +25,7 @@ div.dfc-app-pages-alignment-justify {
     padding-top: 20px;
 }
 .dfc-app-pages-triage-header {
-    width: 313px;
-    height: 40px;
+    width: auto;
     margin-bottom: 20px;
     font-family: Arial;
     font-size: 24px;
@@ -42,7 +39,6 @@ div.dfc-app-pages-alignment-justify {
     font-weight: 300;
     line-height: 24px;
     text-align: left;
-    height: 60px;
     margin-bottom: 30px;
 }
 .dfc-app-pages-triage-select {
@@ -60,20 +56,13 @@ div.dfc-app-pages-alignment-justify {
     margin-top: 5px;
     margin-bottom: 5px;
 }
-.dfc-app-pages-button {
-    width:330px;
 
-}
-
-@media (min-width: 40.0625em) {
+@media (min-width: 856px) {
     .dfc-app-pages-button {
         width: 259px;
     }
 
     .dfc-app-pages-triage-panel {
-        min-height: 296px;
-        max-height: 498px;
-        width: 960px;
         border-bottom: solid 4px;
         background-color: #f3f2f1;
         border-color: #b1b4b6;
@@ -82,9 +71,7 @@ div.dfc-app-pages-alignment-justify {
     }
 
     .dfc-app-pages-triage-header {
-        width: 469px;
-        height: 40px;
-        margin-bottom: 20px;
+         margin-bottom: 20px;
         font-family: Arial;
         font-size: 36px;
         font-weight: 700;
@@ -97,9 +84,9 @@ div.dfc-app-pages-alignment-justify {
         font-weight: 300;
         line-height: 24px;
         text-align: left;
-        width: 613px;
-        height: 48px;
         margin-bottom: 15px;
+        width: auto;
+        max-width: 613px;
     }
 
     .dfc-app-pages-triage-select {
